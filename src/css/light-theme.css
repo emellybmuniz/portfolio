@@ -1,0 +1,143 @@
+html.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #020202;
+  --primary-color: #8846c2; 
+  --primary-color-darker: #69269c; 
+  --primary-color-shadow: #d1a5f585; 
+  --surface-color: rgba(250, 250, 250, 0.9);
+  --surface-border-color: rgba(0, 0, 0, 0.1);
+  --text-secondary-color: #555555;
+  --text-on-primary: #ffffff; 
+}
+
+html.light-mode body {
+  background-image: radial-gradient(
+      circle 600px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+      rgba(255, 217, 0, 0.123), 
+      transparent 80%
+    ),
+    linear-gradient(150deg, var(--bg-color) 65%, rgb(205, 204, 205) 100%);
+}
+
+html.light-mode .logo {
+  color: var(--text-color);
+}
+
+
+html.light-mode .header .menu li a {
+  color: var(--text-color);
+}
+
+html.light-mode .header .menu .dropdown .dropdown-menu {
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border-color);
+}
+
+
+html.light-mode .header .menu .dropdown-menu li a,
+html.light-mode .header .menu .dropdown-menu li button {
+  color: var(--text-color);
+}
+
+
+html.light-mode .header .menu .dropdown-menu li a:hover,
+html.light-mode .header .menu .dropdown-menu li button:hover {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .informations strong {
+  color: #944fd1;
+}
+
+html.light-mode .home .social-media li a:hover i {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .home .photo.inner-shadow  {
+  background: linear-gradient(to right, #bc7bf5, #8df9c3, #89f3dc);
+}
+
+html.light-mode .header .menu li a:hover {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+}
+
+html.light-mode .header .menu .dropdown:hover > a {
+  color: var(--text-on-primary);
+}
+
+
+html.light-mode .projects .project {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .projects .btn-show-projects {
+  color: var(--text-color);
+}
+
+html.light-mode .projects .btn-show-projects:hover {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .certificates,
+html.light-mode .skills {
+  background-color: rgba(238, 238, 238, 0.833);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html.light-mode .skills .title,
+html.light-mode .certificates .title,
+html.light-mode .form-container .title {
+  filter: none;
+}
+
+html.light-mode .skills .container-skills {
+  background: rgba(255, 255, 255, 0.936);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+html.light-mode .skills .container-skills .skill-item:hover span {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+html.light-mode .form-container {
+  background: #292727;
+}
+
+html.light-mode .form label {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .form input,
+html.light-mode .form textarea {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  color: var(--text-color);
+}
+
+html.light-mode .form input::placeholder,
+html.light-mode .form textarea::placeholder {
+  color: #a0a0a0;
+}
+
+html.light-mode .form-container .title {
+  color: var(--text-on-primary);
+}
+
+
+html.light-mode .form .btn-submit {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .header .menu.menu-open {
+  background-color: rgba(245, 245, 245, 0.95);
+}
+
+@media (max-width: 768px) {
+  html.light-mode .menu-toggle {
+    color: var(--text-color);
+  }
+}
