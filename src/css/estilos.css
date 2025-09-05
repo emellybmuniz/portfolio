@@ -670,7 +670,7 @@ body.body-no-scroll {
   gap: 20px;
   width: 100%;
   background: rgb(27, 26, 26);
-  padding: 80px 0px 80px 0px;
+  padding: 38px 0px 100px 0px;
 }
 
 .form-container .title {
@@ -752,6 +752,116 @@ body.body-no-scroll {
   opacity: 0;
   will-change: opacity, transform; 
 }
+
+/* --- footer --- */
+.site-footer {
+  background-color: #1d1f22;
+  color: #ecf0f1;
+  padding: 60px 0px 30px;
+  display: grid;
+  border-radius: 40px 40px 0px 0px;
+  grid-template-columns: 1fr 300px 1fr;
+  gap: 50px;
+  position: relative;
+  margin-top: -35px;
+  z-index: 10;
+}
+
+.footer-column {
+  padding: 20px 0px;
+  margin: 0px 40px;
+}
+
+
+.footer-column h3 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-family: var(--font-secondary);
+}
+
+.footer-column p {
+  margin: 0 0 10px 0;
+  color: var(--text-secondary-color);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-social-media {
+  display: flex;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.footer-social-media li {
+  margin-right: 15px;
+}
+
+
+.footer-social-media a {
+  display: inline-block;
+  transition: transform var(--transition-fast) ease;
+}
+
+.footer-social-media a:hover {
+  transform: translateY(-3px);
+}
+
+.footer-social-media i {
+  font-size: 28px;
+  padding: 5px 10px;
+  transition: color var(--transition-fast) ease;
+}
+
+.footer-social-media .fa-linkedin-in {
+  color: #0077b5;
+}
+
+.footer-social-media .fa-github {
+  color: #e1e1e1;
+}
+
+.footer-social-media .fa-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.footer-copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 20px;
+  color: var(--text-secondary-color);
+  font-size: 14px;
+  border-top: 1px solid var(--surface-border-color);
+  width: 90%;
+  max-width: 1120px;
+  margin: 20px auto 0;
+}
+
 
 /* --- Scroll to Top Button --- */
 #scrollTopBtn {
