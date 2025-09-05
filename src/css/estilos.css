@@ -426,7 +426,7 @@ body.body-no-scroll {
 }
 
 .projects .project .project-information::-webkit-scrollbar {
-  display: 5px;
+  height: 5px;
 }
 
 .projects .project .project-information::-webkit-scrollbar-track {
@@ -692,7 +692,7 @@ body.body-no-scroll {
 .form label {
   font-size: 18px;
   color: var(--text-secondary-color);
-  margin-bottom: 5px;
+  margin: 4px 2px;
 }
 
 .form input,
@@ -768,8 +768,9 @@ body.body-no-scroll {
 }
 
 .footer-column {
+  justify-content: center;
   padding: 20px 0px;
-  margin: 0px 40px;
+  margin: 0px 60px;
 }
 
 

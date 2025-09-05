@@ -120,7 +120,7 @@ html.light-mode .form textarea {
 
 html.light-mode .form input::placeholder,
 html.light-mode .form textarea::placeholder {
-  color: #a0a0a0;
+  color: #928f8f;
 }
 
 html.light-mode .form-container .title {
@@ -140,4 +140,17 @@ html.light-mode .header .menu.menu-open {
   html.light-mode .menu-toggle {
     color: var(--text-color);
   }
+}
+
+html.light-mode .site-footer {
+  background-color: #f8f9fa;
+  color: var(--text-secondary-color);
+}
+
+html.light-mode .footer-column h3 {
+  color: var(--text-color);
+}
+
+html.light-mode .footer-social-media .fa-github {
+  color: #333;
 }
