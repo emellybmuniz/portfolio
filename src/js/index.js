@@ -34,12 +34,11 @@ function showMoreProjects() {
   showProjectsButton.textContent = "Mostrar menos";
 }
 
-
 // Parallax effect
 if (window.matchMedia("(pointer: fine)").matches) {
   const lightPos = { x: 0, y: 0 };
   const targetPos = { x: 0, y: 0 };
-  const easeFactor = 0.15; 
+  const easeFactor = 0.15;
   let animationFrameId = null;
 
   function updateLightPosition() {
@@ -85,6 +84,7 @@ function type() {
     setTimeout(type, 130);
   }
 }
+
 window.addEventListener("DOMContentLoaded", type);
 
 window.addEventListener("load", () => {
@@ -95,7 +95,7 @@ window.addEventListener("load", () => {
   }
 });
 
-// Btn scroll to top logic 
+// Btn scroll to top logic
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 window.addEventListener("scroll", () => {
   if (scrollTopBtn) {
@@ -108,7 +108,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Intersection Observer for animations
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   /**
    * Creates an Intersection Observer to add/remove a CSS class when an element enters/leaves the viewport.
    * This ensures animations run only when visible.
@@ -120,24 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll(selector);
     if (elements.length === 0) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle(animationClass, entry.isIntersecting);
-      });
-    }, { threshold });
-    
-    elements.forEach(element => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle(animationClass, entry.isIntersecting);
+        });
+      },
+      { threshold }
+    );
+
+    elements.forEach((element) => {
       observer.observe(element);
     });
   };
 
-  createAnimationObserver('.home .photo.inner-shadow', 'animate-gradient', 0.2);
-  createAnimationObserver('.home .informations', 'fadeInLeft', 0.2);
-  createAnimationObserver('.home .photo-container', 'fadeInRight', 0.2);
-  createAnimationObserver('.projects', 'in-view', 0.1);
-  createAnimationObserver('.certificates', 'in-view', 0.25);
-  createAnimationObserver('.skills', 'in-view', 0.25);
-  createAnimationObserver('.project', 'in-view', 0.2);
-  createAnimationObserver('.btn-show-projects', 'in-view', 0.2);
-  createAnimationObserver('.form-container', 'in-view', 0.15);
+  createAnimationObserver(".home .photo.inner-shadow", "animate-gradient", 0.2);
+  createAnimationObserver(".home .informations", "fadeInLeft", 0.2);
+  createAnimationObserver(".home .photo-container", "fadeInRight", 0.2);
+  createAnimationObserver(".projects", "in-view", 0.1);
+  createAnimationObserver(".certificates", "in-view", 0.25);
+  createAnimationObserver(".skills", "in-view", 0.25);
+  createAnimationObserver(".project", "in-view", 0.2);
+  createAnimationObserver(".btn-show-projects", "in-view", 0.2);
+  createAnimationObserver(".form-container", "in-view", 0.15);
 });
