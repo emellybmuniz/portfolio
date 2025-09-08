@@ -30,7 +30,7 @@ This repository contains the source code for my personal portfolio website. It's
 
 ## 🚀 Project Overview
 
-[![Project Demo](src/images/project-demo.gif)](https://emellybmuniz.github.io/emellybmuniz/)
+[![Project Demo](src/images/project-demo.gif)](https://emellybmuniz.github.io/portfolio/)
 
 This portfolio was built from scratch to serve as a central hub for my professional identity as a Frontend Developer. The primary goal is to present my work in a clean, visually appealing, and user-friendly manner. It reflects my passion for technology and design, demonstrating how I transform ideas into functional and aesthetic digital solutions.
 
