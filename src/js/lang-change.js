@@ -32,31 +32,23 @@ async function setLanguage(lang) {
             const translation = resolve(key, translations);
 
             if (translation) {
-                const type = element.getAttribute('data-translate-type');
-                switch (type) {
-                    case 'content':
-                    case 'alt':
-                    case 'title':
-                    case 'placeholder':
-                    case 'aria-label':
-                    case 'value':
-                        element.setAttribute(type === 'content' ? 'content' : type, translation);
-                        break;
-                    default:
-                        element.textContent = translation;
-                        break;
+                const attribute = element.getAttribute('data-translate-type');
+                const validAttributes = ['content', 'alt', 'title', 'placeholder', 'aria-label', 'value'];
+
+                if (attribute && validAttributes.includes(attribute)) {
+                    element.setAttribute(attribute, translation);
+                } else {
+                    element.textContent = translation;
                 }
             }
         });
 
-        // Special handling for the CV download link
-        const cvLink = document.querySelector('[data-cv-link]');
-        if (cvLink) {
+        document.querySelectorAll('[data-cv-link]').forEach(cvLink => {
             const cvFile = resolve('header.cvFile', translations);
             const cvFileName = resolve('header.cvFileName', translations);
             if (cvFile) cvLink.setAttribute('href', cvFile);
             if (cvFileName) cvLink.setAttribute('download', cvFileName);
-        }
+        });
 
         document.documentElement.lang = lang;
 
