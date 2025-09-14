@@ -16,8 +16,8 @@
       "themeButtonLight": "Light Theme",
       "downloadCV": "Download CV",
       "contactMe": "Contact Me",
-      "cvFile": "src/downloads/enUS-cv.pdf",
-      "cvFileName": "CV_Emelly_Beatriz_EN.pdf"
+      "cvFile": "src/downloads/ptBR-cv",
+      "cvFileName": "CV_Emelly_Beatriz_PT.pdf"
     },
     "home": {
       "typed": "Hi, I'm Emelly Beatriz.",
