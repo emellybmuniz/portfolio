@@ -16,7 +16,7 @@ html.light-mode body {
       rgba(255, 217, 0, 0.123),
       transparent 80%
     ),
-    linear-gradient(150deg, var(--bg-color) 65%, rgb(205, 204, 205) 100%);
+    linear-gradient(150deg, var(--bg-color) 65%, rgb(237, 237, 237) 100%);
 }
 
 html.light-mode .logo {
@@ -58,6 +58,15 @@ html.light-mode .header .menu li a:hover {
   background-color: var(--primary-color);
   color: var(--text-on-primary);
 }
+
+html.light-mode .header .menu li a:hover > i {
+  color: var(--text-on-primary);
+}
+
+html.light-mode .header .menu li button:hover > i {
+  color: var(--text-on-primary);
+}
+
 
 html.light-mode .header .menu .dropdown:hover > a {
   color: var(--text-on-primary);

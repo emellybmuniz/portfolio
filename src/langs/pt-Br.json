@@ -1,0 +1,140 @@
+{
+    "pt-BR": {
+      "meta": {
+        "title": "Emelly Beatriz | Desenvolvedora Frontend - Portfólio de Projetos",
+        "description": "Portfólio de Emelly Beatriz, desenvolvedora frontend apaixonada por tecnologia e design. Explore meus projetos em HTML, CSS, JavaScript, Python e veja como transformo ideias em soluções digitais funcionais e estéticas.",
+        "keywords": "Desenvolvedora Frontend, Portfólio, Emelly Beatriz, Web Developer, Projetos, HTML, CSS, JavaScript, Python, UI/UX",
+        "ogTitle": "Emelly Beatriz | Desenvolvedora Frontend - Portfólio",
+        "ogDescription": "Explore os projetos de Emelly Beatriz, uma desenvolvedora frontend que cria soluções digitais criativas e funcionais."
+      },
+      "header": {
+        "openMenu": "Abrir menu",
+        "projects": "Projetos",
+        "skills": "Habilidades",
+        "certificates": "Certificados",
+        "themeButtonDark": "Tema Escuro",
+        "themeButtonLight": "Tema Claro",
+        "downloadCV": "Baixar CV",
+        "contactMe": "Fale Comigo",
+        "cvFile": "src/downloads/ptBR-cv.pdf",
+        "cvFileName": "CV_Emelly_Beatriz.pdf"
+      },
+      "home": {
+        "typed": "Olá, Sou a Emelly Beatriz.",
+        "jobTitle": "Desenvolvedora Frontend",
+        "intro1": ", meu trabalho é transformar desafios complexos em soluções digitais que unem usabilidade, estética e funcionalidade. 🚀",
+        "intro2": "Guiada pela paixão por tecnologia e design, transformo esboços em experiências memoráveis que geram impacto real para quem as utiliza.",
+        "intro3": "✨ Explore meus projetos e veja como cada ideia ganha vida em código! 💻",
+        "profilePicAlt": "Foto de perfil de Emelly Beatriz",
+        "social": {
+          "linkedin": "Ir para o Linkedin",
+          "email": "Enviar E-mail",
+          "github": "Ir para GitHub",
+          "instagram": "Ir para o Instagram"
+        }
+      },
+      "projects": {
+        "title": "Meus projetos",
+        "showMore": "Mostrar mais",
+        "showLess": "Mostrar menos",
+        "viewOnStreamlit": "🔗 Ver no Streamlit",
+        "viewOnGithub": "🔗 Ver no GitHub Pages",
+        "project1": {
+          "alt": "Dashboard de análise de salários na área de dados",
+          "title": "Dashboard de análise de salários na área de dados",
+          "description": "Um dashboard interativo construído com Python e Streamlit para explorar e analisar dados de salários no campo de Data Science, baseado em dados coletados nos últimos anos."
+        },
+        "project2": {
+          "alt": "Jogo Pedra, Papel e Tesoura",
+          "title": "Jogo Pedra, Papel e Tesoura",
+          "description": "Um jogo interativo de Pedra, Papel e Tesoura desenvolvido com Html, CSS e JavaScript onde os usuários podem jogar contra o computador, testando suas habilidades e sorte."
+        },
+        "project3": {
+          "alt": "Validador de CPF",
+          "title": "Validador de CPF",
+          "description": "Uma ferramenta simples construída com JavaScript puro para validar números de CPF com base no algoritmo oficial."
+        },
+        "project4": {
+          "alt": "Cronômetro",
+          "title": "Cronômetro",
+          "description": "Cronômetro simples desenvolvido com JavaScript, HTML e CSS, permitindo que os usuários iniciem, pausem e reiniciem o tempo."
+        },
+        "project5": {
+          "alt": "Cópia de Alta Fidelidade da Netflix",
+          "title": "Netflix réplica",
+          "description": "Um modelo de alta fidelidade da interface da Netflix, desenvolvido apenas com HTML e CSS. Este projeto foca na reprodução visual do layout e design da plataforma, proporcionando uma experiência visual semelhante à original, sem funcionalidades interativas."
+        },
+        "project6": {
+          "alt": "Projeto Calculadora de IMC",
+          "title": "Calculadora de IMC",
+          "description": "Uma calculadora de IMC (Índice de Massa Corporal) simples e funcional, desenvolvida com HTML, CSS e JavaScript. Esta ferramenta permite que os usuários insiram seu peso e altura para calcular seu IMC, fornecendo uma avaliação rápida e fácil da sua condição corporal."
+        },
+        "project7": {
+          "alt": "Projeto Lista de Tarefas",
+          "title": "Lista de Tarefas",
+          "description": "Uma aplicação de Lista de Tarefas desenvolvida com HTML, CSS e JavaScript. Permite que os usuários adicionem e removam tarefas, proporcionando uma maneira simples e eficaz de gerenciar suas atividades diárias."
+        },
+        "project8": {
+          "alt": "Projeto Sistema Solar",
+          "title": "Sistema Solar",
+          "description": "Um projeto interativo do Sistema Solar, desenvolvido com HTML, CSS e JavaScript. Este projeto permite que os usuários explorem os planetas do nosso sistema solar de forma visual e educativa, proporcionando uma experiência envolvente e informativa."
+        },
+        "project9": {
+          "alt": "Projeto Calculadora Simples",
+          "title": "Calculadora",
+          "description": "Uma calculadora simples desenvolvida com HTML, CSS e JavaScript, permitindo que os usuários realizem operações matemáticas básicas de forma intuitiva e rápida."
+        },
+        "project10": {
+          "alt": "Projeto Calculadora Simples",
+          "title": "Calculadora Simples",
+          "description": "Calculadora simples desenvolvida com HTML, CSS e JavaScript, permitindo operações básicas como adição, subtração, multiplicação e divisão."
+        },
+        "project11": {
+          "alt": "Projeto Cordel Moderno",
+          "title": "Cordel Moderno",
+          "description": "Um projeto de Cordel Moderno desenvolvido com HTML e CSS, apresentando uma abordagem contemporânea para a tradicional literatura de cordel."
+        },
+        "project12": {
+          "alt": "Projeto História do Mascote Android",
+          "title": "História do Mascote Android",
+          "description": "Um projeto que explora a história do mascote Android, desenvolvido com HTML e CSS. Este projeto apresenta uma narrativa visual sobre a evolução do icônico mascote do sistema operacional Android."
+        }
+      },
+      "skills": {
+        "title": "Habilidades"
+      },
+      "certificates": {
+        "title": "Certificados",
+        "text": "Aqui estão alguns dos meus certificados.",
+        "openCertificate": "Abrir Certificado"
+      },
+      "form": {
+        "title": "Envie sua Mensagem!",
+        "nameLabel": "Nome",
+        "namePlaceholder": "Digite seu nome",
+        "emailLabel": "E-mail",
+        "emailPlaceholder": "Digite seu e-mail",
+        "messageLabel": "Mensagem",
+        "messagePlaceholder": "Digite sua mensagem",
+        "submitButton": "Enviar",
+        "nextPage": "https://emellybmuniz.github.io/portfolio-simplificado/thanks.html"
+      },
+      "footer": {
+        "aboutTitle": "Emelly Beatriz",
+        "aboutText": "Chegou até o fim? Muito legal! Se meu trabalho despertou seu interesse, não vamos encerrar por aqui. Conecte-se comigo para criarmos algo incrível juntos.",
+        "quickLinksTitle": "Links Rápidos",
+        "linkHome": "Início",
+        "toggleLanguage": "Português → English",
+        "contactTitle": "Contato",
+        "phone": "Telefone: (21) 99083-6960",
+        "copyright": "© 2025 Emelly B. Muniz. Todos os direitos reservados.",
+        "backToTop": "Voltar ao topo"
+      },
+      "thanksPage": {
+        "title": "Obrigada pelo Contato!",
+        "header": "Obrigada!",
+        "message": "Sua mensagem foi enviada com sucesso. Retornarei em breve.",
+        "backLink": "Voltar ao Início"
+      }
+    }
+}

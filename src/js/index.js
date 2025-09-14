@@ -1,6 +1,8 @@
 const showProjectsButton = document.querySelector(".btn-show-projects");
 const inactiveProjects = document.querySelectorAll(".project:not(.active)");
 const projectsSection = document.querySelector("#projects");
+let showMoreText = "Mostrar mais";
+let showLessText = "Mostrar menos";
 
 showProjectsButton.addEventListener("click", () => {
   const isButtonActive = showProjectsButton.classList.contains("active");
@@ -18,7 +20,7 @@ function hideProjects() {
     inactiveProject.classList.remove("active");
   });
   showProjectsButton.classList.remove("active");
-  showProjectsButton.textContent = "Mostrar mais";
+  showProjectsButton.textContent = showMoreText;
 
   setTimeout(() => {
     projectsSection.scrollIntoView();
@@ -31,7 +33,7 @@ function showMoreProjects() {
     inactiveProject.classList.add("active");
   });
   showProjectsButton.classList.add("active");
-  showProjectsButton.textContent = "Mostrar menos";
+  showProjectsButton.textContent = showLessText;
 }
 
 // Parallax effect
@@ -72,20 +74,26 @@ if (window.matchMedia("(pointer: fine)").matches) {
 }
 
 // Typing effect
-const text = "Olá! Sou a Emelly Beatriz.";
 const typedEl = document.querySelector(".typed");
-
+let typingText = ""; 
 let i = 0;
+let typeTimeout;
 
-function type() {
-  if (i < text.length) {
-    typedEl.textContent += text.charAt(i);
+function typeAnimation() {
+  if (i < typingText.length) {
+    typedEl.textContent += typingText.charAt(i);
     i++;
-    setTimeout(type, 130);
+    typeTimeout = setTimeout(typeAnimation, 130);
   }
 }
 
-window.addEventListener("DOMContentLoaded", type);
+function startTyping(text) {
+    if (typeTimeout) clearTimeout(typeTimeout);
+    if (typedEl) typedEl.textContent = '';
+    typingText = text;
+    i = 0;
+    typeAnimation();
+}
 
 window.addEventListener("load", () => {
   const slideContainer = document.querySelector(".certificates-slide");
@@ -143,4 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
   createAnimationObserver(".project", "in-view", 0.2);
   createAnimationObserver(".btn-show-projects", "in-view", 0.2);
   createAnimationObserver(".form-container", "in-view", 0.15);
+});
+
+// Listen for language changes to update dynamic JS-controlled text
+document.addEventListener('languageChanged', (e) => {
+    const { translations } = e.detail;
+
+    const resolve = (path, obj) => path.split('.').reduce((p, c) => (p && p[c]) || null, obj);
+
+    showMoreText = resolve('projects.showMore', translations) || showMoreText;
+    showLessText = resolve('projects.showLess', translations) || showLessText;
+    
+    if (showProjectsButton) {
+        const isButtonActive = showProjectsButton.classList.contains("active");
+        showProjectsButton.textContent = isButtonActive ? showLessText : showMoreText;
+    }
+
+    const typedText = resolve('home.typed', translations);
+    if (typedEl && typedText) {
+        startTyping(typedText);
+    }
 });

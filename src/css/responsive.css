@@ -102,6 +102,17 @@
     line-height: inherit;
   }
 
+  .header .menu .mobile-only a,
+  .header .menu .mobile-only button {
+  font-size: 18px;
+  text-transform: none;
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+}
+
   .header .menu li a:hover,
   .header .menu li button:hover {
     background-color: transparent !important;

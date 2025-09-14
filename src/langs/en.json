@@ -1,0 +1,140 @@
+{
+  "en": {
+    "meta": {
+      "title": "Emelly Beatriz | Frontend Developer - Project Portfolio",
+      "description": "Portfolio of Emelly Beatriz, a frontend developer passionate about technology and design. Explore my projects in HTML, CSS, JavaScript, Python and see how I transform ideas into functional and aesthetic digital solutions.",
+      "keywords": "Frontend Developer, Portfolio, Emelly Beatriz, Web Developer, Projects, HTML, CSS, JavaScript, Python, UI/UX",
+      "ogTitle": "Emelly Beatriz | Frontend Developer - Portfolio",
+      "ogDescription": "Explore the projects of Emelly Beatriz, a frontend developer who creates creative and functional digital solutions."
+    },
+    "header": {
+      "openMenu": "Open menu",
+      "projects": "Projects",
+      "skills": "Skills",
+      "certificates": "Certificates",
+      "themeButtonDark": "Dark Theme",
+      "themeButtonLight": "Light Theme",
+      "downloadCV": "Download CV",
+      "contactMe": "Contact Me",
+      "cvFile": "src/downloads/enUS-cv.pdf",
+      "cvFileName": "CV_Emelly_Beatriz_EN.pdf"
+    },
+    "home": {
+      "typed": "Hi, I'm Emelly Beatriz.",
+      "jobTitle": "Frontend Developer",
+      "intro1": ", my job is to transform complex challenges into digital solutions that unite usability, aesthetics, and functionality. 🚀",
+      "intro2": "Guided by a passion for technology and design, I turn sketches into memorable experiences that generate real impact for those who use them.",
+      "intro3": "✨ Explore my projects and see how each idea comes to life in code! 💻",
+      "profilePicAlt": "Profile picture of Emelly Beatriz",
+      "social": {
+        "linkedin": "Go to Linkedin",
+        "email": "Send Email",
+        "github": "Go to GitHub",
+        "instagram": "Go to Instagram"
+      }
+    },
+    "projects": {
+      "title": "My projects",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "viewOnStreamlit": "🔗 View on Streamlit",
+      "viewOnGithub": "🔗 View on GitHub Pages",
+      "project1": {
+        "alt": "Dashboard for salary analysis in the data area",
+        "title": "Salary Analysis Dashboard for the Data Field",
+        "description": "An interactive dashboard built with Python and Streamlit to explore and analyze salary data in the Data Science field, based on data collected in recent years."
+      },
+      "project2": {
+        "alt": "Rock, Paper, Scissors Game",
+        "title": "Rock, Paper, Scissors Game",
+        "description": "An interactive Rock, Paper, Scissors game developed with HTML, CSS, and JavaScript where users can play against the computer, testing their skills and luck."
+      },
+      "project3": {
+        "alt": "CPF Validator",
+        "title": "CPF Validator",
+        "description": "A simple tool built with pure JavaScript to validate CPF numbers based on the official algorithm."
+      },
+      "project4": {
+        "alt": "Stopwatch",
+        "title": "Stopwatch",
+        "description": "A simple stopwatch developed with JavaScript, HTML, and CSS, allowing users to start, pause, and reset the time."
+      },
+      "project5": {
+        "alt": "High-Fidelity Netflix Replica",
+        "title": "Netflix Replica",
+        "description": "A high-fidelity model of the Netflix interface, developed with only HTML and CSS. This project focuses on visually reproducing the platform's layout and design, providing a visual experience similar to the original, without interactive functionalities."
+      },
+      "project6": {
+        "alt": "BMI Calculator Project",
+        "title": "BMI Calculator",
+        "description": "A simple and functional BMI (Body Mass Index) calculator developed with HTML, CSS, and JavaScript. This tool allows users to enter their weight and height to calculate their BMI, providing a quick and easy assessment of their body condition."
+      },
+      "project7": {
+        "alt": "To-Do List Project",
+        "title": "To-Do List",
+        "description": "A To-Do List application developed with HTML, CSS, and JavaScript. It allows users to add and remove tasks, providing a simple and effective way to manage their daily activities."
+      },
+      "project8": {
+        "alt": "Solar System Project",
+        "title": "Solar System",
+        "description": "An interactive Solar System project developed with HTML, CSS, and JavaScript. This project allows users to explore the planets of our solar system in a visual and educational way, providing an engaging and informative experience."
+      },
+      "project9": {
+        "alt": "Simple Calculator Project",
+        "title": "Calculator",
+        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing users to perform basic mathematical operations intuitively and quickly."
+      },
+      "project10": {
+        "alt": "Simple Calculator Project",
+        "title": "Simple Calculator",
+        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing basic operations like addition, subtraction, multiplication, and division."
+      },
+      "project11": {
+        "alt": "Modern Cordel Project",
+        "title": "Modern Cordel",
+        "description": "A Modern Cordel project developed with HTML and CSS, presenting a contemporary approach to traditional cordel literature."
+      },
+      "project12": {
+        "alt": "Android Mascot History Project",
+        "title": "History of the Android Mascot",
+        "description": "A project that explores the history of the Android mascot, developed with HTML and CSS. This project presents a visual narrative about the evolution of the iconic mascot of the Android operating system."
+      }
+    },
+    "skills": {
+      "title": "Skills"
+    },
+    "certificates": {
+      "title": "Certificates",
+      "text": "Here are some of my certificates.",
+      "openCertificate": "Open Certificate"
+    },
+    "form": {
+      "title": "Send Your Message!",
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter your name",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Enter your e-mail",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Enter your message",
+      "submitButton": "Send",
+      "nextPage": "https://emellybmuniz.github.io/portfolio-simplificado/thanks.html"
+    },
+    "footer": {
+      "aboutTitle": "Emelly Beatriz",
+      "aboutText": "Made it to the end? Awesome! If my work has sparked your interest, let's not stop here. Connect with me to create something amazing together.",
+      "quickLinksTitle": "Quick Links",
+      "linkHome": "Home",
+      "toggleLanguage": "English → Português",
+      "contactTitle": "Contact",
+      "phone": "Phone: (21) 99083-6960",
+      "copyright": "© 2025 Emelly B. Muniz. All rights reserved.",
+      "backToTop": "Back to top"
+    },
+    "thanksPage": {
+      "title": "Thank you for your contact!",
+      "header": "Thank you!",
+      "message": "Your message has been sent successfully. I will get back to you soon.",
+      "backLink": "Back to Home"
+    }
+  }
+}
