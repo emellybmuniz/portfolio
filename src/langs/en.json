@@ -16,7 +16,7 @@
       "themeButtonLight": "Light Theme",
       "downloadCV": "Download CV",
       "contactMe": "Contact Me",
-      "cvFile": "src/downloads/ptBR-cv",
+      "cvFile": "src/downloads/ptBR-cv.pdf",
       "cvFileName": "CV_Emelly_Beatriz_PT.pdf"
     },
     "home": {
@@ -124,7 +124,7 @@
       "aboutText": "Made it to the end? Awesome! If my work has sparked your interest, let's not stop here. Connect with me to create something amazing together.",
       "quickLinksTitle": "Quick Links",
       "linkHome": "Home",
-      "toggleLanguage": "English → Português",
+      "toggleLanguage": "English > Português",
       "contactTitle": "Contact",
       "phone": "Phone: (21) 99083-6960",
       "copyright": "© 2025 Emelly B. Muniz. All rights reserved.",
