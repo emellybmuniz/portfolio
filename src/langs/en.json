@@ -39,30 +39,35 @@
       "showLess": "Show less",
       "viewOnStreamlit": "🔗 View on Streamlit",
       "viewOnGithub": "🔗 View on GitHub Pages",
+      "project0": {
+        "alt": "Android Mascot History Project",
+        "title": "History of the Android Mascot",
+        "description": "A project that explores the history of the Android mascot, developed with HTML and CSS. This project presents a visual narrative about the evolution of the iconic mascot of the Android operating system."
+      },
       "project1": {
-        "alt": "Dashboard for salary analysis in the data area",
-        "title": "Salary Analysis Dashboard for the Data Field",
-        "description": "An interactive dashboard built with Python and Streamlit to explore and analyze salary data in the Data Science field, based on data collected in recent years."
+        "alt": "Modern Cordel Project",
+        "title": "Modern Cordel",
+        "description": "A Modern Cordel project developed with HTML and CSS, presenting a contemporary approach to traditional cordel literature."
       },
       "project2": {
-        "alt": "Rock, Paper, Scissors Game",
-        "title": "Rock, Paper, Scissors Game",
-        "description": "An interactive Rock, Paper, Scissors game developed with HTML, CSS, and JavaScript where users can play against the computer, testing their skills and luck."
+        "alt": "Simple Calculator Project",
+        "title": "Simple Calculator",
+        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing basic operations like addition, subtraction, multiplication, and division."
       },
       "project3": {
-        "alt": "CPF Validator",
-        "title": "CPF Validator",
-        "description": "A simple tool built with pure JavaScript to validate CPF numbers based on the official algorithm."
+        "alt": "Simple Calculator Project",
+        "title": "Calculator",
+        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing users to perform basic mathematical operations intuitively and quickly."
       },
       "project4": {
-        "alt": "Stopwatch",
-        "title": "Stopwatch",
-        "description": "A simple stopwatch developed with JavaScript, HTML, and CSS, allowing users to start, pause, and reset the time."
+        "alt": "Solar System Project",
+        "title": "Solar System",
+        "description": "An interactive Solar System project developed with HTML, CSS, and JavaScript. This project allows users to explore the planets of our solar system in a visual and educational way, providing an engaging and informative experience."
       },
       "project5": {
-        "alt": "High-Fidelity Netflix Replica",
-        "title": "Netflix Replica",
-        "description": "A high-fidelity model of the Netflix interface, developed with only HTML and CSS. This project focuses on visually reproducing the platform's layout and design, providing a visual experience similar to the original, without interactive functionalities."
+        "alt": "To-Do List Project",
+        "title": "To-Do List",
+        "description": "A To-Do List application developed with HTML, CSS, and JavaScript. It allows users to add and remove tasks, providing a simple and effective way to manage their daily activities."
       },
       "project6": {
         "alt": "BMI Calculator Project",
@@ -70,34 +75,34 @@
         "description": "A simple and functional BMI (Body Mass Index) calculator developed with HTML, CSS, and JavaScript. This tool allows users to enter their weight and height to calculate their BMI, providing a quick and easy assessment of their body condition."
       },
       "project7": {
-        "alt": "To-Do List Project",
-        "title": "To-Do List",
-        "description": "A To-Do List application developed with HTML, CSS, and JavaScript. It allows users to add and remove tasks, providing a simple and effective way to manage their daily activities."
+        "alt": "High-Fidelity Netflix Replica",
+        "title": "Netflix Replica",
+        "description": "A high-fidelity model of the Netflix interface, developed with only HTML and CSS. This project focuses on visually reproducing the platform's layout and design, providing a visual experience similar to the original, without interactive functionalities."
       },
       "project8": {
-        "alt": "Solar System Project",
-        "title": "Solar System",
-        "description": "An interactive Solar System project developed with HTML, CSS, and JavaScript. This project allows users to explore the planets of our solar system in a visual and educational way, providing an engaging and informative experience."
+        "alt": "Stopwatch",
+        "title": "Stopwatch",
+        "description": "A simple stopwatch developed with JavaScript, HTML, and CSS, allowing users to start, pause, and reset the time."
       },
       "project9": {
-        "alt": "Simple Calculator Project",
-        "title": "Calculator",
-        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing users to perform basic mathematical operations intuitively and quickly."
+        "alt": "CPF Validator",
+        "title": "CPF Validator",
+        "description": "A simple tool built with pure JavaScript to validate CPF numbers based on the official algorithm."
       },
       "project10": {
-        "alt": "Simple Calculator Project",
-        "title": "Simple Calculator",
-        "description": "A simple calculator developed with HTML, CSS, and JavaScript, allowing basic operations like addition, subtraction, multiplication, and division."
+        "alt": "Rock, Paper, Scissors Game",
+        "title": "Rock, Paper, Scissors Game",
+        "description": "An interactive Rock, Paper, Scissors game developed with HTML, CSS, and JavaScript where users can play against the computer, testing their skills and luck."
       },
       "project11": {
-        "alt": "Modern Cordel Project",
-        "title": "Modern Cordel",
-        "description": "A Modern Cordel project developed with HTML and CSS, presenting a contemporary approach to traditional cordel literature."
+        "alt": "Dashboard for salary analysis in the data area",
+        "title": "Salary Analysis Dashboard for the Data Field",
+        "description": "An interactive dashboard built with Python and Streamlit to explore and analyze salary data in the Data Science field, based on data collected in recent years."
       },
       "project12": {
-        "alt": "Android Mascot History Project",
-        "title": "History of the Android Mascot",
-        "description": "A project that explores the history of the Android mascot, developed with HTML and CSS. This project presents a visual narrative about the evolution of the iconic mascot of the Android operating system."
+        "alt": "Professional Portfolio Project",
+        "title": "Professional Portfolio",
+        "description": "Portfolio page developed to showcase my career and projects. Created with pure HTML, CSS, and JavaScript, it includes light/dark mode and responsive design for a pleasant experience."
       }
     },
     "skills": {

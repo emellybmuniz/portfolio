@@ -48,7 +48,7 @@
 
         <nav class="menu">
             <ul class="menu-list">
-                <li class="projects-li">
+                <li class="projects-li desktop-only">
                     <a href="#projects" data-translate-key="header.projects">Projetos</a>
                 </li>
                 <li class="dropdown desktop-only">
@@ -77,6 +77,9 @@
                     </ul>
                 </li>
     
+                <li class="mobile-only">
+                    <a href="#projects"><i class="fas fa-project-diagram"></i><span data-translate-key="header.projects">Projetos</span></a>
+                </li>
                 <li class="mobile-only"><a href="#skills"><i class="fas fa-star"></i><span data-translate-key="header.skills">Habilidades</span></a></li>
                 <li class="mobile-only"><a href="#certificates"><i class="fas fa-award"></i><span data-translate-key="header.certificates">Certificados</span></a></li>
                 <li class="mobile-only"><a href="#form"><i class="fas fa-paper-plane"></i><span data-translate-key="header.contactMe">Fale Comigo</span></a></li>
@@ -143,10 +146,32 @@
         <div class="projects-container">
 
             <div class="project active">
+                <a href="https://emellybmuniz.github.io/coursePortfolio/" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="project-image-wrapper">
+                        <img src="src/images/coursePortfolio.webp" loading="lazy" alt="Portfólio Profissional" data-translate-key="projects.project12.alt" data-translate-type="alt">
+                        <div class="project-information">
+                            <ul class="technologies">
+                                <li><span>HTML</span></li>
+                                <li><span>CSS</span></li>
+                                <li><span>JavaScript</span></li>  
+                            </ul>
+                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-translate-key="projects.project12.title">Portfólio Profissional</h3>
+                        <p data-translate-key="projects.project12.description">
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project active">
                 <a href="https://imersao-dados-python-alura-emellybmuniz.streamlit.app/" target="_blank"
                     rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/Dashboard-de-Salários-Area-de-Dados-Streamlit.webp" loading="lazy" alt="Dashboard de análise de salários na área de dados" data-translate-key="projects.project1.alt" data-translate-type="alt">
+                        <img src="src/images/Dashboard-de-Salários-Area-de-Dados-Streamlit.webp" loading="lazy" alt="Dashboard de análise de salários na área de dados" data-translate-key="projects.project11.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>Python</span></li>
@@ -158,8 +183,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project1.title">Dashboard de análise de salários na área de dados</h3>
-                        <p data-translate-key="projects.project1.description">
+                        <h3 data-translate-key="projects.project11.title">Dashboard de análise de salários na área de dados</h3>
+                        <p data-translate-key="projects.project11.description">
                         </p>
                     </div>
                 </a>
@@ -170,7 +195,7 @@
                 <a href="https://emellybmuniz.github.io/rock-paper-scissors-game/" target="_blank"
                     rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/rock-paper-scissors-game.webp" alt="Jogo Pedra, Papel e Tesoura" loading="lazy" data-translate-key="projects.project2.alt" data-translate-type="alt">
+                        <img src="src/images/rock-paper-scissors-game.webp" alt="Jogo Pedra, Papel e Tesoura" loading="lazy" data-translate-key="projects.project10.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -181,38 +206,17 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project2.title">Jogo Pedra, Papel e Tesoura</h3>
-                        <p data-translate-key="projects.project2.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project active">
-                <a href="https://emellybmuniz.github.io/validador-CPF/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/validador.webp" alt="Validador de CPF" loading="lazy" data-translate-key="projects.project3.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project3.title">Validador de CPF</h3>
-                        <p data-translate-key="projects.project3.description">
+                        <h3 data-translate-key="projects.project10.title">Jogo Pedra, Papel e Tesoura</h3>
+                        <p data-translate-key="projects.project10.description">
                         </p>
                     </div>
                 </a>
             </div>
 
             <div class="project">
-                <a href="https://emellybmuniz.github.io/timer/" target="_blank" rel="noopener noreferrer">
+                <a href="https://emellybmuniz.github.io/validador-CPF/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/timer.webp" alt="Cronômetro" loading="lazy" data-translate-key="projects.project4.alt" data-translate-type="alt">
+                        <img src="src/images/validador-cpf.webp" alt="Validador de CPF" loading="lazy" data-translate-key="projects.project9.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -223,8 +227,29 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project4.title">Cronômetro</h3>
-                        <p data-translate-key="projects.project4.description">
+                        <h3 data-translate-key="projects.project9.title">Validador de CPF</h3>
+                        <p data-translate-key="projects.project9.description">
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project">
+                <a href="https://emellybmuniz.github.io/stopwatch/" target="_blank" rel="noopener noreferrer">
+                    <div class="project-image-wrapper">
+                        <img src="src/images/stopwatch.webp" alt="Cronômetro" loading="lazy" data-translate-key="projects.project8.alt" data-translate-type="alt">
+                        <div class="project-information">
+                            <ul class="technologies">
+                                <li><span>HTML</span></li>
+                                <li><span>CSS</span></li>
+                                <li><span>JavaScript</span></li>
+                            </ul>
+                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-translate-key="projects.project8.title">Cronômetro</h3>
+                        <p data-translate-key="projects.project8.description">
                         </p>
                     </div>
                 </a>
@@ -233,7 +258,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/netflix-replica/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/netflix-replica.webp" alt="Cópia de Alta Fidelidade da Netflix" loading="lazy" data-translate-key="projects.project5.alt" data-translate-type="alt">
+                        <img src="src/images/netflix-replica.webp" alt="Cópia de Alta Fidelidade da Netflix" loading="lazy" data-translate-key="projects.project7.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -244,8 +269,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project5.title">Netflix réplica</h3>
-                        <p data-translate-key="projects.project5.description">
+                        <h3 data-translate-key="projects.project7.title">Netflix réplica</h3>
+                        <p data-translate-key="projects.project7.description">
                         </p>
                     </div>
                 </a>
@@ -275,7 +300,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/to-do-list/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/to-do-list.webp" alt="Projeto Lista de Tarefas" loading="lazy" data-translate-key="projects.project7.alt" data-translate-type="alt">
+                        <img src="src/images/to-do-list.webp" alt="Projeto Lista de Tarefas" loading="lazy" data-translate-key="projects.project5.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -286,8 +311,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project7.title">Lista de Tarefas</h3>
-                        <p data-translate-key="projects.project7.description">
+                        <h3 data-translate-key="projects.project5.title">Lista de Tarefas</h3>
+                        <p data-translate-key="projects.project5.description">
                         </p>
                     </div>
                 </a>
@@ -296,7 +321,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/projeto-via-lactea-v0.1/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/sistema-solar.webp" alt="Projeto Sistema Solar" loading="lazy" data-translate-key="projects.project8.alt" data-translate-type="alt">
+                        <img src="src/images/sistema-solar.webp" alt="Projeto Sistema Solar" loading="lazy" data-translate-key="projects.project4.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -307,8 +332,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project8.title">Sistema Solar</h3>
-                        <p data-translate-key="projects.project8.description">
+                        <h3 data-translate-key="projects.project4.title">Sistema Solar</h3>
+                        <p data-translate-key="projects.project4.description">
                         </p>
                     </div>
                 </a>
@@ -317,7 +342,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/calculadora/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/calculadora.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project9.alt" data-translate-type="alt">
+                        <img src="src/images/calculadora.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project3.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -328,8 +353,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project9.title">Calculadora</h3>
-                        <p data-translate-key="projects.project9.description">
+                        <h3 data-translate-key="projects.project3.title">Calculadora</h3>
+                        <p data-translate-key="projects.project3.description">
                         </p>
                     </div>
                 </a>
@@ -339,7 +364,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/calculadora-simples/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/calculadora-simples.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project10.alt" data-translate-type="alt">
+                        <img src="src/images/calculadora-simples.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project2.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -350,8 +375,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project10.title">Calculadora Simples</h3>
-                        <p data-translate-key="projects.project10.description">
+                        <h3 data-translate-key="projects.project2.title">Calculadora Simples</h3>
+                        <p data-translate-key="projects.project2.description">
                         </p>
                     </div>
                 </a>
@@ -360,7 +385,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/projeto-cordel/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/cordel-moderno.webp" alt="Projeto Cordel Moderno" loading="lazy" data-translate-key="projects.project11.alt" data-translate-type="alt">
+                        <img src="src/images/cordel-moderno.webp" alt="Projeto Cordel Moderno" loading="lazy" data-translate-key="projects.project1.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -370,8 +395,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project11.title">Cordel Moderno</h3>
-                        <p data-translate-key="projects.project11.description">
+                        <h3 data-translate-key="projects.project1.title">Cordel Moderno</h3>
+                        <p data-translate-key="projects.project1.description">
                         </p>
                     </div>
                 </a>
@@ -380,7 +405,7 @@
             <div class="project">
                 <a href="https://emellybmuniz.github.io/mini-projeto-android/" target="_blank" rel="noopener noreferrer">
                     <div class="project-image-wrapper">
-                        <img src="src/images/mini-projeto-android.webp" alt="Projeto História do Mascote Android" loading="lazy" data-translate-key="projects.project12.alt" data-translate-type="alt">
+                        <img src="src/images/mini-projeto-android.webp" alt="Projeto História do Mascote Android" loading="lazy" data-translate-key="projects.project0.alt" data-translate-type="alt">
                         <div class="project-information">
                             <ul class="technologies">
                                 <li><span>HTML</span></li>
@@ -390,8 +415,8 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 data-translate-key="projects.project12.title">História do Mascote Android</h3>
-                        <p data-translate-key="projects.project12.description">
+                        <h3 data-translate-key="projects.project0.title">História do Mascote Android</h3>
+                        <p data-translate-key="projects.project0.description">
                         </p>
                     </div>
                 </a>
