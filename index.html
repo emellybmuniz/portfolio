@@ -1,555 +1,1027 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title data-translate-key="meta.title">Emelly Beatriz | Desenvolvedora Frontend - Portfólio de Projetos</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title data-translate-key="meta.title">
+      Emelly Beatriz | Desenvolvedora Frontend - Portfólio de Projetos
+    </title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfólio de Emelly Beatriz, desenvolvedora frontend apaixonada por tecnologia e design. Explore meus projetos em HTML, CSS, JavaScript, Python e veja como transformo ideias em soluções digitais funcionais e estéticas." data-translate-key="meta.description" data-translate-type="content">
-    <meta name="keywords" content="Desenvolvedora Frontend, Portfólio, Emelly Beatriz, Web Developer, Projetos, HTML, CSS, JavaScript, Python, UI/UX" data-translate-key="meta.keywords" data-translate-type="content">
+    <meta
+      name="description"
+      content="Portfólio de Emelly Beatriz, desenvolvedora frontend apaixonada por tecnologia e design. Explore meus projetos em HTML, CSS, JavaScript, Python e veja como transformo ideias em soluções digitais funcionais e estéticas."
+      data-translate-key="meta.description"
+      data-translate-type="content"
+    />
+    <meta
+      name="keywords"
+      content="Desenvolvedora Frontend, Portfólio, Emelly Beatriz, Web Developer, Projetos, HTML, CSS, JavaScript, Python, UI/UX"
+      data-translate-key="meta.keywords"
+      data-translate-type="content"
+    />
 
     <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Emelly Beatriz | Desenvolvedora Frontend - Portfólio" data-translate-key="meta.ogTitle" data-translate-type="content">
-    <meta property="og:description" content="Explore os projetos de Emelly Beatriz, uma desenvolvedora frontend que cria soluções digitais criativas e funcionais." data-translate-key="meta.ogDescription" data-translate-type="content">
-    <meta property="og:image" content="https://emellybmuniz.github.io/portfolio-simplificado/src/images/bg-profile.png">
-    <meta property="og:url" content="https://emellybmuniz.github.io/portfolio-simplificado/"> 
- 
-    <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        
-    <link rel="stylesheet" 
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Emelly Beatriz | Desenvolvedora Frontend - Portfólio"
+      data-translate-key="meta.ogTitle"
+      data-translate-type="content"
+    />
+    <meta
+      property="og:description"
+      content="Explore os projetos de Emelly Beatriz, uma desenvolvedora frontend que cria soluções digitais criativas e funcionais."
+      data-translate-key="meta.ogDescription"
+      data-translate-type="content"
+    />
+    <meta
+      property="og:image"
+      content="https://emellybmuniz.github.io/portfolio-simplificado/src/images/bg-profile.png"
+    />
+    <meta
+      property="og:url"
+      content="https://emellybmuniz.github.io/portfolio-simplificado/"
+    />
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    
-    <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
-    <link rel="stylesheet" href="./src/css/light-theme.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-</head>
-<body>
-    <header class="header"> 
-        <a href="#">
-            <div class="logo">EB</div>
-        </a>
-        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" data-translate-key="header.openMenu" data-translate-type="aria-label">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <link rel="stylesheet" href="./src/css/light-theme.css" />
 
-        <nav class="menu">
-            <ul class="menu-list">
-                <li class="projects-li desktop-only">
-                    <a href="#projects" data-translate-key="header.projects">Projetos</a>
-                </li>
-                <li class="dropdown desktop-only">
-                    <a href="#skills"><span data-translate-key="header.skills">Habilidades</span> <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#certificates">
-                                <i class="fas fa-award"></i><span data-translate-key="header.certificates">Certificados</span>
-                            </a>
-                        </li>
-                        <li>
-                            <button type="button" class="theme-btn">
-                                <i class="fas fa-sun"></i><span data-translate-key="header.themeButtonLight">Tema Claro</span>
-                            </button>
-                        </li>
-                        <li>
-                            <a href="src/downloads/ptBR-cv.pdf" download="CV_Emelly_Beatriz.pdf" data-cv-link>
-                                <i class="fas fa-file-download"></i><span data-translate-key="header.downloadCV">Baixar CV</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#form">
-                                <i class="fas fa-paper-plane"></i><span data-translate-key="header.contactMe">Fale Comigo</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-    
-                <li class="mobile-only">
-                    <a href="#projects"><i class="fas fa-project-diagram"></i><span data-translate-key="header.projects">Projetos</span></a>
-                </li>
-                <li class="mobile-only"><a href="#skills"><i class="fas fa-star"></i><span data-translate-key="header.skills">Habilidades</span></a></li>
-                <li class="mobile-only"><a href="#certificates"><i class="fas fa-award"></i><span data-translate-key="header.certificates">Certificados</span></a></li>
-                <li class="mobile-only"><a href="#form"><i class="fas fa-paper-plane"></i><span data-translate-key="header.contactMe">Fale Comigo</span></a></li>
-                <li class="mobile-only">
-                    <a href="src/downloads/ptBR-cv.pdf" download="CV_Emelly_Beatriz.pdf" data-cv-link>
-                        <i class="fas fa-file-download"></i><span data-translate-key="header.downloadCV">Baixar CV</span>
-                    </a>
-                </li>
-                <li class="mobile-only">
-                    <button type="button" class="theme-btn">
-                        <i class="fas fa-sun"></i><span data-translate-key="header.themeButtonLight">Tema Claro</span>
-                    </button>
-                </li>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#">
+        <div class="logo">EB</div>
+      </a>
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        data-translate-key="header.openMenu"
+        data-translate-type="aria-label"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
 
+      <nav class="menu">
+        <ul class="menu-list">
+          <li class="projects-li desktop-only">
+            <a href="#projects" data-translate-key="header.projects"
+              >Projetos</a
+            >
+          </li>
+          <li class="dropdown desktop-only">
+            <a href="#skills"
+              ><span data-translate-key="header.skills">Habilidades</span>
+              <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#certificates">
+                  <i class="fas fa-award"></i
+                  ><span data-translate-key="header.certificates"
+                    >Certificados</span
+                  >
+                </a>
+              </li>
+              <li>
+                <button type="button" class="theme-btn">
+                  <i class="fas fa-sun"></i
+                  ><span data-translate-key="header.themeButtonLight"
+                    >Tema Claro</span
+                  >
+                </button>
+              </li>
+              <li>
+                <a
+                  href="src/downloads/ptBR-cv.pdf"
+                  download="CV_Emelly_Beatriz.pdf"
+                  data-cv-link
+                >
+                  <i class="fas fa-file-download"></i
+                  ><span data-translate-key="header.downloadCV">Baixar CV</span>
+                </a>
+              </li>
+              <li>
+                <a href="#form">
+                  <i class="fas fa-paper-plane"></i
+                  ><span data-translate-key="header.contactMe"
+                    >Fale Comigo</span
+                  >
+                </a>
+              </li>
             </ul>
-        </nav>
+          </li>
+
+          <li class="mobile-only">
+            <a href="#projects"
+              ><i class="fas fa-project-diagram"></i
+              ><span data-translate-key="header.projects">Projetos</span></a
+            >
+          </li>
+          <li class="mobile-only">
+            <a href="#skills"
+              ><i class="fas fa-star"></i
+              ><span data-translate-key="header.skills">Habilidades</span></a
+            >
+          </li>
+          <li class="mobile-only">
+            <a href="#certificates"
+              ><i class="fas fa-award"></i
+              ><span data-translate-key="header.certificates"
+                >Certificados</span
+              ></a
+            >
+          </li>
+          <li class="mobile-only">
+            <a href="#form"
+              ><i class="fas fa-paper-plane"></i
+              ><span data-translate-key="header.contactMe">Fale Comigo</span></a
+            >
+          </li>
+          <li class="mobile-only">
+            <a
+              href="src/downloads/ptBR-cv.pdf"
+              download="CV_Emelly_Beatriz.pdf"
+              data-cv-link
+            >
+              <i class="fas fa-file-download"></i
+              ><span data-translate-key="header.downloadCV">Baixar CV</span>
+            </a>
+          </li>
+          <li class="mobile-only">
+            <button type="button" class="theme-btn">
+              <i class="fas fa-sun"></i
+              ><span data-translate-key="header.themeButtonLight"
+                >Tema Claro</span
+              >
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <section class="home">
-        <div class="informations">
-            <h1 class="typed"></h1>
-            <p><strong data-translate-key="home.jobTitle">Desenvolvedora Frontend</strong><span data-translate-key="home.intro1">, meu trabalho é transformar desafios complexos em soluções digitais que unem usabilidade, estética e funcionalidade. 🚀</span></p>
-            <p data-translate-key="home.intro2">Guiada pela paixão por tecnologia e design, transformo esboços em experiências memoráveis que geram impacto real para quem as utiliza.</p>
-            <p data-translate-key="home.intro3">✨ Explore meus projetos e veja como cada ideia ganha vida em código! 💻</p>
+      <div class="informations">
+        <h1 class="typed"></h1>
+        <p>
+          <strong data-translate-key="home.jobTitle"
+            >Desenvolvedora Frontend</strong
+          ><span data-translate-key="home.intro1"
+            >, meu trabalho é transformar desafios complexos em soluções
+            digitais que unem usabilidade, estética e funcionalidade. 🚀</span
+          >
+        </p>
+        <p data-translate-key="home.intro2">
+          Guiada pela paixão por tecnologia e design, transformo esboços em
+          experiências memoráveis que geram impacto real para quem as utiliza.
+        </p>
+        <p data-translate-key="home.intro3">
+          ✨ Explore meus projetos e veja como cada ideia ganha vida em código!
+          💻
+        </p>
 
-            <ul class="social-media">
-                <li>
-                    <a href="https://www.linkedin.com/in/emelly-beatriz-719989194/" title="Ir para o Linkedin" 
-                        target="_blank" rel="noopener noreferrer" data-translate-key="home.social.linkedin" data-translate-type="title">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
+        <ul class="social-media">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/emelly-beatriz-719989194/"
+              title="Ir para o Linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.linkedin"
+              data-translate-type="title"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
 
-                <li>
-                    <a href="mailto:emellybmuniz@gmail.com" title="Enviar E-mail" target="_blank" rel="noopener noreferrer" data-translate-key="home.social.email" data-translate-type="title">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </li>
+          <li>
+            <a
+              href="mailto:emellybmuniz@gmail.com"
+              title="Enviar E-mail"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.email"
+              data-translate-type="title"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
 
-                <li>
-                    <a href="https://github.com/emellybmuniz" title="Ir para GitHub" target="_blank" rel="noopener noreferrer" data-translate-key="home.social.github" data-translate-type="title">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
+          <li>
+            <a
+              href="https://github.com/emellybmuniz"
+              title="Ir para GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.github"
+              data-translate-type="title"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
 
-                <li>
-                    <a href="https://www.instagram.com/emellybmuniz" title="Ir para o Instagram" target="_blank" rel="noopener noreferrer" data-translate-key="home.social.instagram" data-translate-type="title">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
+          <li>
+            <a
+              href="https://www.instagram.com/emellybmuniz"
+              title="Ir para o Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.instagram"
+              data-translate-type="title"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="photo-container">
+        <div class="photo inner-shadow">
+          <picture>
+            <source srcset="./src/images/bg-profile.webp" type="image/webp" />
+            <img
+              src="./src/images/bg-profile.png"
+              alt="Foto de perfil de Emelly Beatriz"
+              loading="lazy"
+              data-translate-key="home.profilePicAlt"
+              data-translate-type="alt"
+            />
+          </picture>
         </div>
-        <div class="photo-container">
-            <div class="photo inner-shadow ">
-                <picture>
-                    <source srcset="./src/images/bg-profile.webp" type="image/webp">
-                    <img src="./src/images/bg-profile.png" alt="Foto de perfil de Emelly Beatriz" loading="lazy" data-translate-key="home.profilePicAlt" data-translate-type="alt">
-                </picture>
-            </div>
-        </div>
+      </div>
     </section>
     <section class="projects" id="projects">
-        <h2 class="title" data-translate-key="projects.title">Meus projetos</h2>
+      <h2 class="title" data-translate-key="projects.title">Meus projetos</h2>
 
-        <div class="projects-container">
-
-            <div class="project active">
-                <a href="https://emellybmuniz.github.io/coursePortfolio/" target="_blank"
-                    rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/coursePortfolio.webp" loading="lazy" alt="Portfólio Profissional" data-translate-key="projects.project12.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>  
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project12.title">Portfólio Profissional</h3>
-                        <p data-translate-key="projects.project12.description">
-                        </p>
-                    </div>
-                </a>
+      <div class="projects-container">
+        <div class="project active">
+          <a
+            href="https://emellybmuniz.github.io/coursePortfolio/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/coursePortfolio.webp"
+                loading="lazy"
+                alt="Portfólio Profissional"
+                data-translate-key="projects.project12.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
             </div>
-
-            <div class="project active">
-                <a href="https://imersao-dados-python-alura-emellybmuniz.streamlit.app/" target="_blank"
-                    rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/Dashboard-de-Salários-Area-de-Dados-Streamlit.webp" loading="lazy" alt="Dashboard de análise de salários na área de dados" data-translate-key="projects.project11.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>Python</span></li>
-                                <li><span>Streamlit</span></li>
-                                <li><span>Pandas</span></li>
-                                <li><span>Plotly</span></li>     
-                            </ul>
-                            <p data-translate-key="projects.viewOnStreamlit">🔗 Ver no Streamlit</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project11.title">Dashboard de análise de salários na área de dados</h3>
-                        <p data-translate-key="projects.project11.description">
-                        </p>
-                    </div>
-                </a>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project12.title">
+                Portfólio Profissional
+              </h3>
+              <p data-translate-key="projects.project12.description"></p>
             </div>
-
-
-            <div class="project active">
-                <a href="https://emellybmuniz.github.io/rock-paper-scissors-game/" target="_blank"
-                    rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/rock-paper-scissors-game.webp" alt="Jogo Pedra, Papel e Tesoura" loading="lazy" data-translate-key="projects.project10.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no Github Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project10.title">Jogo Pedra, Papel e Tesoura</h3>
-                        <p data-translate-key="projects.project10.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/validador-CPF/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/validador-cpf.webp" alt="Validador de CPF" loading="lazy" data-translate-key="projects.project9.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project9.title">Validador de CPF</h3>
-                        <p data-translate-key="projects.project9.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/stopwatch/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/stopwatch.webp" alt="Cronômetro" loading="lazy" data-translate-key="projects.project8.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project8.title">Cronômetro</h3>
-                        <p data-translate-key="projects.project8.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/netflix-replica/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/netflix-replica.webp" alt="Cópia de Alta Fidelidade da Netflix" loading="lazy" data-translate-key="projects.project7.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project7.title">Netflix réplica</h3>
-                        <p data-translate-key="projects.project7.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/calculadora-imc/" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/calculadora-imc.webp" alt="Projeto Calculadora de IMC" loading="lazy" data-translate-key="projects.project6.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project6.title">Calculadora de IMC</h3>
-                        <p data-translate-key="projects.project6.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/to-do-list/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/to-do-list.webp" alt="Projeto Lista de Tarefas" loading="lazy" data-translate-key="projects.project5.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project5.title">Lista de Tarefas</h3>
-                        <p data-translate-key="projects.project5.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/projeto-via-lactea-v0.1/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/sistema-solar.webp" alt="Projeto Sistema Solar" loading="lazy" data-translate-key="projects.project4.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project4.title">Sistema Solar</h3>
-                        <p data-translate-key="projects.project4.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/calculadora/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/calculadora.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project3.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project3.title">Calculadora</h3>
-                        <p data-translate-key="projects.project3.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/calculadora-simples/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/calculadora-simples.webp" alt="Projeto Calculadora Simples" loading="lazy" data-translate-key="projects.project2.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                                <li><span>JavaScript</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project2.title">Calculadora Simples</h3>
-                        <p data-translate-key="projects.project2.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/projeto-cordel/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/cordel-moderno.webp" alt="Projeto Cordel Moderno" loading="lazy" data-translate-key="projects.project1.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project1.title">Cordel Moderno</h3>
-                        <p data-translate-key="projects.project1.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="project">
-                <a href="https://emellybmuniz.github.io/mini-projeto-android/" target="_blank" rel="noopener noreferrer">
-                    <div class="project-image-wrapper">
-                        <img src="src/images/mini-projeto-android.webp" alt="Projeto História do Mascote Android" loading="lazy" data-translate-key="projects.project0.alt" data-translate-type="alt">
-                        <div class="project-information">
-                            <ul class="technologies">
-                                <li><span>HTML</span></li>
-                                <li><span>CSS</span></li>
-                            </ul>
-                            <p data-translate-key="projects.viewOnGithub">🔗 Ver no GitHub Pages</p>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-translate-key="projects.project0.title">História do Mascote Android</h3>
-                        <p data-translate-key="projects.project0.description">
-                        </p>
-                    </div>
-                </a>
-            </div>
+          </a>
         </div>
-        <button class="btn-show-projects" data-translate-key="projects.showMore">Mostrar mais</button>
+
+        <div class="project active">
+          <a
+            href="https://imersao-dados-python-alura-emellybmuniz.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/Dashboard-de-Salários-Area-de-Dados-Streamlit.webp"
+                loading="lazy"
+                alt="Dashboard de análise de salários na área de dados"
+                data-translate-key="projects.project11.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>Python</span></li>
+                  <li><span>Streamlit</span></li>
+                  <li><span>Pandas</span></li>
+                  <li><span>Plotly</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnStreamlit">
+                  🔗 Ver no Streamlit
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project11.title">
+                Dashboard de análise de salários na área de dados
+              </h3>
+              <p data-translate-key="projects.project11.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project active">
+          <a
+            href="https://emellybmuniz.github.io/rock-paper-scissors-game/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/rock-paper-scissors-game.webp"
+                alt="Jogo Pedra, Papel e Tesoura"
+                loading="lazy"
+                data-translate-key="projects.project10.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no Github Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project10.title">
+                Jogo Pedra, Papel e Tesoura
+              </h3>
+              <p data-translate-key="projects.project10.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/validador-CPF/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/validador-cpf.webp"
+                alt="Validador de CPF"
+                loading="lazy"
+                data-translate-key="projects.project9.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project9.title">
+                Validador de CPF
+              </h3>
+              <p data-translate-key="projects.project9.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/stopwatch/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/stopwatch.webp"
+                alt="Cronômetro"
+                loading="lazy"
+                data-translate-key="projects.project8.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project8.title">Cronômetro</h3>
+              <p data-translate-key="projects.project8.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/netflix-replica/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/netflix-replica.webp"
+                alt="Cópia de Alta Fidelidade da Netflix"
+                loading="lazy"
+                data-translate-key="projects.project7.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project7.title">
+                Netflix réplica
+              </h3>
+              <p data-translate-key="projects.project7.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/calculadora-imc/"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/calculadora-imc.webp"
+                alt="Projeto Calculadora de IMC"
+                loading="lazy"
+                data-translate-key="projects.project6.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project6.title">
+                Calculadora de IMC
+              </h3>
+              <p data-translate-key="projects.project6.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/to-do-list/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/to-do-list.webp"
+                alt="Projeto Lista de Tarefas"
+                loading="lazy"
+                data-translate-key="projects.project5.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project5.title">
+                Lista de Tarefas
+              </h3>
+              <p data-translate-key="projects.project5.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/projeto-via-lactea-v0.1/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/sistema-solar.webp"
+                alt="Projeto Sistema Solar"
+                loading="lazy"
+                data-translate-key="projects.project4.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project4.title">
+                Sistema Solar
+              </h3>
+              <p data-translate-key="projects.project4.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/calculadora/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/calculadora.webp"
+                alt="Projeto Calculadora Simples"
+                loading="lazy"
+                data-translate-key="projects.project3.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project3.title">Calculadora</h3>
+              <p data-translate-key="projects.project3.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/calculadora-simples/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/calculadora-simples.webp"
+                alt="Projeto Calculadora Simples"
+                loading="lazy"
+                data-translate-key="projects.project2.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                  <li><span>JavaScript</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project2.title">
+                Calculadora Simples
+              </h3>
+              <p data-translate-key="projects.project2.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/projeto-cordel/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/cordel-moderno.webp"
+                alt="Projeto Cordel Moderno"
+                loading="lazy"
+                data-translate-key="projects.project1.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project1.title">
+                Cordel Moderno
+              </h3>
+              <p data-translate-key="projects.project1.description"></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project">
+          <a
+            href="https://emellybmuniz.github.io/mini-projeto-android/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-image-wrapper">
+              <img
+                src="src/images/mini-projeto-android.webp"
+                alt="Projeto História do Mascote Android"
+                loading="lazy"
+                data-translate-key="projects.project0.alt"
+                data-translate-type="alt"
+              />
+              <div class="project-information">
+                <ul class="technologies">
+                  <li><span>HTML</span></li>
+                  <li><span>CSS</span></li>
+                </ul>
+                <p data-translate-key="projects.viewOnGithub">
+                  🔗 Ver no GitHub Pages
+                </p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 data-translate-key="projects.project0.title">
+                História do Mascote Android
+              </h3>
+              <p data-translate-key="projects.project0.description"></p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <button class="btn-show-projects" data-translate-key="projects.showMore">
+        Mostrar mais
+      </button>
     </section>
 
     <section class="skills" id="skills">
-        <h2 class="title" data-translate-key="skills.title">Habilidades</h2>
-        <div class="container-skills">
-            <div class="skill-item">
-                <img src="src/images-skills-svg/html.svg" alt="Ícone do HTML5">
-                <span>HTML</span>
-            </div>
-            <div class="skill-item">
-                <img src="src/images-skills-svg/css.svg" alt="Ícone do CSS3">
-                <span>CSS</span>
-            </div>
-            <div class="skill-item">
-                <img src="src/images-skills-svg/js.svg" alt="Ícone do JavaScript">
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-                <img src="src/images-skills-svg/python.svg" alt="Ícone do Python">
-                <span>Python</span>
-            </div>
-            <div class="skill-item">
-                <img src="src/images-skills-svg/mysql.svg" alt="Ícone do MySQL">
-                <span>MySQL</span>
-            </div>
-            <div class="skill-item">
-                <img src="src/images-skills-svg/vscode.svg" alt="Ícone do VS Code">
-                <span>VS Code</span>
-            </div>
-
+      <h2 class="title" data-translate-key="skills.title">Habilidades</h2>
+      <div class="container-skills">
+        <div class="skill-item">
+          <img src="src/images-skills-svg/html.svg" alt="Ícone do HTML5" />
+          <span>HTML</span>
         </div>
+        <div class="skill-item">
+          <img src="src/images-skills-svg/css.svg" alt="Ícone do CSS3" />
+          <span>CSS</span>
+        </div>
+        <div class="skill-item">
+          <img src="src/images-skills-svg/js.svg" alt="Ícone do JavaScript" />
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item">
+          <img src="src/images-skills-svg/python.svg" alt="Ícone do Python" />
+          <span>Python</span>
+        </div>
+        <div class="skill-item">
+          <img src="src/images-skills-svg/mysql.svg" alt="Ícone do MySQL" />
+          <span>MySQL</span>
+        </div>
+        <div class="skill-item">
+          <img src="src/images-skills-svg/vscode.svg" alt="Ícone do VS Code" />
+          <span>VS Code</span>
+        </div>
+      </div>
     </section>
 
     <section class="certificates" id="certificates">
-        <h2 class="title auto" data-translate-key="certificates.title">Certificados</h2>
-            <p class="certificates-text" data-translate-key="certificates.text">Aqui estão alguns dos meus certificados.</p>
-            <div class="certificates-container">
-                <div class="certificates-slide">
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/EfiMGaLfRIhEmScGtRPJ8RQB95zGQYQJ4piPToO5gEx_mQ?e=9U2dZr" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/tecnicas-engenharia-prompt.png" alt="Certificado de Técnicas de Engenharia de Prompt"></a>
+      <h2 class="title auto" data-translate-key="certificates.title">
+        Certificados
+      </h2>
+      <p class="certificates-text" data-translate-key="certificates.text">
+        Aqui estão alguns dos meus certificados.
+      </p>
+      <div class="certificates-container">
+        <div class="certificates-slide">
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/EfiMGaLfRIhEmScGtRPJ8RQB95zGQYQJ4piPToO5gEx_mQ?e=9U2dZr"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/tecnicas-engenharia-prompt.png"
+              alt="Certificado de Técnicas de Engenharia de Prompt"
+          /></a>
 
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/EWEvAgv_eqlMvK35xvfcMg0BVdst9Rc7XmEP2j9LC-OKJw?e=uHx2VA" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/WPPEZBDR.png" alt="Certificado de Lógica de Programação"></a>
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/EWEvAgv_eqlMvK35xvfcMg0BVdst9Rc7XmEP2j9LC-OKJw?e=uHx2VA"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/WPPEZBDR.png"
+              alt="Certificado de Lógica de Programação"
+          /></a>
 
-                    <a href="https://cursos.alura.com.br/immersion/certificate/d2b90e3a-13d8-4691-b44c-f04a7b4797c6?lang" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/imersao-ia-alura-2024.png" alt="Certificado da Imersão IA Alura 2024"></a>
+          <a
+            href="https://cursos.alura.com.br/immersion/certificate/d2b90e3a-13d8-4691-b44c-f04a7b4797c6?lang"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/imersao-ia-alura-2024.png"
+              alt="Certificado da Imersão IA Alura 2024"
+          /></a>
 
-                    <a href="https://cursos.alura.com.br/user/emellybmuniz/immersion/certificate/81094" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/imersao-cloud-devops.png" alt="Certificado da Imersão Cloud & DevOps"></a>
+          <a
+            href="https://cursos.alura.com.br/user/emellybmuniz/immersion/certificate/81094"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/imersao-cloud-devops.png"
+              alt="Certificado da Imersão Cloud & DevOps"
+          /></a>
 
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/EWucD8ITAW5HpmLUW45izVoBqYV9I-o_LU9SMmM1n7qo-Q?e=YaONmc" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/jornada_em_tech_do_programa_desenvolve-14-08-2025.png" alt="Certificado da Jornada em Tech do Programa Desenvolve"></a>
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/EWucD8ITAW5HpmLUW45izVoBqYV9I-o_LU9SMmM1n7qo-Q?e=YaONmc"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/jornada_em_tech_do_programa_desenvolve-14-08-2025.png"
+              alt="Certificado da Jornada em Tech do Programa Desenvolve"
+          /></a>
 
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/EcycKRSXNNROti7AIiN1U4wBlB5PcKGE_OVeUdqWLyVibw?e=pUvKwR" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/PROGRAMA_POR_DENTRO_DO_MERCADO_DE_TI _ COMO_A_ANÁLISE_DE_DADOS_TRANSFORMA_EMPRESAS_E_CARREIRAS_2025.png" alt="Certificado do Programa Por Dentro do Mercado de TI"></a>
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/EcycKRSXNNROti7AIiN1U4wBlB5PcKGE_OVeUdqWLyVibw?e=pUvKwR"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/PROGRAMA_POR_DENTRO_DO_MERCADO_DE_TI _ COMO_A_ANÁLISE_DE_DADOS_TRANSFORMA_EMPRESAS_E_CARREIRAS_2025.png"
+              alt="Certificado do Programa Por Dentro do Mercado de TI"
+          /></a>
 
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/EeAoV37JXmBAoJMAxEvfnIkBWlmqDakH4gpeQ4fizEuT9A?e=6IS3sX" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/introducao_ao_java_e_seu_ambiente_de_desenvolvimento.png" alt="Certificado de Introdução ao Java"></a>
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/EeAoV37JXmBAoJMAxEvfnIkBWlmqDakH4gpeQ4fizEuT9A?e=6IS3sX"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/introducao_ao_java_e_seu_ambiente_de_desenvolvimento.png"
+              alt="Certificado de Introdução ao Java"
+          /></a>
 
-                    <a href="https://1drv.ms/b/c/f8120291656d6c7c/ETTiEfgQWh5Ivh17tUP-XUIBK4FbDXVDbKQl925pdFvpyQ?e=lEXtP8" target="_blank" rel="noopener noreferrer" title="Abrir Certificado" data-translate-key="certificates.openCertificate" data-translate-type="title"><img src="src/infinite-certificate-carousel-starter/escrevendo_prompts_eficazes.png" alt="Certificado de Escrevendo Prompts Eficazes"></a>
-                </div>
-            </div>
+          <a
+            href="https://1drv.ms/b/c/f8120291656d6c7c/ETTiEfgQWh5Ivh17tUP-XUIBK4FbDXVDbKQl925pdFvpyQ?e=lEXtP8"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Certificado"
+            data-translate-key="certificates.openCertificate"
+            data-translate-type="title"
+            ><img
+              src="src/infinite-certificate-carousel-starter/escrevendo_prompts_eficazes.png"
+              alt="Certificado de Escrevendo Prompts Eficazes"
+          /></a>
+        </div>
+      </div>
     </section>
 
     <section class="form-container" id="form">
-        <h2 class="title" data-translate-key="form.title">Envie sua Mensagem!</h2>
-        <form action="https://formsubmit.co/emellybmuniz@gmail.com" method="POST" class="form" target="_blank">
-            <label for="name" data-translate-key="form.nameLabel">Nome</label>
-            <input type="text" id="name" name="name" placeholder="Digite seu nome" required data-translate-key="form.namePlaceholder" data-translate-type="placeholder"/>
-            <label for="email" data-translate-key="form.emailLabel">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required data-translate-key="form.emailPlaceholder" data-translate-type="placeholder"/>
-            <label for="message" data-translate-key="form.messageLabel">Mensagem</label>
-            <textarea id="message" name="message" placeholder="Digite sua mensagem" rows="5" required data-translate-key="form.messagePlaceholder" data-translate-type="placeholder"></textarea>
-            <input type="hidden" name="_next" value="https://emellybmuniz.github.io/portfolio-simplificado/thanks.html" data-translate-key="form.nextPage" data-translate-type="value"/>
-            <button type="submit" class="btn-submit" data-translate-key="form.submitButton">Enviar</button>
-       </form>
-        </section>
+      <h2 class="title" data-translate-key="form.title">Envie sua Mensagem!</h2>
+      <form
+        action="https://formsubmit.co/emellybmuniz@gmail.com"
+        method="POST"
+        class="form"
+      >
+        <label for="name" data-translate-key="form.nameLabel">Nome</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Digite seu nome"
+          required
+          data-translate-key="form.namePlaceholder"
+          data-translate-type="placeholder"
+        />
+        <label for="email" data-translate-key="form.emailLabel">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu e-mail"
+          required
+          data-translate-key="form.emailPlaceholder"
+          data-translate-type="placeholder"
+        />
+        <label for="message" data-translate-key="form.messageLabel"
+          >Mensagem</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Digite sua mensagem"
+          rows="5"
+          required
+          data-translate-key="form.messagePlaceholder"
+          data-translate-type="placeholder"
+        ></textarea>
+        <input
+          type="hidden"
+          name="_next"
+          value="https://emellybmuniz.github.io/portfolio-simplificado/thanks.html"
+          data-translate-key="form.nextPage"
+          data-translate-type="value"
+        />
+        <button
+          type="submit"
+          class="btn-submit"
+          data-translate-key="form.submitButton"
+        >
+          Enviar
+        </button>
+      </form>
+    </section>
 
-        <footer class="site-footer">
-            <div class="footer-column footer-about">
-                <h3 data-translate-key="footer.aboutTitle"> Emelly Beatriz </h3>
-                <p data-translate-key="footer.aboutText">Chegou até o fim? Muito legal! Se meu trabalho despertou seu interesse, não vamos encerrar por aqui. Conecte-se comigo para criarmos algo incrível juntos.</p>
-                <div class="footer-social-media">
-                    <li>
-                        <a href="https://www.linkedin.com/in/emelly-beatriz-719989194/" title="Ir para o Linkedin" 
-                            target="_blank" rel="noopener noreferrer" data-translate-key="home.social.linkedin" data-translate-type="title">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-    
-                    <li>
-                        <a href="https://github.com/emellybmuniz" title="Ir para GitHub" target="_blank" rel="noopener noreferrer" data-translate-key="home.social.github" data-translate-type="title">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-    
-                    <li>
-                        <a href="https://www.instagram.com/emellybmuniz" title="Ir para o Instagram" target="_blank" rel="noopener noreferrer" data-translate-key="home.social.instagram" data-translate-type="title">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </div>
-            </div>
-            <div class="footer-column footer-links">
-                <h3 data-translate-key="footer.quickLinksTitle">Links Rápidos</h3>
-                <ul>
-                    <li><a href="#" data-translate-key="footer.linkHome">Início</a></li>
-                    <li><a href="#skills" data-translate-key="header.skills">Habilidades</a></li>
-                    <li><a href="#certificates" data-translate-key="header.certificates">Certificados</a></li>
-                    <li><a href="src/downloads/ptBR-cv.pdf" download="CV_Emelly_Beatriz.pdf" data-translate-key="header.downloadCV" data-cv-link>Baixar CV</a></li>
-                    <li><a href="#form" data-translate-key="header.contactMe">Fale Comigo</a></li>
-                    <li><a href="#" id="lang-toggle-btn" data-translate-key="footer.toggleLanguage">Português → English</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-column footer-contact">
-                <h3 data-translate-key="footer.contactTitle">Contato</h3>
-                <p>Email: emellybmuniz@gmail.com</p>
-                <p data-translate-key="footer.phone">Telefone: (21) 99083-6960</p>
-            </div>
-            <div class="footer-copyright">
-                <p data-translate-key="footer.copyright">© 2025 Emelly B. Muniz. Todos os direitos reservados.</p>
-            </div>
-        </footer>
+    <footer class="site-footer">
+      <div class="footer-column footer-about">
+        <h3 data-translate-key="footer.aboutTitle">Emelly Beatriz</h3>
+        <p data-translate-key="footer.aboutText">
+          Chegou até o fim? Muito legal! Se meu trabalho despertou seu
+          interesse, não vamos encerrar por aqui. Conecte-se comigo para
+          criarmos algo incrível juntos.
+        </p>
+        <div class="footer-social-media">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/emelly-beatriz-719989194/"
+              title="Ir para o Linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.linkedin"
+              data-translate-type="title"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
 
-    <a href="#" id="scrollTopBtn" title="Voltar ao topo" data-translate-key="footer.backToTop" data-translate-type="title">
-        <i class="fas fa-arrow-up"></i>
+          <li>
+            <a
+              href="https://github.com/emellybmuniz"
+              title="Ir para GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.github"
+              data-translate-type="title"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.instagram.com/emellybmuniz"
+              title="Ir para o Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-translate-key="home.social.instagram"
+              data-translate-type="title"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </div>
+      </div>
+      <div class="footer-column footer-links">
+        <h3 data-translate-key="footer.quickLinksTitle">Links Rápidos</h3>
+        <ul>
+          <li><a href="#" data-translate-key="footer.linkHome">Início</a></li>
+          <li>
+            <a href="#skills" data-translate-key="header.skills">Habilidades</a>
+          </li>
+          <li>
+            <a href="#certificates" data-translate-key="header.certificates"
+              >Certificados</a
+            >
+          </li>
+          <li>
+            <a
+              href="src/downloads/ptBR-cv.pdf"
+              download="CV_Emelly_Beatriz.pdf"
+              data-translate-key="header.downloadCV"
+              data-cv-link
+              >Baixar CV</a
+            >
+          </li>
+          <li>
+            <a href="#form" data-translate-key="header.contactMe"
+              >Fale Comigo</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="lang-toggle-btn"
+              data-translate-key="footer.toggleLanguage"
+              >Português → English</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3 data-translate-key="footer.contactTitle">Contato</h3>
+        <p>Email: emellybmuniz@gmail.com</p>
+        <p data-translate-key="footer.phone">Telefone: (21) 99083-6960</p>
+      </div>
+      <div class="footer-copyright">
+        <p data-translate-key="footer.copyright">
+          © 2025 Emelly B. Muniz. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="scrollTopBtn"
+      title="Voltar ao topo"
+      data-translate-key="footer.backToTop"
+      data-translate-type="title"
+    >
+      <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="./src/js/index.js" defer></script>      
+    <script src="./src/js/index.js" defer></script>
     <script src="./src/js/toggle-theme.js" defer></script>
     <script src="./src/js/mobile-menu.js" defer></script>
     <script src="./src/js/lang-change.js" defer></script>
-    
-</body>
-
+  </body>
 </html>

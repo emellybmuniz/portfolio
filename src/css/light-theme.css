@@ -67,7 +67,6 @@ html.light-mode .header .menu li button:hover > i {
   color: var(--text-on-primary);
 }
 
-
 html.light-mode .header .menu .dropdown:hover > a {
   color: var(--text-on-primary);
 }
