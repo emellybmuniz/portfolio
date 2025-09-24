@@ -3,10 +3,10 @@
 [🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
 
 
-![GitHub License](https://img.shields.io/github/license/emellybmuniz/emellybmuniz)
-![GitHub language count](https://img.shields.io/github/languages/count/emellybmuniz/emellybmuniz)
-![GitHub last commit](https://img.shields.io/github/last-commit/emellybmuniz/emellybmuniz)
-![GitHub repo size](https://img.shields.io/github/repo-size/emellybmuniz/emellybmuniz)
+![GitHub License](https://img.shields.io/github/license/emellybmuniz/portfolio)
+![GitHub language count](https://img.shields.io/github/languages/count/emellybmuniz/portfolio)
+![GitHub last commit](https://img.shields.io/github/last-commit/emellybmuniz/portfolio)
+![GitHub repo size](https://img.shields.io/github/repo-size/emellybmuniz/portfolio)
 ![Status do Projeto](https://img.shields.io/badge/Status-Concluído-brightgreen)
 
 
@@ -107,7 +107,10 @@ Contribuições são sempre bem-vindas e **muito apreciadas!** Sinta-se à vonta
 
 ## 🔑 Licença
 
-Este projeto não possui uma licença específica.
+Este projeto está licenciado sob a **GNU Lesser General Public License v2.1 (LGPL-2.1)**.  
+Você é livre para usar, modificar e distribuir este projeto de acordo com os termos desta licença, desde que as obras derivadas também sejam licenciadas sob a LGPL-2.1.  
+
+Para mais detalhes, consulte o arquivo [LICENSE](./LICENSE) incluído neste repositório.
 
 ## ✍️ Autora
 
@@ -117,4 +120,5 @@ Feito por **Emelly Beatriz** com ❤️
 📧 emellybmuniz@gmail.com |
 💼 [Linkedin](https://www.linkedin.com/in/emellybmuniz) |
 🐙 [Github](https://github.com/emellybmuniz)
+
 
