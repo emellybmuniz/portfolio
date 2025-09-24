@@ -107,7 +107,10 @@ Contributions are always welcome and **greatly appreciated!** Feel free to open 
 
 ## 🔑 License
 
-This project does not have a specific license.
+This project is licensed under the **GNU Lesser General Public License v2.1 (LGPL-2.1)**.  
+You are free to use, modify, and distribute this project under the terms of this license, provided that derivative works are also licensed under the LGPL-2.1.  
+
+For more details, please see the [LICENSE](./LICENSE) file included in this repository.
 
 ## ✍️ Author
 
@@ -117,4 +120,5 @@ Crafted with ❤️ by **Emelly Beatriz**
 📧 emellybmuniz@gmail.com |
 💼 [Linkedin](https://www.linkedin.com/in/emellybmuniz) |
 🐙 [Github](https://github.com/emellybmuniz)
+
 
