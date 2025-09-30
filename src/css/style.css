@@ -178,12 +178,31 @@ body.body-no-scroll {
   background-color: var(--primary-color);
 }
 
+.header .menu .mobile-only {
+  display: none;
+}
+
 .header .menu .mobile-only i {
   width: 16px;
   text-align: center;
   padding-right: 25px;
   color: #bf58ff;
   transition: color var(--transition-fast) ease;
+}
+
+.header .menu .mobile-only i:first-child {
+  padding-right: 30px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
 }
 
 /* ===== HOME SECTION ===== */
@@ -333,6 +352,7 @@ body.body-no-scroll {
   flex-wrap: wrap;
   margin-bottom: 20px;
   justify-content: center;
+  padding: 0 30px;
 }
 
 /* --- Project Card --- */
@@ -575,10 +595,6 @@ body.body-no-scroll {
   border: 1px solid var(--surface-border-color);
 }
 
-.skills .container-skills:hover {
-  animation: subtle-shake 0.4s ease-in-out;
-}
-
 .skills .container-skills .skill-item {
   display: flex;
   flex-direction: column;
@@ -594,8 +610,8 @@ body.body-no-scroll {
 }
 
 .skills .container-skills .skill-item img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 .skills .container-skills .skill-item span {
@@ -607,25 +623,6 @@ body.body-no-scroll {
 
 .skills.in-view .container-skills .skill-item {
   animation: fadeInUp 0.8s var(--timing-function-smooth) forwards;
-}
-
-.skills.in-view .container-skills .skill-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.skills.in-view .container-skills .skill-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.skills.in-view .container-skills .skill-item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.skills.in-view .container-skills .skill-item:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.skills.in-view .container-skills .skill-item:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.skills.in-view .container-skills .skill-item:nth-child(6) {
-  animation-delay: 0.6s;
 }
 
 .skills .container-skills .skill-item:hover {
@@ -787,7 +784,7 @@ body.body-no-scroll {
 }
 
 /* ===== UTILITIES & HELPERS ===== */
-/* --- General Title Styling --- */
+
 .title {
   text-align: center;
   font-size: 45px;
@@ -943,7 +940,7 @@ body.body-no-scroll {
   transform: translateY(0);
 }
 
-/* ===== ANIMATIONS & KEYFRAMES ===== */
+/* ===== ANIMATIONS ===== */
 .animate-gradient {
   background: linear-gradient(to right, #8a35c8, #18c063, #00eea2);
   background-size: 180% 180%;
@@ -976,7 +973,7 @@ body.body-no-scroll {
   animation-delay: 0.2s;
 }
 
-/* --- Keyframe Definitions --- */
+/* --- Keyframes --- */
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -1031,5 +1028,228 @@ body.body-no-scroll {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    background-image: linear-gradient(150deg, var(--bg-color), #9e00ff);
+  }
+
+  html.light-mode body {
+    background-image: linear-gradient(
+      150deg,
+      var(--bg-color) 65%,
+      rgb(205, 204, 205) 100%
+    );
+  }
+
+  .header {
+    padding: 30px;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    gap: 30px;
+  }
+
+  .home .informations {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-column {
+    justify-self: center;
+  }
+
+  .footer-social-media {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header .menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 14, 22, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+
+  .header .menu.menu-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header .menu .menu-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .header .menu li a,
+  .header .menu li button {
+    font-size: 24px;
+  }
+
+  .header .menu li button {
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    font-family: inherit;
+    color: inherit;
+    margin: 0;
+    line-height: inherit;
+  }
+
+  .header .menu .mobile-only a,
+  .header .menu .mobile-only button {
+    font-size: 18px;
+    text-transform: none;
+    width: 100%;
+    border-radius: var(--border-radius-sm);
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+  }
+
+  .header .menu li a:hover,
+  .header .menu li button:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+
+  .header .menu .desktop-only {
+    display: none;
+  }
+
+  .header .menu .mobile-only {
+    display: list-item;
+  }
+
+  .home {
+    flex-direction: column;
+    min-height: auto;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .home .informations {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home .informations h1 {
+    font-size: 35px;
+  }
+
+  .home .informations p {
+    font-size: 18px;
+  }
+
+  .home .photo-container .photo {
+    max-width: 300px;
+  }
+
+  .projects .project {
+    max-width: 380px;
+  }
+
+  .project.active.in-view:nth-child(odd) {
+    animation: fadeInLeft 0.8s var(--timing-function-smooth) 0.2s forwards;
+  }
+
+  .project.active.in-view:nth-child(even) {
+    animation: fadeInRight 0.8s var(--timing-function-smooth) 0.2s forwards;
+  }
+
+  .skills .container-skills {
+    padding: 15px;
+  }
+
+  .certificates-slide a {
+    width: 300px;
+    height: 225px;
+  }
+
+  .form-container {
+    padding: 50px 15px;
+  }
+
+  .site-footer {
+    padding: 50px 20px 20px;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    margin-top: -28px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background-color: #191818;
+    background-image: none;
+  }
+
+  .home .informations h1 {
+    font-size: 30px;
+  }
+
+  .home .informations p {
+    font-size: 16px;
+  }
+
+  .home .photo-container img {
+    max-width: 320px;
+  }
+
+  .projects {
+    padding: 10px;
+  }
+
+  .skills {
+    margin-top: 25px;
+  }
+
+  .skills .container-skills .skill-item {
+    padding: 10px;
+  }
+
+  .form-container .title {
+    font-size: 28px;
+  }
+
+  .footer-column {
+    padding: 0px;
+  }
+
+  .site-footer {
+    padding: 50px 20px 20px;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    margin-top: -24px;
+  }
+
+  #scrollTopBtn {
+    width: 45px;
+    height: 45px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
   }
 }
