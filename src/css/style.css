@@ -385,8 +385,7 @@ body.body-no-scroll {
 
 .projects .project:hover {
   will-change: transform;
-  transform: translateY(-5px);
-  border: 1.7px solid var(--primary-color);
+  border: 1.5px solid var(--primary-color);
 }
 
 .projects .project.active {
@@ -418,7 +417,8 @@ body.body-no-scroll {
   background-color: #ffffff;
   color: #111;
   padding: 20px;
-  flex-grow: 1;
+  position: relative;
+  height: 100%;
   order: 3;
   transition: all var(--transition-medium) ease-in-out;
 }
@@ -523,16 +523,17 @@ body.body-no-scroll {
 }
 
 .btn {
-  display: inline-block;
   padding: 10px 20px;
+  display: flex;
+  align-items: last baseline;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: var(--primary-color, #007bff); /* Use uma variável ou cor padrão */
+  background-color: var(--primary-color, #007bff);
   border: none;
-  border-radius: var(--border-radius, 5px); /* Consistência com o restante do projeto */
+  border-radius: var(--border-radius, 5px); 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -550,18 +551,20 @@ body.body-no-scroll {
   background-color: var(--secondary-color, #28a745);
 }
 
-
 .btn-repo {
   background-color: var(--tertiary-color, #6c757d);
 }
 
 .projects .project-content > div {
   display: flex;
+  position: relative;
+  top: ;
   gap: 10px; 
   justify-content: flex-start; 
   background-color: transparent;
-  padding: 0; 
-  margin-top: 10px;
+  align-items: center;
+  margin-top: 15px;
+  flex-grow: 1;
 }
 
 .projects .btn-show-projects {
@@ -570,7 +573,6 @@ body.body-no-scroll {
   border-radius: 15px;
   width: 180px;
   padding: 20px;
-
   font-size: 18px;
   font-weight: 600;
   margin: 0 auto;
