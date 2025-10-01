@@ -333,6 +333,7 @@ body.body-no-scroll {
   padding: 70px 0 70px;
   margin: 0 auto;
   max-width: 1400px;
+  cursor: default;
 }
 
 /* --- Section Title Specifics --- */
@@ -397,6 +398,10 @@ body.body-no-scroll {
   flex-direction: column;
   height: 100%;
   text-decoration: none;
+}
+
+.projects .project div {
+  background-color: black;
 }
 
 .projects .project img {
@@ -517,12 +522,55 @@ body.body-no-scroll {
   pointer-events: auto;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color, #007bff); /* Use uma variável ou cor padrão */
+  border: none;
+  border-radius: var(--border-radius, 5px); /* Consistência com o restante do projeto */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-hover, #0056b3); 
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-demo {
+  background-color: var(--secondary-color, #28a745);
+}
+
+
+.btn-repo {
+  background-color: var(--tertiary-color, #6c757d);
+}
+
+.projects .project-content > div {
+  display: flex;
+  gap: 10px; 
+  justify-content: flex-start; 
+  background-color: transparent;
+  padding: 0; 
+  margin-top: 10px;
+}
+
 .projects .btn-show-projects {
   background: none;
   border: 1px solid var(--text-color);
   border-radius: 15px;
   width: 180px;
   padding: 20px;
+
   font-size: 18px;
   font-weight: 600;
   margin: 0 auto;
