@@ -343,7 +343,7 @@ body.body-no-scroll {
   flex-wrap: wrap;
   margin-bottom: 20px;
   justify-content: center;
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 /* --- Projects Grid --- */
@@ -353,7 +353,7 @@ body.body-no-scroll {
   flex-wrap: wrap;
   margin-bottom: 20px;
   justify-content: center;
-  padding: 0 30px;
+  padding: 0 18px;
 }
 
 /* --- Project Card --- */
@@ -366,7 +366,6 @@ body.body-no-scroll {
 
 .projects .project {
   max-width: 420px;
-  max-height: none;
   min-height: 400px;
   background-color: #00000076;
   border-radius: var(--border-radius-md);
@@ -570,7 +569,6 @@ body.body-no-scroll {
 .projects .project-content > div {
   display: flex;
   position: relative;
-  top: ;
   gap: 10px; 
   justify-content: flex-start; 
   background-color: transparent;
@@ -1280,6 +1278,10 @@ body.body-no-scroll {
 
   .projects {
     padding: 10px;
+  }
+
+  .btn {
+    font-size: 14px;
   }
 
   .skills {
