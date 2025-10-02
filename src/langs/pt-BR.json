@@ -37,8 +37,8 @@
       "title": "Meus projetos",
       "showMore": "Mostrar mais",
       "showLess": "Mostrar menos",
-      "viewOnStreamlit": "🔗 Ver no Streamlit",
-      "viewOnGithub": "🔗 Ver no GitHub Pages",
+      "demo": "Demonstração",
+      "repo": "Repositório </>",
       "project0": {
         "alt": "Projeto História do Mascote Android",
         "title": "História do Mascote Android",
