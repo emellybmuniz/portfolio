@@ -399,6 +399,12 @@ body.body-no-scroll {
   text-decoration: none;
 }
 
+.projects .project > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .projects .project div {
   background-color: black;
 }
@@ -418,9 +424,11 @@ body.body-no-scroll {
   color: #111;
   padding: 20px;
   position: relative;
-  height: 100%;
   order: 3;
   transition: all var(--transition-medium) ease-in-out;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .projects .project .project-content h3 {
@@ -431,6 +439,10 @@ body.body-no-scroll {
   margin-bottom: 18px;
   color: #111;
   text-transform: capitalize;
+}
+
+.projects .project .project-content p {
+  flex-grow: 1;
 }
 
 .projects .project .project-information {
@@ -564,7 +576,6 @@ body.body-no-scroll {
   background-color: transparent;
   align-items: center;
   margin-top: 15px;
-  flex-grow: 1;
 }
 
 .projects .btn-show-projects {
