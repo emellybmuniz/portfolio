@@ -16,7 +16,7 @@
       "themeButtonLight": "Tema Claro",
       "downloadCV": "Baixar CV",
       "contactMe": "Fale Comigo",
-      "cvFile": "../public/downloads/ptBR-cv.pdf",
+      "cvFile": "public/downloads/ptBR-cv.pdf",
       "cvFileName": "CV_Emelly_Beatriz.pdf"
     },
     "home": {
