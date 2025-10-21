@@ -16,7 +16,7 @@ function resolve(path, obj) {
  */
 async function setLanguage(lang) {
   try {
-    const response = await fetch(`../src/langs/${lang}.json`);
+    const response = await fetch(`src/langs/${lang}.json`);
     if (!response.ok) {
       throw new Error(
         `Could not fetch ${lang}.json, status: ${response.status}`
