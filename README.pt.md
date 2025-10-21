@@ -30,7 +30,7 @@ Este repositório contém o código-fonte do meu site de portfólio pessoal. É 
 
 ## 🚀 Visão Geral do Projeto
 
-[![Demonstração do Projeto](src/images/project-demo.gif)](https://emellybmuniz.github.io/portfolio/)
+[![Project Demo](src/assets/images/project-demo.gif)](https://emellybmuniz.github.io/portfolio/)
 
 Este portfólio foi construído do zero para servir como um hub central para minha identidade profissional como Desenvolvedora Frontend. O objetivo principal é apresentar meu trabalho de forma organizada, visualmente atraente e amigável. Ele reflete minha paixão por tecnologia e design, demonstrando como transformo ideias em soluções digitais funcionais e estéticas.
 
@@ -120,5 +120,6 @@ Feito por **Emelly Beatriz** com ❤️
 📧 emellybmuniz@gmail.com |
 💼 [Linkedin](https://www.linkedin.com/in/emellybmuniz) |
 🐙 [Github](https://github.com/emellybmuniz)
+
 
 
