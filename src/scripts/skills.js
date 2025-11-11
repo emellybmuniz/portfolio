@@ -1,0 +1,257 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+  const ICONS = {
+    Code2:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="M14.5 4l-5 16"/></svg>',
+    Database:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>',
+    LayoutTemplate:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>',
+    Briefcase:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>',
+    PenTool:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><path d="m12 19 7-7 3 3-7 7-3-3Z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5Z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>',
+  };
+
+  const skills = [
+    {
+      name: "HTML",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/html.svg",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      name: "CSS",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/css.svg",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      name: "JavaScript",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/js.svg",
+      color: "from-yellow-400 to-yellow-600",
+    },
+    {
+      name: "Python",
+      category: ["backend"],
+      icon: "src/assets/images-skills-svg/python.svg",
+      color: "from-blue-400 to-yellow-400",
+    },
+    {
+      name: "MySQL",
+      category: ["backend"],
+      icon: "src/assets/images-skills-svg/mysql.svg",
+      color: "from-blue-600 to-cyan-600",
+    },
+    {
+      name: "Java",
+      category: ["backend"],
+      icon: "src/assets/images-skills-svg/Java.svg",
+      color: "from-red-500 to-orange-600",
+    },
+    {
+      name: "VS Code",
+      category: ["tools"],
+      icon: "src/assets/images-skills-svg/vscode.svg",
+      color: "from-blue-500 to-blue-700",
+    },
+    {
+      name: "IntelliJ IDEA",
+      category: ["tools"],
+      icon: "src/assets/images-skills-svg/intellij.svg",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "Git",
+      category: ["tools"],
+      icon: "src/assets/images-skills-svg/Git.svg",
+      color: "from-orange-600 to-red-600",
+    },
+    {
+      name: "Firebase",
+      category: ["tools", "backend"],
+      icon: "src/assets/images-skills-svg/Firebase.svg",
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
+      name: "Canva",
+      category: ["design"],
+      icon: "src/assets/images-skills-svg/Canva.svg",
+      color: "from-cyan-400 to-blue-500",
+    },
+    {
+      name: "Figma",
+      category: ["design"],
+      icon: "src/assets/images-skills-svg/Figma.svg",
+      color: "from-purple-500 to-pink-500",
+    },
+  ];
+
+  const categories = [
+    { id: "all", label: "All Skills", iconName: "Code2" },
+    { id: "frontend", label: "Frontend", iconName: "LayoutTemplate" },
+    { id: "backend", label: "Backend", iconName: "Database" },
+    { id: "tools", label: "Tools", iconName: "Briefcase" },
+    { id: "design", label: "Design", iconName: "PenTool" },
+  ];
+
+  let activeCategory = "all";
+
+  const desktopFilterButtons = document.getElementById(
+    "desktop-filter-buttons"
+  );
+  const desktopSkillsGrid = document.getElementById("desktop-skills-grid");
+  const mobileCategoryButtons = document.getElementById(
+    "mobile-category-buttons"
+  );
+
+  const drawerOverlay = document.getElementById("drawer-overlay");
+  const drawerContent = document.getElementById("drawer-content");
+  const drawerTitle = document.getElementById("drawer-title");
+  const drawerDescription = document.getElementById("drawer-description");
+  const drawerSkillsList = document.getElementById("drawer-skills-list");
+  const drawerCloseButton = document.getElementById("drawer-close-button");
+
+  function renderDesktopFilters() {
+    if (!desktopFilterButtons) return;
+    desktopFilterButtons.innerHTML = "";
+    categories.forEach((category) => {
+      const isActive = category.id === activeCategory;
+      const button = document.createElement("button");
+      button.className = `filter-button ${isActive ? "active" : "inactive"}`;
+      button.onclick = () => handleFilterClick(category.id);
+
+      button.innerHTML = `
+              ${ICONS[category.iconName]}
+              <span>${category.label}</span>
+              ${isActive ? '<div class="pulse-effect"></div>' : ""}
+          `;
+      desktopFilterButtons.appendChild(button);
+    });
+  }
+
+  function renderDesktopSkills() {
+    if (!desktopSkillsGrid) return;
+    desktopSkillsGrid.innerHTML = "";
+
+    const filteredSkills =
+      activeCategory === "all"
+        ? skills
+        : skills.filter((skill) => skill.category.includes(activeCategory));
+
+    if (filteredSkills.length === 0) {
+      desktopSkillsGrid.innerHTML = `<p class="no-skills-message">Nenhuma skill encontrada para esta categoria.</p>`;
+      return;
+    }
+
+    filteredSkills.forEach((skill, index) => {
+      const skillCard = document.createElement("div");
+      skillCard.className = "skill-card glass-card animate-scale-in";
+      skillCard.style.animationDelay = `${index * 0.05}s`;
+
+      const categoryTags = skill.category
+        .map((cat) => `<span>${cat}</span>`)
+        .join(" ");
+
+      skillCard.innerHTML = `
+              <div class="icon-container">
+                  <div class="icon-bg" style="background-image: linear-gradient(to bottom right, var(--tw-${skill.color.replace(
+                    /-500/g,
+                    "-400"
+                  )}), var(--tw-${skill.color.replace(/from-|to-/g, "")}))">
+                      <img src="${skill.icon}" alt="${skill.name}" />
+                  </div>
+                  <div class="glow-effect" style="background-image: linear-gradient(to bottom right, var(--tw-${skill.color.replace(
+                    /-500/g,
+                    "-400"
+                  )}), var(--tw-${skill.color.replace(
+        /from-|to-/g,
+        ""
+      )}))"></div>
+              </div>
+              <h3>${skill.name}</h3>
+              <div class="category-tags">${categoryTags}</div>
+          `;
+      desktopSkillsGrid.appendChild(skillCard);
+    });
+  }
+
+  function renderMobileButtons() {
+    if (!mobileCategoryButtons) return;
+    mobileCategoryButtons.innerHTML = "";
+    categories.forEach((category, index) => {
+      const categorySkills =
+        category.id === "all"
+          ? skills
+          : skills.filter((s) => s.category.includes(category.id));
+
+      const button = document.createElement("button");
+      button.className = "glass-card animate-fade-in";
+      button.style.animationDelay = `${index * 0.05}s`;
+      button.onclick = () => openDrawer(category.id);
+
+      button.innerHTML = `
+              ${ICONS[category.iconName]}
+              <span class="font-medium">${category.label}</span>
+              <span class="category-count">${
+                categorySkills.length
+              } skills</span>
+          `;
+      mobileCategoryButtons.appendChild(button);
+    });
+  }
+
+  function handleFilterClick(categoryId) {
+    activeCategory = categoryId;
+    renderDesktopFilters();
+    renderDesktopSkills();
+  }
+
+  function openDrawer(categoryId) {
+    const category = categories.find((c) => c.id === categoryId);
+    if (!category) return;
+
+    const categorySkills =
+      category.id === "all"
+        ? skills
+        : skills.filter((s) => s.category.includes(category.id));
+
+    drawerTitle.innerHTML = `${ICONS[category.iconName]} ${category.label}`;
+    drawerDescription.textContent = `${categorySkills.length} ${
+      categorySkills.length === 1 ? "skill" : "skills"
+    } nesta categoria`;
+
+    drawerSkillsList.innerHTML = "";
+    categorySkills.forEach((skill) => {
+      const badge = document.createElement("div");
+      badge.className = "skill-badge";
+      badge.style.backgroundImage = `linear-gradient(to bottom right, var(--tw-${skill.color.replace(
+        /-500/g,
+        "-400"
+      )}), var(--tw-${skill.color.replace(/from-|to-/g, "")}))`;
+      badge.innerHTML = `
+              <img src="${skill.icon}" alt="${skill.name}" />
+              ${skill.name}
+          `;
+      drawerSkillsList.appendChild(badge);
+    });
+
+    drawerOverlay.classList.add("visible");
+    drawerContent.classList.add("visible");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer() {
+    drawerOverlay.classList.remove("visible");
+    drawerContent.classList.remove("visible");
+    document.body.style.overflow = "";
+  }
+
+  renderDesktopFilters();
+  renderDesktopSkills();
+  renderMobileButtons();
+
+  drawerCloseButton.addEventListener("click", closeDrawer);
+  drawerOverlay.addEventListener("click", closeDrawer);
+});
