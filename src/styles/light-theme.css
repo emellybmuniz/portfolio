@@ -97,6 +97,7 @@ html.light-mode .form-container .title {
   filter: none;
 }
 
+<<<<<<< HEAD
 html.light-mode .skills .container-skills {
   background: rgba(255, 255, 255, 0.936);
   border-color: rgba(0, 0, 0, 0.08);
@@ -105,6 +106,63 @@ html.light-mode .skills .container-skills {
 html.light-mode .skills .container-skills .skill-item:hover span {
   font-weight: 600;
   color: var(--text-color);
+=======
+html.light-mode .skills {
+  background-image: linear-gradient(to bottom, #eef2ff, #e0e7ff);
+  color: #1f2937;
+}
+
+html.light-mode .skills .title {
+  color: #111827;
+  filter: none;
+}
+
+html.light-mode .title-decorator {
+    background-image: linear-gradient(to right, #3b82f6, #14b8a6);
+}
+
+html.light-mode .glass-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(209, 213, 219, 0.8);
+}
+
+html.light-mode #desktop-filter-buttons .filter-button {
+  color: #1f2937;
+}
+
+html.light-mode #desktop-filter-buttons .filter-button.inactive {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(209, 213, 219, 0.7);
+}
+
+html.light-mode #desktop-filter-buttons .filter-button.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+html.light-mode #desktop-filter-buttons .filter-button.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+html.light-mode .skill-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+html.light-mode .skill-card h3 {
+  color: #111827;
+}
+
+html.light-mode .skill-card:hover h3 {
+  color: #3b82f6;
+}
+
+html.light-mode .skill-card .category-tags span {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+>>>>>>> feature/skill-reworking
 }
 
 html.light-mode .form-container {
