@@ -71,11 +71,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
-<<<<<<<< HEAD:src/scripts/index.js
-// Typing effect
-========
 
->>>>>>>> feature/skill-reworking:src/scripts/main.js
 const typedEl = document.querySelector(".typed");
 let typingText = ""; 
 let i = 0;
@@ -174,7 +170,3 @@ document.addEventListener('languageChanged', (e) => {
         startTyping(typedText);
     }
 });
-<<<<<<<< HEAD:src/scripts/index.js
-
-========
->>>>>>>> feature/skill-reworking:src/scripts/main.js

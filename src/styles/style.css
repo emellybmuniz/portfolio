@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-/* ===== ROOT & GLOBAL STYLES ===== */
-=======
->>>>>>> feature/skill-reworking
 :root {
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Raleway", sans-serif;
 
-<<<<<<< HEAD
-  /* === COLORS === */
-=======
->>>>>>> feature/skill-reworking
   --text-color: #ffffff;
   --bg-color: #110606;
   --primary-color: #7a37b3;
@@ -19,18 +11,10 @@
   --surface-border-color: rgba(255, 255, 255, 0.1);
   --text-secondary-color: #c4c4c4;
 
-<<<<<<< HEAD
-  /* === SIZING & RADIUS === */
-=======
->>>>>>> feature/skill-reworking
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-circle: 50%;
 
-<<<<<<< HEAD
-  /* === TRANSITIONS & ANIMATIONS === */
-=======
->>>>>>> feature/skill-reworking
   --transition-fast: 0.2s;
   --transition-medium: 0.4s;
   --timing-function-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -61,10 +45,6 @@ body.body-no-scroll {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
-/* ===== HEADER ===== */
-=======
->>>>>>> feature/skill-reworking
 .header {
   display: flex;
   justify-content: space-between;
@@ -220,10 +200,6 @@ body.body-no-scroll {
   z-index: 1100;
 }
 
-<<<<<<< HEAD
-/* ===== HOME SECTION ===== */
-=======
->>>>>>> feature/skill-reworking
 .home {
   max-width: 1120px;
   margin: 0 auto;
@@ -346,11 +322,7 @@ body.body-no-scroll {
   border-radius: var(--border-radius-circle);
 }
 
-<<<<<<< HEAD
-/* ===== PROJECTS SECTION ===== */
-=======
 
->>>>>>> feature/skill-reworking
 .projects {
   padding: 70px 0 70px;
   margin: 0 auto;
@@ -358,11 +330,7 @@ body.body-no-scroll {
   cursor: default;
 }
 
-<<<<<<< HEAD
-/* --- Section Title Specifics --- */
-=======
 
->>>>>>> feature/skill-reworking
 .projects .title {
   display: flex;
   gap: 20px;
@@ -640,12 +608,7 @@ body.body-no-scroll {
   animation: fadeInUp 0.8s var(--timing-function-smooth) forwards;
 }
 
-<<<<<<< HEAD
-/* ===== SKILLS & CERTIFICATES SECTIONS ===== */
-/* --- Shared Container Styles --- */
-=======
 
->>>>>>> feature/skill-reworking
 .certificates,
 .skills {
   background-color: rgba(22, 20, 37, 0.649);
@@ -659,11 +622,7 @@ body.body-no-scroll {
   align-items: center;
 }
 
-<<<<<<< HEAD
-/* --- Skills Section --- */
-=======
 
->>>>>>> feature/skill-reworking
 .skills {
   margin-bottom: 5px;
 }
@@ -694,11 +653,7 @@ body.body-no-scroll {
   align-items: center;
   justify-content: center;
   gap: 15px;
-<<<<<<< HEAD
-  width: 120px;
-=======
   width: 150px;
->>>>>>> feature/skill-reworking
   text-align: center;
   margin: 15px 0px;
   opacity: 0;
@@ -734,15 +689,9 @@ body.body-no-scroll {
   color: #fff;
 }
 
-<<<<<<< HEAD
-/* --- Certificates Section --- */
-.certificates {
-  padding-top: 120px;
-=======
 
 .certificates {
   padding-top: 48px;
->>>>>>> feature/skill-reworking
   padding-bottom: 140px;
 }
 
@@ -803,26 +752,12 @@ body.body-no-scroll {
   animation-play-state: paused;
 }
 
-<<<<<<< HEAD
-/* ===== CONTACT SECTION ===== */
-=======
 
->>>>>>> feature/skill-reworking
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  gap: 20px;
-  width: 100%;
-  background: rgb(27, 26, 26);
-  padding: 40px 0px 100px 0px;
-}
-
-.form-container .title {
-  margin-bottom: 30px;
-=======
   gap: 10px;
   width: 100%;
   background: rgb(27, 26, 26);
@@ -831,7 +766,6 @@ body.body-no-scroll {
 
 .form-container .title {
   margin-bottom: 18px;
->>>>>>> feature/skill-reworking
   filter: drop-shadow(0 0 8px var(--primary-color-shadow));
 }
 
@@ -901,11 +835,6 @@ body.body-no-scroll {
   transform: translateY(-2px);
 }
 
-<<<<<<< HEAD
-/* ===== UTILITIES & HELPERS ===== */
-
-=======
->>>>>>> feature/skill-reworking
 .title {
   text-align: center;
   font-size: 45px;
@@ -915,10 +844,6 @@ body.body-no-scroll {
   will-change: opacity, transform;
 }
 
-<<<<<<< HEAD
-/* --- footer --- */
-=======
->>>>>>> feature/skill-reworking
 .site-footer {
   background-color: #1d1f22;
   color: #ecf0f1;
@@ -1033,10 +958,6 @@ body.body-no-scroll {
   margin: 20px auto 0;
 }
 
-<<<<<<< HEAD
-/* --- Scroll to Top Button --- */
-=======
->>>>>>> feature/skill-reworking
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -1067,14 +988,11 @@ body.body-no-scroll {
   transform: translateY(0);
 }
 
-<<<<<<< HEAD
-=======
 body.body-no-scroll #scrollTopBtn {
   opacity: 0;
   visibility: hidden;
 }
 
->>>>>>> feature/skill-reworking
 /* ===== ANIMATIONS ===== */
 .animate-gradient {
   background: linear-gradient(to right, #8a35c8, #18c063, #00eea2);
@@ -1108,10 +1026,6 @@ body.body-no-scroll #scrollTopBtn {
   animation-delay: 0.2s;
 }
 
-<<<<<<< HEAD
-/* --- Keyframes --- */
-=======
->>>>>>> feature/skill-reworking
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -1169,8 +1083,6 @@ body.body-no-scroll #scrollTopBtn {
   }
 }
 
-<<<<<<< HEAD
-=======
 .skills {
   position: relative;
   padding-top: 3rem;
@@ -1624,7 +1536,6 @@ title-decorator {
 }
 
 
->>>>>>> feature/skill-reworking
 @media (max-width: 1200px) {
   body {
     background-image: linear-gradient(150deg, var(--bg-color), #9e00ff);

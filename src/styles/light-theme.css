@@ -97,16 +97,6 @@ html.light-mode .form-container .title {
   filter: none;
 }
 
-<<<<<<< HEAD
-html.light-mode .skills .container-skills {
-  background: rgba(255, 255, 255, 0.936);
-  border-color: rgba(0, 0, 0, 0.08);
-}
-
-html.light-mode .skills .container-skills .skill-item:hover span {
-  font-weight: 600;
-  color: var(--text-color);
-=======
 html.light-mode .skills {
   background-image: linear-gradient(to bottom, #eef2ff, #e0e7ff);
   color: #1f2937;
@@ -162,7 +152,6 @@ html.light-mode .skill-card:hover h3 {
 html.light-mode .skill-card .category-tags span {
   background-color: rgba(59, 130, 246, 0.15);
   color: #2563eb;
->>>>>>> feature/skill-reworking
 }
 
 html.light-mode .form-container {
