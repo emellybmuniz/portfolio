@@ -17,91 +17,91 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "HTML",
       category: ["frontend"],
       icon: "src/assets/images-skills-svg/html.svg",
-      color: "from-orange-500 to-red-500",
+      color: { from: "#F16529", to: "#D6336C" },
     },
     {
       name: "CSS",
       category: ["frontend"],
       icon: "src/assets/images-skills-svg/css.svg",
-      color: "from-blue-500 to-cyan-500",
+      color: { from: "#2965F1", to: "#2DD4BF" },
     },
     {
       name: "JavaScript",
       category: ["frontend"],
       icon: "src/assets/images-skills-svg/js.svg",
-      color: "from-yellow-400 to-yellow-600",
+      color: { from: "#f7e031", to: "#F0B90B" },
     },
     {
       name: "Python",
       category: ["backend"],
       icon: "src/assets/images-skills-svg/python.svg",
-      color: "from-blue-400 to-yellow-400",
+      color: { from: "#2C3E50", to: "#1A2533" },
     },
     {
       name: "MySQL",
       category: ["backend"],
       icon: "src/assets/images-skills-svg/mysql.svg",
-      color: "from-blue-600 to-cyan-600",
-    },
-    {
-      name: "Java",
-      category: ["backend"],
-      icon: "src/assets/images-skills-svg/Java.svg",
-      color: "from-red-500 to-orange-600",
+      color: { from: "#347098", to: "#2f6a91" },
     },
     {
       name: "VS Code",
       category: ["tools"],
       icon: "src/assets/images-skills-svg/vscode.svg",
-      color: "from-blue-500 to-blue-700",
+      color: { from: "#2C3E50", to: "#1A2533" },
     },
     {
       name: "IntelliJ IDEA",
       category: ["tools"],
       icon: "src/assets/images-skills-svg/intellij.svg",
-      color: "from-purple-500 to-pink-500",
+      color: { from: "#a855f7", to: "#ec4899" },
+    },
+    {
+      name: "Java",
+      category: ["backend"],
+      icon: "src/assets/images-skills-svg/Java.svg",
+      color: { from: "#dbdbdb", to: "#edf5f7" },
     },
     {
       name: "Git",
       category: ["tools"],
       icon: "src/assets/images-skills-svg/Git.svg",
-      color: "from-orange-600 to-red-600",
+      color: { from: "#1f2937", to: "#000000" },
     },
     {
       name: "Firebase",
       category: ["tools", "backend"],
       icon: "src/assets/images-skills-svg/Firebase.svg",
-      color: "from-yellow-500 to-orange-500",
+      color: { from: "#3c3c3c", to: "#1e1e1e" },
     },
     {
       name: "Canva",
       category: ["design"],
       icon: "src/assets/images-skills-svg/Canva.svg",
-      color: "from-cyan-400 to-blue-500",
+      color: { from: "#2C3E50", to: "#1A2533" },
     },
     {
       name: "Figma",
       category: ["design"],
       icon: "src/assets/images-skills-svg/Figma.svg",
-      color: "from-purple-500 to-pink-500",
+      color: { from: "#4a5568", to: "#2d3748" },
     },
     {
       name: "Maven",
       category: ["tools", "backend"],
-      icon: "src/assets/images-skills-svg/Maven.svg",
-      color: "from-purple-500 to-pink-500",
+      icon: "src/assets/images-skills-svg/maven.svg",
+      color: { from: "#02303A", to: "#000000" },
     },
     {
       name: "Gradle",
       category: ["tools", "backend"],
-      icon: "src/assets/images-skills-svg/Gradle.svg",
-      color: "from-purple-500 to-pink-500",
+      icon: "src/assets/images-skills-svg/gradle.svg",
+      color: { from: "#e3eff2", to: "#edf5f7" },
     },
     {
       name: "MongoDB",
       category: ["backend"],
       icon: "src/assets/images-skills-svg/mongodb.svg",
-      color: "from-purple-500 to-pink-500",
+      color: { from: "#104828", to: "#0A2C18" },
     },
   ];
 
@@ -185,21 +185,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((cat) => `<span>${cat}</span>`)
         .join(" ");
 
+      const color = skill.color || { from: "#9ca3af", to: "#4b5563" };
+      const gradient = `linear-gradient(to bottom right, ${color.from}, ${color.to})`;
+
       skillCard.innerHTML = `
               <div class="icon-container">
-                  <div class="icon-bg" style="background-image: linear-gradient(to bottom right, var(--tw-${skill.color.replace(
-                    /-500/g,
-                    "-400"
-                  )}), var(--tw-${skill.color.replace(/from-|to-/g, "")}))">
+                  <div class="icon-bg" style="background-image: ${gradient}">
                       <img src="${skill.icon}" alt="${skill.name}" />
                   </div>
-                  <div class="glow-effect" style="background-image: linear-gradient(to bottom right, var(--tw-${skill.color.replace(
-                    /-500/g,
-                    "-400"
-                  )}), var(--tw-${skill.color.replace(
-        /from-|to-/g,
-        ""
-      )}))"></div>
+                  <div class="glow-effect" style="background-image: ${gradient}"></div>
               </div>
               <h3>${skill.name}</h3>
               <div class="category-tags">${categoryTags}</div>
@@ -265,12 +259,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     drawerSkillsList.innerHTML = "";
     categorySkills.forEach((skill) => {
+      const color = skill.color || { from: "#9ca3af", to: "#4b5563" };
       const badge = document.createElement("div");
       badge.className = "skill-badge";
-      badge.style.backgroundImage = `linear-gradient(to bottom right, var(--tw-${skill.color.replace(
-        /-500/g,
-        "-400"
-      )}), var(--tw-${skill.color.replace(/from-|to-/g, "")}))`;
+      badge.style.backgroundImage = `linear-gradient(to bottom right, ${color.from}, ${color.to})`;
       badge.innerHTML = `
               <img src="${skill.icon}" alt="${skill.name}" />
               ${skill.name}
