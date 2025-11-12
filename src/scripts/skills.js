@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const ICONS = {
     Code2:
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-wrapper"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="M14.5 4l-5 16"/></svg>',
@@ -86,8 +85,25 @@ document.addEventListener("DOMContentLoaded", () => {
       icon: "src/assets/images-skills-svg/Figma.svg",
       color: "from-purple-500 to-pink-500",
     },
+    {
+      name: "Maven",
+      category: ["tools", "backend"],
+      icon: "src/assets/images-skills-svg/Maven.svg",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "Gradle",
+      category: ["tools", "backend"],
+      icon: "src/assets/images-skills-svg/Gradle.svg",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "MongoDB",
+      category: ["backend"],
+      icon: "src/assets/images-skills-svg/mongodb.svg",
+      color: "from-purple-500 to-pink-500",
+    },
   ];
-
 
   const categories = [
     { id: "all", labelKey: "skills.allSkills", iconName: "Code2" },
@@ -212,7 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
       button.innerHTML = `
               ${ICONS[category.iconName]}
               <span class="font-medium">${label}</span>
-              <span class="category-count">${categorySkills.length} ${skillsText}</span>
+              <span class="category-count">${
+                categorySkills.length
+              } ${skillsText}</span>
           `;
       mobileCategoryButtons.appendChild(button);
     });
@@ -240,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resolve("skills.categoryText", translations) || "in this category";
 
     drawerTitle.innerHTML = `${ICONS[category.iconName]} ${label}`;
-    drawerTitle.dataset.categoryId = categoryId; 
+    drawerTitle.dataset.categoryId = categoryId;
     drawerDescription.textContent = `${categorySkills.length} ${
       categorySkills.length === 1 ? skillText : skillsText
     } ${categoryText}`;
