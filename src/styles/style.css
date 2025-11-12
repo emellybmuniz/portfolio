@@ -774,7 +774,7 @@ title-decorator {
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(90, 89, 89, 0.1);
   border-radius: 0.75rem;
   padding: 1.5rem;
   text-align: center;
@@ -1075,10 +1075,7 @@ title-decorator {
   align-items: center;
 }
 
-.certificates {
-  padding-top: 48px;
-  padding-bottom: 140px;
-}
+
 
 .certificates .title {
   margin-bottom: 18px;
@@ -1108,6 +1105,7 @@ title-decorator {
   padding: 10px 0px 40px 0px;
   margin: auto;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .certificates-slide {
@@ -1124,7 +1122,7 @@ title-decorator {
   height: 300px;
   background-color: #f3f3f3f4;
   border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .certificates-slide a img {
@@ -1627,7 +1625,7 @@ body.body-no-scroll #scrollTopBtn {
 
   .home .informations h1 {
     font-family: var(--font-secondary);
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 14px;
   }
 
