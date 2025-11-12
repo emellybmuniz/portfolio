@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const drawerDescription = document.getElementById("drawer-description");
   const drawerSkillsList = document.getElementById("drawer-skills-list");
   const drawerCloseButton = document.getElementById("drawer-close-button");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   function renderDesktopFilters() {
     if (!desktopFilterButtons) return;
@@ -262,12 +263,20 @@ document.addEventListener("DOMContentLoaded", () => {
     drawerOverlay.classList.add("visible");
     drawerContent.classList.add("visible");
     document.body.style.overflow = "hidden";
+
+    if (scrollTopBtn) {
+      scrollTopBtn.classList.remove("show");
+    }
   }
 
   function closeDrawer() {
     drawerOverlay.classList.remove("visible");
     drawerContent.classList.remove("visible");
     document.body.style.overflow = "";
+
+    if (scrollTopBtn && window.scrollY > 500) {
+      scrollTopBtn.classList.add("show");
+    }
   }
 
   function updateUI() {

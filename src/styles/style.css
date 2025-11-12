@@ -1285,6 +1285,7 @@ title-decorator {
   flex-direction: column;
   width: 100%;
   gap: 1rem;
+  cursor: pointer;
 }
 
 #mobile-category-buttons button {
@@ -1297,6 +1298,8 @@ title-decorator {
   border-radius: 0.5rem;
   transition: all 0.3s;
   font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 #mobile-category-buttons button:hover {
@@ -1348,7 +1351,6 @@ title-decorator {
   display: flex;
   flex-direction: column;
   background-color: rgba(17, 24, 39, 0.85);
-
 }
 
 #drawer-content.visible {
@@ -1403,7 +1405,6 @@ title-decorator {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s;
-  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;

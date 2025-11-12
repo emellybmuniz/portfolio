@@ -107,10 +107,6 @@ html.light-mode .skills .title {
   filter: none;
 }
 
-html.light-mode .title-decorator {
-    background-image: linear-gradient(to right, #3b82f6, #14b8a6);
-}
-
 html.light-mode .glass-card {
   background-color: rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(10px);
@@ -154,10 +150,6 @@ html.light-mode .skill-card .category-tags span {
   color: #2563eb;
 }
 
-html.light-mode .form-container {
-  background: #292727;
-}
-
 html.light-mode .form label {
   color: var(--text-on-primary);
 }
@@ -194,7 +186,7 @@ html.light-mode .header .menu.menu-open {
 
 html.light-mode .site-footer {
   background-color: #f8f9fa;
-  color: var(--text-secondary-color);
+  color: var(--text-on-primary);
 }
 
 html.light-mode .footer-column h3 {
@@ -203,4 +195,10 @@ html.light-mode .footer-column h3 {
 
 html.light-mode .footer-social-media .fa-github {
   color: #333;
+}
+
+
+html.light-mode #drawer-close-button {
+  color: #ffffff; 
+  border-color: #ffffff; 
 }
