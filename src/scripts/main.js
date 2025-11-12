@@ -71,9 +71,8 @@ if (window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
-
 const typedEl = document.querySelector(".typed");
-let typingText = ""; 
+let typingText = "";
 let i = 0;
 let typeTimeout;
 
@@ -86,11 +85,11 @@ function typeAnimation() {
 }
 
 function startTyping(text) {
-    if (typeTimeout) clearTimeout(typeTimeout);
-    if (typedEl) typedEl.textContent = '';
-    typingText = text;
-    i = 0;
-    typeAnimation();
+  if (typeTimeout) clearTimeout(typeTimeout);
+  if (typedEl) typedEl.textContent = "";
+  typingText = text;
+  i = 0;
+  typeAnimation();
 }
 
 window.addEventListener("load", () => {
@@ -100,7 +99,6 @@ window.addEventListener("load", () => {
     slideContainer.innerHTML += slideContent;
   }
 });
-
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 window.addEventListener("scroll", () => {
@@ -151,22 +149,24 @@ document.addEventListener("DOMContentLoaded", () => {
   createAnimationObserver(".form-container", "in-view", 0.15);
 });
 
+document.addEventListener("languageChanged", (e) => {
+  const { translations } = e.detail;
 
-document.addEventListener('languageChanged', (e) => {
-    const { translations } = e.detail;
+  const resolve = (path, obj) =>
+    path.split(".").reduce((p, c) => (p && p[c]) || null, obj);
 
-    const resolve = (path, obj) => path.split('.').reduce((p, c) => (p && p[c]) || null, obj);
+  showMoreText = resolve("projects.showMore", translations) || showMoreText;
+  showLessText = resolve("projects.showLess", translations) || showLessText;
 
-    showMoreText = resolve('projects.showMore', translations) || showMoreText;
-    showLessText = resolve('projects.showLess', translations) || showLessText;
-    
-    if (showProjectsButton) {
-        const isButtonActive = showProjectsButton.classList.contains("active");
-        showProjectsButton.textContent = isButtonActive ? showLessText : showMoreText;
-    }
+  if (showProjectsButton) {
+    const isButtonActive = showProjectsButton.classList.contains("active");
+    showProjectsButton.textContent = isButtonActive
+      ? showLessText
+      : showMoreText;
+  }
 
-    const typedText = resolve('home.typed', translations);
-    if (typedEl && typedText) {
-        startTyping(typedText);
-    }
+  const typedText = resolve("home.typed", translations);
+  if (typedEl && typedText) {
+    startTyping(typedText);
+  }
 });

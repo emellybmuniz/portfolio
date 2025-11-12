@@ -46,6 +46,12 @@ html.light-mode .informations strong {
   color: #944fd1;
 }
 
+html.light-mode .home .informations .highlight {
+  background: linear-gradient(to right, #8a2be2, #4169e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 html.light-mode .home .social-media li a:hover i {
   color: var(--text-on-primary);
 }
@@ -197,8 +203,7 @@ html.light-mode .footer-social-media .fa-github {
   color: #333;
 }
 
-
 html.light-mode #drawer-close-button {
-  color: #ffffff; 
-  border-color: #ffffff; 
+  color: #ffffff;
+  border-color: #ffffff;
 }
