@@ -88,15 +88,24 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
+
   const categories = [
-    { id: "all", label: "All Skills", iconName: "Code2" },
-    { id: "frontend", label: "Frontend", iconName: "LayoutTemplate" },
-    { id: "backend", label: "Backend", iconName: "Database" },
-    { id: "tools", label: "Tools", iconName: "Briefcase" },
-    { id: "design", label: "Design", iconName: "PenTool" },
+    { id: "all", labelKey: "skills.allSkills", iconName: "Code2" },
+    { id: "frontend", labelKey: "skills.frontend", iconName: "LayoutTemplate" },
+    { id: "backend", labelKey: "skills.backend", iconName: "Database" },
+    { id: "tools", labelKey: "skills.tools", iconName: "Briefcase" },
+    { id: "design", labelKey: "skills.design", iconName: "PenTool" },
   ];
 
   let activeCategory = "all";
+  let translations = {};
+
+  const resolve = (path, obj) => {
+    if (!path || !obj) return null;
+    return path
+      .split(".")
+      .reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+  };
 
   const desktopFilterButtons = document.getElementById(
     "desktop-filter-buttons"
@@ -119,12 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
     categories.forEach((category) => {
       const isActive = category.id === activeCategory;
       const button = document.createElement("button");
+      const label = resolve(category.labelKey, translations) || category.id;
+
       button.className = `filter-button ${isActive ? "active" : "inactive"}`;
       button.onclick = () => handleFilterClick(category.id);
 
       button.innerHTML = `
               ${ICONS[category.iconName]}
-              <span>${category.label}</span>
+              <span>${label}</span>
               ${isActive ? '<div class="pulse-effect"></div>' : ""}
           `;
       desktopFilterButtons.appendChild(button);
@@ -141,7 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
         : skills.filter((skill) => skill.category.includes(activeCategory));
 
     if (filteredSkills.length === 0) {
-      desktopSkillsGrid.innerHTML = `<p class="no-skills-message">Nenhuma skill encontrada para esta categoria.</p>`;
+      const noSkillsMessage =
+        resolve("skills.noSkills", translations) ||
+        "No skills found for this category.";
+      desktopSkillsGrid.innerHTML = `<p class="no-skills-message">${noSkillsMessage}</p>`;
       return;
     }
 
@@ -186,6 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ? skills
           : skills.filter((s) => s.category.includes(category.id));
 
+      const label = resolve(category.labelKey, translations) || category.id;
+      const skillsText = resolve("skills.skills", translations) || "skills";
+
       const button = document.createElement("button");
       button.className = "glass-card animate-fade-in";
       button.style.animationDelay = `${index * 0.05}s`;
@@ -193,10 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       button.innerHTML = `
               ${ICONS[category.iconName]}
-              <span class="font-medium">${category.label}</span>
-              <span class="category-count">${
-                categorySkills.length
-              } skills</span>
+              <span class="font-medium">${label}</span>
+              <span class="category-count">${categorySkills.length} ${skillsText}</span>
           `;
       mobileCategoryButtons.appendChild(button);
     });
@@ -217,10 +232,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ? skills
         : skills.filter((s) => s.category.includes(category.id));
 
-    drawerTitle.innerHTML = `${ICONS[category.iconName]} ${category.label}`;
+    const label = resolve(category.labelKey, translations) || category.id;
+    const skillText = resolve("skills.skill", translations) || "skill";
+    const skillsText = resolve("skills.skills", translations) || "skills";
+    const categoryText =
+      resolve("skills.categoryText", translations) || "in this category";
+
+    drawerTitle.innerHTML = `${ICONS[category.iconName]} ${label}`;
+    drawerTitle.dataset.categoryId = categoryId; 
     drawerDescription.textContent = `${categorySkills.length} ${
-      categorySkills.length === 1 ? "skill" : "skills"
-    } nesta categoria`;
+      categorySkills.length === 1 ? skillText : skillsText
+    } ${categoryText}`;
 
     drawerSkillsList.innerHTML = "";
     categorySkills.forEach((skill) => {
@@ -248,10 +270,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  renderDesktopFilters();
-  renderDesktopSkills();
-  renderMobileButtons();
+  function updateUI() {
+    renderDesktopFilters();
+    renderDesktopSkills();
+    renderMobileButtons();
+
+    if (drawerContent.classList.contains("visible")) {
+      const categoryId = drawerTitle.dataset.categoryId;
+      if (categoryId) {
+        openDrawer(categoryId);
+      }
+    }
+  }
 
   drawerCloseButton.addEventListener("click", closeDrawer);
   drawerOverlay.addEventListener("click", closeDrawer);
+
+  document.addEventListener("languageChanged", (e) => {
+    translations = e.detail.translations;
+    updateUI();
+  });
 });

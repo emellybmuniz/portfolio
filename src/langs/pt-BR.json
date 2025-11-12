@@ -103,10 +103,24 @@
         "alt": "Projeto Portfólio Profissional",
         "title": "Portfólio Profissional",
         "description": "Página de portfólio desenvolvida para apresentar minha trajetória e projetos. Criada com HTML, CSS e JavaScript puros, inclui modo claro/escuro e design responsivo para uma agradável experiência."
+      },
+      "project13": {
+        "alt": "Banco Java",
+        "title": "Java Bank",
+        "description": "Sistema bancário em Java para controle de contas, carteiras e investimentos. Permite criar contas, realizar transferências, investir, consultar saldo e histórico de operações. Focado em boas práticas de POO, tratamento de exceções e arquitetura modular."
       }
     },
     "skills": {
-      "title": "Habilidades"
+      "title": "Habilidades",
+      "allSkills": "Mostrar tudo",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Ferramentas",
+      "design": "Design",
+      "categoryText": "nesta categoria",
+      "skill": "habilidade",
+      "skills": "habilidades",
+      "noSkills": "Nenhuma skill encontrada para esta categoria."
     },
     "certificates": {
       "title": "Certificados",
@@ -121,7 +135,7 @@
       "messageLabel": "Mensagem",
       "messagePlaceholder": "Digite sua mensagem",
       "submitButton": "Enviar",
-      "nextPage": "https://emellybmuniz.github.io/portfolio-simplificado/thanks.html"
+      "nextPage": "https://emellybmuniz.github.io/portfolio/thanks.html"
     },
     "footer": {
       "aboutTitle": "Emelly Beatriz",
@@ -133,6 +147,9 @@
       "phone": "Telefone: (21) 99083-6960",
       "copyright": "© 2025 Emelly B. Muniz. Todos os direitos reservados.",
       "backToTop": "Voltar ao topo"
+    },
+    "drawer": {
+      "close": "Fechar"
     },
     "thanksPage": {
       "title": "Obrigada pelo Contato!",

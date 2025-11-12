@@ -103,10 +103,24 @@
         "alt": "Professional Portfolio Project",
         "title": "Professional Portfolio",
         "description": "Portfolio page developed to showcase my career and projects. Created with pure HTML, CSS, and JavaScript, it includes light/dark mode and responsive design for a pleasant experience."
+      },
+      "project13": {
+        "alt": "Java Bank Project",
+        "title": "Java Bank",
+        "description": "Java banking system for managing accounts, portfolios, and investments. Allows you to create accounts, make transfers, invest, check balances, and view transaction history. Focused on OOP best practices, exception handling, and modular architecture."
       }
     },
     "skills": {
-      "title": "Skills"
+      "title": "Skills",
+      "allSkills": "All Skills",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools",
+      "design": "Design",
+      "categoryText": "in this category",
+      "skill": "skill",
+      "skills": "skills",
+      "noSkills": "No skills found for this category."
     },
     "certificates": {
       "title": "Certificates",
@@ -121,7 +135,7 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Enter your message",
       "submitButton": "Send",
-      "nextPage": "https://emellybmuniz.github.io/portfolio-simplificado/thanks.html"
+      "nextPage": "https://emellybmuniz.github.io/portfolio/thanks.html"
     },
     "footer": {
       "aboutTitle": "Emelly Beatriz",
@@ -133,6 +147,9 @@
       "phone": "Phone: (21) 99083-6960",
       "copyright": "© 2025 Emelly B. Muniz. All rights reserved.",
       "backToTop": "Back to top"
+    },
+    "drawer": {
+      "close": "Close"
     },
     "thanksPage": {
       "title": "Thank you for your contact!",

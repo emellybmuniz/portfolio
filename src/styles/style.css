@@ -1283,6 +1283,7 @@ title-decorator {
 
 #mobile-category-buttons {
   flex-direction: column;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -1292,7 +1293,7 @@ title-decorator {
   font-size: 1.125rem;
   display: flex;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 3rem;
   border-radius: 0.5rem;
   transition: all 0.3s;
   font-weight: 500;
@@ -1347,6 +1348,7 @@ title-decorator {
   display: flex;
   flex-direction: column;
   background-color: rgba(17, 24, 39, 0.85);
+
 }
 
 #drawer-content.visible {
@@ -1466,7 +1468,7 @@ title-decorator {
 }
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out forwards;
-  opacity: 0; /* Start hidden */
+  opacity: 0;
 }
 
 @keyframes scaleIn {
