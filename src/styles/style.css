@@ -548,17 +548,18 @@ body {
 }
 
 .about {
-  padding: 18px 0;
+  padding: 18px 15px;
   margin: 0 auto;
   background-image: linear-gradient(
     to bottom,
     var(--bg-color),
     rgba(17, 24, 39, 0.8)
   );
+  max-width: 1200px;
 }
 
 .about-grid {
-  padding: 0 15px;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   grid-template-areas:

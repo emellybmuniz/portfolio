@@ -279,12 +279,6 @@ html.light-mode #drawer-description {
   color: var(--text-secondary-color);
 }
 
-html.light-mode .skill-badge {
-  color: #374151;
-  background-color: #f3f4f6;
-  border: 1px solid #e5e7eb;
-}
-
 html.light-mode #drawer-close-button {
   color: var(--text-color);
   border-color: #d1d5db;
@@ -303,4 +297,3 @@ html.light-mode .lang-options li button:hover {
   background-color: transparent;
   color: var(--text-color);
 }
-
