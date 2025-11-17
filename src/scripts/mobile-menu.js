@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-times");
         menuToggle.setAttribute("aria-label", "Fechar menu");
+        document.body.style.overflow = "hidden";
       } else {
         icon.classList.remove("fa-times");
         icon.classList.add("fa-bars");
         menuToggle.setAttribute("aria-label", "Abrir menu");
+        document.body.style.overflow = "";
       }
     });
   }
