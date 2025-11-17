@@ -87,19 +87,28 @@ body {
 }
 
 .header .menu li a {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
   text-transform: capitalize;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 50px;
   transition: background-color var(--transition-fast) ease;
 }
 
 .header .menu .menu-list a i {
-  display: none;
+  font-size: 16px;
+  color: var(--text-secondary-color);
+  transition: color var(--transition-fast) ease;
 }
 
 .header .menu .menu-list > li > a:hover {
   background-color: var(--primary-color);
+}
+
+.header .menu .menu-list > li > a:hover i {
+  color: var(--text-color);
 }
 
 .menu-toggle {
@@ -154,6 +163,7 @@ body {
 .home .informations .job-title {
   font-size: 28px;
   font-weight: 700;
+  margin-right: 8px;
 }
 
 .home .informations .highlight {
@@ -1302,7 +1312,7 @@ title-decorator {
   gap: 10px;
   width: 100%;
   background: rgb(27, 26, 26);
-  padding: 48px 0px 100px 0px;
+  padding: 48px 15px 80px;
 }
 
 .form-container .title {
@@ -1313,8 +1323,8 @@ title-decorator {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
+  gap: 12px;
+  max-width: 550px;
   margin: auto;
   width: 100%;
   opacity: 0;
@@ -1330,7 +1340,7 @@ title-decorator {
 .form input,
 .form textarea {
   width: 100%;
-  padding: 15px;
+  padding: 14px;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--surface-border-color);
   border-radius: var(--border-radius-sm);
@@ -1362,13 +1372,23 @@ title-decorator {
   color: var(--text-color);
   border: none;
   border-radius: 15px;
-  padding: 20px;
+  padding: 18px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 15px;
   transition: background-color var(--transition-medium) ease,
     transform var(--transition-fast) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form .btn-submit::after {
+  content: '\f1d8';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .form .btn-submit:hover {

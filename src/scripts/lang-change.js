@@ -80,7 +80,7 @@ async function setLanguage(lang) {
 
 function getInitialLanguage() {
   const savedLang = localStorage.getItem("lang");
-  const supportedLangs = ["pt-BR", "en"];
+  const supportedLangs = ["pt-BR", "en", "es"];
 
   if (savedLang && supportedLangs.includes(savedLang)) return savedLang;
 
@@ -106,7 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updateButtonText = (lang) => {
       if (selectedLangSpan) {
-        selectedLangSpan.textContent = lang === "pt-BR" ? "PT" : "EN";
+        if (lang === "pt-BR") {
+          selectedLangSpan.textContent = "PT";
+        } else if (lang === "en") {
+          selectedLangSpan.textContent = "EN";
+        } else if (lang === "es") {
+          selectedLangSpan.textContent = "ES";
+        }
       }
     };
 

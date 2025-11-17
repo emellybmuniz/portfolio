@@ -1,0 +1,199 @@
+{
+  "es": {
+    "meta": {
+      "title": "Emelly Beatriz | Desarrolladora Frontend - Portafolio de Proyectos",
+      "description": "Portafolio de Emelly Beatriz, desarrolladora frontend apasionada por la tecnología y el diseño. Explora mis proyectos en HTML, CSS, JavaScript, Python y mira cómo transformo ideas en soluciones digitales funcionales y estéticas.",
+      "keywords": "Desarrolladora Frontend, Portafolio, Emelly Beatriz, Web Developer, Proyectos, HTML, CSS, JavaScript, Python, UI/UX",
+      "ogTitle": "Emelly Beatriz | Desarrolladora Frontend - Portafolio",
+      "ogDescription": "Explora los proyectos de Emelly Beatriz, una desarrolladora frontend que crea soluciones digitales creativas y funcionales."
+    },
+    "header": {
+      "openMenu": "Abrir menú",
+      "about": "Sobre mí",
+      "skills": "Habilidades",
+      "certificates": "Certificaciones",
+      "themeButtonDark": "Tema Oscuro",
+      "themeButtonLight": "Tema Claro",
+      "downloadCV": "Descargar CV",
+      "contactMe": "Contáctame",
+      "cvFile": "public/downloads/ptBR-cv.pdf",
+      "cvFileName": "CV_Emelly_Beatriz.pdf"
+    },
+    "home": {
+      "typed": "¡Hola, Soy Emelly Beatriz!",
+      "jobTitle": "Desarrolladora Frontend & Entusiasta de UI/UX",
+      "intro1": "Apasionada por crear experiencias digitales intuitivas y visualmente impactantes, buscando siempre colaborar en proyectos innovadores. ✨",
+      "buttons": {
+        "projects": "Mis Proyectos",
+        "downloadCV": "Descargar CV"
+      },
+      "profilePicAlt": "Foto de perfil de Emelly Beatriz",
+      "social": {
+        "linkedin": "Ir a Linkedin",
+        "email": "Enviar Correo",
+        "github": "Ir a GitHub",
+        "instagram": "Ir a Instagram"
+      }
+    },
+    "projects": {
+      "title": "Mis proyectos",
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos",
+      "demo": "Demostración",
+      "repo": "Repositorio </>",
+      "project0": {
+        "alt": "Proyecto Historia de la Mascota de Android",
+        "title": "Historia de la Mascota de Android",
+        "description": "Un proyecto que explora la historia de la mascota de Android, desarrollado con HTML y CSS. Este proyecto presenta una narrativa visual sobre la evolución de la icónica mascota del sistema operativo Android."
+      },
+      "project1": {
+        "alt": "Proyecto Cordel Moderno",
+        "title": "Cordel Moderno",
+        "description": "Un proyecto de Cordel Moderno desarrollado con HTML y CSS, que presenta un enfoque contemporáneo de la literatura de cordel tradicional."
+      },
+      "project2": {
+        "alt": "Proyecto Calculadora Simple",
+        "title": "Calculadora Simple",
+        "description": "Calculadora simple desarrollada con HTML, CSS y JavaScript, que permite operaciones básicas como suma, resta, multiplicación y división."
+      },
+      "project3": {
+        "alt": "Proyecto Calculadora Simple",
+        "title": "Calculadora",
+        "description": "Una calculadora simple desarrollada con HTML, CSS y JavaScript, que permite a los usuarios realizar operaciones matemáticas básicas de forma intuitiva y rápida."
+      },
+      "project4": {
+        "alt": "Proyecto Sistema Solar",
+        "title": "Sistema Solar",
+        "description": "Un proyecto interactivo del Sistema Solar, desarrollado con HTML, CSS y JavaScript. Este proyecto permite a los usuarios explorar los planetas de nuestro sistema solar de forma visual y educativa, proporcionando una experiencia envolvente e informativa."
+      },
+      "project5": {
+        "alt": "Proyecto Lista de Tareas",
+        "title": "Lista de Tareas",
+        "description": "Una aplicación de Lista de Tareas desarrollada con HTML, CSS y JavaScript. Permite a los usuarios agregar y eliminar tareas, proporcionando una forma simple y eficaz de gestionar sus actividades diarias."
+      },
+      "project6": {
+        "alt": "Proyecto Calculadora de IMC",
+        "title": "Calculadora de IMC",
+        "description": "Una calculadora de IMC (Índice de Masa Corporal) simple y funcional, desarrollada con HTML, CSS y JavaScript. Esta herramienta permite a los usuarios ingresar su peso y altura para calcular su IMC, proporcionando una evaluación rápida y fácil de su condición corporal."
+      },
+      "project7": {
+        "alt": "Copia de Alta Fidelidad de Netflix",
+        "title": "Réplica de Netflix",
+        "description": "Un modelo de alta fidelidad de la interfaz de Netflix, desarrollado solo con HTML y CSS. Este proyecto se enfoca en la reproducción visual del diseño de la plataforma, proporcionando una experiencia visual similar a la original, sin funcionalidades interactivas."
+      },
+      "project8": {
+        "alt": "Cronómetro",
+        "title": "Cronómetro",
+        "description": "Cronómetro simple desarrollado con JavaScript, HTML y CSS, que permite a los usuarios iniciar, pausar y reiniciar el tiempo."
+      },
+      "project9": {
+        "alt": "Validador de CPF",
+        "title": "Validador de CPF",
+        "description": "Una herramienta simple construida con JavaScript puro para validar números de CPF basada en el algoritmo oficial."
+      },
+      "project10": {
+        "alt": "Juego Piedra, Papel y Tijera",
+        "title": "Juego Piedra, Papel y Tijera",
+        "description": "Un juego interactivo de Piedra, Papel y Tijera desarrollado con HTML, CSS y JavaScript donde los usuarios pueden jugar contra la computadora, probando sus habilidades y suerte."
+      },
+      "project11": {
+        "alt": "Dashboard de análisis de salarios en el área de datos",
+        "title": "Dashboard de análisis de salarios en el área de datos",
+        "description": "Un dashboard interactivo construido con Python y Streamlit para explorar y analizar datos de salarios en el campo de Data Science, basado en datos recopilados en los últimos años."
+      },
+      "project12": {
+        "alt": "Proyecto Portafolio Profesional",
+        "title": "Portafolio Profesional",
+        "description": "Página de portafolio desarrollada para presentar mi trayectoria y proyectos. Creada con HTML, CSS y JavaScript puros, incluye modo claro/oscuro y diseño responsivo para una agradable experiencia."
+      },
+      "project13": {
+        "alt": "Banco Java",
+        "title": "Java Bank",
+        "description": "Sistema bancario en Java para control de cuentas, carteras e inversiones. Permite crear cuentas, realizar transferencias, invertir, consultar saldo e historial de operaciones. Enfocado en buenas prácticas de POO, manejo de excepciones y arquitectura modular."
+      }
+    },
+    "about": {
+      "metrics": {
+        "experience": { "value": "+1 año", "label": "Experiencia Frontend" },
+        "projects": { "value": "15+", "label": "Proyectos Concluidos" }
+      },
+      "div2": {
+        "title": "Formación Académica",
+        "course": "Ingeniería de Software",
+        "university": "Centro Universitário Internacional Uninter",
+        "period": "2024 - 2028"
+      },
+      "soft_skills": {
+        "title": "Habilidades Blandas",
+        "communication": "Comunicación",
+        "teamwork": "Trabajo en Equipo",
+        "adaptability": "Adaptabilidad",
+        "problem_solving": "Resolución de Problemas",
+        "empathy": "Empatía",
+        "critical_thinking": "Pensamiento Crítico",
+        "creativity": "Creatividad",
+        "emotional_intelligence": "Inteligencia Emocional"
+      },
+      "div3": {
+        "title": "Trayectoria Profesional",
+        "intro": "Esta es una línea de tiempo que destaca mis experiencias más recientes e importantes. Para una visión completa de mi trayectoria, ",
+        "cvLink": "haz clic aquí para ver mi currículum"
+      },
+      "timeline": {
+        "item1": { "title": "Proyectos Autónomos - Frontend", "location": "Río de Janeiro, Brasil", "date": "2024 - Presente", "desc": "Desarrollo de proyectos web con enfoque en UX/UI, utilizando HTML, CSS, JavaScript y Git/GitHub para crear soluciones funcionales y accesibles, con exploración de integraciones back-end." },
+        "item2": { "title": "Embajadora Universitaria", "location": "Río de Janeiro, Brasil", "date": "Actual", "desc": "Representante de DIO para promover la innovación y conectar la plataforma con la comunidad académica, desarrollando liderazgo y habilidades técnicas a través de proyectos y eventos." }
+      }
+    },
+    "skills": {
+      "title": "Habilidades",
+      "allSkills": "Mostrar todo",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Herramientas",
+      "design": "Diseño",
+      "categoryText": "en esta categoría",
+      "skill": "habilidad",
+      "skills": "habilidades",
+      "noSkills": "No se encontraron habilidades para esta categoría."
+    },
+    "certificates": {
+      "title": "Certificaciones",
+      "openCertificate": "Abrir Certificado"
+    },
+    "form": {
+      "title": "¡Envía tu Mensaje!",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Escribe tu nombre",
+      "emailLabel": "Correo Electrónico",
+      "emailPlaceholder": "Escribe tu correo electrónico",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje",
+      "submitButton": "Enviar",
+      "nextPage": "https://emellybmuniz.github.io/portfolio/thanks.html"
+    },
+    "footer": {
+      "aboutTitle": "Emelly Beatriz",
+      "aboutText": "¿Llegaste hasta el final? ¡Genial! Si mi trabajo despertó tu interés, no terminemos aquí. Conéctate conmigo para que creemos algo increíble juntos.",
+      "quickLinksTitle": "Enlaces Rápidos",
+      "linkHome": "Inicio",
+      "contactTitle": "Contacto",
+      "phone": "Teléfono: (21) 99083-6960",
+      "theme": {
+        "light": "Tema Claro",
+        "dark": "Tema Oscuro"
+      },
+      "copyright": "© 2025 Emelly B. Muniz. Todos los derechos reservados.",
+      "backToTop": "Volver arriba"
+    },
+    "drawer": {
+      "close": "Cerrar"
+    },
+    "thanksPage": {
+      "title": "¡Gracias por tu Contacto!",
+      "header": "¡Gracias!",
+      "message": "Tu mensaje ha sido enviado con éxito. Te responderé en breve.",
+      "backLink": "Volver al Inicio"
+    }
+  }
+  }
+  
