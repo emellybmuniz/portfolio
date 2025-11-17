@@ -254,6 +254,7 @@ body {
 
 .home .photo-container .photo {
   max-width: 400px;
+  margin-bottom: 20px;
   border-radius: var(--border-radius-circle);
   box-shadow: rgba(0, 1, 1, 0.19) 0px 2px 4px 0px,
     rgba(6, 12, 15, 0.426) 0px 2px 16px 0px;
@@ -1158,7 +1159,6 @@ title-decorator {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  color: white;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);

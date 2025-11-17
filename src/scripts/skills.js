@@ -139,6 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const drawerCloseButton = document.getElementById("drawer-close-button");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
+  const getTextColorForBackground = (hexColor) => {
+    if (!hexColor || hexColor.length < 7) return "#ffffff";
+    const r = parseInt(hexColor.substr(1, 2), 16);
+    const g = parseInt(hexColor.substr(3, 2), 16);
+    const b = parseInt(hexColor.substr(5, 2), 16);
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness > 150 ? "#111827" : "#ffffff";
+  };
+
   function renderDesktopFilters() {
     if (!desktopFilterButtons) return;
     desktopFilterButtons.innerHTML = "";
@@ -263,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const badge = document.createElement("div");
       badge.className = "skill-badge";
       badge.style.backgroundImage = `linear-gradient(to bottom right, ${color.from}, ${color.to})`;
+      badge.style.color = getTextColorForBackground(color.from);
       badge.innerHTML = `
               <img src="${skill.icon}" alt="${skill.name}" />
               ${skill.name}
