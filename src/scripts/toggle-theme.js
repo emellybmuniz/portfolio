@@ -5,16 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateButtonState = (isLight) => {
     themeButtons.forEach((button) => {
       const icon = button.querySelector("i");
-      const span = button.querySelector("span");
 
       if (isLight) {
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
-        span.setAttribute("data-translate-key", "header.themeButtonDark");
       } else {
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
-        span.setAttribute("data-translate-key", "header.themeButtonLight");
       }
     });
   };
