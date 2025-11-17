@@ -166,6 +166,11 @@ body {
   margin-right: 8px;
 }
 
+.home .informations p {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
 .home .informations .highlight {
   background: linear-gradient(to right, #05e595, #2dd4bf, #3b82f6);
   -webkit-background-clip: text;
@@ -1828,6 +1833,18 @@ body.body-no-scroll #scrollTopBtn {
     grid-column-gap: 0;
   }
 
+  .home .informations h1 {
+    font-size: 30px;
+  }
+
+  .home .informations .job-title {
+    font-size: 26px;
+  }
+
+  .home .informations p {
+    font-size: 20px;
+  }
+
   .footer-controls {
     justify-content: center;
   }
@@ -1906,11 +1923,23 @@ body.body-no-scroll #scrollTopBtn {
 
   .home .informations h1 {
     font-family: var(--font-secondary);
-    font-size: 38px;
+    font-size: 28px;
+  }
+
+  .home .informations .job-title {
+    font-size: 24px;
+  }
+
+  .home .informations p {
+    font-size: 18px;
   }
 
   .home .photo-container .photo {
     max-width: 300px;
+  }
+
+  .about-metrics {
+    flex-direction: column;
   }
 
   .projects .project {
@@ -1974,7 +2003,15 @@ body.body-no-scroll #scrollTopBtn {
   }
 
   .home .informations h1 {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  .home .informations .job-title {
+    font-size: 22px;
+  }
+
+  .home .informations p {
+    font-size: 16px;
   }
 
   .home .photo-container img {

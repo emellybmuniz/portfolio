@@ -140,8 +140,8 @@
         "cvLink": "click here to view my resume"
       },
       "timeline": {
-        "item1": { "title": "Freelance Projects - Frontend", "location": "Rio de Janeiro, Brazil", "date": "2024 - Present", "desc": "Development of web projects with a focus on UX/UI, using HTML, CSS, JavaScript, and Git/GitHub to create functional and accessible solutions, with exploration of back-end integrations." },
-        "item2": { "title": "University Ambassador", "location": "Rio de Janeiro, Brazil", "date": "Current", "desc": "Representative for DIO to promote innovation and connect the platform to the academic community, developing leadership and technical skills through projects and events." }
+        "item1": { "title": "Freelance Projects - Frontend", "location": "Rio de Janeiro, Brazil", "date": "2024 - Current", "desc": "Development of web projects with a focus on UX/UI, using HTML, CSS, JavaScript, and Git/GitHub to create functional and accessible solutions, with exploration of back-end integrations." },
+        "item2": { "title": "University Ambassador", "location": "Rio de Janeiro, Brazil", "date": "2025 - Current", "desc": "Representative for DIO to promote innovation and connect the platform to the academic community, developing leadership and technical skills through projects and events." }
       }
     },
     "skills": {
