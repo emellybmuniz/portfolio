@@ -9,7 +9,6 @@
     },
     "header": {
       "openMenu": "Abrir menu",
-      "projects": "Projetos",
       "about": "Sobre",
       "skills": "Habilidades",
       "certificates": "Certificações",
@@ -21,11 +20,13 @@
       "cvFileName": "CV_Emelly_Beatriz.pdf"
     },
     "home": {
-      "typed": "Olá, Sou a Emelly Beatriz.",
-      "jobTitle": "Desenvolvedora Frontend",
-      "intro1": ", meu trabalho é transformar desafios complexos em soluções digitais que unem usabilidade, estética e funcionalidade. ✨",
-      "intro2": "Guiada pela paixão por tecnologia e design, transformo esboços em experiências memoráveis que geram impacto real para quem as utiliza.",
-      "intro3": "Explore meus projetos e veja como cada ideia ganha vida em código! 💻",
+      "typed": "Olá, Sou a Emelly Beatriz!",
+      "jobTitle": "Desenvolvedora Frontend & Entusiasta de UI/UX",
+      "intro1": "Apaixonada por criar experiências digitais intuitivas e visualmente impactantes, buscando sempre colaborar em projetos inovadores. ✨",
+      "buttons": {
+        "projects": "Meus Projetos",
+        "downloadCV": "Baixar CV"
+      },
       "profilePicAlt": "Foto de perfil de Emelly Beatriz",
       "social": {
         "linkedin": "Ir para o Linkedin",
@@ -156,7 +157,7 @@
       "noSkills": "Nenhuma skill encontrada para esta categoria."
     },
     "certificates": {
-      "title": "Certificados",
+      "title": "Certificações",
       "openCertificate": "Abrir Certificado"
     },
     "form": {
@@ -175,9 +176,12 @@
       "aboutText": "Chegou até o fim? Muito legal! Se meu trabalho despertou seu interesse, não vamos encerrar por aqui. Conecte-se comigo para criarmos algo incrível juntos.",
       "quickLinksTitle": "Links Rápidos",
       "linkHome": "Início",
-      "toggleLanguage": "Português > English",
       "contactTitle": "Contato",
       "phone": "Telefone: (21) 99083-6960",
+      "theme": {
+        "light": "Tema Claro",
+        "dark": "Tema Escuro"
+      },
       "copyright": "© 2025 Emelly B. Muniz. Todos os direitos reservados.",
       "backToTop": "Voltar ao topo"
     },

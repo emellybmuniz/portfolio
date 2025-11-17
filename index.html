@@ -117,94 +117,25 @@
 
       <nav class="menu">
         <ul class="menu-list">
-          <li class="projects-li desktop-only">
-            <a href="#projects" data-translate-key="header.projects"></a>
-          </li>
-          <li class="desktop-only">
-            <a href="#about" data-translate-key="header.about"></a>
-          </li>
-          <li class="dropdown desktop-only">
-            <a href="#skills"
-              ><span data-translate-key="header.skills">Habilidades</span>
-              <i class="fas fa-chevron-down"></i
-            ></a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#certificates">
-                  <i class="fas fa-award"></i
-                  ><span data-translate-key="header.certificates"></span>
-                </a>
-              </li>
-              <li>
-                <button type="button" class="theme-btn">
-                  <i class="fas fa-sun"></i
-                  ><span data-translate-key="header.themeButtonLight"></span>
-                </button>
-              </li>
-              <li>
-                <a
-                  href="src/downloads/ptBR-cv.pdf"
-                  download="CV_Emelly_Beatriz.pdf"
-                  data-cv-link
-                >
-                  <i class="fas fa-file-download"></i
-                  ><span data-translate-key="header.downloadCV"></span>
-                </a>
-              </li>
-              <li>
-                <a href="#form">
-                  <i class="fas fa-paper-plane"></i
-                  ><span data-translate-key="header.contactMe"></span>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="mobile-only">
-            <a href="#about"
-              ><i class="fas fa-user"></i
-              ><span data-translate-key="header.about"></span
-            ></a>
-          </li>
-          <li class="mobile-only">
-            <a href="#projects"
-              ><i class="fas fa-project-diagram"></i
-              ><span data-translate-key="header.projects"></span
-            ></a>
-          </li>
-          <li class="mobile-only">
-            <a href="#skills"
-              ><i class="fas fa-star"></i
-              ><span data-translate-key="header.skills"></span
-            ></a>
-          </li>
-          <li class="mobile-only">
-            <a href="#certificates"
-              ><i class="fas fa-award"></i
-              ><span data-translate-key="header.certificates"></span
-            ></a>
-          </li>
-          <li class="mobile-only">
-            <a href="#form"
-              ><i class="fas fa-paper-plane"></i
-              ><span data-translate-key="header.contactMe"></span
-            ></a>
-          </li>
-          <li class="mobile-only">
-            <a
-              href="src/downloads/ptBR-cv.pdf"
-              download="CV_Emelly_Beatriz.pdf"
-              data-cv-link
-            >
-              <i class="fas fa-file-download"></i
-              ><span data-translate-key="header.downloadCV"></span>
+          <li>
+            <a href="#about">
+              <i class="fas fa-user"></i><span data-translate-key="header.about"></span>
             </a>
           </li>
-          <li class="mobile-only">
-            <button type="button" class="theme-btn">
-              <i class="fas fa-sun"></i
-              ><span data-translate-key="header.themeButtonLight"></span>
-            </button>
+          <li>
+            <a href="#skills">
+              <i class="fas fa-star"></i><span data-translate-key="header.skills"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#certificates">
+              <i class="fas fa-award"></i><span data-translate-key="header.certificates"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#form">
+              <i class="fas fa-paper-plane"></i><span data-translate-key="header.contactMe"></span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -213,15 +144,28 @@
       <section class="home">
         <div class="informations">
           <h1 class="typed"></h1>
-          <p>
+          <p class="job-title">
             <strong
               class="highlight"
               data-translate-key="home.jobTitle"
-            ></strong
-            ><span data-translate-key="home.intro1"></span>
+            ></strong>
           </p>
-          <p data-translate-key="home.intro2"></p>
-          <p data-translate-key="home.intro3"></p>
+          <p data-translate-key="home.intro1"></p>
+
+          <div class="home-buttons">
+            <a
+              href="#projects"
+              class="btn btn-primary"
+              data-translate-key="home.buttons.projects"
+            ></a>
+            <a
+              href="src/downloads/ptBR-cv.pdf"
+              class="btn btn-secondary"
+              download="CV_Emelly_Beatriz.pdf"
+              data-cv-link
+              data-translate-key="home.buttons.downloadCV"
+            ></a>
+          </div>
 
           <ul class="social-media">
             <li>
@@ -1184,16 +1128,6 @@
               data-cv-link
             ></a>
           </li>
-          <li>
-            <a href="#form" data-translate-key="header.contactMe"></a>
-          </li>
-          <li>
-            <a
-              href="#"
-              id="lang-toggle-btn"
-              data-translate-key="footer.toggleLanguage"
-            ></a>
-          </li>
         </ul>
       </div>
 
@@ -1201,6 +1135,24 @@
         <h3 data-translate-key="footer.contactTitle"></h3>
         <p>Email: emellybmuniz@gmail.com</p>
         <p data-translate-key="footer.phone"></p>
+        <div class="footer-controls">
+          <button type="button" class="theme-btn">
+            <i class="fas fa-sun"></i>
+            <span class="theme-label-light" data-translate-key="footer.theme.light"></span>
+            <span class="theme-label-dark" data-translate-key="footer.theme.dark"></span>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-btn" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-globe"></i>
+              <span class="selected-lang">PT</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="lang-options">
+              <li><button data-lang="pt-BR">Português</button></li>
+              <li><button data-lang="en">English</button></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="footer-copyright">
         <p data-translate-key="footer.copyright"></p>

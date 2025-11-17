@@ -9,7 +9,6 @@
     },
     "header": {
       "openMenu": "Open menu",
-      "projects": "Projects",
       "about": "About",
       "skills": "Skills",
       "certificates": "Certificates",
@@ -21,11 +20,13 @@
       "cvFileName": "CV_Emelly_Beatriz_EN.pdf"
     },
     "home": {
-      "typed": "Hi, I'm Emelly Beatriz.",
-      "jobTitle": "Frontend Developer",
-      "intro1": ", my job is to transform complex challenges into digital solutions that unite usability, aesthetics, and functionality. ✨",
-      "intro2": "Guided by a passion for technology and design, I turn sketches into memorable experiences that generate real impact for those who use them.",
-      "intro3": "Explore my projects and see how each idea comes to life in code! 💻",
+      "typed": "Hi, I'm Emelly Beatriz!",
+      "jobTitle": "Frontend Developer & UI/UX Enthusiast",
+      "intro1": "Passionate about creating intuitive and visually impactful digital experiences, always looking to collaborate on innovative projects. ✨",
+      "buttons": {
+        "projects": "My Projects",
+        "downloadCV": "Download CV"
+      },
       "profilePicAlt": "Profile picture of Emelly Beatriz",
       "social": {
         "linkedin": "Go to Linkedin",
@@ -175,9 +176,12 @@
       "aboutText": "Made it to the end? Awesome! If my work has sparked your interest, let's not stop here. Connect with me to create something amazing together.",
       "quickLinksTitle": "Quick Links",
       "linkHome": "Home",
-      "toggleLanguage": "Switch to Portuguese",
       "contactTitle": "Contact",
       "phone": "Phone: (21) 99083-6960",
+      "theme": {
+        "light": "Light Theme",
+        "dark": "Dark Theme"
+      },
       "copyright": "© 2025 Emelly B. Muniz. All rights reserved.",
       "backToTop": "Back to top"
     },
