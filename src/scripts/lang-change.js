@@ -32,7 +32,6 @@ async function setLanguage(lang) {
       return;
     }
 
-    // Update all elements with a data-translate-key
     document.querySelectorAll("[data-translate-key]").forEach((element) => {
       const key = element.getAttribute("data-translate-key");
       const translation = resolve(key, translations);
@@ -93,21 +92,45 @@ function getInitialLanguage() {
   return matchedLang || "pt-BR";
 }
 
+/**
+ * Initializes the language functionality on page load.
+ * It handles the language dropdown UI and sets the initial language.
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  const langToggleButton = document.getElementById("lang-toggle-btn");
+  const langDropdown = document.querySelector(".lang-dropdown");
 
-  if (langToggleButton) {
-    langToggleButton.addEventListener("click", (event) => {
-      event.preventDefault();
+  if (langDropdown) {
+    const langBtn = langDropdown.querySelector(".lang-btn");
+    const langOptions = langDropdown.querySelector(".lang-options");
+    const selectedLangSpan = langDropdown.querySelector(".selected-lang");
 
-      const currentLang = document.documentElement.lang;
-      const newLang = currentLang === "pt-BR" ? "en" : "pt-BR";
+    const updateButtonText = (lang) => {
+      if (selectedLangSpan) {
+        selectedLangSpan.textContent = lang === "pt-BR" ? "PT" : "EN";
+      }
+    };
 
-      localStorage.setItem("lang", newLang);
-      setLanguage(newLang);
+    langBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      langDropdown.classList.toggle("open");
     });
-  }
 
-  const initialLang = getInitialLanguage();
-  setLanguage(initialLang);
+    langOptions.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        const lang = e.target.dataset.lang;
+        localStorage.setItem("lang", lang); 
+        setLanguage(lang);
+        updateButtonText(lang);
+        langDropdown.classList.remove("open");
+      }
+    });
+
+    document.addEventListener("click", () => {
+      langDropdown.classList.remove("open");
+    });
+
+    const initialLang = getInitialLanguage();
+    setLanguage(initialLang);
+    updateButtonText(initialLang);
+  }
 });

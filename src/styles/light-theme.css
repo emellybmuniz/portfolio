@@ -77,6 +77,15 @@ html.light-mode .header .menu .dropdown:hover > a {
   color: var(--text-on-primary);
 }
 
+html.light-mode .btn.btn-secondary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+html.light-mode .btn.btn-secondary:hover {
+  color: var(--text-on-primary);
+}
+
 html.light-mode .projects .project {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -219,6 +228,17 @@ html.light-mode .header .menu.menu-open {
   background-color: rgba(245, 245, 245, 0.95);
 }
 
+html.light-mode .footer-controls button:hover {
+  background: var(--primary-color);
+  color: var(--text-on-primary);
+
+}
+.theme-btn .theme-label-light {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   html.light-mode .menu-toggle {
     color: var(--text-color);
@@ -227,7 +247,7 @@ html.light-mode .header .menu.menu-open {
 
 html.light-mode .site-footer {
   background-color: #f8f9fa;
-  color: var(--text-on-primary);
+  color: var(--text-secondary-color);
 }
 
 html.light-mode .footer-column h3 {
@@ -238,7 +258,49 @@ html.light-mode .footer-social-media .fa-github {
   color: #333;
 }
 
-html.light-mode #drawer-close-button {
-  color: #ffffff;
-  border-color: #ffffff;
+html.light-mode #mobile-category-buttons button .category-count {
+  color: #4b5563;
 }
+
+html.light-mode #drawer-content {
+  background-color: rgba(249, 250, 251, 0.95);
+  border-top-color: #e5e7eb;
+}
+
+html.light-mode #drawer-header {
+  border-bottom-color: #e5e7eb;
+}
+
+html.light-mode #drawer-title {
+  color: var(--text-color);
+}
+
+html.light-mode #drawer-description {
+  color: var(--text-secondary-color);
+}
+
+html.light-mode .skill-badge {
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+}
+
+html.light-mode #drawer-close-button {
+  color: var(--text-color);
+  border-color: #d1d5db;
+  background-color: #fff;
+}
+
+html.light-mode .theme-btn .theme-label-light {
+  display: none;
+}
+
+html.light-mode .theme-btn .theme-label-dark {
+  display: inline-block;
+}
+
+html.light-mode .lang-options li button:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+

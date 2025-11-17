@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createAnimationObserver(".home .photo-container", "fadeInRight", 0.2);
   createAnimationObserver(".projects", "in-view", 0.1);
   createAnimationObserver(".certificates", "in-view", 0.25);
-  createAnimationObserver(".skills", "in-view", 0.23);
+  createAnimationObserver(".skills", "in-view", 0.12);
   createAnimationObserver(".project", "in-view", 0.2);
   createAnimationObserver(".btn-show-projects", "in-view", 0.2);
   createAnimationObserver(".form-container", "in-view", 0.15);
