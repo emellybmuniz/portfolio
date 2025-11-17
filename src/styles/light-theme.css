@@ -91,6 +91,41 @@ html.light-mode .projects .btn-show-projects:hover {
   color: var(--text-on-primary);
 }
 
+html.light-mode .about {
+  background-image: none;
+  background-color: rgba(238, 238, 238, 0.833);
+}
+
+html.light-mode .about-grid > div,
+html.light-mode .metric-card {
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+html.light-mode .about-grid h3 {
+  color: var(--primary-color-darker);
+  border-bottom-color: var(--primary-color-darker);
+}
+
+html.light-mode .timeline-item::before {
+  border-color: var(--bg-color);
+}
+
+html.light-mode .badges-container span {
+  background-color: rgba(136, 70, 194, 0.1);
+  color: var(--primary-color-darker);
+  border: 1px solid rgba(136, 70, 194, 0.2);
+}
+
+html.light-mode .badges-container span:hover {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  border-color: var(--primary-color);
+}
+
 html.light-mode .certificates,
 html.light-mode .skills {
   background-color: rgba(238, 238, 238, 0.833);

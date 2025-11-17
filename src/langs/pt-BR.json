@@ -10,8 +10,9 @@
     "header": {
       "openMenu": "Abrir menu",
       "projects": "Projetos",
+      "about": "Sobre",
       "skills": "Habilidades",
-      "certificates": "Certificados",
+      "certificates": "Certificações",
       "themeButtonDark": "Tema Escuro",
       "themeButtonLight": "Tema Claro",
       "downloadCV": "Baixar CV",
@@ -108,6 +109,38 @@
         "alt": "Banco Java",
         "title": "Java Bank",
         "description": "Sistema bancário em Java para controle de contas, carteiras e investimentos. Permite criar contas, realizar transferências, investir, consultar saldo e histórico de operações. Focado em boas práticas de POO, tratamento de exceções e arquitetura modular."
+      }
+    },
+    "about": {
+      "metrics": {
+        "experience": { "value": "+1 ano", "label": "Experiência Frontend" },
+        "projects": { "value": "15+", "label": "Projetos Concluídos" }
+      },
+      "div2": {
+        "title": "Formação Acadêmica",
+        "course": "Engenharia de Software",
+        "university": "Centro Universitário Internacional Uninter",
+        "period": "2024 - 2028"
+      },
+      "soft_skills": {
+        "title": "Soft Skills",
+        "communication": "Comunicação",
+        "teamwork": "Trabalho em Equipe",
+        "adaptability": "Adaptabilidade",
+        "problem_solving": "Resolução de Problemas",
+        "empathy": "Empatia",
+        "critical_thinking": "Pensamento Crítico",
+        "creativity": "Criatividade",
+        "emotional_intelligence": "Inteligência Emocional"
+      },
+      "div3": {
+        "title": "Jornada Profissional",
+        "intro": "Esta é uma linha do tempo destacando minhas experiências mais recentes e importantes. Para uma visão completa da minha trajetória, ",
+        "cvLink": "clique aqui para ver meu currículo"
+      },
+      "timeline": {
+        "item1": { "title": "Projetos Autônomos - Frontend", "location": "Rio de Janeiro, Brasil", "date": "2024 - Presente", "desc": "Desenvolvimento de projetos web com foco em UX/UI, utilizando HTML, CSS, JavaScript e Git/GitHub para criar soluções funcionais e acessíveis, com exploração de integrações back-end." },
+        "item2": { "title": "Embaixadora Universitária", "location": "Rio de Janeiro, Brasil", "date": "Atual", "desc": "Representante da DIO para promover inovação e conectar a plataforma à comunidade acadêmica, desenvolvendo liderança e habilidades técnicas através de projetos e eventos." }
       }
     },
     "skills": {
