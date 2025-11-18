@@ -560,7 +560,7 @@ body {
     var(--bg-color),
     rgba(17, 24, 39, 0.8)
   );
-  max-width: 1200px;
+  width: 100%;
 }
 
 .about-grid {
@@ -1792,9 +1792,15 @@ body.body-no-scroll #scrollTopBtn {
   animation: glow 4s infinite ease-in-out;
 }
 
+@media (max-width: 1350px) {
+  .projects .project {
+    max-width: 390px;
+  }
+}
+
 @media (max-width: 1200px) {
   body {
-    background-image: linear-gradient(150deg, var(--bg-color), #9e00ff);
+    background-image: linear-gradient(150deg,#53037C, var(--bg-color));
     background-attachment: scroll;
   }
 
@@ -1847,6 +1853,20 @@ body.body-no-scroll #scrollTopBtn {
   }
 
   .footer-controls {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1120px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    justify-items: center;
+    padding: 60px 20px 30px;
+  }
+
+  .footer-social-media {
     justify-content: center;
   }
 }
@@ -1918,10 +1938,6 @@ body.body-no-scroll #scrollTopBtn {
     justify-self: center;
   }
 
-  .footer-social-media {
-    justify-content: center;
-  }
-
   .home .informations h1 {
     font-family: var(--font-secondary);
     font-size: 28px;
@@ -1970,9 +1986,6 @@ body.body-no-scroll #scrollTopBtn {
 
   .site-footer {
     padding: 50px 20px 20px;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
     margin-top: -28px;
   }
 }
@@ -2045,9 +2058,6 @@ body.body-no-scroll #scrollTopBtn {
 
   .site-footer {
     padding: 50px 20px 20px;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
     margin-top: -24px;
   }
 
