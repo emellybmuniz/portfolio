@@ -308,12 +308,11 @@ body {
 .projects .project {
   max-width: 420px;
   min-height: 400px;
-  background-color: #00000076;
-  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  border-radius: 18px;
   overflow: hidden;
   display: none;
   position: relative;
-  border: 1px solid #1d1c1c;
   transition: transform var(--transition-fast) var(--timing-function-smooth),
     box-shadow var(--transition-medium) var(--timing-function-smooth),
     border-color var(--transition-medium) ease;
@@ -343,7 +342,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: black;
 }
 
 .projects .project img {
@@ -351,7 +349,6 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 0px;
   background-color: #111;
   transition: transform var(--transition-medium) ease-in-out;
 }
@@ -509,7 +506,6 @@ body {
 
 .btn-demo {
   background-color: var(--secondary-color, #28a745);
-
 }
 
 .btn-repo {

@@ -52,64 +52,64 @@
         "description": "Un proyecto de Cordel Moderno desarrollado con HTML y CSS, que presenta un enfoque contemporáneo de la literatura de cordel tradicional."
       },
       "project2": {
-        "alt": "Proyecto Calculadora Simple",
-        "title": "Calculadora Simple",
-        "description": "Calculadora simple desarrollada con HTML, CSS y JavaScript, que permite operaciones básicas como suma, resta, multiplicación y división."
-      },
-      "project3": {
-        "alt": "Proyecto Calculadora Simple",
+        "alt": "Proyecto Calculadora",
         "title": "Calculadora",
         "description": "Una calculadora simple desarrollada con HTML, CSS y JavaScript, que permite a los usuarios realizar operaciones matemáticas básicas de forma intuitiva y rápida."
       },
-      "project4": {
+      "project3": {
         "alt": "Proyecto Sistema Solar",
         "title": "Sistema Solar",
         "description": "Un proyecto interactivo del Sistema Solar, desarrollado con HTML, CSS y JavaScript. Este proyecto permite a los usuarios explorar los planetas de nuestro sistema solar de forma visual y educativa, proporcionando una experiencia envolvente e informativa."
       },
-      "project5": {
+      "project4": {
         "alt": "Proyecto Lista de Tareas",
         "title": "Lista de Tareas",
         "description": "Una aplicación de Lista de Tareas desarrollada con HTML, CSS y JavaScript. Permite a los usuarios agregar y eliminar tareas, proporcionando una forma simple y eficaz de gestionar sus actividades diarias."
       },
-      "project6": {
+      "project5": {
         "alt": "Proyecto Calculadora de IMC",
         "title": "Calculadora de IMC",
         "description": "Una calculadora de IMC (Índice de Masa Corporal) simple y funcional, desarrollada con HTML, CSS y JavaScript. Esta herramienta permite a los usuarios ingresar su peso y altura para calcular su IMC, proporcionando una evaluación rápida y fácil de su condición corporal."
       },
-      "project7": {
+      "project6": {
         "alt": "Copia de Alta Fidelidad de Netflix",
         "title": "Réplica de Netflix",
         "description": "Un modelo de alta fidelidad de la interfaz de Netflix, desarrollado solo con HTML y CSS. Este proyecto se enfoca en la reproducción visual del diseño de la plataforma, proporcionando una experiencia visual similar a la original, sin funcionalidades interactivas."
       },
-      "project8": {
+      "project7": {
         "alt": "Cronómetro",
         "title": "Cronómetro",
         "description": "Cronómetro simple desarrollado con JavaScript, HTML y CSS, que permite a los usuarios iniciar, pausar y reiniciar el tiempo."
       },
-      "project9": {
+      "project8": {
         "alt": "Validador de CPF",
         "title": "Validador de CPF",
         "description": "Una herramienta simple construida con JavaScript puro para validar números de CPF basada en el algoritmo oficial."
       },
-      "project10": {
+      "project9": {
         "alt": "Juego Piedra, Papel y Tijera",
         "title": "Juego Piedra, Papel y Tijera",
         "description": "Un juego interactivo de Piedra, Papel y Tijera desarrollado con HTML, CSS y JavaScript donde los usuarios pueden jugar contra la computadora, probando sus habilidades y suerte."
       },
-      "project11": {
+      "project10": {
         "alt": "Dashboard de análisis de salarios en el área de datos",
         "title": "Dashboard de análisis de salarios en el área de datos",
         "description": "Un dashboard interactivo construido con Python y Streamlit para explorar y analizar datos de salarios en el campo de Data Science, basado en datos recopilados en los últimos años."
       },
-      "project12": {
+      "project11": {
         "alt": "Proyecto Portafolio Profesional",
         "title": "Portafolio Profesional",
         "description": "Página de portafolio desarrollada para presentar mi trayectoria y proyectos. Creada con HTML, CSS y JavaScript puros, incluye modo claro/oscuro y diseño responsivo para una agradable experiencia."
       },
-      "project13": {
+      "project12": {
         "alt": "Banco Java",
         "title": "Java Bank",
         "description": "Sistema bancario en Java para control de cuentas, carteras e inversiones. Permite crear cuentas, realizar transferencias, invertir, consultar saldo e historial de operaciones. Enfocado en buenas prácticas de POO, manejo de excepciones y arquitectura modular."
+      },
+      "project13": {
+        "alt": "Proyecto Nikel - Aplicación Web de Finanzas Personales",
+        "title": "Nikel",
+        "description": "Nikel es una aplicación web de finanzas personales diseñada para ayudar a los usuarios a organizar sus finanzas sin esfuerzo. Permite a los usuarios realizar un seguimiento de sus ingresos y gastos, ver su saldo actual y gestionar transacciones en una interfaz simple e intuitiva."
       },
       "project14": {
         "alt": "Hoja de ruta interactiva para desarrolladores y profesionales de TI",
