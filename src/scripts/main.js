@@ -92,24 +92,26 @@ function startTyping(text) {
   typeAnimation();
 }
 
-window.addEventListener("load", () => {
-  const slideContainer = document.querySelector(".certificates-slide");
-  if (slideContainer) {
-    const slideContent = slideContainer.innerHTML;
-    slideContainer.innerHTML += slideContent;
-  }
-});
+const slideContainer = document.querySelector(".certificates-slide");
+if (slideContainer) {
+  const slideContent = slideContainer.innerHTML;
+  slideContainer.innerHTML += slideContent;
+}
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
+let isScrolling = false;
+
 window.addEventListener("scroll", () => {
-  if (scrollTopBtn) {
-    if (window.scrollY > 500) {
-      scrollTopBtn.classList.add("show");
-    } else {
-      scrollTopBtn.classList.remove("show");
-    }
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
+      if (scrollTopBtn) {
+        scrollTopBtn.classList.toggle("show", window.scrollY > 500);
+      }
+      isScrolling = false;
+    });
+    isScrolling = true;
   }
-});
+}, { passive: true });
 
 // Intersection Observer for animations
 document.addEventListener("DOMContentLoaded", () => {
@@ -147,6 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
   createAnimationObserver(".project", "in-view", 0.2);
   createAnimationObserver(".btn-show-projects", "in-view", 0.2);
   createAnimationObserver(".form-container", "in-view", 0.15);
+  createAnimationObserver(".about-metrics", "in-view", 0.2);
+  createAnimationObserver(".about-academic-info", "in-view", 0.2);
+  createAnimationObserver(".about-soft-skills", "in-view", 0.2);
+  createAnimationObserver(".timeline-item", "in-view", 0.3);
 });
 
 document.addEventListener("languageChanged", (e) => {

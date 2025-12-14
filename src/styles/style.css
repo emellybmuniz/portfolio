@@ -45,7 +45,7 @@ body {
 /* --- Global Title --- */
 .title {
   text-align: center;
-  font-size: 45px;
+  font-size: clamp(2rem, 5vw, 2.8125rem);
   font-weight: 500;
   text-transform: uppercase;
   opacity: 0;
@@ -276,6 +276,8 @@ body {
   margin: 0 auto;
   max-width: 1400px;
   cursor: default;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px; 
 }
 
 .projects .title {
@@ -319,12 +321,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   opacity: 0;
-  will-change: opacity, transform;
-}
-
-.projects .project:hover {
-  will-change: transform;
-  border: 1.5px solid var(--primary-color);
 }
 
 .projects .project.active {
@@ -557,6 +553,8 @@ body {
     rgba(17, 24, 39, 0.8)
   );
   width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 .about-grid {
@@ -583,7 +581,7 @@ body {
 }
 
 .about-grid h3 {
-  font-size: 24px;
+  font-size: clamp(1.25rem, 2vw + 1rem, 1.5rem);
   font-weight: 600;
   margin-bottom: 20px;
   color: var(--primary-color);
@@ -596,7 +594,7 @@ body {
   font-family: var(--font-secondary);
   line-height: 1.7;
   color: var(--text-secondary-color);
-  font-size: 16px;
+  font-size: clamp(0.9rem, 0.5vw + 0.75rem, 1rem);
 }
 
 .about-journey p {
@@ -617,9 +615,17 @@ body {
 
 .about-soft-skills {
   grid-area: soft-skills;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
 .about-academic-info {
   grid-area: academic-info;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
 .about-journey {
   grid-area: journey;
@@ -643,6 +649,10 @@ body {
   padding: 0;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
 
 .metric-card {
@@ -659,12 +669,12 @@ body {
 }
 
 .metric-card i {
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: var(--primary-color);
 }
 
 .metric-card .metric-content h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw + 1rem, 2rem);
   font-weight: 700;
   color: var(--text-color);
   margin: 0 0 5px 0;
@@ -674,7 +684,7 @@ body {
 }
 
 .metric-card .metric-content p {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1vw + 0.6rem, 0.9rem);
   color: var(--text-secondary-color);
   margin: 0;
   line-height: 1.4;
@@ -682,7 +692,7 @@ body {
 
 .about-academic-info h3 i {
   margin-right: 10px;
-  font-size: 22px;
+  font-size: clamp(1.1rem, 1.5vw + 0.8rem, 1.375rem);
   vertical-align: middle;
 }
 
@@ -728,6 +738,10 @@ body {
 .timeline-item {
   position: relative;
   margin-bottom: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
 
 .timeline-item:last-child {
@@ -748,7 +762,7 @@ body {
 }
 
 .timeline-content h4 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   font-weight: 600;
   margin-bottom: 4px;
   color: var(--text-color);
@@ -756,7 +770,7 @@ body {
 
 .timeline-content .timeline-date,
 .timeline-content .timeline-company {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
   color: var(--text-secondary-color);
   display: block;
 }
@@ -766,7 +780,7 @@ body {
   margin-bottom: 4px;
 }
 .timeline-content .timeline-location {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
   color: var(--text-secondary-color);
   display: block;
   margin-bottom: 4px;
@@ -774,7 +788,7 @@ body {
 }
 
 .timeline-content .timeline-description {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
   color: var(--text-secondary-color);
   margin-top: 10px;
   line-height: 1.5;
@@ -852,6 +866,8 @@ body {
     var(--bg-color),
     rgba(17, 24, 39, 0.8)
   );
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 .skills .container {
@@ -1244,6 +1260,8 @@ title-decorator {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
 }
 
 .certificates .title {
@@ -1315,6 +1333,8 @@ title-decorator {
   width: 100%;
   background: rgb(27, 26, 26);
   padding: 48px 15px 80px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
 }
 
 .form-container .title {
@@ -1688,6 +1708,14 @@ body.body-no-scroll #scrollTopBtn {
   animation-delay: 0.1s;
 }
 
+.about-metrics.in-view,
+.about-academic-info.in-view,
+.about-soft-skills.in-view,
+.timeline-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -1788,11 +1816,7 @@ body.body-no-scroll #scrollTopBtn {
   animation: glow 4s infinite ease-in-out;
 }
 
-@media (max-width: 1350px) {
-  .projects .project {
-    max-width: 390px;
-  }
-}
+
 
 @media (max-width: 1200px) {
   body {
@@ -1824,6 +1848,12 @@ body.body-no-scroll #scrollTopBtn {
     text-align: center;
     align-items: center;
   }
+
+  .home .informations p {
+    max-width: 620px;
+
+  }
+
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -1867,7 +1897,7 @@ body.body-no-scroll #scrollTopBtn {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .menu-toggle {
     display: block;
   }
@@ -1930,6 +1960,7 @@ body.body-no-scroll #scrollTopBtn {
     align-items: center;
   }
 
+ 
   .footer-column {
     justify-self: center;
   }
