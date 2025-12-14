@@ -110,6 +110,11 @@
         "alt": "Banco Java",
         "title": "Java Bank",
         "description": "Sistema bancário em Java para controle de contas, carteiras e investimentos. Permite criar contas, realizar transferências, investir, consultar saldo e histórico de operações. Focado em boas práticas de POO, tratamento de exceções e arquitetura modular."
+      },
+      "project14": {
+        "alt": "Roadmap interativo para desenvolvedores e profissionais de TI",
+        "title": "Path4developers",
+        "description": "Um roadmap interativo e inteligente que guia profissionais de TI em sua jornada de aprendizado, combinando rastreamento de progresso, persistência de dados e o poder da IA Gemini para explicações e sugestões de projetos personalizados. Tenha controle total do seu plano de estudos, customizando cada passo do seu caminho."
       }
     },
     "about": {
@@ -140,8 +145,18 @@
         "cvLink": "clique aqui para ver meu currículo"
       },
       "timeline": {
-        "item1": { "title": "Projetos Autônomos - Frontend", "location": "Rio de Janeiro, Brasil", "date": "2024 - Presente", "desc": "Desenvolvimento de projetos web com foco em UX/UI, utilizando HTML, CSS, JavaScript e Git/GitHub para criar soluções funcionais e acessíveis, com exploração de integrações back-end." },
-        "item2": { "title": "Embaixadora Universitária", "location": "Rio de Janeiro, Brasil", "date": "2025 - Presente", "desc": "Representante da DIO para promover inovação e conectar a plataforma à comunidade acadêmica, desenvolvendo liderança e habilidades técnicas através de projetos e eventos." }
+        "item1": {
+          "title": "Projetos Autônomos - Frontend",
+          "location": "Rio de Janeiro, Brasil",
+          "date": "2024 - Presente",
+          "desc": "Desenvolvimento de projetos web com foco em UX/UI, utilizando HTML, CSS, JavaScript e Git/GitHub para criar soluções funcionais e acessíveis, com exploração de integrações back-end."
+        },
+        "item2": {
+          "title": "Embaixadora Universitária",
+          "location": "Rio de Janeiro, Brasil",
+          "date": "2025 - Presente",
+          "desc": "Representante da DIO para promover inovação e conectar a plataforma à comunidade acadêmica, desenvolvendo liderança e habilidades técnicas através de projetos e eventos."
+        }
       }
     },
     "skills": {

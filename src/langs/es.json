@@ -110,6 +110,11 @@
         "alt": "Banco Java",
         "title": "Java Bank",
         "description": "Sistema bancario en Java para control de cuentas, carteras e inversiones. Permite crear cuentas, realizar transferencias, invertir, consultar saldo e historial de operaciones. Enfocado en buenas prácticas de POO, manejo de excepciones y arquitectura modular."
+      },
+      "project14": {
+        "alt": "Hoja de ruta interactiva para desarrolladores y profesionales de TI",
+        "title": "Path4developers",
+        "description": "Una hoja de ruta interactiva e inteligente que guía a los profesionales de TI en su viaje de aprendizaje, combinando seguimiento de progreso, persistencia de datos y el poder de IA Gemini para explicaciones y sugerencias de proyectos personalizados. Ten control total de tu plan de estudios, personalizando cada paso de tu camino."
       }
     },
     "about": {
@@ -140,8 +145,18 @@
         "cvLink": "haz clic aquí para ver mi currículum"
       },
       "timeline": {
-        "item1": { "title": "Proyectos Autónomos - Frontend", "location": "Río de Janeiro, Brasil", "date": "2024 - Presente", "desc": "Desarrollo de proyectos web con enfoque en UX/UI, utilizando HTML, CSS, JavaScript y Git/GitHub para crear soluciones funcionales y accesibles, con exploración de integraciones back-end." },
-        "item2": { "title": "Embajadora Universitaria", "location": "Río de Janeiro, Brasil", "date": "2025 - Presente", "desc": "Representante de DIO para promover la innovación y conectar la plataforma con la comunidad académica, desarrollando liderazgo y habilidades técnicas a través de proyectos y eventos." }
+        "item1": {
+          "title": "Proyectos Autónomos - Frontend",
+          "location": "Río de Janeiro, Brasil",
+          "date": "2024 - Presente",
+          "desc": "Desarrollo de proyectos web con enfoque en UX/UI, utilizando HTML, CSS, JavaScript y Git/GitHub para crear soluciones funcionales y accesibles, con exploración de integraciones back-end."
+        },
+        "item2": {
+          "title": "Embajadora Universitaria",
+          "location": "Río de Janeiro, Brasil",
+          "date": "2025 - Presente",
+          "desc": "Representante de DIO para promover la innovación y conectar la plataforma con la comunidad académica, desarrollando liderazgo y habilidades técnicas a través de proyectos y eventos."
+        }
       }
     },
     "skills": {
@@ -195,5 +210,4 @@
       "backLink": "Volver al Inicio"
     }
   }
-  }
-  
+}

@@ -110,6 +110,11 @@
         "alt": "Java Bank Project",
         "title": "Java Bank",
         "description": "Java banking system for managing accounts, portfolios, and investments. Allows you to create accounts, make transfers, invest, check balances, and view transaction history. Focused on OOP best practices, exception handling, and modular architecture."
+      },
+      "project14": {
+        "alt": "Interactive roadmap for developers and IT professionals",
+        "title": "Path4developers",
+        "description": "An interactive and intelligent roadmap that guides IT professionals in their learning journey, combining progress tracking, data persistence, and the power of AI Gemini for explanations and personalized project suggestions. Have complete control over your study plan, customizing each step of your path."
       }
     },
     "about": {
@@ -140,8 +145,18 @@
         "cvLink": "click here to view my resume"
       },
       "timeline": {
-        "item1": { "title": "Freelance Projects - Frontend", "location": "Rio de Janeiro, Brazil", "date": "2024 - Current", "desc": "Development of web projects with a focus on UX/UI, using HTML, CSS, JavaScript, and Git/GitHub to create functional and accessible solutions, with exploration of back-end integrations." },
-        "item2": { "title": "University Ambassador", "location": "Rio de Janeiro, Brazil", "date": "2025 - Current", "desc": "Representative for DIO to promote innovation and connect the platform to the academic community, developing leadership and technical skills through projects and events." }
+        "item1": {
+          "title": "Freelance Projects - Frontend",
+          "location": "Rio de Janeiro, Brazil",
+          "date": "2024 - Current",
+          "desc": "Development of web projects with a focus on UX/UI, using HTML, CSS, JavaScript, and Git/GitHub to create functional and accessible solutions, with exploration of back-end integrations."
+        },
+        "item2": {
+          "title": "University Ambassador",
+          "location": "Rio de Janeiro, Brazil",
+          "date": "2025 - Current",
+          "desc": "Representative for DIO to promote innovation and connect the platform to the academic community, developing leadership and technical skills through projects and events."
+        }
       }
     },
     "skills": {
