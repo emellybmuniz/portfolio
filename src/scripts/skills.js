@@ -103,6 +103,24 @@ document.addEventListener("DOMContentLoaded", () => {
       icon: "src/assets/images-skills-svg/mongodb.svg",
       color: { from: "#104828", to: "#0A2C18" },
     },
+    {
+      name: "Next.js",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/nextjs.svg",
+      color: { from: "#000000", to: "#444444" },
+    },
+    {
+      name: "Tailwind CSS",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/tailwind.svg",
+      color: { from: "#06B6D4", to: "#38BDF8" },
+    },
+    {
+      name: "Bootstrap",
+      category: ["frontend"],
+      icon: "src/assets/images-skills-svg/bootstrap.svg",
+      color: { from: "#fff", to: "#D899FF" },
+    },
   ];
 
   const categories = [
