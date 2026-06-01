@@ -1,0 +1,34 @@
+{
+  "name": "emelly-portfolio",
+  "version": "3.0.0",
+  "description": "Portfolio de Emelly Beatriz",
+  "scripts": {
+    "dev": "hugo server -D",
+    "build": "hugo --gc --minify",
+    "preview": "hugo server",
+    "lint:css": "stylelint assets/scss/**/*.scss",
+    "lint:js": "eslint assets/ts/**/*.ts",
+    "format": "prettier --write 'assets/**/*.{ts,scss,html}'",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "portfolio",
+    "hugo",
+    "typescript",
+    "performance",
+    "frontend"
+  ],
+  "author": "Emelly Beatriz",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "postcss": "^8.4.0",
+    "postcss-preset-env": "^9.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}

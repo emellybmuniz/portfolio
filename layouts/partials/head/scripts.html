@@ -1,0 +1,22 @@
+<!-- TypeScript/JavaScript compilado e minificado -->
+{{ $ts := resources.Get "ts/main.ts" }} {{ if $ts }} {{ $js := $ts | js.Build (dict "minify" true) }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
+
+<!-- Analytics carregado apenas após idle (nao bloqueia FCP) -->
+<script>
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(() => {
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-QQ38JRQ412";
+      script.async = true;
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QQ38JRQ412");
+    });
+  }
+</script>

@@ -1,0 +1,154 @@
+{{ define "main" }}
+{{ $projects := .RegularPages }}
+{{ $categoryLabels := dict
+  "frontend" "Frontend"
+  "backend" "Backend"
+  "fullstack" "Full Stack"
+  "ui-ux" "UI/UX"
+  "cli" "CLI"
+  "api" "API"
+}}
+{{ $projectTechnologies := slice }}
+{{ $projectCategories := slice }}
+{{ range $projects }}
+  {{ with .Params.technologies }}
+    {{ $projectTechnologies = $projectTechnologies | append . }}
+  {{ end }}
+  {{ with .Params.categories }}
+    {{ range . }}
+      {{ if not (in $projectCategories .) }}
+        {{ $projectCategories = $projectCategories | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $projectCategories = $projectCategories | append . }}
+  {{ end }}
+{{ end }}
+{{ $projectTechnologies = $projectTechnologies | uniq | sort }}
+{{ $projectCategories = $projectCategories | uniq | sort }}
+
+{{ $projectTechnologies = sort $projectTechnologies }}
+{{ $projectCategories = sort $projectCategories }}
+
+<section class="projects projects--all projects-explorer" id="projects" data-projects-explorer>
+  <div class="projects-explorer__container">
+    <header class="projects-explorer__hero">
+      <div class="projects-explorer__hero-copy">
+        <p class="projects-explorer__eyebrow">{{ i18n "projects.list_eyebrow" }}</p>
+        <h1 class="projects-explorer__title">{{ i18n "projects.list_title" }}</h1>
+      </div>
+
+      <div class="projects-explorer__meta" aria-label="Resumo da lista de projetos">
+        <span class="projects-explorer__meta-chip">
+          <strong data-projects-total>{{ len $projects }}</strong>
+          {{ i18n "projects.total_label" }}
+        </span>
+        <span class="projects-explorer__meta-chip">
+          <strong>{{ len $projectTechnologies }}</strong>
+          {{ i18n "projects.technologies_label" }}
+        </span>
+        <span class="projects-explorer__meta-chip">
+          <strong>{{ len $projectCategories }}</strong>
+          {{ i18n "projects.categories_label" }}
+        </span>
+      </div>
+    </header>
+
+    <div class="projects-explorer__layout">
+      <aside class="projects-explorer__filters" aria-label="{{ i18n "projects.filters_title" }}">
+        <div class="projects-explorer__filters-header">
+          <div>
+            <h2>{{ i18n "projects.filters_title" }}</h2>
+          </div>
+          <button class="projects-explorer__clear" type="button" data-projects-clear>{{ i18n "projects.clear" }}</button>
+        </div>
+
+        <label class="projects-explorer__field">
+          <span>{{ i18n "projects.search_placeholder" }}</span>
+          <input type="search" placeholder="{{ i18n "projects.search_placeholder" }}" data-projects-search />
+        </label>
+
+        <label class="projects-explorer__field">
+          <span>{{ i18n "projects.technologies_label" }}</span>
+          <select data-projects-tech>
+            <option value="all">{{ i18n "projects.tech_all" }}</option>
+            {{ range $projectTechnologies }}
+              <option value="{{ lower . }}">{{ . }}</option>
+            {{ end }}
+          </select>
+        </label>
+
+        <label class="projects-explorer__field">
+          <span>{{ i18n "projects.categories_label" }}</span>
+          <select data-projects-category>
+            <option value="all">{{ i18n "projects.category_all" }}</option>
+            {{ range $projectCategories }}
+              {{ $label := index $categoryLabels . | default (. | title) }}
+              <option value="{{ lower . }}">{{ $label }}</option>
+            {{ end }}
+          </select>
+        </label>
+
+        <label class="projects-explorer__field">
+          <span>{{ i18n "about.demo" }}</span>
+          <select data-projects-demo>
+            <option value="all">{{ i18n "projects.demo_all" }}</option>
+            <option value="yes">{{ i18n "projects.demo_yes" }}</option>
+            <option value="no">{{ i18n "projects.demo_no" }}</option>
+          </select>
+        </label>
+
+        <label class="projects-explorer__field">
+          <span>{{ i18n "projects.sort_title" }}</span>
+          <select data-projects-sort>
+            <option value="recent">{{ i18n "projects.sort_recent" }}</option>
+            <option value="featured">{{ i18n "projects.sort_featured" }}</option>
+            <option value="oldest">{{ i18n "projects.sort_oldest" }}</option>
+            <option value="title">{{ i18n "projects.sort_title" }}</option>
+          </select>
+        </label>
+
+        <p class="projects-explorer__counter">
+          <span>{{ i18n "projects.visible" }}</span>
+          <strong data-projects-count>{{ len $projects }}</strong>
+        </p>
+      </aside>
+
+      <section class="projects-explorer__results" aria-label="Lista de projetos">
+        <div class="projects-explorer__results-header">
+          <p class="projects-explorer__results-summary">
+            <span data-projects-summary>{{ len $projects }}</span> {{ i18n "projects.results_found" }}
+          </p>
+        </div>
+
+        <div class="projects-explorer__grid" data-projects-grid>
+          {{ range sort $projects "Date" "desc" }}
+            {{ $technologies := .Params.technologies | default (slice) }}
+            {{ $categories := .Params.categories | default (slice) }}
+            {{ $description := .Params.description | default .Summary | plainify }}
+            {{ $hasDemo := and .Params.liveDemo (ne .Params.liveDemo "#") }}
+            <div
+              class="projects-explorer__item"
+              data-project-item
+              data-title="{{ .Title | plainify | lower }}"
+              data-description="{{ $description | plainify | lower }}"
+              data-technologies="{{ delimit $technologies " " | lower }}"
+              data-categories="{{ delimit $categories " " | lower }}"
+              data-featured="{{ if .Params.featured }}yes{{ else }}no{{ end }}"
+              data-has-demo="{{ if $hasDemo }}yes{{ else }}no{{ end }}"
+              data-date="{{ .Date.Format "2006-01-02" }}"
+              data-searchable="{{ printf "%s %s" .Title $description | plainify | lower }}"
+            >
+              {{ partial "components/project-card.html" . }}
+            </div>
+          {{ end }}
+        </div>
+
+        <p class="projects-explorer__empty-state is-hidden" data-projects-empty>
+          {{ i18n "projects.no_results" }}
+        </p>
+      </section>
+    </div>
+  </div>
+</section>
+{{- partial "sections/footer.html" . -}}
+{{ end }}

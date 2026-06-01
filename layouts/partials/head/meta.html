@@ -1,0 +1,31 @@
+<!-- SEO & Open Graph -->
+<title>{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<meta name="description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta name="keywords" content="{{ delimit ($.Params.keywords | default $.Site.Params.keywords) "," }}" />
+<meta name="author" content="{{ .Site.Params.author }}" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if eq .Kind "home" }}website{{ else }}article{{ end }}" />
+<meta property="og:title" content="{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta property="og:description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ if .Params.image }}<meta property="og:image" content="{{ .Params.image }}" />{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- Preconnect para melhor performance -->
+<!-- Fontes locais usadas agora -->
+
+<!-- Lang alternate -->
+{{ range .Sites }}
+  {{ if ne .Language.Lang $.Site.Language.Lang }}
+    <link rel="alternate" hreflang="{{ lower .Language.Lang }}" href="{{ .Home.RelPermalink }}" />
+  {{ end }}
+{{ end }}

@@ -1,0 +1,43 @@
+{{ if and .IsHome (eq (lower .Site.Language.Lang) "pt-br") }}
+<script>
+  (() => {
+    let savedLanguage = null;
+    try {
+      savedLanguage = localStorage.getItem("lang");
+    } catch (error) {
+    }
+
+      {{- $paths := dict -}}
+      {{- range .AllTranslations }}{{ $paths = merge $paths (dict (lower .Language.Lang) .RelPermalink) }}{{ end -}}
+      const languagePaths = {{ $paths | jsonify | safeJS }};
+
+    const normalize = (value) => String(value || "").toLowerCase();
+    const resolveLanguage = (value) => {
+      const normalized = normalize(value);
+
+      if (normalized.startsWith("pt")) return "pt-br";
+      if (normalized.startsWith("es")) return "es";
+      if (normalized.startsWith("en")) return "en";
+
+      return null;
+    };
+
+    const browserLanguages = [
+      savedLanguage,
+      ...(typeof navigator !== "undefined" && navigator.languages ? navigator.languages : []),
+      typeof navigator !== "undefined" ? navigator.language : null,
+    ];
+
+    const preferredLanguage = browserLanguages
+      .map(resolveLanguage)
+      .find(Boolean);
+
+    const targetUrl = languagePaths[preferredLanguage];
+
+    if (preferredLanguage && preferredLanguage !== "pt-br" && targetUrl) {
+        const { search, hash } = window.location;
+        window.location.replace(targetUrl + search + hash);
+    }
+  })();
+</script>
+{{ end }}

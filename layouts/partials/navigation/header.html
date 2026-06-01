@@ -1,0 +1,51 @@
+<header class="header">
+  <!-- Logo/Home Link -->
+  {{- $homePath := .Site.Home.RelPermalink -}}
+  {{ if .IsHome }}
+  <a href="{{ .Site.Home.RelPermalink }}" class="header__logo">
+    <div class="header__logo-badge">EB</div>
+  </a>
+  {{ end }}
+
+  <!-- Menu Toggle (Mobile) -->
+  <button
+    class="header__menuToggle_button"
+    id="menuToggle"
+    aria-label="{{ i18n "nav.home" }}"
+    aria-expanded="false"
+  >
+    {{ with resources.Get "icons/bars-solid-full.svg" }}{{ .Content | safeHTML
+    }}{{ end }}
+  </button>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      {{ if or (eq .Section "about") (eq .Section "projects") }}
+      <li class="header__nav-item">
+        <a href="{{ .Site.Home.RelPermalink }}" class="header__nav-link">
+          {{ with resources.Get "icons/house-solid-full.svg" }}
+          <span class="header__nav-icon" aria-hidden="true">
+            {{ .Content | safeHTML }}
+          </span>
+          {{ end }}
+          <span>{{ i18n "nav.home" }}</span>
+        </a>
+      </li>
+      {{ end }} {{ range .Site.Menus.main }}
+      <li class="header__nav-item">
+        <a
+          href="{{ if eq .Identifier "about" }}{{ .URL | relURL }}{{ else if eq .Identifier "skills" }}{{ printf "%s#skills" $homePath }}{{ else if eq .Identifier "certificates" }}{{ printf "%s#certificates" $homePath }}{{ else if eq .Identifier "contact" }}{{ if eq $.Section "about" }}{{ printf "%s#contact" $.RelPermalink }}{{ else }}{{ printf "%s#contact" $homePath }}{{ end }}{{ else }}{{ .URL | relURL }}{{ end }}"
+          class="header__nav-link"
+        >
+          {{ with .Params.icon }} {{ $icon := resources.Get (printf
+          "icons/%s.svg" .) }} {{ if $icon }}
+          <span class="header__nav-icon" aria-hidden="true">
+            {{ $icon.Content | safeHTML }}
+          </span>
+          {{ end }} {{ end }}
+          <span>{{ i18n (printf "nav.%s" .Identifier) }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

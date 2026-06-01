@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "pt-BR" }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (prefersDark ? "violet" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+
+    {{- partial "head/meta.html" . -}}
+    {{- partial "head/language-redirect.html" . -}}
+    {{- partial "head/styles.html" . -}}
+    {{- partial "head/favicons.html" . -}}
+  </head>
+  <body class="{{ if eq .Section "about" }}page-about{{ else if .IsHome }}page-home{{ else }}page-{{ .Section }}{{ end }}">
+    <a href="#main-content" class="skip-link sr-only">Pular para o conteúdo principal</a>
+
+    {{- partial "navigation/header.html" . -}}
+
+    <main id="main-content">{{- block "main" . }} {{- end }}</main>
+
+    {{- partial "head/scripts.html" . -}}
+  </body>
+</html>

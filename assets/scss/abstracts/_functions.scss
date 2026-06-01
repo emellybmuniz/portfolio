@@ -1,0 +1,29 @@
+/**
+ * ABSTRACTS / FUNCTIONS
+ * Funções SCSS reutilizáveis
+ */
+
+/* Converter pixels para rem */
+@function to-rem($pixels) {
+  @if unit($pixels) == "px" {
+    @return ($pixels / 16px) * 1rem;
+  } @else {
+    @return ($pixels / 16) * 1rem;
+  }
+}
+
+/* Converter pixels para em */
+@function to-em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}
+
+/* Gerar escala de cor com ajuste de opacity */
+@function color-alpha($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
+/* Calcular contraste */
+@function luminance($color) {
+  @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) /
+    255;
+}

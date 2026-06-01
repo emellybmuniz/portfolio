@@ -1,0 +1,96 @@
+baseURL = 'https://emellybmuniz.github.io/portfolio/'
+defaultContentLanguage = 'pt-BR'
+defaultContentLanguageInSubdir = false
+pageSize = 12
+enableRobotsTXT = true
+enableGitInfo = false
+pluralizeListTitles = false
+disableKinds = ["taxonomy", "term"]
+
+# Outputs
+[outputs]
+home = ['HTML', 'JSON']
+
+# Markup
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    style = "monokai"
+
+# Params
+[params]
+  author = "Emelly Beatriz"
+  cvLink = "/downloads/emelly-beatriz-cv-pt.pdf"
+  
+  # Social
+  [params.social]
+    linkedin = "https://www.linkedin.com/in/emellybmuniz/"
+    github = "https://github.com/emellybmuniz"
+    instagram = "https://www.instagram.com/emellybmuniz"
+    email = "emellybmuniz@gmail.com"
+
+  # Performance
+  [params.performance]
+    lazyLoadImages = true
+    minifyHTML = true
+    minifyCSS = true
+    minifyJS = true
+
+# Idiomas / Languages
+[languages]
+  [languages.pt-BR]
+    languageCode = "pt-BR"
+    languageName = "Português (BR)"
+    title = "Emelly Beatriz | Desenvolvedora Frontend - Portfólio de Projetos"
+    weight = 1
+    [languages.pt-BR.params]
+      description = "Portfólio de Emelly Beatriz, desenvolvedora frontend apaixonada por tecnologia e design. Explore meus projetos em HTML, CSS, JavaScript, Python e veja como transformo ideias em soluções digitais funcionais e estéticas."
+      keywords = ["Desenvolvedora Frontend", "Portfólio", "Emelly Beatriz", "Web Developer", "Projetos", "HTML", "CSS", "JavaScript", "Python", "UI/UX"]
+    
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    title = "Emelly Beatriz | Frontend Developer - Project Portfolio"
+    weight = 2
+    [languages.en.params]
+      description = "Portfolio of Emelly Beatriz, a frontend developer passionate about technology and design. Explore my projects in HTML, CSS, JavaScript, Python and see how I turn ideas into functional and aesthetic digital solutions."
+      keywords = ["Frontend Developer", "Portfolio", "Emelly Beatriz", "Web Developer", "Projects", "HTML", "CSS", "JavaScript", "Python", "UI/UX"]
+
+  [languages.es]
+    languageCode = "es"
+    languageName = "Español"
+    title = "Emelly Beatriz | Desarrolladora Frontend - Portafolio de Proyectos"
+    weight = 3
+    [languages.es.params]
+      description = "Portafolio de Emelly Beatriz, desarrolladora frontend apasionada por la tecnología y el diseño. Explora mis proyectos en HTML, CSS, JavaScript, Python y mira cómo convierto ideas en soluciones digitales funcionales y estéticas."
+      keywords = ["Desarrolladora Frontend", "Portafolio", "Emelly Beatriz", "Web Developer", "Proyectos", "HTML", "CSS", "JavaScript", "Python", "UI/UX"]
+
+# Menu Principal
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    url = "/about/"
+    weight = 10
+    [menu.main.params]
+      icon = "user-solid-full"
+  [[menu.main]]
+    identifier = "skills"
+    url = "/#skills"
+    weight = 20
+    [menu.main.params]
+      icon = "star-solid-full"
+  [[menu.main]]
+    identifier = "certificates"
+    url = "/#certificates"
+    weight = 30
+    [menu.main.params]
+      icon = "award-solid-full"
+  [[menu.main]]
+    identifier = "contact"
+    url = "/#contact"
+    weight = 40
+    [menu.main.params]
+      icon = "paper-plane-solid-full"

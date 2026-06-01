@@ -1,0 +1,144 @@
+<footer class="footer">
+  <div class="footer__container">
+    {{- $homePath := $.Site.Home.RelPermalink -}}
+    {{- $certificatesPath := printf "%s#certificates" $homePath -}}
+    {{- $contactPath := printf "%s#contact" $homePath -}}
+    {{- if eq .Section "about" -}}
+      {{- $contactPath = printf "%s#contact" $.RelPermalink -}}
+    {{- end -}}
+
+    <div class="footer__column footer__column--brand">
+      <h3 class="footer__heading">Emelly Beatriz</h3>
+      <p class="footer__text">{{ i18n "footer.brand" }}</p>
+
+      <ul class="footer__socials">
+        {{ with .Site.Params.social.linkedin }}
+        <li>
+          <a href="{{ . }}" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            {{ with resources.Get "icons/linkedin.svg" }}{{ .Content | safeHTML }}{{ end }}
+          </a>
+        </li>
+        {{ end }}
+        {{ with .Site.Params.social.github }}
+        <li>
+          <a href="{{ . }}" class="footer__social-link footer__social-link--github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            {{ with resources.Get "icons/github.svg" }}{{ .Content | safeHTML }}{{ end }}
+          </a>
+        </li>
+        {{ end }}
+        {{ with .Site.Params.social.instagram }}
+        <li>
+          <a href="{{ . }}" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            {{ with resources.Get "icons/instagram.svg" }}{{ .Content | safeHTML }}{{ end }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="footer__column footer__column--links">
+      <h3 class="footer__heading" id="footerQuickLinksLabel">{{ i18n "footer.quick_links" }}</h3>
+      <ul class="footer__list">
+        <li><a href="{{ $homePath }}#hero" class="footer__link" id="footerHomeLink">{{ i18n "nav.home" }}</a></li>
+        <li><a href="{{ $homePath }}#projects" class="footer__link" id="footerProjectsLink">{{ i18n "nav.projects" }}</a></li>
+        <li><a href="{{ $homePath }}#skills" class="footer__link" id="footerSkillsLink">{{ i18n "nav.skills" }}</a></li>
+        <li><a href="{{ $certificatesPath }}" class="footer__link" id="footerCertificatesLink">{{ i18n "nav.certificates" }}</a></li>
+        <li><a href="{{ .Site.Params.cvLink | relURL }}" class="footer__link" id="footerDownloadCv" download="CV_Emelly_Beatriz.pdf"><span>{{ i18n "footer.download_cv" }}</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer__column footer__column--contact">
+      <h3 class="footer__heading" id="footerContactLabel">{{ i18n "footer.contact" }}</h3>
+
+      <div class="footer__contact-items">
+        {{ with .Site.Params.social.email }}
+        <a href="mailto:{{ . }}" class="footer__contact-link">
+          <span class="footer__contact-label">{{ i18n "footer.email" }}</span>
+          <span class="footer__contact-value">{{ . }}</span>
+        </a>
+        {{ end }}
+        <a href="https://wa.me/5521990836960" class="footer__contact-link">
+          <span class="footer__contact-label">{{ i18n "footer.phone" }}</span>
+          <span class="footer__contact-value">(21) 99083-6960</span>
+        </a>
+      </div>
+
+      <div class="footer__controls">
+        <div class="footer__control-group" id="themeDropdownContainer">
+          <button class="footer__control-btn footer__control-btn--theme" id="themeToggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Selecionar tema">
+            <span class="footer__control-icon" id="themeActiveIcon" aria-hidden="true"></span>
+            <span class="footer__control-label" id="themeActiveLabel">{{ i18n "footer.theme_violet" }}</span>
+            <svg class="footer__control-caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="m5 8 5 5 5-5" />
+            </svg>
+          </button>
+
+          <div class="footer__dropdown" id="themeMenu" role="menu" hidden>
+            <button type="button" class="footer__dropdown-item" data-theme="light" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_light" }}</span>
+              <span class="footer__dropdown-item-meta">01</span>
+            </button>
+            <button type="button" class="footer__dropdown-item" data-theme="violet" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_violet" }}</span>
+              <span class="footer__dropdown-item-meta">02</span>
+            </button>
+            <button type="button" class="footer__dropdown-item" data-theme="extra-dark" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_dark" }}</span>
+              <span class="footer__dropdown-item-meta">03</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer__control-group" id="langDropdownContainer">
+          <button class="footer__control-btn footer__control-btn--lang" id="langToggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Selecionar idioma">
+            <span class="footer__control-label" id="langToggleLabel">PT</span>
+            <svg class="footer__control-caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="m5 8 5 5 5-5" />
+            </svg>
+          </button>
+
+          <div class="footer__dropdown footer__dropdown--lang" id="langMenu" role="menu" hidden>
+            {{- range $.Site.Languages -}}
+              {{- if eq (lower .Lang) "pt-br" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="pt-BR" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "lang.pt" }}</span>
+              <span class="footer__dropdown-item-meta">PT</span>
+            </button>
+              {{- end -}}
+            {{- end -}}
+            {{- range $.Site.Languages -}}
+              {{- if eq (lower .Lang) "en" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="en" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "lang.en" }}</span>
+              <span class="footer__dropdown-item-meta">EN</span>
+            </button>
+              {{- end -}}
+            {{- end -}}
+            {{- range $.Site.Languages -}}
+              {{- if eq (lower .Lang) "es" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="es" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "lang.es" }}</span>
+              <span class="footer__dropdown-item-meta">ES</span>
+            </button>
+              {{- end -}}
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__copyright" id="footerCopyright">© {{ now.Year }} Emelly B. Muniz. {{ i18n "footer.copyright" }}</p>
+  </div>
+</footer>
+
+<button
+  type="button"
+  id="scrollTopBtn"
+    title="{{ i18n "footer.back_to_top" }}"
+    aria-label="{{ i18n "footer.back_to_top" }}"
+>
+  {{ with resources.Get "icons/up-long-solid-full.svg" }}{{ .Content | safeHTML
+  }}{{ end }}
+</button>

@@ -1,0 +1,82 @@
+{{ with . }}
+  <article class="project-card" data-category="{{ with .Params.categories }}{{ delimit . " " }}{{ end }}">
+    <div class="project-card__image-wrapper" data-parallax data-parallax-speed="0.05">
+      {{- /* Procura pela imagem dentro da pasta do projeto */ -}}
+      {{- $image := .Resources.GetMatch .Params.imageCover -}}
+      {{- if $image -}}
+        {{- /* Cria uma versão WebP e uma fallback (original format) */ -}}
+        {{- $thumbnailWebP := $image.Resize "600x webp" -}}
+        {{- $thumbnailFallback := $image.Resize "600x" -}}
+        <a href="{{ .RelPermalink }}" class="project-card__image-link" aria-label="Ver detalhes do projeto {{ .Title }}">
+          <picture>
+            <source srcset="{{ $thumbnailWebP.RelPermalink }}" type="image/webp" />
+            <img
+              src="{{ $thumbnailFallback.RelPermalink }}"
+              alt="Capa do projeto {{ .Title }}"
+              class="project-card__image"
+              loading="lazy"
+              decoding="async"
+              width="{{ $thumbnailFallback.Width }}"
+              height="{{ $thumbnailFallback.Height }}"
+            />
+          </picture>
+        </a>
+      {{- else -}}
+        <div class="project-card__image-placeholder"><span>{{ .Title }}</span></div>
+      {{- end -}}
+      {{ if .Params.technologies }}
+        <div class="project-card__overlay">
+          <ul class="project-card__technologies">
+            {{ range .Params.technologies }}
+              <li class="project-card__tech-badge">{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="project-card__content">
+      <div class="project-card__meta-row">
+        <span class="project-card__eyebrow">
+          {{ with .Params.categories }}{{ delimit . " / " }}{{ else }}Projeto{{ end }}
+        </span>
+        <span class="project-card__status">
+          {{ if and .Params.liveDemo (ne .Params.liveDemo "#") }}Demo disponível{{ else }}Sem demo{{ end }}
+        </span>
+      </div>
+
+      <h3 class="project-card__title">{{ .Title }}</h3>
+
+      {{ $projectDescription := .Params.description | default .Summary }}
+      <p class="project-card__description">{{ $projectDescription | plainify | truncate 150 }}</p>
+
+      {{ if .Params.technologies }}
+        <ul class="project-card__tech-list" aria-label="Tecnologias do projeto">
+          {{ range first 4 .Params.technologies }}
+            <li class="project-card__tech-badge">{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      <div class="project-card__footer">
+        <span class="project-card__date">{{ .Date.Format "2006" }}</span>
+
+        <div class="project-card__actions">
+          {{ if and .Params.liveDemo (ne .Params.liveDemo "#") }}
+            <a href="{{ .Params.liveDemo }}" class="btn btn--sm project-card__action project-card__action--demo" target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          {{ end }}
+          {{ if .Params.repositoryUrl }}
+            <a href="{{ .Params.repositoryUrl }}" class="btn btn--sm project-card__action project-card__action--repository" target="_blank" rel="noopener noreferrer">
+              Repository
+            </a>
+          {{ end }}
+          <a href="{{ .RelPermalink }}" class="btn btn--sm project-card__action project-card__action--details">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+{{ end }}

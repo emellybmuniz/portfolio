@@ -1,0 +1,93 @@
+/**
+ * BASE / GLOBALS
+ * Estilos globais e inicializações
+ */
+
+/* Focus visível global */
+:focus-visible {
+  @include focus-ring;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--border-radius-full);
+
+  &:hover {
+    background: var(--color-primary-light);
+  }
+}
+
+/* Firefox */
+* {
+  scrollbar-color: var(--color-primary) var(--color-surface);
+  scrollbar-width: thin;
+}
+
+/* Placeholder */
+::placeholder {
+  color: var(--color-text-tertiary);
+  opacity: 1;
+}
+
+/* Screen reader only */
+.sr-only {
+  @include sr-only;
+}
+
+/* Visually hidden */
+.visually-hidden {
+  @include visually-hidden;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

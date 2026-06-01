@@ -1,0 +1,6 @@
+<!-- CSS Principal (Hugo Pipeline) -->
+{{ $scss := resources.Get "scss/main.scss" }} {{ $css := $scss | css.Sass (dict
+"outputStyle" "compressed") }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+
+<!-- Normalize/Reset já incluído em main.scss -->

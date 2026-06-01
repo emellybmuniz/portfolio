@@ -1,0 +1,323 @@
+[nav.about]
+other = "Sobre mí"
+
+[nav.skills]
+other = "Habilidades"
+
+[nav.certificates]
+other = "Certificaciones"
+
+[nav.contact]
+other = "Contacto"
+
+[nav.home]
+other = "Inicio"
+
+[nav.projects]
+other = "Proyectos"
+
+[hero.title]
+other = "¡Hola, soy Emelly Beatriz!"
+
+[hero.subtitle]
+other = "Desarrolladora Frontend & Entusiasta de UX"
+
+[hero.description]
+other = "Apasionada por crear experiencias digitales intuitivas y visualmente impactantes, buscando siempre colaborar en proyectos innovadores. ✨"
+
+[hero.projects_cta]
+other = "Mis Proyectos"
+
+[hero.download_cv]
+other = "Descargar CV"
+
+[projects.featured_title]
+other = "Proyectos Destacados"
+
+[projects.view_more]
+other = "Mostrar más proyectos"
+
+[projects.view_all]
+other = "Ver todos los proyectos"
+
+[projects.list_eyebrow]
+other = "Proyectos y tecnologías"
+
+[projects.list_title]
+other = "Proyectos Disponibles"
+
+[projects.total_label]
+other = "proyectos"
+
+[projects.technologies_label]
+other = "tecnologías"
+
+[projects.categories_label]
+other = "categorías"
+
+[projects.filters_title]
+other = "Filtros"
+
+[projects.clear]
+other = "Limpiar"
+
+[projects.search_placeholder]
+other = "Ej.: React, API, UI/UX"
+
+[projects.tech_all]
+other = "Todas las tecnologías"
+
+[projects.category_all]
+other = "Todas las categorías"
+
+[projects.demo_all]
+other = "Con o sin demo"
+
+[projects.demo_yes]
+other = "Con demo"
+
+[projects.demo_no]
+other = "Sin demo"
+
+[projects.sort_recent]
+other = "Más recientes"
+
+[projects.sort_featured]
+other = "Más relevantes"
+
+[projects.sort_oldest]
+other = "Más antiguos"
+
+[projects.sort_title]
+other = "Nombre A-Z"
+
+[projects.visible]
+other = "Proyectos visibles"
+
+[projects.results_found]
+other = "resultados encontrados"
+
+[projects.no_results]
+other = "Ningún proyecto coincide con los filtros actuales."
+
+[skills.title]
+other = "Habilidades y Tecnologías"
+
+[skills.all]
+other = "Todas las Habilidades"
+
+[skills.frontend]
+other = "Frontend"
+
+[skills.backend]
+other = "Backend"
+
+[skills.tools]
+other = "Herramientas"
+
+[skills.design]
+other = "Diseño"
+
+[skills.tags]
+other = "Etiquetas de habilidad"
+
+[certificates.title]
+other = "Certificaciones y Credenciales"
+
+[certificates.all]
+other = "Todas"
+
+[certificates.empty]
+other = "Aún no se han añadido certificados."
+
+[contact.title]
+other = "Hablemos"
+
+[contact.subtitle]
+other = "¡Abierta a nuevas oportunidades y colaboraciones! Comparte un resumen de tu proyecto o idea y te responderé pronto para revisar juntos los próximos pasos."
+
+[contact.email]
+other = "Correo"
+
+[contact.linkedin]
+other = "LinkedIn"
+
+[contact.github]
+other = "GitHub"
+
+[contact.instagram]
+other = "Instagram"
+
+[contact.whatsapp]
+other = "WhatsApp"
+
+[contact.location]
+other = "Ubicación"
+
+[contact.name]
+other = "Nombre"
+
+[contact.name_placeholder]
+other = "Tu nombre"
+
+[contact.message]
+other = "Mensaje"
+
+[contact.message_placeholder]
+other = "Tu mensaje aquí..."
+
+[contact.send]
+other = "Enviar Mensaje"
+
+[dashboard.experience_label]
+other = "Experiencia"
+
+[dashboard.experience_value]
+other = "3+ años"
+
+[dashboard.experience_desc]
+other = "Desarrollo Frontend"
+
+[dashboard.projects_label]
+other = "Proyectos"
+
+[dashboard.projects_value]
+other = "15+"
+
+[dashboard.projects_desc]
+other = "Desarrollados"
+
+[dashboard.academic_title]
+other = "Formación Académica"
+
+[dashboard.academic_degree]
+other = "Licenciatura en Ingeniería de Software"
+
+[dashboard.academic_uni]
+other = "Universidad Ejemplo"
+
+[dashboard.academic_period]
+other = "2018 - 2022"
+
+[dashboard.soft_skills]
+other = "Habilidades Blandas"
+
+[dashboard.professional_journey]
+other = "Trayectoria Profesional"
+
+[dashboard.timeline_intro]
+other = "Una línea de tiempo que destaca mis experiencias recientes y más relevantes en desarrollo de software y soporte al ecosistema."
+
+[dashboard.timeline_title]
+other = "Desarrolladora Front-end"
+
+[dashboard.timeline_date]
+other = "2022 - Presente"
+
+[dashboard.timeline_company]
+other = "Río de Janeiro, Brasil"
+
+[dashboard.timeline_content]
+other = "Construcción de interfaces modernas, responsivas y escalables con foco en rendimiento y accesibilidad. Creación de layouts responsivos, código limpio y uso práctico de bibliotecas y frameworks."
+
+[about.back]
+other = "Proyectos"
+
+[about.details]
+other = "Detalles del Proyecto"
+
+[about.overview]
+other = "Resumen del proyecto"
+
+[about.applied_tech]
+other = "Tecnologías Aplicadas y Decisiones"
+
+[about.context]
+other = "1. Contexto y Arquitectura"
+
+[about.challenges]
+other = "2. Desafíos Resueltos"
+
+[about.code]
+other = "Algoritmo de Buffer"
+
+[about.critical_challenge]
+other = "Desafío crítico"
+
+[about.ux_challenge]
+other = "Desafío de UX"
+
+[about.repository]
+other = "Repositorio"
+
+[about.demo]
+other = "Demostración"
+
+[about.no_demo]
+other = "Sin demo"
+
+[about.demo_available]
+other = "Demo disponible"
+
+[single.back]
+other = "Proyectos"
+
+[single.dev_time]
+other = "Tiempo de desarrollo"
+
+[single.role]
+other = "Rol"
+
+[single.accessibility]
+other = "Accesibilidad"
+
+[single.type]
+other = "Tipo"
+
+[single.copy_snippet]
+other = "Copiar snippet"
+
+[footer.brand]
+other = "¿Llegaste hasta el final? Si mi trabajo despertó tu interés, sigamos conversando y convirtamos la próxima idea en algo sólido."
+
+[footer.quick_links]
+other = "Enlaces Rápidos"
+
+[footer.contact]
+other = "Contacto"
+
+[footer.download_cv]
+other = "Descargar CV"
+
+[footer.email]
+other = "Correo"
+
+[footer.phone]
+other = "Teléfono"
+
+[footer.location]
+other = "Ubicación"
+
+[footer.language]
+other = "Idioma"
+
+[footer.theme_light]
+other = "Claro"
+
+[footer.theme_violet]
+other = "Violeta"
+
+[footer.theme_dark]
+other = "Extra Oscuro"
+
+[footer.back_to_top]
+other = "Volver arriba"
+
+[lang.pt]
+other = "Portugués"
+
+[lang.en]
+other = "Inglês"
+
+[lang.es]
+other = "Español"

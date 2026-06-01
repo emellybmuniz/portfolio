@@ -1,0 +1,323 @@
+[nav.about]
+other = "About"
+
+[nav.skills]
+other = "Skills"
+
+[nav.certificates]
+other = "Certificates"
+
+[nav.contact]
+other = "Contact"
+
+[nav.home]
+other = "Home"
+
+[nav.projects]
+other = "Projects"
+
+[hero.title]
+other = "Hi, I'm Emelly Beatriz!"
+
+[hero.subtitle]
+other = "Frontend Developer & UX Enthusiast"
+
+[hero.description]
+other = "Passionate about creating intuitive and visually impactful digital experiences, always looking to collaborate on innovative projects. ✨"
+
+[hero.projects_cta]
+other = "My Projects"
+
+[hero.download_cv]
+other = "Download CV"
+
+[projects.featured_title]
+other = "Featured Projects"
+
+[projects.view_more]
+other = "Show more projects"
+
+[projects.view_all]
+other = "View all projects"
+
+[projects.list_eyebrow]
+other = "Projects and technologies"
+
+[projects.list_title]
+other = "Available Projects"
+
+[projects.total_label]
+other = "projects"
+
+[projects.technologies_label]
+other = "technologies"
+
+[projects.categories_label]
+other = "categories"
+
+[projects.filters_title]
+other = "Filters"
+
+[projects.clear]
+other = "Clear"
+
+[projects.search_placeholder]
+other = "Ex.: React, API, UI/UX"
+
+[projects.tech_all]
+other = "All technologies"
+
+[projects.category_all]
+other = "All categories"
+
+[projects.demo_all]
+other = "With or without demo"
+
+[projects.demo_yes]
+other = "With demo"
+
+[projects.demo_no]
+other = "Without demo"
+
+[projects.sort_recent]
+other = "Most recent"
+
+[projects.sort_featured]
+other = "Most relevant"
+
+[projects.sort_oldest]
+other = "Oldest"
+
+[projects.sort_title]
+other = "Name A-Z"
+
+[projects.visible]
+other = "Visible projects"
+
+[projects.results_found]
+other = "results found"
+
+[projects.no_results]
+other = "No projects match the current filters."
+
+[skills.title]
+other = "Skills"
+
+[skills.all]
+other = "All Skills"
+
+[skills.frontend]
+other = "Frontend"
+
+[skills.backend]
+other = "Backend"
+
+[skills.tools]
+other = "Tools"
+
+[skills.design]
+other = "Design"
+
+[skills.tags]
+other = "Skill tags"
+
+[certificates.title]
+other = "Certifications & Credentials"
+
+[certificates.all]
+other = "All"
+
+[certificates.empty]
+other = "No certificates added yet."
+
+[contact.title]
+other = "Let's Talk"
+
+[contact.subtitle]
+other = "Open to new opportunities and collaborations! Share a quick summary of your project or idea, and I'll get back to you soon so we can discuss the next steps together."
+
+[contact.email]
+other = "Email"
+
+[contact.linkedin]
+other = "LinkedIn"
+
+[contact.github]
+other = "GitHub"
+
+[contact.instagram]
+other = "Instagram"
+
+[contact.whatsapp]
+other = "WhatsApp"
+
+[contact.location]
+other = "Location"
+
+[contact.name]
+other = "Name"
+
+[contact.name_placeholder]
+other = "Your name"
+
+[contact.message]
+other = "Message"
+
+[contact.message_placeholder]
+other = "Your message here..."
+
+[contact.send]
+other = "Send Message"
+
+[dashboard.experience_label]
+other = "Experience"
+
+[dashboard.experience_value]
+other = "3+ years"
+
+[dashboard.experience_desc]
+other = "Frontend Development"
+
+[dashboard.projects_label]
+other = "Projects"
+
+[dashboard.projects_value]
+other = "15+"
+
+[dashboard.projects_desc]
+other = "Built"
+
+[dashboard.academic_title]
+other = "Academic Background"
+
+[dashboard.academic_degree]
+other = "Bachelor's in Software Engineering"
+
+[dashboard.academic_uni]
+other = "Example University"
+
+[dashboard.academic_period]
+other = "2018 - 2022"
+
+[dashboard.soft_skills]
+other = "Soft Skills"
+
+[dashboard.professional_journey]
+other = "Professional Journey"
+
+[dashboard.timeline_intro]
+other = "A timeline highlighting my recent and most relevant experiences in software development and ecosystem support."
+
+[dashboard.timeline_title]
+other = "Front-end Developer"
+
+[dashboard.timeline_date]
+other = "2022 - Present"
+
+[dashboard.timeline_company]
+other = "Rio de Janeiro, Brazil"
+
+[dashboard.timeline_content]
+other = "Building modern, responsive, and scalable interfaces with a focus on performance and accessibility. Creating responsive layouts, clean code, and practical use of libraries and frameworks."
+
+[about.back]
+other = "Projects"
+
+[about.details]
+other = "Project Details"
+
+[about.overview]
+other = "Project overview"
+
+[about.applied_tech]
+other = "Applied Technologies and Decisions"
+
+[about.context]
+other = "1. Context and Architecture"
+
+[about.challenges]
+other = "2. Challenges Solved"
+
+[about.code]
+other = "Buffer Algorithm"
+
+[about.critical_challenge]
+other = "Critical challenge"
+
+[about.ux_challenge]
+other = "UX challenge"
+
+[about.repository]
+other = "Repository"
+
+[about.demo]
+other = "Live Demo"
+
+[about.no_demo]
+other = "No demo"
+
+[about.demo_available]
+other = "Demo available"
+
+[single.back]
+other = "Projects"
+
+[single.dev_time]
+other = "Dev Time"
+
+[single.role]
+other = "Role"
+
+[single.accessibility]
+other = "Accessibility"
+
+[single.type]
+other = "Type"
+
+[single.copy_snippet]
+other = "Copy Snippet"
+
+[footer.brand]
+other = "Made it to the end? If my work sparked your interest, let's keep the conversation going and turn the next idea into something solid."
+
+[footer.quick_links]
+other = "Quick Links"
+
+[footer.contact]
+other = "Contact"
+
+[footer.download_cv]
+other = "Download CV"
+
+[footer.email]
+other = "Email"
+
+[footer.phone]
+other = "Phone"
+
+[footer.location]
+other = "Location"
+
+[footer.language]
+other = "Language"
+
+[footer.theme_light]
+other = "Light"
+
+[footer.theme_violet]
+other = "Violet"
+
+[footer.theme_dark]
+other = "Extra Dark"
+
+[footer.back_to_top]
+other = "Back to top"
+
+[lang.pt]
+other = "Portuguese"
+
+[lang.en]
+other = "English"
+
+[lang.es]
+other = "Spanish"

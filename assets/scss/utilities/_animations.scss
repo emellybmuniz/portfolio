@@ -1,0 +1,133 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(157, 78, 221, 0.6);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-glow {
+  /* avoid continuous infinite glow for performance; play once by default */
+  animation: glow 2s ease-in-out;
+}
+
+/* hide element at load, JS will un-hide and animate to avoid layout thrash */
+[data-initial-hide] {
+  display: none;
+}
+
+.projects__initial-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 480ms cubic-bezier(0.22, 0.9, 0.32, 1),
+    transform 480ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+
+.projects__initial-reveal.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Drive-scroll helpers */
+[data-parallax] {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  /* smoother, slightly longer transition for subtle parallax */
+  transition: transform 620ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+
+/* Staggered children utilities */
+[data-stagger] {
+}
+
+[data-stagger-item] {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 0.9, 0.32, 1),
+    transform 520ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+
+[data-stagger] .in-view [data-stagger-item],
+[data-stagger-item].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

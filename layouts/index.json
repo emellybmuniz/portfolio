@@ -1,0 +1,3 @@
+{{- /* Minimal JSON output for home to satisfy Hugo outputs */ -}}
+{{- $out := dict "title" .Site.Title "baseURL" .Site.BaseURL "description" .Site.Params.description -}}
+{{- printf "%s" ($out | jsonify) -}}

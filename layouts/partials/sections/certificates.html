@@ -1,0 +1,44 @@
+<section class="certificates" id="certificates">
+  <div class="certificates__container">
+    <h2 class="certificates__title">{{ i18n "certificates.title" }}</h2>
+
+    {{- $contentSite := $.Site -}} {{- if ne (lower $.Site.Language.Lang)
+    "pt-br" -}} {{- range .Sites -}} {{- if eq (lower .Language.Lang) "pt-br"
+    -}} {{- $contentSite = . -}} {{- end -}} {{- end -}} {{- end -}}
+
+    <div class="certificates__filters" data-filter-group="certificates">
+      <button
+        class="certificates__filter-btn certificates__filter-btn--active"
+        data-category="all"
+      >
+        <span class="certificates__filter-btn-icon" aria-hidden="true"
+          >{{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content |
+          safeHTML }}{{ end }}</span
+        >
+        <span>{{ i18n "certificates.all" }}</span>
+      </button>
+
+      {{/* Institution filters (no icons) */}}
+      <button class="certificates__filter-btn" data-category="dio">
+        <span>DIO</span>
+      </button>
+      <button class="certificates__filter-btn" data-category="uninter">
+        <span>Uninter</span>
+      </button>
+      <button class="certificates__filter-btn" data-category="udemy">
+        <span>Udemy</span>
+      </button>
+      <button class="certificates__filter-btn" data-category="alura">
+        <span>Alura</span>
+      </button>
+    </div>
+
+    <div class="certificates__grid" id="certificatesGrid">
+      {{ $certs := where $contentSite.RegularPages "Section" "certificates" }}
+      {{ if gt (len $certs) 0 }} {{ range $certs }} {{ partial
+      "components/certificate-card.html" . }} {{ end }} {{ else }}
+      <p class="certificates__empty-state">{{ i18n "certificates.empty" }}</p>
+      {{ end }}
+    </div>
+  </div>
+</section>

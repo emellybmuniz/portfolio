@@ -1,0 +1,41 @@
+<article class="cert-card" data-category="{{ lower (default "all" .Params.issuer) }}">
+  <!-- Parte Superior: Badge do Emissor e Carga Horária -->
+  <div class="cert-card__header">
+    {{ $issuer := .Params.issuer | default "Certificado" }}
+    {{ $issuerClass := lower $issuer | replaceRE "[^a-z0-9]" "-" }}
+    <span class="cert-card__badge cert-card__badge--{{ $issuerClass }}">
+      {{ $issuer }}
+    </span>
+    
+    {{ if .Params.hours }}
+    <div class="cert-card__hours">
+      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>{{ .Params.hours }}</span>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- Corpo Central: Título -->
+  <div class="cert-card__body">
+    <h3 class="cert-card__title">{{ .Title }}</h3>
+  </div>
+
+  <!-- Parte Inferior: ID e Link de Verificação -->
+  <div class="cert-card__footer">
+    {{ if .Params.code }}
+    <button class="cert-card__copy-btn js-copy-btn" data-clipboard-text="{{ .Params.code }}" aria-label="Copiar chave de verificação">
+      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+      <span>ID: {{ .Params.code }}</span>
+    </button>
+    {{ else }}<div></div>{{ end }}
+
+    {{ if .Params.credentialUrl }}
+    <a href="{{ .Params.credentialUrl }}" target="_blank" rel="noopener noreferrer" class="cert-card__verify-link" aria-label="Acessar credencial oficial">
+      <span>Verify</span>
+      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+    </a>
+    {{ end }}
+  </div>
+  <!-- Efeito Neon -->
+  <div class="cert-card__glow"></div>
+</article>

@@ -1,0 +1,106 @@
+<section class="hero" id="hero">
+  <div class="hero__container">
+    <div class="hero__content" data-observe data-observe-once="true">
+      <h1 class="hero__title">{{ i18n "hero.title" }}</h1>
+
+      <p
+        class="hero__subtitle"
+        data-animate="animate-fade-in-up"
+        data-observe-once="true"
+      >
+        <strong class="hero__highlight">{{ i18n "hero.subtitle" }}</strong>
+      </p>
+
+      <p class="hero__description">{{ i18n "hero.description" }}</p>
+
+      <div class="hero__ctas">
+        <a href="#projects" class="btn btn--primary btn--holographic">
+          {{ i18n "hero.projects_cta" }}
+        </a>
+        <a href="{{ .Site.Params.cvLink | relURL }}" class="btn btn--secondary" download="CV_Emelly_Beatriz.pdf">
+          {{ with resources.Get "icons/file-arrow-down-solid-full.svg" }}
+          <span class="btn__icon" aria-hidden="true"
+            >{{ .Content | safeHTML }}</span
+          >
+          {{ end }}
+          <span>{{ i18n "hero.download_cv" }}</span>
+        </a>
+      </div>
+
+      <ul class="hero__socials">
+        {{ with .Site.Params.social.linkedin }}
+        <li>
+          <a
+            href="{{ . }}"
+            class="hero__social-link hero__social-link--linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
+            {{ (resources.Get "icons/linkedin.svg").Content | safeHTML }}
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li>
+        {{ end }} {{ with .Site.Params.social.email }}
+        <li>
+          <a
+            href="mailto:{{ . }}"
+            class="hero__social-link hero__social-link--email"
+            title="Email"
+          >
+            {{ (resources.Get "icons/email.svg").Content | safeHTML }}
+            <span class="sr-only">Email</span>
+          </a>
+        </li>
+        {{ end }} {{ with .Site.Params.social.github }}
+        <li>
+          <a
+            href="{{ . }}"
+            class="hero__social-link hero__social-link--github"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
+            {{ (resources.Get "icons/github.svg").Content | safeHTML }}
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li>
+        {{ end }} {{ with .Site.Params.social.instagram }}
+        <li>
+          <a
+            href="{{ . }}"
+            class="hero__social-link hero__social-link--instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+          >
+            {{ (resources.Get "icons/instagram.svg").Content | safeHTML }}
+            <span class="sr-only">Instagram</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="hero__media">
+      <div class="hero__photo-shell">
+        <div class="hero__photo-inner" data-observe data-observe-once="true">
+          <picture class="hero__photo">
+            {{ $profile := resources.Get "images/hero/profile-picture.webp" }}
+            {{ if $profile }}
+            <img
+              src="{{ $profile.RelPermalink }}"
+              alt="{{ i18n "hero.title" }}"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="400"
+              height="400"
+            />
+            {{ end }}
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
