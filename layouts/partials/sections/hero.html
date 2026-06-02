@@ -18,11 +18,6 @@
           {{ i18n "hero.projects_cta" }}
         </a>
         <a href="{{ .Site.Params.cvLink | relURL }}" class="btn btn--secondary" download="CV_Emelly_Beatriz.pdf">
-          {{ with resources.Get "icons/file-arrow-down-solid-full.svg" }}
-          <span class="btn__icon" aria-hidden="true"
-            >{{ .Content | safeHTML }}</span
-          >
-          {{ end }}
           <span>{{ i18n "hero.download_cv" }}</span>
         </a>
       </div>
@@ -86,7 +81,7 @@
       <div class="hero__photo-shell">
         <div class="hero__photo-inner" data-observe data-observe-once="true">
           <picture class="hero__photo">
-            {{ $profile := resources.Get "images/hero/profile-picture.webp" }}
+            {{ $profile := resources.Get "images/hero/profile-picture.webp" | resources.Fingerprint }}
             {{ if $profile }}
             <img
               src="{{ $profile.RelPermalink }}"

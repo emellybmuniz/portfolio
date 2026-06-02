@@ -43,9 +43,7 @@
     border-color: var(--color-primary);
     background-color: rgba(157, 78, 221, 0.05);
     color: var(--color-text);
-    box-shadow:
-      0 0 0 1px rgba(45, 212, 191, 0.05),
-      0 8px 18px rgba(145, 61, 207, 0.08);
+    box-shadow: var(--shadow-sm);
     transform: translateY(-0.5px);
   }
 
@@ -104,9 +102,7 @@
   );
   border-color: rgba(116, 64, 182, 0.36);
   color: var(--text-on-primary, #fff);
-  box-shadow:
-    0 0 0 1px rgba(116, 64, 182, 0.1),
-    0 10px 22px rgba(116, 64, 182, 0.18);
+  box-shadow: 0 10px 22px rgba(var(--shadow-accent-rgb), 0.18);
 }
 
 .skills__filter-btn--active {
@@ -202,6 +198,7 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-surface-border);
   border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
   padding: var(--spacing-sm);
   text-align: center;
   @include transition;
@@ -217,7 +214,7 @@
   &:hover {
     border-color: rgba(var(--color-secondary-rgb), 0.4);
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px var(--secondary-color-shadow);
+    box-shadow: var(--shadow-card-hover);
 
     &::after {
       opacity: 1;

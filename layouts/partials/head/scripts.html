@@ -1,9 +1,7 @@
-<!-- TypeScript/JavaScript compilado e minificado -->
 {{ $ts := resources.Get "ts/main.ts" }} {{ if $ts }} {{ $js := $ts | js.Build (dict "minify" true) }}
 <script src="{{ $js.RelPermalink }}" defer></script>
 {{ end }}
 
-<!-- Analytics carregado apenas após idle (nao bloqueia FCP) -->
 <script>
   if ("requestIdleCallback" in window) {
     requestIdleCallback(() => {

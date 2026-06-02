@@ -157,12 +157,6 @@ class Portfolio {
 
   private getThemePreference(): ThemeMode {
     const saved = localStorage.getItem("theme");
-    const themeLabel =
-      this.elements.themeMenu
-        ?.querySelector<HTMLElement>(
-          `[data-theme="${this.currentThemeMode}"] .footer__dropdown-item-title`,
-        )
-        ?.textContent?.trim() || themeLabels[this.currentThemeMode];
     if (saved === "light" || saved === "violet" || saved === "extra-dark") {
       return saved;
     }

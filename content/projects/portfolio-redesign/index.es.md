@@ -8,12 +8,12 @@ imageCoverFallback: "portfolio-project-cover.png"
 categories:
   - frontend
 technologies:
-  - Hugo
-  - SCSS
-  - Typescript
-  - JavaScript
-  - HTML5
-  - CSS3
+  - hugo
+  - scss
+  - typescript
+  - javascript
+  - html
+  - css
 liveDemo: "https://example.com"
 repositoryUrl: "https://github.com/emellybmuniz/portfolio"
 ---

@@ -7,9 +7,9 @@
     } catch (error) {
     }
 
-      {{- $paths := dict -}}
+    {{- $paths := dict -}}
       {{- range .AllTranslations }}{{ $paths = merge $paths (dict (lower .Language.Lang) .RelPermalink) }}{{ end -}}
-      const languagePaths = {{ $paths | jsonify | safeJS }};
+    const languagePaths = {{ $paths | jsonify | safeJS }};
 
     const normalize = (value) => String(value || "").toLowerCase();
     const resolveLanguage = (value) => {

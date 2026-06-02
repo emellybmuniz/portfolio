@@ -1,24 +1,9 @@
 {{ define "main" }}
 {{ $technologies := .Params.technologies | default (slice "Hugo" "TypeScript" "SCSS") }}
 {{ $primaryTechs := first 3 $technologies }}
-{{ $categories := .Params.categories | default (slice "Projeto") }}
+{{ $categories := .Params.categories | default (slice) }}
 {{ $projectType := delimit $categories " / " }}
-{{ $summary := .Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lectus sed urna facilisis posuere em projetos digitais de alta qualidade." }}
-{{ $snippet := `export class ProjectBuffer {
-  private queue: T[] = [];
-  private frameId: number | null = null;
-
-  public push(item: T): void {
-    this.queue.push(item);
-    if (!this.frameId) {
-      this.frameId = requestAnimationFrame(() => {
-        const payload = [...this.queue];
-        this.queue = [];
-        this.frameId = null;
-      });
-    }
-  }
-}` }}
+{{ $summary := .Params.description }} 
 
 <article class="project-single">
   <section class="project-single__hero">
@@ -46,19 +31,19 @@
         <dl class="project-single__meta-grid">
           <div>
             <dt>{{ i18n "single.dev_time" }}</dt>
-            <dd>{{ .Params.developmentTime | default "3 semanas" }}</dd>
+            <dd>{{ .Params.metadata.duration }}</dd>
           </div>
           <div>
             <dt>{{ i18n "single.role" }}</dt>
-            <dd>{{ .Params.role | default "Frontend Developer" }}</dd>
+            <dd>{{ .Params.metadata.role }}</dd>
           </div>
           <div>
             <dt>{{ i18n "single.accessibility" }}</dt>
-            <dd>{{ .Params.accessibility | default "A validar com Lighthouse" }}</dd>
+            <dd>{{ .Params.metadata.accessibility }}</dd>
           </div>
           <div>
             <dt>{{ i18n "single.type" }}</dt>
-            <dd>{{ .Params.projectType | default $projectType }}</dd>
+            <dd>{{ $projectType }}</dd>
           </div>
         </dl>
 
@@ -78,17 +63,16 @@
     <section class="project-single__section" aria-labelledby="project-stack-title">
       <div class="project-single__section-heading">
         <h2 id="project-stack-title">{{ i18n "about.applied_tech" }}</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cada escolha técnica abaixo representa uma decisão de produto, performance e manutenção.</p>
+        {{ with .Params.stackIntro }}<p>{{ . }}</p>{{ end }}
       </div>
 
       <div class="project-single__stack-grid">
         {{ range $index, $tech := first 4 $technologies }}
           <article class="project-single__stack-card">
             <div class="project-single__stack-card-header">
-              <h3>{{ $tech }}</h3>
+              <h3>{{ $tech | title }}</h3>
               <span aria-hidden="true"></span>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nibh sed augue tincidunt luctus para sustentar uma experiência consistente.</p>
           </article>
         {{ end }}
       </div>
@@ -102,39 +86,27 @@
             <div class="project-single__content">
               {{ .Content }}
             </div>
-          {{ else }}
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo sit amet gravida commodo, ipsum nunc cursus justo, vitae porttitor urna lacus vitae mi.</p>
-            <p>Praesent luctus sem sed nibh porta, id posuere risus fermentum. Donec elementum, magna sed pulvinar sagittis, lorem erat bibendum nibh, at cursus ipsum lorem vitae arcu.</p>
           {{ end }}
         </section>
 
         <section class="project-single__topic">
           <h2><span aria-hidden="true"></span>{{ i18n "about.challenges" }}</h2>
           <div class="project-single__challenge-list">
-            <article class="project-single__challenge">
-              <p class="project-single__challenge-kicker">{{ i18n "about.critical_challenge" }}</p>
-              <h3>Estabilidade em cenários de alta interação</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta, risus vel pulvinar molestie, nibh justo consequat elit, et dignissim augue nisl in neque.</p>
-              <strong>Resolução: Lorem ipsum dolor sit amet com organização em camadas e feedback visual previsível.</strong>
-            </article>
-            <article class="project-single__challenge">
-              <p class="project-single__challenge-kicker">{{ i18n "about.ux_challenge" }}</p>
-              <h3>Leitura rápida sem perder densidade técnica</h3>
-              <p>Aliquam erat volutpat. Aenean pharetra elit eget eros vestibulum, sed porta lacus vulputate. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-              <strong>Resolução: cards de decisão, metadados escaneáveis e hierarquia visual clara.</strong>
-            </article>
+            {{ if .Params.metadata.challenges }}
+              {{ range $challenge := .Params.metadata.challenges }}
+                <article class="project-single__challenge">
+                  {{ with $challenge.kicker }}<p class="project-single__challenge-kicker">{{ . }}</p>{{ end }}
+                  {{ with $challenge.title }}<h3>{{ . }}</h3>{{ end }}
+                  {{ with $challenge.description }}<p>{{ . }}</p>{{ end }}
+                  {{ with $challenge.resolution }}<strong>{{ i18n "single.resolution" }}: {{ . }}</strong>{{ end }}
+                </article>
+              {{ end }}
+            {{ else }}
+              <p>{{ i18n "single.no_challenges" }}</p>
+            {{ end }}
           </div>
         </section>
 
-        <section class="project-single__code-card" aria-labelledby="project-code-title">
-          <div class="project-single__code-header">
-            <h2 id="project-code-title">{{ i18n "about.code" }}</h2>
-            <button class="js-copy-btn" type="button" data-clipboard-text="{{ $snippet | htmlEscape }}">
-              <span>{{ i18n "single.copy_snippet" }}</span>
-            </button>
-          </div>
-          <pre><code>{{ $snippet }}</code></pre>
-        </section>
       </div>
     </section>
   </div>

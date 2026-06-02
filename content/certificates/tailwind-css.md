@@ -1,5 +1,5 @@
 ---
-title: "Tailwind CSS & Design Systems Avançados"
+title: "tailwind CSS & Design Systems Avançados"
 date: 2025-09-01
 issuer: "Udemy"
 hours: "24h"

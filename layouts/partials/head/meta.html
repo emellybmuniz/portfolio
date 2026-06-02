@@ -20,8 +20,16 @@
 <!-- Canonical -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<!-- Preconnect para melhor performance -->
-<!-- Fontes locais usadas agora -->
+
+<!-- Preloads-->
+
+<link rel="preload" href="{{ "fonts/poppins-bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/raleway-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{ $profile := resources.Get "images/hero/profile-picture.webp" }}
+{{ if $profile }}
+<link rel="preload" href="{{ $profile.RelPermalink }}" as="image" fetchpriority="high">
+{{ end }}
+
 
 <!-- Lang alternate -->
 {{ range .Sites }}

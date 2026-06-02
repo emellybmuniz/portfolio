@@ -8,11 +8,13 @@
   "cli" "CLI"
   "api" "API"
 }}
-{{ $projectTechnologies := slice }}
+{{ $allTechnologies := slice }}
 {{ $projectCategories := slice }}
 {{ range $projects }}
   {{ with .Params.technologies }}
-    {{ $projectTechnologies = $projectTechnologies | append . }}
+    {{ range . }}
+      {{ $allTechnologies = $allTechnologies | append . }}
+    {{ end }}
   {{ end }}
   {{ with .Params.categories }}
     {{ range . }}
@@ -20,14 +22,10 @@
         {{ $projectCategories = $projectCategories | append . }}
       {{ end }}
     {{ end }}
-    {{ $projectCategories = $projectCategories | append . }}
   {{ end }}
 {{ end }}
-{{ $projectTechnologies = $projectTechnologies | uniq | sort }}
-{{ $projectCategories = $projectCategories | uniq | sort }}
-
-{{ $projectTechnologies = sort $projectTechnologies }}
-{{ $projectCategories = sort $projectCategories }}
+{{ $uniqueTechnologies := $allTechnologies | uniq | sort }}
+{{ $uniqueCategories := $projectCategories | uniq | sort }}
 
 <section class="projects projects--all projects-explorer" id="projects" data-projects-explorer>
   <div class="projects-explorer__container">
@@ -43,7 +41,7 @@
           {{ i18n "projects.total_label" }}
         </span>
         <span class="projects-explorer__meta-chip">
-          <strong>{{ len $projectTechnologies }}</strong>
+          <strong>{{ len $uniqueTechnologies }}</strong>
           {{ i18n "projects.technologies_label" }}
         </span>
         <span class="projects-explorer__meta-chip">
@@ -71,7 +69,7 @@
           <span>{{ i18n "projects.technologies_label" }}</span>
           <select data-projects-tech>
             <option value="all">{{ i18n "projects.tech_all" }}</option>
-            {{ range $projectTechnologies }}
+            {{ range $uniqueTechnologies }}
               <option value="{{ lower . }}">{{ . }}</option>
             {{ end }}
           </select>
@@ -81,7 +79,7 @@
           <span>{{ i18n "projects.categories_label" }}</span>
           <select data-projects-category>
             <option value="all">{{ i18n "projects.category_all" }}</option>
-            {{ range $projectCategories }}
+            {{ range $uniqueCategories }}
               {{ $label := index $categoryLabels . | default (. | title) }}
               <option value="{{ lower . }}">{{ $label }}</option>
             {{ end }}
@@ -101,8 +99,8 @@
           <span>{{ i18n "projects.sort_title" }}</span>
           <select data-projects-sort>
             <option value="recent">{{ i18n "projects.sort_recent" }}</option>
-            <option value="featured">{{ i18n "projects.sort_featured" }}</option>
             <option value="oldest">{{ i18n "projects.sort_oldest" }}</option>
+            <option value="featured">{{ i18n "projects.sort_featured" }}</option>
             <option value="title">{{ i18n "projects.sort_title" }}</option>
           </select>
         </label>

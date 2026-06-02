@@ -326,9 +326,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px) scale(0.96);
-  box-shadow:
-    0 10px 24px var(--primary-color-shadow),
-    0 2px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-xl);
   @include transition;
 
   &::before,

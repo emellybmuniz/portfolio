@@ -3,6 +3,7 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-surface-border);
   border-radius: 1rem;
+  box-shadow: var(--shadow-card);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -15,9 +16,7 @@
   &:hover {
     border-color: rgba(157, 78, 221, 0.4);
     transform: translateY(-3px);
-    box-shadow:
-      0 0 0 1px rgba(45, 212, 191, 0.08),
-      0 10px 20px rgba(145, 61, 207, 0.1);
+    box-shadow: var(--shadow-card-hover);
 
     .cert-card__glow {
       opacity: 1;
@@ -56,41 +55,13 @@
 }
 
 [data-theme="light"] .project-card,
-[data-theme="light"] .skill-card,
-[data-theme="light"] .dashboard__card,
-[data-theme="light"] .dashboard__metric-card,
-[data-theme="light"] .contact__card,
-[data-theme="light"] .cert-card {
-  box-shadow:
-    0 1px 2px rgba(17, 17, 17, 0.04),
-    0 10px 26px rgba(17, 17, 17, 0.06);
-}
-[data-theme="light"] .project-card,
 [data-theme="light"] .cert-card {
   background-color: var(--color-surface-elevated);
-}
-
-[data-theme="light"] .cert-card:hover,
-[data-theme="light"] .project-card:hover {
-  border-color: rgba(99, 102, 241, 0.28);
-  box-shadow:
-    0 0 0 1px rgba(99, 102, 241, 0.08),
-    0 14px 28px rgba(99, 102, 241, 0.09),
-    0 0 32px rgba(20, 184, 166, 0.04);
 }
 
 [data-theme="extra-dark"] .project-card,
 [data-theme="extra-dark"] .cert-card {
   background-color: var(--color-surface-elevated);
-}
-
-[data-theme="extra-dark"] .project-card:hover,
-[data-theme="extra-dark"] .cert-card:hover {
-  border-color: rgba(56, 189, 248, 0.28);
-  box-shadow:
-    0 0 0 1px rgba(56, 189, 248, 0.1),
-    0 16px 32px rgba(2, 6, 23, 0.34),
-    0 0 34px rgba(124, 92, 255, 0.06);
 }
 
 .cert-card__header {

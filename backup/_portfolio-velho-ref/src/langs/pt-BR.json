@@ -1,0 +1,213 @@
+{
+  "pt-BR": {
+    "meta": {
+      "title": "Emelly Beatriz | Desenvolvedora Frontend - Portfólio de Projetos",
+      "description": "Portfólio de Emelly Beatriz, desenvolvedora frontend apaixonada por tecnologia e design. Explore meus projetos em HTML, CSS, JavaScript, Python e veja como transformo ideias em soluções digitais funcionais e estéticas.",
+      "keywords": "Desenvolvedora Frontend, Portfólio, Emelly Beatriz, Web Developer, Projetos, HTML, CSS, JavaScript, Python, UI/UX",
+      "ogTitle": "Emelly Beatriz | Desenvolvedora Frontend - Portfólio",
+      "ogDescription": "Explore os projetos de Emelly Beatriz, uma desenvolvedora frontend que cria soluções digitais criativas e funcionais."
+    },
+    "header": {
+      "openMenu": "Abrir menu",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "certificates": "Certificações",
+      "themeButtonDark": "Tema Escuro",
+      "themeButtonLight": "Tema Claro",
+      "downloadCV": "Baixar CV",
+      "contactMe": "Fale Comigo",
+      "cvFile": "public/downloads/ptBR-cv.pdf",
+      "cvFileName": "CV_Emelly_Beatriz.pdf"
+    },
+    "home": {
+      "typed": "Olá, Sou a Emelly Beatriz!",
+      "jobTitle": "Desenvolvedora Frontend & Entusiasta de UI/UX",
+      "intro1": "Apaixonada por criar experiências digitais intuitivas e visualmente impactantes, buscando sempre colaborar em projetos inovadores. ✨",
+      "buttons": {
+        "projects": "Meus Projetos",
+        "downloadCV": "Baixar CV"
+      },
+      "profilePicAlt": "Foto de perfil de Emelly Beatriz",
+      "social": {
+        "linkedin": "Ir para o Linkedin",
+        "email": "Enviar E-mail",
+        "github": "Ir para GitHub",
+        "instagram": "Ir para o Instagram"
+      }
+    },
+    "projects": {
+      "title": "Meus projetos",
+      "showMore": "Mostrar mais",
+      "showLess": "Mostrar menos",
+      "demo": "Demonstração",
+      "repo": "Repositório",
+      "project0": {
+        "alt": "Projeto História do Mascote Android",
+        "title": "História do Mascote Android",
+        "description": "Um projeto que explora a história do mascote Android, desenvolvido com HTML e CSS. Este projeto apresenta uma narrativa visual sobre a evolução do icônico mascote do sistema operacional Android."
+      },
+      "project1": {
+        "alt": "Projeto Cordel Moderno",
+        "title": "Cordel Moderno",
+        "description": "Um projeto de Cordel Moderno desenvolvido com HTML e CSS, apresentando uma abordagem contemporânea para a tradicional literatura de cordel."
+      },
+      "project2": {
+        "alt": "Projeto Calculadora",
+        "title": "Calculadora",
+        "description": "Uma calculadora simples desenvolvida com HTML, CSS e JavaScript, permitindo que os usuários realizem operações matemáticas básicas de forma intuitiva e rápida."
+      },
+      "project3": {
+        "alt": "Projeto Sistema Solar",
+        "title": "Sistema Solar",
+        "description": "Um projeto interativo do Sistema Solar, desenvolvido com HTML, CSS e JavaScript. Este projeto permite que os usuários explorem os planetas do nosso sistema solar de forma visual e educativa, proporcionando uma experiência envolvente e informativa."
+      },
+      "project4": {
+        "alt": "Projeto Lista de Tarefas",
+        "title": "Lista de Tarefas",
+        "description": "Uma aplicação de Lista de Tarefas desenvolvida com HTML, CSS e JavaScript. Permite que os usuários adicionem e removam tarefas, proporcionando uma maneira simples e eficaz de gerenciar suas atividades diárias."
+      },
+      "project5": {
+        "alt": "Projeto Calculadora de IMC",
+        "title": "Calculadora de IMC",
+        "description": "Uma calculadora de IMC (Índice de Massa Corporal) simples e funcional, desenvolvida com HTML, CSS e JavaScript. Esta ferramenta permite que os usuários insiram seu peso e altura para calcular seu IMC, fornecendo uma avaliação rápida e fácil da sua condição corporal."
+      },
+      "project6": {
+        "alt": "Cópia de Alta Fidelidade da Netflix",
+        "title": "Netflix réplica",
+        "description": "Um modelo de alta fidelidade da interface da Netflix, desenvolvido apenas com HTML e CSS. Este projeto foca na reprodução visual do layout e design da plataforma, proporcionando uma experiência visual semelhante à original, sem funcionalidades interativas."
+      },
+      "project7": {
+        "alt": "Cronômetro",
+        "title": "Cronômetro",
+        "description": "Cronômetro simples desenvolvido com JavaScript, HTML e CSS, permitindo que os usuários iniciem, pausem e reiniciem o tempo."
+      },
+      "project8": {
+        "alt": "Validador de CPF",
+        "title": "Validador de CPF",
+        "description": "Uma ferramenta simples construída com JavaScript puro para validar números de CPF com base no algoritmo oficial."
+      },
+      "project9": {
+        "alt": "Jogo Pedra, Papel e Tesoura",
+        "title": "Jogo Pedra, Papel e Tesoura",
+        "description": "Um jogo interativo de Pedra, Papel e Tesoura desenvolvido com Html, CSS e JavaScript onde os usuários podem jogar contra o computador, testando suas habilidades e sorte."
+      },
+      "project10": {
+        "alt": "Dashboard de análise de salários na área de dados",
+        "title": "Dashboard de análise de salários na área de dados",
+        "description": "Um dashboard interativo construído com Python e Streamlit para explorar e analisar dados de salários no campo de Data Science, baseado em dados coletados nos últimos anos."
+      },
+      "project11": {
+        "alt": "Projeto Portfólio Profissional",
+        "title": "Portfólio Profissional",
+        "description": "Página de portfólio desenvolvida para apresentar minha trajetória e projetos. Criada com HTML, CSS e JavaScript puros, inclui modo claro/escuro e design responsivo para uma agradável experiência."
+      },
+      "project12": {
+        "alt": "Banco Java",
+        "title": "Java Bank",
+        "description": "Sistema bancário em Java para controle de contas, carteiras e investimentos. Permite criar contas, realizar transferências, investir, consultar saldo e histórico de operações. Focado em boas práticas de POO, tratamento de exceções e arquitetura modular."
+      },
+      "project13": {
+        "alt": "Projeto Nikel - Aplicativo Web de Finanças Pessoais",
+        "title": "Nikel",
+        "description": "O Nikel é um aplicativo web de finanças pessoais projetado para ajudar os usuários a organizar suas finanças sem esforço. Ele permite que os usuários acompanhem suas receitas e despesas, visualizem seu saldo atual e gerenciem transações em uma interface simples e intuitiva."
+      },
+      "project14": {
+        "alt": "Roadmap interativo para desenvolvedores e profissionais de TI",
+        "title": "Path4developers",
+        "description": "Um roadmap interativo e inteligente que guia profissionais de TI em sua jornada de aprendizado, combinando rastreamento de progresso, persistência de dados e o poder da IA Gemini para explicações e sugestões de projetos personalizados. Tenha controle total do seu plano de estudos, customizando cada passo do seu caminho."
+      }
+    },
+    "about": {
+      "metrics": {
+        "experience": { "value": "+1 ano", "label": "Experiência Frontend" },
+        "projects": { "value": "15+", "label": "Projetos Concluídos" }
+      },
+      "div2": {
+        "title": "Formação Acadêmica",
+        "course": "Engenharia de Software",
+        "university": "Centro Universitário Internacional Uninter",
+        "period": "2024 - 2028"
+      },
+      "soft_skills": {
+        "title": "Soft Skills",
+        "communication": "Comunicação",
+        "teamwork": "Trabalho em Equipe",
+        "adaptability": "Adaptabilidade",
+        "problem_solving": "Resolução de Problemas",
+        "empathy": "Empatia",
+        "critical_thinking": "Pensamento Crítico",
+        "creativity": "Criatividade",
+        "emotional_intelligence": "Inteligência Emocional"
+      },
+      "div3": {
+        "title": "Jornada Profissional",
+        "intro": "Esta é uma linha do tempo destacando minhas experiências mais recentes e importantes. Para uma visão completa da minha trajetória, ",
+        "cvLink": "clique aqui para ver meu currículo"
+      },
+      "timeline": {
+        "item1": {
+          "title": "Projetos Autônomos - Frontend",
+          "location": "Rio de Janeiro, Brasil",
+          "date": "2024 - Presente",
+          "desc": "Desenvolvedora frontend com habilidades em HTML, CSS e JavaScript, dedicada a criar interfaces dinâmicas e responsivas. Priorizo um código limpo e princípios de design centrados no usuário para construir experiências digitais intuitivas e inclusivas, enquanto exploro integrações de backend."
+        },
+        "item2": {
+          "title": "Embaixadora Universitária",
+          "location": "Rio de Janeiro, Brasil",
+          "date": "2025 - Presente",
+          "desc": "Representante da DIO para promover inovação e conectar a plataforma à comunidade acadêmica, desenvolvendo liderança e habilidades técnicas através de projetos e eventos."
+        }
+      }
+    },
+    "skills": {
+      "title": "Habilidades",
+      "allSkills": "Mostrar tudo",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Ferramentas",
+      "design": "Design",
+      "categoryText": "nesta categoria",
+      "skill": "habilidade",
+      "skills": "habilidades",
+      "noSkills": "Nenhuma skill encontrada para esta categoria."
+    },
+    "certificates": {
+      "title": "Certificações",
+      "openCertificate": "Abrir Certificado"
+    },
+    "form": {
+      "title": "Envie sua Mensagem!",
+      "nameLabel": "Nome",
+      "namePlaceholder": "Digite seu nome",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Digite seu e-mail",
+      "messageLabel": "Mensagem",
+      "messagePlaceholder": "Digite sua mensagem",
+      "submitButton": "Enviar",
+      "nextPage": "https://emellybmuniz.github.io/portfolio/thanks.html"
+    },
+    "footer": {
+      "aboutTitle": "Emelly Beatriz",
+      "aboutText": "Chegou até o fim? Muito legal! Se meu trabalho despertou seu interesse, não vamos encerrar por aqui. Conecte-se comigo para criarmos algo incrível juntos.",
+      "quickLinksTitle": "Links Rápidos",
+      "linkHome": "Início",
+      "contactTitle": "Contato",
+      "phone": "Telefone: (21) 99083-6960",
+      "theme": {
+        "light": "Tema Claro",
+        "dark": "Tema Escuro"
+      },
+      "copyright": "© 2025 Emelly B. Muniz. Todos os direitos reservados.",
+      "backToTop": "Voltar ao topo"
+    },
+    "drawer": {
+      "close": "Fechar"
+    },
+    "thanksPage": {
+      "title": "Obrigada pelo Contato!",
+      "header": "Obrigada!",
+      "message": "Sua mensagem foi enviada com sucesso. Retornarei em breve.",
+      "backLink": "Voltar ao Início"
+    }
+  }
+}

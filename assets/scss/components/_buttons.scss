@@ -65,7 +65,7 @@
 
 .btn--secondary {
   background-color: var(--color-secondary);
-  color: var(--text-on-secondary, var(--color-text));
+  color: var(--text-on-primary, var(--color-text));
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -111,7 +111,7 @@
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.1),
       0 8px 20px var(--secondary-color-shadow);
-    color: var(--text-on-secondary, white);
+    color: #ffffff;
 
     &::before {
       opacity: 1;

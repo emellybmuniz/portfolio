@@ -1,9 +1,3 @@
-/**
- * LAYOUT / HEADER
- * Estilos do cabeçalho/navbar
- * BEM: .header__elemento--modificador
- */
-
 .header {
   @include flex-between;
   align-items: center;
@@ -12,7 +6,6 @@
   padding: var(--spacing-2xl) var(--spacing-lg);
   position: relative;
   z-index: 100;
-
   @media (max-width: 768px) {
     padding: var(--spacing-lg);
   }
@@ -116,17 +109,26 @@ body.page-projects .header {
   background: none;
   border: none;
   color: var(--color-text);
-  font-size: 1.875rem;
+  font-size: 2rem;
   cursor: pointer;
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   z-index: 101;
+  @include flex-center;
+  min-width: 44px;
+  min-height: 44px;
 
   @media (max-width: 768px) {
     display: block;
   }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    display: block;
+  }
 }
 
-/* Navegação */
 .header__nav {
   display: flex;
   margin-left: auto;
@@ -134,15 +136,16 @@ body.page-projects .header {
   @media (max-width: 768px) {
     margin-left: 0;
     position: fixed;
-    top: 70px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    height: 100vh;
     background-color: var(--color-bg);
     flex-direction: column;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-5xl) var(--spacing-xl);
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-base) var(--timing-smooth);
     z-index: 99;
 
     &.is-active {
@@ -169,20 +172,20 @@ body.page-projects .header {
 .header__nav-link {
   @include flex-center;
   gap: var(--spacing-sm);
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 50px;
   @include transition;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl); 
   text-transform: capitalize;
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   position: relative;
   overflow: hidden;
   isolation: isolate;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: transparent;
 
-  i {
-    font-size: var(--font-size-sm);
+  span {
+    font-size: var(--font-size-md);
     color: currentColor;
     @include transition;
   }

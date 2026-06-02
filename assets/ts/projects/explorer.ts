@@ -6,7 +6,7 @@ export class ProjectsExplorer {
   private readonly elements: {
     cards: HTMLElement[];
     searchInput: HTMLInputElement | null;
-    techContainer: HTMLElement | null;
+    techSelect: HTMLSelectElement | null;
     categorySelect: HTMLSelectElement | null;
     demoSelect: HTMLSelectElement | null;
     sortSelect: HTMLSelectElement | null;
@@ -14,6 +14,7 @@ export class ProjectsExplorer {
     count: HTMLElement | null;
     summary: HTMLElement | null;
     emptyState: HTMLElement | null;
+    projectsGrid: HTMLElement | null; 
   };
   private lastControlUsed: HTMLElement | null = null;
 
@@ -25,7 +26,7 @@ export class ProjectsExplorer {
       searchInput: root.querySelector<HTMLInputElement>(
         "[data-projects-search]",
       ),
-      techContainer: root.querySelector<HTMLElement>("[data-projects-tech]"),
+      techSelect: root.querySelector<HTMLSelectElement>("[data-projects-tech]"),
       categorySelect: root.querySelector<HTMLSelectElement>(
         "[data-projects-category]",
       ),
@@ -37,6 +38,7 @@ export class ProjectsExplorer {
       count: root.querySelector<HTMLElement>("[data-projects-count]"),
       summary: root.querySelector<HTMLElement>("[data-projects-summary]"),
       emptyState: root.querySelector<HTMLElement>("[data-projects-empty]"),
+      projectsGrid: root.querySelector<HTMLElement>("[data-projects-grid]"), 
     };
 
     this.init();
@@ -47,12 +49,9 @@ export class ProjectsExplorer {
       this.lastControlUsed = event.currentTarget as HTMLElement;
       this.render();
     });
-    this.elements.techContainer?.addEventListener("change", (event) => {
-      const target = event.target as HTMLElement;
-      if (target.matches('input')) {
-        this.lastControlUsed = target;
-        this.render();
-      }
+    this.elements.techSelect?.addEventListener("change", (event) => {
+      this.lastControlUsed = event.currentTarget as HTMLElement;
+      this.render();
     });
     this.elements.categorySelect?.addEventListener("change", (event) => {
       this.lastControlUsed = event.currentTarget as HTMLElement;
@@ -70,13 +69,7 @@ export class ProjectsExplorer {
     this.elements.clearButton?.addEventListener("click", () => {
       this.lastControlUsed = this.elements.clearButton;
       if (this.elements.searchInput) this.elements.searchInput.value = "";
-      if (this.elements.techContainer) {
-        this.elements.techContainer
-          .querySelectorAll<HTMLInputElement>('input')
-          .forEach((cb) => {
-            cb.checked = false;
-          });
-      }
+      if (this.elements.techSelect) this.elements.techSelect.value = "all";
       if (this.elements.categorySelect)
         this.elements.categorySelect.value = "all";
       if (this.elements.demoSelect) this.elements.demoSelect.value = "all";
@@ -89,7 +82,12 @@ export class ProjectsExplorer {
 
   private getSortMode(): ProjectsSortMode {
     const value = this.elements.sortSelect?.value;
-    if (value === "oldest" || value === "title" || value === "featured") {
+    if (
+      value === "recent" ||
+      value === "oldest" ||
+      value === "title" ||
+      value === "featured"
+    ) {
       return value as ProjectsSortMode;
     }
 
@@ -98,17 +96,12 @@ export class ProjectsExplorer {
 
   private render(): void {
     const searchTerm = normalize(this.elements.searchInput?.value || "");
-    const techFilters = Array.from(
-      this.elements.techContainer?.querySelectorAll<HTMLInputElement>(
-        'input:checked',
-      ) || [],
-    ).map((input) => normalize(input.value));
+    const techFilter = normalize(this.elements.techSelect?.value || "all");
     const categoryFilter = normalize(
       this.elements.categorySelect?.value || "all",
     );
     const demoFilter = this.elements.demoSelect?.value || "all";
     const sortMode = this.getSortMode();
-
     const filteredCards = this.elements.cards.filter((card) => {
       const searchable = normalize(card.dataset.searchable || "");
       const technologies = splitTokens(card.dataset.technologies);
@@ -117,8 +110,7 @@ export class ProjectsExplorer {
 
       const matchesSearch = !searchTerm || searchable.includes(searchTerm);
       const matchesTech =
-        techFilters.length === 0 ||
-        technologies.some((t) => techFilters.includes(t));
+        techFilter === "all" || technologies.includes(techFilter);
       const matchesCategory =
         categoryFilter === "all" || categories.includes(categoryFilter);
       const matchesDemo =
@@ -141,6 +133,7 @@ export class ProjectsExplorer {
         if (leftFeatured !== rightFeatured) {
           return rightFeatured - leftFeatured;
         }
+        // Fallback to date if featured is the same
         if (rightDate !== leftDate) {
           return rightDate - leftDate;
         }
@@ -155,16 +148,19 @@ export class ProjectsExplorer {
         return leftDate - rightDate;
       }
 
+      // Default to "recent"
       return rightDate - leftDate;
     });
 
-    this.elements.cards.forEach((card) => {
-      card.classList.add("is-hidden");
-    });
+    if (this.elements.projectsGrid) {
+      while (this.elements.projectsGrid.firstChild) {
+        this.elements.projectsGrid.removeChild(this.elements.projectsGrid.firstChild);
+      }
 
-    sortedCards.forEach((card) => {
-      card.classList.remove("is-hidden");
-    });
+      sortedCards.forEach((card) => {
+        this.elements.projectsGrid?.appendChild(card);
+      });
+    };
 
     const visibleCount = sortedCards.length;
 
@@ -192,7 +188,7 @@ export class ProjectsExplorer {
     if ((activeElement as HTMLElement).closest("[data-project-item]")) {
       const fallbackControl =
         this.lastControlUsed ||
-        this.elements.techContainer ||
+        this.elements.techSelect ||
         this.elements.categorySelect ||
         this.elements.searchInput ||
         this.elements.clearButton;
