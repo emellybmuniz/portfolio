@@ -57,5 +57,10 @@
       <p class="certificates__empty-state">{{ i18n "certificates.empty" }}</p>
       {{ end }}
     </div>
+
+    <div class="certificates__pagination" id="certificatesPagination" aria-hidden="true">
+      <div class="certificates__dots" id="certificatesDots"></div>
+      <span class="certificates__swipe-hint">{{ i18n "certificates.swipe" | default "ARRASTE PARA O LADO ➜" }}</span>
+    </div>
   </div>
 </section>

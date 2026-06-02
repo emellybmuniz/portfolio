@@ -121,6 +121,15 @@ other = "Design"
 [skills.tags]
 other = "Skill tags"
 
+[skills.close_drawer]
+other = "Close"
+
+[skills.count_singular]
+other = "skill in this category"
+
+[skills.count_plural]
+other = "skills in this category"
+
 [certificates.title]
 other = "Certifications & Credentials"
 

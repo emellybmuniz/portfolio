@@ -121,6 +121,15 @@ other = "Diseño"
 [skills.tags]
 other = "Etiquetas de habilidad"
 
+[skills.close_drawer]
+other = "Cerrar"
+
+[skills.count_singular]
+other = "habilidad en esta categoría"
+
+[skills.count_plural]
+other = "habilidades en esta categoría"
+
 [certificates.title]
 other = "Certificaciones y Credenciales"
 

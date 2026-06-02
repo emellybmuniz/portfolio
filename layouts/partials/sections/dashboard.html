@@ -158,6 +158,7 @@
           </p>
 
           <div class="dashboard__timeline">
+            <!-- Etapa 1 -->
             <div class="dashboard__timeline-item">
               <div class="dashboard__timeline-bullet">
                 <span class="pulse"></span>
@@ -165,17 +166,38 @@
               </div>
               <div class="dashboard__timeline-header">
                 <h4 class="dashboard__timeline-title">
-                  {{ i18n "dashboard.timeline_title" }}
+                  {{ i18n "dashboard.timeline_1_title" | default "Embaixadora Universitária" }}
                 </h4>
                 <span class="dashboard__timeline-date"
-                  >{{ i18n "dashboard.timeline_date" }}</span
+                  >{{ i18n "dashboard.timeline_1_date" | default "2025 — Presente" }}</span
                 >
               </div>
               <p class="dashboard__timeline-company">
-                {{ i18n "dashboard.timeline_company" }}
+                {{ i18n "dashboard.timeline_1_company" | default "DIO (Digital Innovation One) — Rio de Janeiro, Brasil" }}
               </p>
               <p class="dashboard__timeline-content">
-                {{ i18n "dashboard.timeline_content" }}
+                {{ i18n "dashboard.timeline_1_content" | default "Responsável pela ponte estratégica entre a comunidade acadêmica de tecnologia e a plataforma de ensino DIO, liderando workshops de desenvolvimento frontend, engajamento comunitário e suporte ao ecossistema estudantil de software." }}
+              </p>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div class="dashboard__timeline-item">
+              <div class="dashboard__timeline-bullet">
+                <span class="core core--hollow"></span>
+              </div>
+              <div class="dashboard__timeline-header">
+                <h4 class="dashboard__timeline-title">
+                  {{ i18n "dashboard.timeline_2_title" | default "Desenvolvedora Front-end Freelance" }}
+                </h4>
+                <span class="dashboard__timeline-date"
+                  >{{ i18n "dashboard.timeline_2_date" | default "2024 — Presente" }}</span
+                >
+              </div>
+              <p class="dashboard__timeline-company">
+                {{ i18n "dashboard.timeline_2_company" | default "Projetos Independentes — Remoto" }}
+              </p>
+              <p class="dashboard__timeline-content">
+                {{ i18n "dashboard.timeline_2_content" | default "Foco na estruturação de interfaces modernas e responsivas utilizando Tailwind CSS, frameworks reativos e melhores práticas de acessibilidade (WCAG). Entrega de layouts otimizados para performance e conversão." }}
               </p>
             </div>
           </div>

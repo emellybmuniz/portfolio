@@ -5,6 +5,10 @@
   padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
   overflow: clip;
 
+  @media (max-width: 768px) {
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+  }
+
   &::before {
     content: "";
     position: absolute;

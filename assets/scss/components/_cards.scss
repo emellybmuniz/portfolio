@@ -13,6 +13,13 @@
   @include transition;
   isolation: isolate;
 
+  @media (max-width: 767px) {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 85%;
+    max-width: 320px;
+  }
+
   &:hover {
     border-color: rgba(157, 78, 221, 0.4);
     transform: translateY(-3px);

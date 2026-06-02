@@ -1,0 +1,200 @@
+/**
+ * UTILITIES / MOBILE PERFORMANCE
+ *
+ * Overrides específicos para mobile que removem ou reduzem elementos visuais
+ * caros em termos de performance e sem utilidade prática em dispositivos touch.
+ *
+ * Princípio: desktop = atmosférico / mobile = rápido, flat, direto.
+ * Referência: docs/conversa-chat-gpt-performance-mobile.md
+ */
+
+@media (max-width: 767px) {
+
+  // ─── 1. Body: remove gradientes pesados e mouse-tracking ────────────────────
+  // O radial-gradient baseado em --mouse-x/--mouse-y não faz sentido em touch.
+  // Substitui por um gradiente estático leve.
+  body {
+    background-attachment: scroll; // background-attachment:fixed é lento no iOS
+    background-image: linear-gradient(
+      150deg,
+      var(--color-bg),
+      var(--color-bg-secondary)
+    );
+  }
+
+  // Remove o pseudo-elemento de mouse glow do body (body::before usa --mouse-x/y)
+  body::before {
+    display: none;
+  }
+
+  // ─── 2. Temas: remove radial gradients e mouse glow nos temas alternativos ──
+  html[data-theme="light"] body,
+  html[data-theme="extra-dark"] body {
+    background-image: linear-gradient(
+      150deg,
+      var(--color-bg),
+      var(--color-bg-secondary)
+    );
+  }
+
+  html[data-theme="light"] body::before,
+  html[data-theme="extra-dark"] body::before {
+    display: none;
+  }
+
+  // ─── 3. Página About: remove radial gradients de fundo ──────────────────────
+  html[data-theme="light"] body.page-about,
+  html[data-theme="violet"] body.page-about,
+  html[data-theme="extra-dark"] body.page-about {
+    background-image: linear-gradient(
+      150deg,
+      var(--color-bg),
+      var(--color-bg-secondary)
+    );
+  }
+
+  // ─── 3.1. Redução geral de padding de seções ─────────────────────────────────
+  // Para liberar espaço útil em telas menores
+  .hero,
+  .projects,
+  .contact,
+  .dashboard,
+  .skills__container {
+    padding-top: var(--spacing-xl) !important;
+    padding-bottom: var(--spacing-xl) !important;
+  }
+  
+  .contact {
+    padding-bottom: 0 !important; // Formulário gruda no bottom
+  }
+
+  // ─── 4. Dashboard cards: remove backdrop-filter (caro em mobile) ─────────────
+  // backdrop-filter: blur() é uma das operações mais pesadas para GPU mobile.
+  .dashboard__card,
+  .dashboard__metric-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--color-surface-elevated, var(--color-surface));
+  }
+
+  // ─── 5. Skills drawer overlay: reduz blur do backdrop ───────────────────────
+  // blur(4px) no overlay ainda é razoável, mas pode ser reduzido.
+  .skills__drawer-overlay {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.72);
+  }
+
+  // ─── 6. Menu de navegação mobile: substitui backdrop-filter por cor sólida ──
+  // Conforme a diretriz: no mobile usar background sólido em vez de blur.
+  .header__nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--color-bg);
+  }
+
+  // ─── 7. Hero: remove animação de rotação contínua do ring (GPU stress) ──────
+  // A animação hero-photo-ring-spin é uma rotação infinita num conic-gradient.
+  // No mobile isso drena bateria sem benefício perceptível.
+  .hero__photo-inner::before {
+    animation: none;
+  }
+
+  // Remove o parallax/tilt do hero (transform via JS será desativado no TS)
+  .hero__content,
+  .hero__media {
+    transform: none !important;
+    transition: none;
+    will-change: auto;
+  }
+
+  // ─── 8. Parallax elements: desativa will-change e transition pesada ──────────
+  [data-parallax] {
+    will-change: auto;
+    transform: none !important;
+    transition: none;
+  }
+
+  // ─── 9. Cards: remove hover transforms pesadas ───────────────────────────────
+  // No mobile não existe hover real; esses transforms ficam "presos" em touch.
+  .cert-card:hover,
+  .skill-card:hover,
+  .dashboard__card:hover,
+  .dashboard__card--hoverable:hover,
+  .dashboard__metric-card:hover,
+  .skills__drawer-badge:hover {
+    transform: none;
+  }
+
+  // Remove o pseudo-elemento de shimmer/glare nos cards (cert-card::before)
+  // que faz translateX + gradiente ao hover — sem sentido em touch.
+  .cert-card::before {
+    display: none;
+  }
+
+  // ─── 10. Sombras: reduz para valores mais leves ──────────────────────────────
+  // No mobile, sombras grandes poluem visualmente e custam compositing.
+  :root {
+    --shadow-lg: var(--shadow-md);
+    --shadow-xl: var(--shadow-lg);
+    --shadow-card-hover: var(--shadow-card);
+  }
+
+  // ─── 11. Animações de entrada: reduz distância e duração ────────────────────
+  // Animações GPU-friendly (opacity + transform) são ok, mas precisam ser leves.
+  .hero__photo-inner.in-view {
+    animation-duration: 0.25s;
+  }
+
+  .hero__content.in-view {
+    animation-duration: 0.3s;
+  }
+
+  // ─── 12. Logo badge: remove gradientes internos caros ───────────────────────
+  .header__logo-badge {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .header__logo-badge::before {
+    display: none;
+  }
+
+  // ─── 13. Skills filter btn: remove pseudo-elementos de shimmer ───────────────
+  .skills__filter-btn::before,
+  .skills__filter-btn::after {
+    display: none;
+  }
+
+  // ─── 14. Skill card icon bg: remove shimmer interno ─────────────────────────
+  .skill-card__icon-bg::before,
+  .skill-card__icon-bg::after {
+    display: none;
+  }
+
+  // ─── 15. Stagger animations: reduz delay e duração em mobile ────────────────
+  [data-stagger-item] {
+    transition-duration: 340ms;
+  }
+}
+
+// ─── prefers-reduced-motion: reforço das diretrizes ─────────────────────────
+// Já existe em _globals.scss, mas reforça para o ring do hero especificamente.
+@media (prefers-reduced-motion: reduce) {
+  .hero__photo-inner::before {
+    animation: none;
+  }
+
+  [data-parallax] {
+    will-change: auto;
+    transform: none !important;
+    transition: none;
+  }
+
+  .hero__content,
+  .hero__media {
+    transform: none !important;
+    transition: none;
+    will-change: auto;
+  }
+}

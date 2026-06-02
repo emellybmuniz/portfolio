@@ -7,13 +7,13 @@
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.125rem;
-  --font-size-1-125xl: 1.25rem;
-  --font-size-xl: 1.5rem;
-  --font-size-1-25xl: 1.625rem;
-  --font-size-1-5xl: 1.75rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
-  --font-size-4xl: 3rem;
+  --font-size-1-125xl: clamp(1.125rem, 2vw + 0.5rem, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 2.5vw + 0.5rem, 1.5rem);
+  --font-size-1-25xl: clamp(1.375rem, 3vw + 0.5rem, 1.625rem);
+  --font-size-1-5xl: clamp(1.5rem, 3.5vw + 0.5rem, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 4vw + 0.5rem, 2rem);
+  --font-size-3xl: clamp(2rem, 5vw + 0.5rem, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 6vw + 0.5rem, 3rem);
 
   --font-weight-light: 300;
   --font-weight-normal: 400;

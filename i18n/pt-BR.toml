@@ -124,6 +124,15 @@ other = "Design"
 [skills.tags]
 other = "Tags da skill"
 
+[skills.close_drawer]
+other = "Fechar"
+
+[skills.count_singular]
+other = "skill nesta categoria"
+
+[skills.count_plural]
+other = "skills nesta categoria"
+
 [certificates.title]
 other = "Certificações & Credenciais"
 
@@ -211,17 +220,29 @@ other = "Jornada Profissional"
 [dashboard.timeline_intro]
 other = "Uma linha do tempo destacando minhas experiências e atuações recentes no desenvolvimento e suporte ao ecossistema de software."
 
-[dashboard.timeline_title]
-other = "Desenvolvedora Front-end"
+[dashboard.timeline_1_title]
+other = "Embaixadora Universitária"
 
-[dashboard.timeline_date]
-other = "2022 - Presente"
+[dashboard.timeline_1_date]
+other = "2025 — Presente"
 
-[dashboard.timeline_company]
-other = "Rio de Janeiro, Brasil"
+[dashboard.timeline_1_company]
+other = "DIO (Digital Innovation One) — Rio de Janeiro, Brasil"
 
-[dashboard.timeline_content]
-other = "Desenvolvimento de interfaces modernas, responsivas e escaláveis. Foco em performance e acessibilidade. Criação de layouts responsivos, clean code e aplicação prática de bibliotecas e frameworks."
+[dashboard.timeline_1_content]
+other = "Responsável pela ponte estratégica entre a comunidade acadêmica de tecnologia e a plataforma de ensino DIO, liderando workshops de desenvolvimento frontend, engajamento comunitário e suporte ao ecossistema estudantil de software."
+
+[dashboard.timeline_2_title]
+other = "Desenvolvedora Front-end Freelance"
+
+[dashboard.timeline_2_date]
+other = "2024 — Presente"
+
+[dashboard.timeline_2_company]
+other = "Projetos Independentes — Remoto"
+
+[dashboard.timeline_2_content]
+other = "Foco na estruturação de interfaces modernas e responsivas utilizando Tailwind CSS, frameworks reativos e melhores práticas de acessibilidade (WCAG). Entrega de layouts otimizados para performance e conversão."
 
 [about.back]
 other = "Projetos"

@@ -2,6 +2,9 @@ import "./projects";
 import "./skills";
 import "./clipboard";
 import { setupFilterGroup } from "./content-filters";
+import { setupCertificatesCarousel } from "./certificates";
+
+declare var Lenis: any;
 
 type LanguageCode = "pt-BR" | "en" | "es";
 type ThemeMode = "light" | "violet" | "extra-dark";
@@ -44,6 +47,9 @@ class Portfolio {
   private currentThemeMode: ThemeMode;
   private currentLang: string;
   private prefersReducedMotion: boolean;
+  /** True em dispositivos com pointer:coarse (touch) — usado para desativar
+   *  features caras que não fazem sentido sem mouse (glow tracking, parallax). */
+  private isMobileTouch: boolean;
 
   constructor() {
     this.elements = {
@@ -81,6 +87,9 @@ class Portfolio {
     this.prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    // pointer:coarse é a forma mais confiável de detectar touch/mobile.
+    // Evita rodar loops de rAF desnecessários em dispositivos que não têm mouse.
+    this.isMobileTouch = window.matchMedia("(pointer: coarse)").matches;
 
     this.init();
   }
@@ -92,10 +101,52 @@ class Portfolio {
     this.setupMenuToggle();
     this.setupScrollToTop();
     this.setupIntersectionObserver();
-    this.setupHeroMotion();
-    this.setupDriveScroll();
-    this.setupMouseLight();
+    // Features que dependem de mouse não são inicializadas em dispositivos touch.
+    // Isso elimina loops de rAF e atualizações de CSS vars desnecessários em mobile.
+    if (!this.isMobileTouch) {
+      this.setupHeroMotion();
+      this.setupDriveScroll();
+      this.setupMouseLight();
+    }
     this.setupAllContentFilters();
+    setupCertificatesCarousel();
+    this.setupSmoothScroll();
+  }
+
+  private setupSmoothScroll(): void {
+    if (this.prefersReducedMotion || typeof Lenis === "undefined") return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Integrar com eventos onde links âncora precisam usar lenis.scrollTo
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId && targetId !== "#") {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            lenis.scrollTo(targetElement);
+          }
+        }
+      });
+    });
   }
 
   private setupTheme(): void {

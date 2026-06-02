@@ -14,8 +14,9 @@
     aria-label="{{ i18n "nav.menu" }}"
     aria-expanded="false"
   >
-    {{ with resources.Get "icons/bars-solid-full.svg" }}{{ .Content | safeHTML
-    }}{{ end }}
+    <span class="header__menuToggle-line header__menuToggle-line--1"></span>
+    <span class="header__menuToggle-line header__menuToggle-line--2"></span>
+    <span class="header__menuToggle-line header__menuToggle-line--3"></span>
   </button>
   <nav class="header__nav">
     <ul class="header__nav-list">
