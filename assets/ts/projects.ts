@@ -29,17 +29,14 @@ function setupProjectsSection(): void {
   let visibleCount = INITIAL_VISIBLE_COUNT;
 
   const render = () => {
-    // 1. Filter items by the active category
     const filteredItems = allItems.filter((item) => {
       if (activeCategory === "all") return true;
       const categories = (item.dataset.category || "").split(/\s+/);
       return categories.includes(activeCategory);
     });
 
-    // 2. Determine which items are visible based on the expansion state
     const visibleBatch = filteredItems.slice(0, visibleCount);
 
-    // 3. Toggle visibility on all project items
     allItems.forEach((item) => {
       const matchesFilter = filteredItems.includes(item);
       const isInBatch = visibleBatch.includes(item);
@@ -52,18 +49,17 @@ function setupProjectsSection(): void {
       }
     });
 
-    // 4. Update the state of the 'expand' button and 'view all' link
     const remainingCount = filteredItems.length - visibleBatch.length;
     if (countEl) {
       countEl.textContent = `+${remainingCount}`;
     }
 
     if (remainingCount > 0) {
-      expandBtn.hidden = false;
-      allProjectsLink.hidden = true;
+      expandBtn.style.display = "";
+      allProjectsLink.style.display = "none";
     } else {
-      expandBtn.hidden = true;
-      allProjectsLink.hidden = filteredItems.length === 0;
+      expandBtn.style.display = "none";
+      allProjectsLink.style.display = filteredItems.length === 0 ? "none" : "";
     }
   };
 
@@ -71,7 +67,6 @@ function setupProjectsSection(): void {
     activeCategory = button.dataset.category || "all";
     visibleCount = INITIAL_VISIBLE_COUNT;
 
-    // Update active state on filter buttons
     filterButtons.forEach((btn) => {
       const isActive = btn === button;
       btn.classList.toggle("projects__filter-btn--active", isActive);
