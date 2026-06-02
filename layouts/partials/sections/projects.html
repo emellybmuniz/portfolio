@@ -4,10 +4,11 @@
 
     {{ $projects := where .Site.RegularPages "Section" "projects" }}
 
-    <div class="projects__filters" data-filter-group="projects">
+    <div class="projects__filters">
       <button
         class="projects__filter-btn projects__filter-btn--active btn--holographic btn--holographic--subtle"
         data-category="all"
+        aria-pressed="true"
       >
         <span class="projects__filter-btn-icon" aria-hidden="true"
           >{{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content |
@@ -26,7 +27,11 @@
       (dict "key" "ui-ux" "label" "UI/UX" "icon" "icons/brush-solid-full.svg") (dict "key" "cli" "label" "CLI" "icon" "icons/terminal-solid-full.svg")
       (dict "key" "api" "label" "API" "icon" "icons/plug-solid-full.svg") }} {{
       range $cat := $taxonomy }} {{ if in $found $cat.key }}
-      <button class="projects__filter-btn btn--holographic btn--holographic--subtle" data-category="{{ $cat.key }}">
+      <button 
+        class="projects__filter-btn btn--holographic btn--holographic--subtle" 
+        data-category="{{ $cat.key }}"
+        aria-pressed="false"
+      >
         {{ with $cat.icon }}<span
           class="projects__filter-btn-icon"
           aria-hidden="true"
@@ -49,7 +54,7 @@
       {{ $projectIndex := 0 }}
       {{ range $featuredProjects }}
         <div
-          class="projects__grid-item{{ if ge $projectIndex 6 }} projects__grid-item--collapsed{{ else }} projects__grid-item--revealed{{ end }}"
+          class="projects__grid-item{{ if ge $projectIndex 3 }} projects__grid-item--collapsed{{ else }} projects__grid-item--revealed{{ end }}"
           data-stagger-item
           data-category="{{ with .Params.categories }}{{ delimit . " " }}{{ end }}"
         >

@@ -6,7 +6,7 @@
           <!-- Experience -->
           <div class="dashboard__metric-card">
             <div class="dashboard__bg-icon">
-              <svg viewBox="0 0 20 20">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
                 <path
                   fill-rule="evenodd"
                   d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
@@ -37,7 +37,7 @@
           <!-- Projects -->
           <div class="dashboard__metric-card">
             <div class="dashboard__bg-icon">
-              <svg viewBox="0 0 20 20">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                 <path
                   fill-rule="evenodd"
@@ -129,12 +129,12 @@
           </div>
           <div class="dashboard__divider"></div>
 
-          <div class="dashboard__skills-wrapper">
-            <span class="dashboard__skill-tag">Comunicação Efetiva</span>
-            <span class="dashboard__skill-tag">Trabalho em Equipe</span>
-            <span class="dashboard__skill-tag">Resolução de Problemas</span>
-            <span class="dashboard__skill-tag">Adaptabilidade</span>
-          </div>
+          <ul class="dashboard__skills-wrapper" aria-label="{{ i18n "dashboard.soft_skills" }}">
+            <li class="dashboard__skill-tag">Comunicação Efetiva</li>
+            <li class="dashboard__skill-tag">Trabalho em Equipe</li>
+            <li class="dashboard__skill-tag">Resolução de Problemas</li>
+            <li class="dashboard__skill-tag">Adaptabilidade</li>
+          </ul>
         </div>
       </div>
 

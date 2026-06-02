@@ -9,8 +9,8 @@ imageCoverFallback: "cordel-moderno-project-cover.png"
 categories:
   - frontend
 technologies:
-  - html
-  - css
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/projeto-cordel/"
 repositoryUrl: "https://github.com/emellybmuniz/projeto-cordel"
 stackIntro: "Técnologias utilizadas como proposta do projeto do curso de HTML e CSS do Gustavo Guanabara, visando a construção de uma interface responsiva e amigável para um site de blog tech fictício."

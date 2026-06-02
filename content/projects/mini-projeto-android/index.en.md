@@ -9,8 +9,8 @@ imageCoverFallback: "mini-projeto-android-project-cover.png"
 categories:
   - frontend
 technologies:
-  - html
-  - css
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/mini-projeto-android/"
 repositoryUrl: "https://github.com/emellybmuniz/mini-projeto-android"
 stackIntro: "Técnologias utilizadas como proposta do projeto do curso de HTML e CSS do Gustavo Guanabara, visando a construção de uma interface responsiva e amigável para um site de blog tech fictício."

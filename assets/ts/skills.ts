@@ -1,121 +1,111 @@
-interface Skill {
-  name: string;
-  category: string[];
-  icon: string;
-  color?: { from: string; to: string };
-}
-
 import { qAll } from "./utils/dom";
 
+/**
+ * Handles behaviors specific to the Skills section that are not covered
+ * by the generic content filter, such as:
+ * - Applying CSS gradients to skill card icons.
+ * - Managing the UI for the mobile filter dropdown menu.
+ */
 class SkillsSection {
   private elements: {
-    filtersContainer: HTMLElement | null;
     skillsGrid: HTMLElement | null;
-    filterButtons: HTMLButtonElement[] | null;
+    mobileToggle: HTMLButtonElement | null;
+    filterMenu: HTMLElement | null;
+    allFilterButtons: HTMLButtonElement[];
   };
-  private activeCategory: string;
 
   constructor() {
     this.elements = {
-      filtersContainer: document.getElementById("skillFiltersDesktop"),
       skillsGrid: document.getElementById("skillsGrid"),
-      filterButtons: qAll<HTMLButtonElement>(
-        "#skillFiltersDesktop .skills__filter-btn",
-      ),
+      mobileToggle: document.getElementById(
+        "skillFiltersMobileToggle",
+      ) as HTMLButtonElement,
+      filterMenu: document.getElementById("skillFiltersMobileMenu"),
+      allFilterButtons: qAll<HTMLButtonElement>(".skills__filter-btn"),
     };
-    this.activeCategory = "all";
     this.init();
   }
 
   private init(): void {
-    if (
-      !this.elements.filtersContainer ||
-      !this.elements.skillsGrid ||
-      !this.elements.filterButtons
-    ) {
-      return;
-    }
-    this.setupFilters();
     this.applySkillGradients();
-    this.renderSkills();
+    this.setupMobileFilterInteraction();
   }
 
+  /**
+   * Applies the gradient background to each skill card icon.
+   */
   private applySkillGradients(): void {
     if (!this.elements.skillsGrid) return;
 
-    const gradientNodes =
-      this.elements.skillsGrid.querySelectorAll<HTMLElement>(
-        ".skill-card__icon-bg",
-      );
+    const gradientNodes = qAll<HTMLElement>(
+      ".skill-card__icon-bg",
+      this.elements.skillsGrid,
+    );
 
     gradientNodes.forEach((node) => {
       const gradient = node.dataset.gradient;
-
       if (gradient) {
         node.style.backgroundImage = gradient;
       }
     });
   }
 
-  private setupFilters(): void {
-    this.elements.filterButtons?.forEach((button) => {
-      const isActive = button.classList.contains("skills__filter-btn--active");
-      button.setAttribute("aria-pressed", String(isActive));
+  /**
+   * Manages the UI interactions for the mobile filter dropdown.
+   * The core filtering logic is handled by `content-filters.ts`.
+   */
+  private setupMobileFilterInteraction(): void {
+    const { mobileToggle, filterMenu, allFilterButtons } = this.elements;
+    if (!mobileToggle || !filterMenu) return;
 
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = filterMenu.classList.toggle("is-open");
+      mobileToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    allFilterButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const category = button.dataset.category;
-        if (category) {
-          this.handleFilterClick(category, button);
-        }
+        this.updateMobileToggleLabel(button.textContent || "Todas");
+        this.closeMobileMenu();
       });
     });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target as Node;
+      const isClickInside =
+        mobileToggle.contains(target) || filterMenu.contains(target);
+      if (!isClickInside) {
+        this.closeMobileMenu();
+      }
+    });
   }
 
-  private handleFilterClick(
-    categoryId: string,
-    clickedButton: HTMLButtonElement,
-  ): void {
-    this.activeCategory = categoryId;
-
-    this.elements.filterButtons?.forEach((button) => {
-      button.classList.remove("skills__filter-btn--active");
-      button.setAttribute("aria-pressed", "false");
-    });
-    clickedButton.classList.add("skills__filter-btn--active");
-    clickedButton.setAttribute("aria-pressed", "true");
-
-    this.renderSkills();
+  private closeMobileMenu(): void {
+    if (this.elements.filterMenu?.classList.contains("is-open")) {
+      this.elements.filterMenu.classList.remove("is-open");
+      this.elements.mobileToggle?.setAttribute("aria-expanded", "false");
+    }
   }
 
-  private renderSkills(): void {
-    if (!this.elements.skillsGrid) return;
+  private updateMobileToggleLabel(label: string): void {
+    if (this.elements.mobileToggle) {
+      const labelSpan =
+        this.elements.mobileToggle.querySelector(".current-category");
+      if (labelSpan) {
+        labelSpan.textContent = label.trim();
+      }
+    }
+  }
+}
 
-    const skillCards = qAll<HTMLElement>(
-      ".skill-card",
-      this.elements.skillsGrid as ParentNode,
-    );
-
-    skillCards.forEach((card) => {
-      const categories = (card.dataset.category || "")
-        .split(/\s+/)
-        .filter(Boolean);
-      const shouldShow =
-        this.activeCategory === "all" ||
-        categories.includes(this.activeCategory);
-
-      card.classList.toggle("skill-card--hidden", !shouldShow);
-    });
+function initializeSkillsSection(): void {
+  if (document.getElementById("skills")) {
+    new SkillsSection();
   }
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById("skills")) {
-      new SkillsSection();
-    }
-  });
+  document.addEventListener("DOMContentLoaded", initializeSkillsSection);
 } else {
-  if (document.getElementById("skills")) {
-    new SkillsSection();
-  }
+  initializeSkillsSection();
 }

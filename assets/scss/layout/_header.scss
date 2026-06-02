@@ -113,12 +113,13 @@ body.page-projects .header {
   cursor: pointer;
   padding: var(--spacing-sm);
   z-index: 101;
-  @include flex-center;
+  display: none;
   min-width: 44px;
   min-height: 44px;
+  position: relative;
 
   @media (max-width: 768px) {
-    display: block;
+    @include flex-center;
   }
 
   svg {
@@ -126,6 +127,38 @@ body.page-projects .header {
     height: 24px;
     fill: currentColor;
     display: block;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    top: 50%;
+    left: 50%;
+    border-radius: var(--border-radius-full);
+    opacity: 0;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  &[aria-expanded="true"] {
+    svg {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    
+    &::before {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    
+    &::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
   }
 }
 
@@ -141,7 +174,7 @@ body.page-projects .header {
     right: 0;
     bottom: 0;
     height: 100vh;
-    background-color: var(--color-bg);
+    background-color: color-mix(in srgb, var(--color-bg) 98%, transparent);
     flex-direction: column;
     padding: var(--spacing-5xl) var(--spacing-xl);
     transform: translateX(-100%);

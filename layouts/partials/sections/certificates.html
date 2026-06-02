@@ -10,6 +10,7 @@
       <button
         class="certificates__filter-btn certificates__filter-btn--active"
         data-category="all"
+        aria-pressed="true"
       >
         <span class="certificates__filter-btn-icon" aria-hidden="true"
           >{{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content |
@@ -19,16 +20,32 @@
       </button>
 
       {{/* Institution filters (no icons) */}}
-      <button class="certificates__filter-btn" data-category="dio">
+      <button
+        class="certificates__filter-btn"
+        data-category="dio"
+        aria-pressed="false"
+      >
         <span>DIO</span>
       </button>
-      <button class="certificates__filter-btn" data-category="uninter">
+      <button
+        class="certificates__filter-btn"
+        data-category="uninter"
+        aria-pressed="false"
+      >
         <span>Uninter</span>
       </button>
-      <button class="certificates__filter-btn" data-category="udemy">
+      <button
+        class="certificates__filter-btn"
+        data-category="udemy"
+        aria-pressed="false"
+      >
         <span>Udemy</span>
       </button>
-      <button class="certificates__filter-btn" data-category="alura">
+      <button
+        class="certificates__filter-btn"
+        data-category="alura"
+        aria-pressed="false"
+      >
         <span>Alura</span>
       </button>
     </div>

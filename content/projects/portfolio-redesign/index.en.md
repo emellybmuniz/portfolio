@@ -10,10 +10,10 @@ categories:
 technologies:
   - Hugo
   - SCSS
-  - Typescript
+  - TypeScript
   - JavaScript
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://example.com"
 repositoryUrl: "https://github.com/emellybmuniz/portfolio"
 ---

@@ -50,10 +50,10 @@ other = "Available Projects"
 other = "projects"
 
 [projects.technologies_label]
-other = "technologies"
+other = "Technologies"
 
 [projects.categories_label]
-other = "categories"
+other = "Categories"
 
 [projects.filters_title]
 other = "Filters"

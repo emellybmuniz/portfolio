@@ -50,10 +50,10 @@ other = "Proyectos Disponibles"
 other = "proyectos"
 
 [projects.technologies_label]
-other = "tecnologías"
+other = "Tecnologías"
 
 [projects.categories_label]
-other = "categorías"
+other = "Categorías"
 
 [projects.filters_title]
 other = "Filtros"

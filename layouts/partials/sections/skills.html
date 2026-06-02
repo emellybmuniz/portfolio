@@ -3,31 +3,31 @@
     <h2 class="skills__title">{{ i18n "skills.title" }}</h2>
 
     <div class="skills__filters-desktop" id="skillFiltersDesktop">
-      <button class="skills__filter-btn skills__filter-btn--active btn--holographic btn--holographic--subtle" data-category="all">
+      <button class="skills__filter-btn skills__filter-btn--active btn--holographic btn--holographic--subtle" data-category="all" aria-pressed="true">
         <span class="skills__filter-btn-icon" aria-hidden="true">
           {{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}
         </span>
         <span>{{ i18n "skills.all" }}</span>
       </button>
-      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="frontend">
+      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="frontend" aria-pressed="false">
         <span class="skills__filter-btn-icon" aria-hidden="true">
           {{ with resources.Get "icons/cube-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}
         </span>
         <span>{{ i18n "skills.frontend" }}</span>
       </button>
-      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="backend">
+      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="backend" aria-pressed="false">
         <span class="skills__filter-btn-icon" aria-hidden="true">
           {{ with resources.Get "icons/database-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}
         </span>
         <span>{{ i18n "skills.backend" }}</span>
       </button>
-      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="tools">
+      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="tools" aria-pressed="false">
         <span class="skills__filter-btn-icon" aria-hidden="true">
           {{ with resources.Get "icons/briefcase-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}
         </span>
         <span>{{ i18n "skills.tools" }}</span>
       </button>
-      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="design">
+      <button class="skills__filter-btn btn--holographic btn--holographic--subtle" data-category="design" aria-pressed="false">
         <span class="skills__filter-btn-icon" aria-hidden="true">
           {{ with resources.Get "icons/pen-nib-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}
         </span>

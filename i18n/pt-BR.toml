@@ -53,10 +53,10 @@ other = "Projetos Disponíveis"
 other = "projetos"
 
 [projects.technologies_label]
-other = "tecnologias"
+other = "Tecnologias"
 
 [projects.categories_label]
-other = "categorias"
+other = "Categorias"
 
 [projects.filters_title]
 other = "Filtros"

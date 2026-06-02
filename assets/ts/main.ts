@@ -95,7 +95,7 @@ class Portfolio {
     this.setupHeroMotion();
     this.setupDriveScroll();
     this.setupMouseLight();
-    this.setupContentFilters();
+    this.setupAllContentFilters();
   }
 
   private setupTheme(): void {
@@ -304,6 +304,16 @@ class Portfolio {
         this.closeMenu();
       });
     });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        if (window.innerWidth > 768) {
+          this.closeMenu();
+        }
+      },
+      { passive: true },
+    );
   }
 
   private toggleMenuVisibility(): void {
@@ -322,7 +332,7 @@ class Portfolio {
 
     this.elements.nav.classList.add("is-active");
     this.elements.menuToggle_button.setAttribute("aria-expanded", "true");
-    document.body.classList.add("body-no-scroll");
+    document.body.style.overflow = "hidden";
   }
 
   private closeMenu(): void {
@@ -330,7 +340,7 @@ class Portfolio {
 
     this.elements.nav.classList.remove("is-active");
     this.elements.menuToggle_button.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("body-no-scroll");
+    document.body.style.overflow = "";
   }
 
   private setupScrollToTop(): void {
@@ -603,7 +613,16 @@ class Portfolio {
     schedule();
   }
 
-  private setupContentFilters(): void {
+  private setupAllContentFilters(): void {
+
+    setupFilterGroup({
+      containerSelector: ".skills",
+      buttonSelector: ".skills__filter-btn",
+      itemSelector: ".skill-card",
+      activeButtonClass: "skills__filter-btn--active",
+      hiddenClass: "skill-card--hidden",
+    });
+    
     setupFilterGroup({
       containerSelector: ".certificates",
       buttonSelector: ".certificates__filter-btn",

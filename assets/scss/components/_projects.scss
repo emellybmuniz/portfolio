@@ -359,14 +359,6 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.projects__all-link {
-  display: none;
-}
-
-.projects__all-link.projects__all-link--visible {
-  display: block;
-}
-
 .project-card {
   background-color: var(--color-surface);
   border-radius: var(--border-radius-lg);
