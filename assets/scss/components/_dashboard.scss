@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 body.page-about {
   background: var(--color-bg);
 }
@@ -89,14 +91,16 @@ html[data-theme="extra-dark"] body.page-about {
   width: 100%;
   background-color: var(--color-surface);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--color-surface-border);
   border-radius: 1.5rem;
   padding: var(--spacing-lg);
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  @include transition;
+
+  @include mixins.transition;
+
   min-width: 0;
 
   &:hover,
@@ -124,7 +128,9 @@ html[data-theme="extra-dark"] body.page-about {
       transparent
     );
     opacity: 0;
-    @include transition;
+
+    @include mixins.transition;
+
     z-index: 10;
   }
 
@@ -138,13 +144,14 @@ html[data-theme="extra-dark"] body.page-about {
 .dashboard__metric-card {
   background-color: var(--color-surface);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--color-surface-border);
   border-radius: 1rem;
   padding: var(--spacing-md);
   position: relative;
   overflow: hidden;
-  @include transition;
+
+  @include mixins.transition;
 
   &:hover {
     border-color: rgba(var(--color-secondary-rgb), 0.4);
@@ -170,7 +177,9 @@ html[data-theme="extra-dark"] body.page-about {
       transparent
     );
     opacity: 0;
-    @include transition;
+
+    @include mixins.transition;
+
     z-index: 10;
   }
 }
@@ -236,7 +245,9 @@ html[data-theme="extra-dark"] body.page-about {
   height: 7.5rem;
   color: var(--color-primary);
   opacity: 0.05;
-  @include transition;
+
+  @include mixins.transition;
+
   pointer-events: none;
 
   svg {
@@ -372,7 +383,7 @@ html[data-theme="extra-dark"] body.page-about {
     border: 2px solid var(--color-bg);
     border-radius: 50%;
     z-index: 1;
-    
+
     &--hollow {
       background-color: var(--color-bg);
       border-color: var(--color-primary);
@@ -405,7 +416,7 @@ html[data-theme="extra-dark"] body.page-about {
 .dashboard__timeline-date {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   flex-shrink: 0;
 
   @media (max-width: 640px) {
@@ -459,7 +470,9 @@ html[data-theme="extra-dark"] body.page-about {
   background-color: var(--color-surface);
   border: 1px solid var(--color-surface-border);
   color: var(--color-text);
-  @include transition;
+
+  @include mixins.transition;
+
   user-select: none;
   white-space: nowrap;
 
@@ -475,10 +488,12 @@ html[data-theme="extra-dark"] body.page-about {
     transform: scale(0.95);
     opacity: 0.7;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.3;
   }
+
   100% {
     transform: scale(0.95);
     opacity: 0.7;

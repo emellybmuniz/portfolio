@@ -1,11 +1,11 @@
 ---
 title: "API de Gestão Escolar com FastAPI"
 date: 2025-06-01
-featured: true
+featured: false
 weight: 1
 draft: false
 description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."
-imageCover: "api-gestao-escolar-fastapi-project-cover.webp"
+imageCover: "api-gestao-escolar-fastapi.webp"
 categories:
   - backend
   - api

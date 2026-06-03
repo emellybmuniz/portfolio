@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /**
  * UTILITIES / DISPLAY VISIBILITY
  */
@@ -28,7 +30,7 @@
 
 /* Screen reader only */
 .sr-only {
-  @include sr-only;
+  @include mixins.sr-only;
 }
 
 /* Flex utilities */
@@ -75,7 +77,7 @@
 }
 
 .text-truncate {
-  @include text-truncate;
+  @include mixins.text-truncate;
 }
 
 /* Pointer events */

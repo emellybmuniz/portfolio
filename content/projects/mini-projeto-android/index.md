@@ -28,7 +28,6 @@ metadata:
     - "Funcionalidade 2"
 ---
 
-# Visão Geral do Projeto
 
 Este é o corpo principal do seu projeto. Use este espaço para fornecer uma descrição longa e detalhada, como uma "wiki" do projeto. Você pode incluir:
 

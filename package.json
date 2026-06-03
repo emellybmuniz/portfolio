@@ -8,8 +8,9 @@
     "preview": "hugo server",
     "lint:css": "stylelint assets/scss/**/*.scss",
     "lint:js": "eslint assets/ts/**/*.ts",
-    "format": "prettier --write 'assets/**/*.{ts,scss,html}'",
-    "type-check": "tsc --noEmit"
+    "format": "prettier --write 'assets/**/*.{ts,scss}'",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky"
   },
   "keywords": [
     "portfolio",
@@ -21,17 +22,31 @@
   "author": "Emelly Beatriz",
   "license": "MIT",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "postcss": "^8.4.0",
     "postcss-preset-env": "^9.0.0",
     "prettier": "^3.0.0",
+    "sass-embedded": "^1.100.0",
     "stylelint": "^15.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "lenis": "^1.3.23"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   }
 }

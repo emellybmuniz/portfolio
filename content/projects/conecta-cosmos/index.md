@@ -1,45 +1,59 @@
 ---
 title: "Conecta Cosmos"
-date: 2025-06-01
+date: 2024-01-01
 featured: true
-weight: 1
+weight: 10
 draft: false
-description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."
-imageCover: "conecta-cosmos-project-cover.webp"
+description: "Projeto Conecta Cosmos."
+imageCover: "conecta-cosmos.webp"
 categories:
-  - fullstack
+  - frontend
 technologies:
-  - Tailwind
-  - HTML
-  - CSS
+  - HTML5
+  - CSS3
   - JavaScript
-  - Google AI Studio
-  - MongoDB
-liveDemo: "#"
-repositoryUrl: "#"
-
-stackIntro: "Cada escolha técnica abaixo representa uma decisão de produto, performance e manutenção, visando a escalabilidade e a experiência do usuário."
+liveDemo: "https://emellybmuniz.github.io/projeto-via-lactea-v0.1/"
+repositoryUrl: "https://github.com/emellybmuniz/projeto-via-lactea-v0.1"
 
 metadata:
-  duration: "3 meses"
-  role: "Desenvolvedora Fullstack"
-  complexity: "Robusto"
-  accessibility: "WCAG 2.1 AA"
-  responsiveness: "Mobile-first"
-  challenges:
-    - kicker: "Integração Complexa"
-      title: "Integração em tempo real com a API do Gemini"
-      description: "O principal desafio foi garantir uma comunicação fluida e em tempo real com a API do Gemini, lidando com latência e garantindo a consistência dos dados."
-      resolution: "Implementação de um sistema de cache robusto e otimização das chamadas à API com estratégias de debounce e throttling."
-    - kicker: "Persistência de Dados"
-      title: "Arquitetura de banco de dados para persistência de progresso"
-      description: "Desenvolver um esquema de banco de dados flexível e escalável para armazenar o progresso do usuário em diferentes roadmaps, considerando a complexidade das relações entre tópicos e subtópicos."
-      resolution: "Utilização de MongoDB com um modelo de dados aninhado e indexação estratégica para consultas rápidas e eficientes."
-    - kicker: "Experiência do Usuário"
-      title: "Design de interface intuitiva para roadmaps complexos"
-      description: "Transformar a complexidade de um roadmap de aprendizado em uma interface de usuário simples e fácil de navegar, que incentive o engajamento e a progressão."
-      resolution: "Foco em um design minimalista, com feedback visual claro para o progresso e navegação por etapas, utilizando testes de usabilidade para refinar a experiência."
-  features:
-    - "Sugestões de projetos personalizadas"
-    - "Tracking de progresso interativo"
+  status: "Concluído"
+  platform: "Web"
+  focus: "Front-end"
 ---
+
+
+[🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
+
+This is an interactive and educational web project that allows users to explore the Solar System. Discover information about the planets and test your knowledge with an engaging quiz.
+
+---
+## 🚀 Project Overview
+
+[![Project Demonstration](src/images/project-demo.gif)](https://emellybmuniz.github.io/projeto-via-lactea-v0.1/)
+
+## ✨ Highlights & Features
+
+- **Interactive Solar System:** Hover over planets to see their names and click to view detailed information.
+- **Educational Content:** Learn interesting facts about each planet and the Sun.
+- **Engaging Quiz:** Test your astronomical knowledge with a multiple-choice quiz.
+
+## 🛠️ Technologies Used
+
+This project was built using the following technologies:
+
+## 1. Clone this repository
+$ git clone https://github.com/emellybmuniz/projeto-via-lactea-v0.1.git
+## 2. Navigate to the project directory
+$ cd projeto-via-lactea-v0.1
+## 3. Open in your browser
+
+## Linux
+$ xdg-open index.html
+
+## macOS
+$ open index.html 
+
+## Windows
+$ start index.html 
+```
+

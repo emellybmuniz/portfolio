@@ -12,7 +12,7 @@
             <source srcset="{{ $thumbnailWebP.RelPermalink }}" type="image/webp" />
             <img
               src="{{ $thumbnailFallback.RelPermalink }}"
-              alt="Capa do projeto {{ .Title }}"
+              alt="{{ printf (i18n "projects.cover_alt" | default "Capa do projeto %s") .Title }}"
               class="project-card__image"
               loading="lazy"
               decoding="async"

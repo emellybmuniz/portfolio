@@ -9,7 +9,6 @@
  */
 
 @media (max-width: 767px) {
-
   // ─── 1. Body: remove gradientes pesados e mouse-tracking ────────────────────
   // O radial-gradient baseado em --mouse-x/--mouse-y não faz sentido em touch.
   // Substitui por um gradiente estático leve.
@@ -63,7 +62,7 @@
     padding-top: var(--spacing-xl) !important;
     padding-bottom: var(--spacing-xl) !important;
   }
-  
+
   .contact {
     padding-bottom: 0 !important; // Formulário gruda no bottom
   }
@@ -73,7 +72,7 @@
   .dashboard__card,
   .dashboard__metric-card {
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     background-color: var(--color-surface-elevated, var(--color-surface));
   }
 
@@ -81,7 +80,7 @@
   // blur(4px) no overlay ainda é razoável, mas pode ser reduzido.
   .skills__drawer-overlay {
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     background-color: rgba(0, 0, 0, 0.72);
   }
 
@@ -89,7 +88,7 @@
   // Conforme a diretriz: no mobile usar background sólido em vez de blur.
   .header__nav {
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     background-color: var(--color-bg);
   }
 

@@ -5,111 +5,149 @@
 {{ $projectType := delimit $categories " / " }}
 {{ $summary := .Params.description }} 
 
-<article class="project-single">
-  <section class="project-single__hero">
-    <div class="project-single__container project-single__hero-grid">
-      <div class="project-single__intro">
-        <a class="project-single__back" href="{{ printf "%s#projects" .Site.Home.RelPermalink }}" aria-label="{{ i18n "single.back" }}">
-          <span aria-hidden="true">‹</span>
-          <span>{{ i18n "single.back" }}</span>
+<article class="single-article">
+  <section class="single-hero">
+    <div class="single-hero__container">
+      
+      <!-- Detalhes Textuais Principais -->
+      <div class="single-hero__content">
+        <a href="{{ printf "%s#projects" .Site.Home.RelPermalink }}" class="single-hero__back-projects">
+          Ver todos os projetos
         </a>
+        
+        <h2 class="single-hero__title">
+          {{ .Title }}
+        </h2>
 
-        <p class="project-single__eyebrow">{{ i18n "about.details" }}</p>
-        <h1 class="project-single__title">{{ .Title }}</h1>
-
-        <ul class="project-single__tech-badges" aria-label="{{ i18n "projects.technologies_label" }}">
+        <!-- Chips Rápidos de Tecnologias de Destaque -->
+        <div class="single-hero__techs">
           {{ range $primaryTechs }}
-            <li class="project-single__tech-badge">{{ . }}</li>
+            <span class="single-hero__tech">{{ . }}</span>
           {{ end }}
-        </ul>
+        </div>
 
-        <p class="project-single__summary">{{ $summary }}</p>
+        <p class="single-hero__desc">
+          {{ $summary }}
+        </p>
       </div>
 
-      <aside class="project-single__spec" aria-label="{{ i18n "about.overview" }}">
-        <p class="project-single__spec-label">{{ i18n "about.overview" }}</p>
-        <dl class="project-single__meta-grid">
-          <div>
-            <dt>{{ i18n "single.dev_time" }}</dt>
-            <dd>{{ .Params.metadata.duration }}</dd>
+      <!-- Card Lateral de Metadados Rápidos -->
+      <aside class="single-meta">
+        <div class="single-meta__grid">
+          {{ if .Params.metadata.status }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.status" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.status }}</span>
           </div>
-          <div>
-            <dt>{{ i18n "single.role" }}</dt>
-            <dd>{{ .Params.metadata.role }}</dd>
+          {{ end }}
+          {{ if .Params.metadata.platform }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.platform" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.platform }}</span>
           </div>
-          <div>
-            <dt>{{ i18n "single.accessibility" }}</dt>
-            <dd>{{ .Params.metadata.accessibility }}</dd>
+          {{ end }}
+          {{ if .Params.metadata.focus }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.focus" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.focus }}</span>
           </div>
-          <div>
-            <dt>{{ i18n "single.type" }}</dt>
-            <dd>{{ $projectType }}</dd>
+          {{ end }}
+          {{ if .Params.metadata.duration }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.dev_time" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.duration }}</span>
           </div>
-        </dl>
+          {{ end }}
+          {{ if .Params.metadata.role }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.role" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.role }}</span>
+          </div>
+          {{ end }}
+          {{ if .Params.metadata.accessibility }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.accessibility" }}</span>
+            <span class="single-meta__value">{{ .Params.metadata.accessibility }}</span>
+          </div>
+          {{ end }}
+          <div class="single-meta__item">
+            <span class="single-meta__label">{{ i18n "single.type" }}</span>
+            <span class="single-meta__value">{{ $projectType }}</span>
+          </div>
+        </div>
 
-        <div class="project-single__actions">
+        <div class="single-meta__actions">
           {{ with .Params.repositoryUrl }}
-            <a class="btn btn--sm project-card__action project-card__action--repository" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "about.repository" }}</a>
+          <a href="{{ . }}" class="single-meta__btn single-meta__btn--repo" target="_blank" rel="noopener noreferrer">
+            {{ i18n "about.repository" }}
+          </a>
           {{ end }}
           {{ with .Params.liveDemo }}
-            <a class="btn btn--sm project-card__action project-card__action--demo" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ i18n "about.demo" }}</a>
+          <a href="{{ . }}" class="single-meta__btn single-meta__btn--demo" target="_blank" rel="noopener noreferrer">
+            {{ i18n "about.demo" }}
+          </a>
           {{ end }}
         </div>
       </aside>
+
     </div>
   </section>
 
-  <div class="project-single__container project-single__body">
-    <section class="project-single__section" aria-labelledby="project-stack-title">
-      <div class="project-single__section-heading">
-        <h2 id="project-stack-title">{{ i18n "about.applied_tech" }}</h2>
-        {{ with .Params.stackIntro }}<p>{{ . }}</p>{{ end }}
-      </div>
+  <!-- CORPO DA WIKI -->
+  <main class="single-body">
+    <div class="single-body__container">
+      
+      <!-- SEÇÃO: TECNOLOGIAS APLICADAS -->
+      <section class="single-section" aria-label="Especialização de Stacks">
+        <div class="single-section__header">
+          <span class="single-section__subtitle">{{ i18n "about.applied_tech" }}</span>
+          {{ with .Params.stackIntro }}<p class="single-section__desc">{{ . }}</p>{{ end }}
+        </div>
 
-      <div class="project-single__stack-grid">
-        {{ range $index, $tech := first 4 $technologies }}
-          <article class="project-single__stack-card">
-            <div class="project-single__stack-card-header">
-              <h3>{{ $tech | title }}</h3>
-              <span aria-hidden="true"></span>
+        <div class="single-stack">
+          {{ range $index, $tech := first 4 $technologies }}
+          <div class="single-stack__card">
+            <div class="single-stack__top">
+              <span class="single-stack__name">{{ $tech | title }}</span>
+              <span class="single-stack__dot"></span>
             </div>
-          </article>
-        {{ end }}
-      </div>
-    </section>
-
-    <section class="project-single__documentation" aria-label="Documentação técnica">
-      <div class="project-single__content-flow">
-        <section class="project-single__topic">
-          <h2><span aria-hidden="true"></span>{{ i18n "about.context" }}</h2>
-          {{ if gt (len .Content) 0 }}
-            <div class="project-single__content">
-              {{ .Content }}
-            </div>
-          {{ end }}
-        </section>
-
-        <section class="project-single__topic">
-          <h2><span aria-hidden="true"></span>{{ i18n "about.challenges" }}</h2>
-          <div class="project-single__challenge-list">
-            {{ if .Params.metadata.challenges }}
-              {{ range $challenge := .Params.metadata.challenges }}
-                <article class="project-single__challenge">
-                  {{ with $challenge.kicker }}<p class="project-single__challenge-kicker">{{ . }}</p>{{ end }}
-                  {{ with $challenge.title }}<h3>{{ . }}</h3>{{ end }}
-                  {{ with $challenge.description }}<p>{{ . }}</p>{{ end }}
-                  {{ with $challenge.resolution }}<strong>{{ i18n "single.resolution" }}: {{ . }}</strong>{{ end }}
-                </article>
-              {{ end }}
-            {{ else }}
-              <p>{{ i18n "single.no_challenges" }}</p>
-            {{ end }}
+            <div class="single-stack__divider"></div>
+            <!-- Idealmente, uma descrição da tecnologia, se não houver, colocamos um placeholder ou não exibimos -->
+            <p class="single-stack__info">Tecnologia central aplicada ao escopo deste projeto visando escalabilidade.</p>
           </div>
-        </section>
+          {{ end }}
+        </div>
+      </section>
 
-      </div>
-    </section>
-  </div>
+      <!-- CONTEÚDO SEMÂNTICO DO MARKDOWN -->
+      {{ if gt (len .Content) 0 }}
+      <section class="single-content">
+        <h3 class="single-content__title">{{ i18n "about.context" }}</h3>
+        <div class="single-content__text">
+          {{ .Content }}
+        </div>
+      </section>
+      {{ end }}
+
+      <!-- Desafios Resolvidos -->
+      {{ if .Params.metadata.challenges }}
+      <section class="single-content">
+        <h3 class="single-content__title">{{ i18n "about.challenges" }}</h3>
+        <div class="single-challenges">
+          {{ range $challenge := .Params.metadata.challenges }}
+          <div class="single-challenge">
+            {{ with $challenge.kicker }}<span class="single-challenge__kicker">{{ . }}</span>{{ end }}
+            {{ with $challenge.title }}<h4 class="single-challenge__title">{{ . }}</h4>{{ end }}
+            {{ with $challenge.description }}<p class="single-challenge__desc">{{ . }}</p>{{ end }}
+            {{ with $challenge.resolution }}<p class="single-challenge__res">: {{ . }}</p>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+    </div>
+  </main>
 </article>
 
 {{- partial "sections/footer.html" . -}}

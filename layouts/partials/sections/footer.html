@@ -64,7 +64,7 @@
       </div>
 
       <div class="footer__controls">
-        <div class="footer__control-group" id="themeDropdownContainer">
+        <theme-toggle class="footer__control-group" id="themeDropdownContainer">
           <button class="footer__control-btn footer__control-btn--theme" id="themeToggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenu" aria-label="Selecionar tema">
             <span class="footer__control-icon" id="themeActiveIcon" aria-hidden="true"></span>
             <span class="footer__control-label" id="themeActiveLabel">{{ i18n "footer.theme_violet" }}</span>
@@ -76,20 +76,20 @@
           <div class="footer__dropdown" id="themeMenu" role="menu" hidden>
             <button type="button" class="footer__dropdown-item" data-theme="light" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "footer.theme_light" }}</span>
-              <span class="footer__dropdown-item-meta">01</span>
+              <span class="theme-dot theme-dot--light"></span>
             </button>
             <button type="button" class="footer__dropdown-item" data-theme="violet" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "footer.theme_violet" }}</span>
-              <span class="footer__dropdown-item-meta">02</span>
+              <span class="theme-dot theme-dot--violet"></span>
             </button>
             <button type="button" class="footer__dropdown-item" data-theme="extra-dark" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "footer.theme_dark" }}</span>
-              <span class="footer__dropdown-item-meta">03</span>
+              <span class="theme-dot theme-dot--extra-dark"></span>
             </button>
           </div>
-        </div>
+        </theme-toggle>
 
-        <div class="footer__control-group" id="langDropdownContainer">
+        <lang-toggle class="footer__control-group" id="langDropdownContainer">
           <button class="footer__control-btn footer__control-btn--lang" id="langToggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" aria-label="Selecionar idioma">
             <span class="footer__control-label" id="langToggleLabel">PT</span>
             <svg class="footer__control-caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
@@ -123,7 +123,7 @@
               {{- end -}}
             {{- end -}}
           </div>
-        </div>
+        </lang-toggle>
       </div>
     </div>
   </div>

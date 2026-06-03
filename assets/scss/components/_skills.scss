@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 .skills__container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -9,7 +11,8 @@
 }
 
 .skills__filters-desktop {
-  @include flex-center;
+  @include mixins.flex-center;
+
   gap: var(--spacing-md);
   flex-wrap: wrap;
   margin-bottom: var(--spacing-2xl);
@@ -17,14 +20,17 @@
 }
 
 .skills__filter-btn {
-  @include flex-center;
+  @include mixins.flex-center;
+
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-lg);
   border: 2px solid var(--color-surface-border);
   border-radius: 50px;
   background: transparent;
   color: var(--color-text);
-  @include transition;
+
+  @include mixins.transition;
+
   font-size: var(--font-size-base);
   position: relative;
   overflow: hidden;
@@ -205,7 +211,9 @@
   box-shadow: var(--shadow-card);
   padding: var(--spacing-sm);
   text-align: center;
-  @include transition;
+
+  @include mixins.transition;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,7 +247,9 @@
       transparent
     );
     opacity: 0;
-    @include transition;
+
+    @include mixins.transition;
+
     z-index: 10;
   }
 }
@@ -249,14 +259,17 @@
   height: 108px;
   margin-bottom: calc(var(--spacing-xs) * -2);
   position: relative;
-  @include flex-center;
+
+  @include mixins.flex-center;
 }
 
 .skill-card__icon-bg {
   width: 100%;
   height: 100%;
   border-radius: var(--border-radius-md);
-  @include flex-center;
+
+  @include mixins.flex-center;
+
   padding: var(--spacing-lg);
   position: relative;
   overflow: hidden;
@@ -371,7 +384,6 @@
   }
 }
 
-
 // ── Botões de categoria mobile ───────────────────────────────────────
 .skills__mobile-cat-btn {
   display: flex;
@@ -387,7 +399,8 @@
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   text-align: left;
-  @include transition;
+
+  @include mixins.transition;
 
   &:hover {
     border-color: rgba(var(--color-secondary-rgb), 0.45);
@@ -437,7 +450,7 @@
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   touch-action: none; // bloqueia scroll por toque em iOS
@@ -468,7 +481,8 @@
   transform: translateY(100%);
   pointer-events: none; // bloqueado enquanto fechado
   will-change: transform;
-  transition: transform var(--transition-base, 0.25s) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-base, 0.25s)
+    cubic-bezier(0.4, 0, 0.2, 1);
 
   &.is-open {
     transform: translateY(0);
@@ -544,7 +558,8 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   box-shadow: var(--shadow-card);
-  @include transition;
+
+  @include mixins.transition;
 
   img {
     width: 1.5rem;
@@ -576,7 +591,8 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-  @include transition;
+
+  @include mixins.transition;
 
   &:hover {
     background-color: rgba(var(--color-secondary-rgb), 0.06);
@@ -588,4 +604,3 @@
     outline-offset: 2px;
   }
 }
-

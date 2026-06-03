@@ -1,7 +1,7 @@
 ---
 title: "Portfolio Redesign"
 date: 2026-06-01
-featured: true
+featured: false
 draft: false
 description: "Redesign de portfólio pessoal focado em destacar projetos de forma mais visual e interativa, utilizando Hugo para uma construção rápida e eficiente."
 imageCover: "portfolio-project-cover.webp"

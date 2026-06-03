@@ -1,5 +1,8 @@
+@use "../abstracts/mixins";
+
 .btn {
-  @include flex-center;
+  @include mixins.flex-center;
+
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-lg);
   font-size: var(--font-size-base);
@@ -8,10 +11,12 @@
   text-decoration: none;
   border-radius: var(--border-radius-md);
   cursor: pointer;
-  @include transition;
+
+  @include mixins.transition;
+
   display: inline-flex;
   white-space: nowrap;
-  min-height: 48px; /* Thumb-friendly tap target */
+  min-height: 48px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -19,7 +24,7 @@
   }
 
   &:focus {
-    @include focus-ring;
+    @include mixins.focus-ring;
   }
 
   &:disabled {
@@ -29,7 +34,8 @@
 }
 
 .btn__icon {
-  @include flex-center;
+  @include mixins.flex-center;
+
   width: 1em;
   height: 1em;
 
@@ -117,7 +123,7 @@
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.1),
       0 8px 20px var(--secondary-color-shadow);
-    color: #ffffff;
+    color: #fff;
 
     &::before {
       opacity: 1;
@@ -145,7 +151,7 @@
     rgba(157, 78, 221, 0.9),
     rgba(145, 61, 207, 0.92)
   );
-  color: #ffffff;
+  color: #fff;
   isolation: isolate;
 
   &::before,
@@ -184,7 +190,7 @@
   }
 
   &:hover:not(:disabled) {
-    color: #ffffff;
+    color: #fff;
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow:
       0 0 0 1px rgba(45, 212, 191, 0.12),
@@ -205,10 +211,10 @@
 [data-theme="light"] .btn--holographic {
   background: linear-gradient(
     135deg,
-    rgba(123, 67, 181, 0.74),
-    rgba(164, 125, 214, 0.8)
+    rgba(93, 47, 150, 0.9),
+    rgba(116, 64, 182, 0.9)
   );
-  border-color: rgba(123, 67, 181, 0.18);
+  border-color: rgba(93, 47, 150, 0.3);
 }
 
 [data-theme="light"] .btn--holographic.btn--holographic--subtle {
@@ -218,6 +224,7 @@
     rgba(123, 67, 181, 0.1)
   );
   border-color: rgba(123, 67, 181, 0.12);
+  color: var(--color-primary-dark);
 }
 
 .btn--holographic.btn--holographic--subtle {

@@ -1,3 +1,4 @@
+@use "sass:map";
 $breakpoints: (
   "xs": 320px,
   "sm": 480px,
@@ -8,7 +9,7 @@ $breakpoints: (
 );
 
 @mixin media($size) {
-  $breakpoint: map-get($breakpoints, $size);
+  $breakpoint: map.get($breakpoints, $size);
 
   @media (min-width: #{$breakpoint}) {
     @content;
@@ -16,7 +17,7 @@ $breakpoints: (
 }
 
 @mixin media-down($size) {
-  $breakpoint: map-get($breakpoints, $size);
+  $breakpoint: map.get($breakpoints, $size);
 
   @media (max-width: #{$breakpoint - 1px}) {
     @content;
@@ -24,8 +25,8 @@ $breakpoints: (
 }
 
 @mixin media-between($start, $end) {
-  $start-breakpoint: map-get($breakpoints, $start);
-  $end-breakpoint: map-get($breakpoints, $end);
+  $start-breakpoint: map.get($breakpoints, $start);
+  $end-breakpoint: map.get($breakpoints, $end);
 
   @media (min-width: #{$start-breakpoint}) and (max-width: #{$end-breakpoint - 1px}) {
     @content;

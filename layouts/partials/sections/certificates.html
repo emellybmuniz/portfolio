@@ -1,6 +1,6 @@
 <section class="certificates" id="certificates">
   <div class="certificates__container">
-    <h2 class="certificates__title">{{ i18n "certificates.title" }}</h2>
+    <h2 class="certificates__title" data-animate="animate-fade-in-up" data-observe-once="true">{{ i18n "certificates.title" }}</h2>
 
     {{- $contentSite := $.Site -}} {{- if ne (lower $.Site.Language.Lang)
     "pt-br" -}} {{- range .Sites -}} {{- if eq (lower .Language.Lang) "pt-br"

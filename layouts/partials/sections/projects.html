@@ -1,6 +1,6 @@
 <section class="projects projects--home" id="projects">
   <div class="projects__container">
-    <h2 class="projects__title">{{ i18n "projects.featured_title" }}</h2>
+    <h2 class="projects__title" data-animate="animate-fade-in-up" data-observe-once="true">{{ i18n "projects.featured_title" }}</h2>
 
     {{ $projects := where .Site.RegularPages "Section" "projects" }}
 

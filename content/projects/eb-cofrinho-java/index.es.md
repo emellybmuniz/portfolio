@@ -1,7 +1,7 @@
 ---
 title: "EB Cofrinho Java"
 date: 2025-06-01
-featured: true
+featured: false
 weight: 1
 draft: false
 description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."

@@ -330,3 +330,12 @@ other = "English"
 
 [lang.es]
 other = "Spanish"
+
+[single.status]
+other = "Status"
+
+[single.platform]
+other = "Platform"
+
+[single.focus]
+other = "Focus"

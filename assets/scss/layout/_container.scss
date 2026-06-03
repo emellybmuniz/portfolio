@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /**
  * LAYOUT / CONTAINER
  * Containers responsivos
@@ -33,5 +35,6 @@
 /* Wrapper para seções */
 section {
   position: relative;
-  @include contain-layout(layout);
+
+  @include mixins.contain-layout(layout);
 }

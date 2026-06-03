@@ -1,11 +1,13 @@
+@use "sass:color";
+@use "sass:math";
 /**
  * ABSTRACTS / FUNCTIONS
- * Funções SCSS reutilizáveis
+ * Mixins
  */
 
 /* Converter pixels para rem */
 @function to-rem($pixels) {
-  @if unit($pixels) == "px" {
+  @if math.unit($pixels) == "px" {
     @return ($pixels / 16px) * 1rem;
   } @else {
     @return ($pixels / 16) * 1rem;
@@ -24,6 +26,9 @@
 
 /* Calcular contraste */
 @function luminance($color) {
-  @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) /
+  @return (
+      color.red($color) * 0.299 + color.green($color) * 0.587 +
+        color.blue($color) * 0.114
+    ) /
     255;
 }

@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /**
  * LAYOUT / GRID
  * Sistemas de grid e layouts
@@ -20,11 +22,11 @@
   }
 
   &--auto-fit {
-    @include grid-auto-fit(250px);
+    @include mixins.grid-auto-fit(250px);
   }
 
   &--auto-fill {
-    @include grid-auto-fill(250px);
+    @include mixins.grid-auto-fill(250px);
   }
 
   @media (max-width: 768px) {
@@ -43,14 +45,14 @@
 
 /* Flex layouts */
 .flex {
-  @include flex-center;
+  @include mixins.flex-center;
 
   &--between {
-    @include flex-between;
+    @include mixins.flex-between;
   }
 
   &--column {
-    @include flex-column;
+    @include mixins.flex-column;
   }
 
   &--start {

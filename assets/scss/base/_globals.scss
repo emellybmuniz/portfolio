@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /**
  * BASE / GLOBALS
  * Estilos globais e inicializações
@@ -5,7 +7,7 @@
 
 /* Focus visível global */
 :focus-visible {
-  @include focus-ring;
+  @include mixins.focus-ring;
 }
 
 /* Selection */
@@ -47,12 +49,12 @@
 
 /* Screen reader only */
 .sr-only {
-  @include sr-only;
+  @include mixins.sr-only;
 }
 
 /* Visually hidden */
 .visually-hidden {
-  @include visually-hidden;
+  @include mixins.visually-hidden;
 }
 
 /* Print styles */

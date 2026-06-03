@@ -1,0 +1,35 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}#person",
+      "name": "Emelly Beatriz",
+      "jobTitle": "Estudante engenharia de software",
+      {{- $profile := resources.Get "images/hero/profile-picture.webp" }}
+      {{- if $profile }}
+      "image": "{{ $profile.Permalink }}",
+      {{- end }}
+      "url": "{{ .Site.BaseURL }}",
+      "sameAs": [
+        {{- $links := slice }}
+        {{- with .Site.Params.social.linkedin }}{{ $links = $links | append (printf "\"%s\"" .) }}{{ end }}
+        {{- with .Site.Params.social.github }}{{ $links = $links | append (printf "\"%s\"" .) }}{{ end }}
+        {{- with .Site.Params.social.instagram }}{{ $links = $links | append (printf "\"%s\"" .) }}{{ end }}
+        {{ delimit $links ", " | safeJS }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "inLanguage": "{{ .Site.Language.Lang }}"
+    }
+  ]
+}
+</script>

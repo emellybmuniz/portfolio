@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,8 +24,9 @@ body {
   background-attachment: fixed; /* overridden to "scroll" on mobile — see _mobile-performance.scss */
   overscroll-behavior-y: contain;
   overflow-x: clip;
-  transition: background-color var(--transition-base), color var(--transition-base);
-
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
   background-image:
     radial-gradient(
       circle 520px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
@@ -82,7 +85,8 @@ li {
 a {
   color: inherit;
   text-decoration: none;
-  @include transition;
+
+  @include mixins.transition;
 }
 
 button {
@@ -139,17 +143,18 @@ input[type="search"]::-webkit-search-results-decoration {
 /* Remove default number input spinner */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
 input[type="number"] {
   appearance: textfield;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* Lenis Smooth Scroll Recommended CSS */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

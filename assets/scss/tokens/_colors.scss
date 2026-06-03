@@ -1,0 +1,66 @@
+:root {
+  /* Colors - States */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #0d6efd;
+
+  /* Violet theme is the default base */
+  --color-bg: #110606;
+  --color-bg-secondary: #1c0f24;
+  --color-bg-elevated: #1f1329;
+  --color-text: #fff;
+  --bg-color: var(--color-bg);
+  --text-color: var(--color-text);
+  --text-secondary-color: var(--color-text-secondary);
+  --primary-color: var(--color-primary);
+  --primary-color-darker: var(--color-primary-dark);
+  --primary-color-shadow: rgba(157, 78, 221, 0.25);
+  --secondary-color: var(--color-secondary);
+  --secondary-color-darker: var(--color-secondary-dark);
+  --surface-color: var(--color-surface);
+  --surface-border-color: var(--color-surface-border);
+  --color-text-secondary: #c4c4c4;
+  --color-text-tertiary: #999;
+  --color-surface-elevated: rgba(34, 28, 47, 0.92);
+  --color-accent-rgb: 45, 212, 191;
+  --color-accent-secondary-rgb: 59, 130, 246;
+
+  /* Colors - Primary */
+  --color-primary: #9d4edd;
+  --color-primary-dark: #913dcf;
+  --color-primary-light: #c896ff;
+  --color-primary-alpha: rgba(157, 78, 221, 0.15);
+  --transition-medium: 0.3s;
+
+  /* Colors - Secondary */
+  --color-secondary: #28a745;
+  --color-secondary-dark: #218838;
+  --color-secondary-light: #71c788;
+  --color-secondary-rgb: 40, 167, 69;
+  --color-secondary-alpha: rgba(40, 167, 69, 0.14);
+  --secondary-color-shadow: rgba(40, 167, 69, 0.25);
+  --text-on-secondary: #fff;
+
+  /* Project actions */
+  --project-action-demo-bg: var(--color-secondary);
+  --project-action-demo-bg-hover: var(--color-secondary-dark);
+  --project-action-demo-border: rgba(var(--color-secondary-rgb), 0.34);
+  --project-action-demo-shadow: var(--secondary-color-shadow);
+  --project-action-demo-text: var(--text-on-secondary);
+  --project-action-repository-bg: rgba(59, 130, 246, 0.16);
+  --project-action-repository-bg-hover: rgba(59, 130, 246, 0.24);
+  --project-action-repository-border: rgba(59, 130, 246, 0.32);
+  --project-action-repository-shadow: rgba(59, 130, 246, 0.18);
+  --project-action-repository-text: #dbeafe;
+  --project-action-details-bg: rgba(157, 78, 221, 0.16);
+  --project-action-details-bg-hover: rgba(157, 78, 221, 0.24);
+  --project-action-details-border: rgba(157, 78, 221, 0.32);
+  --project-action-details-shadow: var(--primary-color-shadow);
+  --project-action-details-text: #f4eaff;
+
+  /* Colors - Surfaces */
+  --color-surface: rgba(27, 26, 40, 0.75);
+  --color-surface-border: rgba(255, 255, 255, 0.25);
+  --color-overlay: rgba(0, 0, 0, 0.3);
+}

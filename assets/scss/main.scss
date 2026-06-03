@@ -1,34 +1,46 @@
+/* ========== TOKENS ========== */
+@use "tokens/typography";
+@use "tokens/spacing";
+@use "tokens/shadows";
+@use "tokens/colors";
+@use "tokens/misc";
+
+/* ========== THEMES ========== */
+@use "themes/light";
+@use "themes/violet";
+@use "themes/extra-dark";
+
 /* ========== ABSTRACTS ========== */
-@import "abstracts/variables";
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/breakpoints";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/breakpoints";
 
 /* ========== BASE ========== */
-@import "base/reset";
-@import "base/typography";
-@import "base/globals";
+@use "base/reset";
+@use "base/typography" as typography2;
+@use "base/globals";
 
 /* ========== LAYOUT ========== */
-@import "layout/container";
-@import "layout/grid";
-@import "layout/header";
-@import "layout/footer";
+@use "layout/container";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
 
 /* ========== COMPONENTS ========== */
-@import "components/buttons";
-@import "components/cards";
-@import "components/hero";
-@import "components/contact";
-@import "components/projects";
-@import "components/dashboard";
-@import "components/skills";
+@use "components/buttons";
+@use "components/cards";
+@use "components/hero";
+@use "components/contact";
+@use "components/projects";
+@use "components/dashboard";
+@use "components/skills";
 
 /* ========== PAGES ========== */
-@import "pages/home";
+@use "pages/home";
+@use "pages/single";
 
 /* ========== UTILITIES ========== */
-@import "utilities/animations";
-@import "utilities/spacing";
-@import "utilities/visibility";
-@import "utilities/mobile-performance";
+@use "utilities/animations";
+@use "utilities/spacing" as spacing2;
+@use "utilities/visibility";
+@use "utilities/mobile-performance";

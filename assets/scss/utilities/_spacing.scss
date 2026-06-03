@@ -1,18 +1,23 @@
 .m-0 {
   margin: 0;
 }
+
 .m-xs {
   margin: var(--spacing-xs);
 }
+
 .m-sm {
   margin: var(--spacing-sm);
 }
+
 .m-md {
   margin: var(--spacing-md);
 }
+
 .m-lg {
   margin: var(--spacing-lg);
 }
+
 .m-xl {
   margin: var(--spacing-xl);
 }
@@ -20,9 +25,11 @@
 .mt-md {
   margin-top: var(--spacing-md);
 }
+
 .mt-lg {
   margin-top: var(--spacing-lg);
 }
+
 .mt-xl {
   margin-top: var(--spacing-xl);
 }
@@ -30,9 +37,11 @@
 .mb-md {
   margin-bottom: var(--spacing-md);
 }
+
 .mb-lg {
   margin-bottom: var(--spacing-lg);
 }
+
 .mb-xl {
   margin-bottom: var(--spacing-xl);
 }
@@ -40,9 +49,11 @@
 .p-md {
   padding: var(--spacing-md);
 }
+
 .p-lg {
   padding: var(--spacing-lg);
 }
+
 .p-xl {
   padding: var(--spacing-xl);
 }
@@ -50,6 +61,7 @@
 .pt-lg {
   padding-top: var(--spacing-lg);
 }
+
 .pb-lg {
   padding-bottom: var(--spacing-lg);
 }
@@ -57,12 +69,15 @@
 .gap-sm {
   gap: var(--spacing-sm);
 }
+
 .gap-md {
   gap: var(--spacing-md);
 }
+
 .gap-lg {
   gap: var(--spacing-lg);
 }
+
 .gap-xl {
   gap: var(--spacing-xl);
 }

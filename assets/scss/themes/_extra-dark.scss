@@ -1,0 +1,62 @@
+[data-theme="extra-dark"] {
+  --color-bg: #020617;
+  --color-bg-secondary: #06101c;
+  --color-bg-elevated: #0f172a;
+  --color-text: #f4f7fb;
+  --color-text-secondary: #a7b4c8;
+  --color-text-tertiary: #71839a;
+  --color-primary: #9b83ff;
+  --color-primary-dark: #6f57d4;
+  --color-primary-light: #c9bcff;
+  --primary-color-shadow: rgba(155, 131, 255, 0.24);
+  --color-accent-rgb: 56, 189, 248;
+  --color-accent-secondary-rgb: 124, 92, 255;
+  --color-secondary: #2dd4bf;
+  --color-secondary-dark: #14b8a6;
+  --color-secondary-light: #7dd3fc;
+  --color-secondary-rgb: 45, 212, 191;
+  --color-secondary-alpha: rgba(45, 212, 191, 0.14);
+  --secondary-color-shadow: rgba(45, 212, 191, 0.22);
+  --color-surface: rgba(9, 15, 24, 0.9);
+  --color-surface-border: rgba(148, 163, 184, 0.25);
+  --color-overlay: rgba(2, 6, 23, 0.42);
+  --color-surface-elevated: rgba(15, 23, 42, 0.96);
+  --shadow-rgb: 0, 0, 0;
+  --shadow-accent-rgb: 155, 131, 255;
+  --text-on-primary: #fff;
+  --text-on-secondary: #031313;
+  --project-action-demo-bg: var(--color-secondary);
+  --project-action-demo-bg-hover: var(--color-secondary-dark);
+  --project-action-demo-border: rgba(var(--color-secondary-rgb), 0.4);
+  --project-action-demo-shadow: var(--secondary-color-shadow);
+  --project-action-demo-text: var(--text-on-secondary);
+  --project-action-repository-bg: rgba(56, 189, 248, 0.12);
+  --project-action-repository-bg-hover: rgba(56, 189, 248, 0.2);
+  --project-action-repository-border: rgba(56, 189, 248, 0.3);
+  --project-action-repository-shadow: rgba(56, 189, 248, 0.16);
+  --project-action-repository-text: #bae6fd;
+  --project-action-details-bg: rgba(155, 131, 255, 0.16);
+  --project-action-details-bg-hover: rgba(155, 131, 255, 0.24);
+  --project-action-details-border: rgba(155, 131, 255, 0.3);
+  --project-action-details-shadow: var(--primary-color-shadow);
+  --project-action-details-text: #eeeaff;
+}
+
+html[data-theme="extra-dark"] body {
+  background-image:
+    radial-gradient(
+      circle 560px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+      rgba(56, 189, 248, 0.08),
+      transparent 84%
+    ),
+    linear-gradient(150deg, var(--color-bg) 54%, var(--color-bg-secondary) 100%);
+}
+
+html[data-theme="extra-dark"] body::before {
+  background: radial-gradient(
+    circle 220px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(56, 189, 248, 0.09) 0,
+    rgba(124, 92, 255, 0.04) 28%,
+    transparent 72%
+  );
+}

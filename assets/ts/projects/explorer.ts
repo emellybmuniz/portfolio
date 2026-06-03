@@ -14,7 +14,7 @@ export class ProjectsExplorer {
     count: HTMLElement | null;
     summary: HTMLElement | null;
     emptyState: HTMLElement | null;
-    projectsGrid: HTMLElement | null; 
+    projectsGrid: HTMLElement | null;
   };
   private lastControlUsed: HTMLElement | null = null;
 
@@ -38,7 +38,7 @@ export class ProjectsExplorer {
       count: root.querySelector<HTMLElement>("[data-projects-count]"),
       summary: root.querySelector<HTMLElement>("[data-projects-summary]"),
       emptyState: root.querySelector<HTMLElement>("[data-projects-empty]"),
-      projectsGrid: root.querySelector<HTMLElement>("[data-projects-grid]"), 
+      projectsGrid: root.querySelector<HTMLElement>("[data-projects-grid]"),
     };
 
     this.init();
@@ -133,7 +133,6 @@ export class ProjectsExplorer {
         if (leftFeatured !== rightFeatured) {
           return rightFeatured - leftFeatured;
         }
-        // Fallback to date if featured is the same
         if (rightDate !== leftDate) {
           return rightDate - leftDate;
         }
@@ -148,19 +147,23 @@ export class ProjectsExplorer {
         return leftDate - rightDate;
       }
 
-      // Default to "recent"
       return rightDate - leftDate;
     });
 
     if (this.elements.projectsGrid) {
-      while (this.elements.projectsGrid.firstChild) {
-        this.elements.projectsGrid.removeChild(this.elements.projectsGrid.firstChild);
-      }
+      this.elements.cards.forEach((card) => {
+        if (!sortedCards.includes(card)) {
+          card.classList.add("projects__grid-item--hidden");
+        } else {
+          card.classList.remove("projects__grid-item--hidden");
+        }
+      });
 
+      // appendChild reorders existing dom nodes
       sortedCards.forEach((card) => {
         this.elements.projectsGrid?.appendChild(card);
       });
-    };
+    }
 
     const visibleCount = sortedCards.length;
 

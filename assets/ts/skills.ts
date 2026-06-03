@@ -1,29 +1,22 @@
 import { qAll } from "./utils/dom";
-
-// ── Tipos ────────────────────────────────────────────────────────────
 type DrawerCategoryId = "all" | "frontend" | "backend" | "tools" | "design";
 
 interface SkillData {
   name: string;
-  /** Caminho relativo do ícone (ex: "html.svg") */
   icon: string;
   categories: DrawerCategoryId[];
   colorFrom: string;
   colorTo: string;
-  /** Permalink completo gerado pelo Hugo */
   iconSrc: string;
 }
 
 interface SkillsElements {
   section: HTMLElement | null;
   skillsGrid: HTMLElement | null;
-  // Desktop
   mobileToggle: HTMLButtonElement | null;
   filterMenu: HTMLElement | null;
   allFilterButtons: HTMLButtonElement[];
-  // Mobile categories
   mobileCategoryButtons: HTMLButtonElement[];
-  // Drawer
   drawerOverlay: HTMLElement | null;
   drawer: HTMLElement | null;
   drawerTitle: HTMLElement | null;
@@ -33,16 +26,11 @@ interface SkillsElements {
 }
 
 /**
- * Gerencia os comportamentos específicos da seção Skills:
- * - Gradientes nas cards do grid
- * - Dropdown de filtro mobile (legado)
- * - Drawer mobile de categorias (novo)
- *
- * A lógica central de filtragem das cards fica em `content-filters.ts`.
+ * manage section behavior
+ * filtering logic kept in content-filters.ts
  */
 class SkillsSection {
   private elements: SkillsElements;
-  /** Cache de dados das skills coletados do DOM uma única vez. */
   private skillsData: SkillData[] = [];
   private previousFocus: HTMLElement | null = null;
 
@@ -55,9 +43,7 @@ class SkillsSection {
       ) as HTMLButtonElement | null,
       filterMenu: document.getElementById("skillFiltersMobileMenu"),
       allFilterButtons: qAll<HTMLButtonElement>(".skills__filter-btn"),
-      mobileCategoryButtons: qAll<HTMLButtonElement>(
-        ".skills__mobile-cat-btn",
-      ),
+      mobileCategoryButtons: qAll<HTMLButtonElement>(".skills__mobile-cat-btn"),
       drawerOverlay: document.getElementById("skillsDrawerOverlay"),
       drawer: document.getElementById("skillsDrawer"),
       drawerTitle: document.getElementById("skillsDrawerTitle"),
@@ -79,13 +65,8 @@ class SkillsSection {
     this.setupDrawer();
   }
 
-  // ── Escape do contain: layout ──────────────────────────────────────
-
   /**
-   * Move o overlay e o drawer para document.body.
-   * A section tem `contain: layout paint style` (via mixin global), o que
-   * quebra `position: fixed` — qualquer fixed filho fica relativo à section.
-   * Mover para body garante que position:fixed ancore ao viewport.
+   * move overlay to body to escape contain: layout and fix positioning
    */
   private hoistDrawerToBody(): void {
     const { drawerOverlay, drawer } = this.elements;
@@ -93,11 +74,8 @@ class SkillsSection {
     if (drawer) document.body.appendChild(drawer);
   }
 
-  // ── Coleta de dados ────────────────────────────────────────────────
-
   /**
-   * Lê os data-attributes das cards do grid (renderizadas pelo Hugo a partir
-   * do YAML) e armazena em memória. Evita duplicação de dados no HTML.
+   * cache dataset from DOM to avoid redundant reads
    */
   private collectSkillsData(): void {
     if (!this.elements.skillsGrid) return;
@@ -121,23 +99,18 @@ class SkillsSection {
     });
   }
 
-  // ── Gradientes ─────────────────────────────────────────────────────
-
   private applySkillGradients(): void {
     if (!this.elements.skillsGrid) return;
 
-    qAll<HTMLElement>(
-      ".skill-card__icon-bg",
-      this.elements.skillsGrid,
-    ).forEach((node) => {
-      const gradient = node.dataset.gradient;
-      if (gradient) {
-        node.style.backgroundImage = gradient;
-      }
-    });
+    qAll<HTMLElement>(".skill-card__icon-bg", this.elements.skillsGrid).forEach(
+      (node) => {
+        const gradient = node.dataset.gradient;
+        if (gradient) {
+          node.style.backgroundImage = gradient;
+        }
+      },
+    );
   }
-
-  // ── Dropdown mobile legado ─────────────────────────────────────────
 
   private setupMobileFilterInteraction(): void {
     const { mobileToggle, filterMenu, allFilterButtons } = this.elements;
@@ -174,15 +147,12 @@ class SkillsSection {
   }
 
   private updateMobileToggleLabel(label: string): void {
-    const labelSpan = this.elements.mobileToggle?.querySelector(
-      ".current-category",
-    );
+    const labelSpan =
+      this.elements.mobileToggle?.querySelector(".current-category");
     if (labelSpan) {
       labelSpan.textContent = label.trim();
     }
   }
-
-  // ── Drawer mobile ──────────────────────────────────────────────────
 
   private setupDrawer(): void {
     const { mobileCategoryButtons, drawerOverlay, drawerClose } = this.elements;
@@ -193,7 +163,9 @@ class SkillsSection {
 
     mobileCategoryButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const categoryId = btn.dataset.drawerTrigger as DrawerCategoryId | undefined;
+        const categoryId = btn.dataset.drawerTrigger as
+          | DrawerCategoryId
+          | undefined;
         if (categoryId) {
           this.openDrawer(categoryId);
         }
@@ -220,20 +192,23 @@ class SkillsSection {
   private openDrawer(categoryId: DrawerCategoryId): void {
     const { drawer, drawerOverlay, drawerTitle, drawerDesc, drawerList } =
       this.elements;
-    if (!drawer || !drawerOverlay || !drawerTitle || !drawerDesc || !drawerList) {
+    if (
+      !drawer ||
+      !drawerOverlay ||
+      !drawerTitle ||
+      !drawerDesc ||
+      !drawerList
+    ) {
       return;
     }
 
-    // Filtra as skills
     const filtered =
       categoryId === "all"
         ? this.skillsData
         : this.skillsData.filter((s) => s.categories.includes(categoryId));
 
-    // Guarda foco anterior para restaurar ao fechar
     this.previousFocus = document.activeElement as HTMLElement;
 
-    // Atualiza título com ícone do botão clicado
     const triggerBtn = this.elements.mobileCategoryButtons.find(
       (b) => b.dataset.drawerTrigger === categoryId,
     );
@@ -241,8 +216,9 @@ class SkillsSection {
       ?.querySelector(".skills__mobile-cat-btn-icon")
       ?.cloneNode(true);
     const labelText =
-      triggerBtn?.querySelector(".skills__mobile-cat-btn-label")?.textContent?.trim() ??
-      categoryId;
+      triggerBtn
+        ?.querySelector(".skills__mobile-cat-btn-label")
+        ?.textContent?.trim() ?? categoryId;
 
     drawerTitle.textContent = "";
     if (iconClone) {
@@ -250,14 +226,13 @@ class SkillsSection {
     }
     drawerTitle.append(` ${labelText}`);
 
-    // Descrição com contagem
     const count = filtered.length;
-    const countLabel = count === 1
-      ? drawerDesc.dataset.singular ?? "skill nesta categoria"
-      : drawerDesc.dataset.plural ?? "skills nesta categoria";
+    const countLabel =
+      count === 1
+        ? (drawerDesc.dataset.singular ?? "skill nesta categoria")
+        : (drawerDesc.dataset.plural ?? "skills nesta categoria");
     drawerDesc.textContent = `${count} ${countLabel}`;
 
-    // Popula badges
     drawerList.innerHTML = "";
     const fragment = document.createDocumentFragment();
 
@@ -282,14 +257,12 @@ class SkillsSection {
 
     drawerList.appendChild(fragment);
 
-    // Abre
     drawerOverlay.classList.add("is-open");
     drawer.classList.add("is-open");
     drawerOverlay.setAttribute("aria-hidden", "false");
     drawer.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    // Foca o botão de fechar
     this.elements.drawerClose?.focus();
   }
 
@@ -303,21 +276,18 @@ class SkillsSection {
     drawer.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
-    // Limpa badges após a transição
-    const delay = parseFloat(
-      getComputedStyle(drawer).transitionDuration,
-    ) * 1000 || 250;
+    const delay =
+      parseFloat(getComputedStyle(drawer).transitionDuration) * 1000 || 250;
     setTimeout(() => {
       if (drawerList) drawerList.innerHTML = "";
     }, delay);
 
-    // Restaura foco
     this.previousFocus?.focus();
     this.previousFocus = null;
   }
 
   /**
-   * Prende o Tab dentro do drawer enquanto ele está aberto.
+   * trap focus within drawer while open
    */
   private trapFocus(e: KeyboardEvent): void {
     const { drawer } = this.elements;
@@ -347,8 +317,7 @@ class SkillsSection {
   }
 
   /**
-   * Retorna `#111827` para fundos claros e `#ffffff` para fundos escuros,
-   * baseado na luminância relativa (mesmo algoritmo do portfolio antigo).
+   * fallback to black/white text depending on relative luminance
    */
   private getTextColor(hex: string): string {
     if (!hex || hex.length < 7) return "#ffffff";
@@ -360,7 +329,6 @@ class SkillsSection {
   }
 }
 
-// ── Inicialização ────────────────────────────────────────────────────
 function initializeSkillsSection(): void {
   if (document.getElementById("skills")) {
     new SkillsSection();
@@ -372,4 +340,3 @@ if (document.readyState === "loading") {
 } else {
   initializeSkillsSection();
 }
-

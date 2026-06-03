@@ -1,4 +1,4 @@
 <!-- Hugo Pipeline -->
-{{ $scss := resources.Get "scss/main.scss" }} {{ $css := $scss | css.Sass (dict
-"outputStyle" "compressed") }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ $scss := resources.Get "scss/main.scss" }}
+{{ $css := $scss | css.Sass (dict "outputStyle" "compressed" "transpiler" "dartsass") | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
