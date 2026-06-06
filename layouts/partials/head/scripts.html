@@ -1,10 +1,18 @@
-{{ $ts := resources.Get "ts/main.ts" }}
-{{ if $ts }}
-{{ $js := $ts | js.Build (dict "minify" true) | resources.Fingerprint }}
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ $ts := resources.Get "ts/main.ts" }} {{ if $ts }} {{ $js := $ts | js.Build
+(dict "minify" true) | resources.Fingerprint }}
+<script
+  src="{{ $js.RelPermalink }}"
+  integrity="{{ $js.Data.Integrity }}"
+  crossorigin="anonymous"
+  defer
+></script>
 {{ end }}
 <!-- Smooth Scrolling via Lenis -->
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"
+  integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed"
+  crossorigin="anonymous"
+></script>
 
 <script>
   if ("requestIdleCallback" in window) {

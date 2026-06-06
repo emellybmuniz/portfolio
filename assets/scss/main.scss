@@ -1,46 +1,47 @@
-/* ========== TOKENS ========== */
-@use "tokens/typography";
-@use "tokens/spacing";
-@use "tokens/shadows";
-@use "tokens/colors";
-@use "tokens/misc";
+// ========== tokens ==========
+@use "../core/styles/tokens/typography";
+@use "../core/styles/tokens/spacing";
+@use "../core/styles/tokens/shadows";
+@use "../core/styles/tokens/colors";
+@use "../core/styles/tokens/misc";
 
-/* ========== THEMES ========== */
-@use "themes/light";
-@use "themes/violet";
-@use "themes/extra-dark";
+// ========== themes ==========
+@use "../core/styles/themes/light";
+@use "../core/styles/themes/violet";
+@use "../core/styles/themes/extra-dark";
 
-/* ========== ABSTRACTS ========== */
-@use "abstracts/functions";
-@use "abstracts/mixins";
-@use "abstracts/breakpoints";
+// ========== abstracts ==========
+@use "../core/styles/abstracts/functions";
+@use "../core/styles/abstracts/mixins";
+@use "../core/styles/abstracts/breakpoints";
 
-/* ========== BASE ========== */
-@use "base/reset";
-@use "base/typography" as typography2;
-@use "base/globals";
+// ========== base ==========
+@use "../core/styles/base/reset";
+@use "../core/styles/base/typography" as typography2;
+@use "../core/styles/base/globals";
 
-/* ========== LAYOUT ========== */
-@use "layout/container";
-@use "layout/grid";
-@use "layout/header";
-@use "layout/footer";
+// ========== layout ==========
+@use "../core/styles/layout/container";
+@use "../core/styles/layout/grid";
+@use "../core/styles/layout/home";
+@use "../core/styles/layout/single";
 
-/* ========== COMPONENTS ========== */
-@use "components/buttons";
-@use "components/cards";
-@use "components/hero";
-@use "components/contact";
-@use "components/projects";
-@use "components/dashboard";
-@use "components/skills";
+// ========== shared ui components ==========
+@use "../shared/ui/buttons/buttons";
+@use "../shared/ui/cards/cards";
+@use "../shared/ui/drawer/drawer";
+@use "../shared/ui/footer/footer";
 
-/* ========== PAGES ========== */
-@use "pages/home";
-@use "pages/single";
+// ========== features ==========
+@use "../features/header/header";
+@use "../features/hero/hero";
+@use "../features/contact/contact";
+@use "../features/projects/projects";
+@use "../features/dashboard/dashboard";
+@use "../features/skills/skills";
 
-/* ========== UTILITIES ========== */
-@use "utilities/animations";
-@use "utilities/spacing" as spacing2;
-@use "utilities/visibility";
-@use "utilities/mobile-performance";
+// ========== utilities ==========
+@use "../core/styles/utilities/animations";
+@use "../core/styles/utilities/spacing" as spacing2;
+@use "../core/styles/utilities/visibility";
+@use "../core/styles/utilities/mobile-performance";

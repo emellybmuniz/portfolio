@@ -1,0 +1,24 @@
+{{ $technologies := .Page.Params.technologies | default (slice "Hugo" "TypeScript" "SCSS") }}
+{{ if .Page.Params.techReasons }}
+<section class="single-section" aria-label="Especialização de Stacks">
+  <div class="single-section__header">
+    <span class="single-section__subtitle">{{ i18n "about.applied_tech" }}</span>
+    {{ with .Page.Params.stackIntro }}<p class="single-section__desc">{{ . }}</p>{{ end }}
+  </div>
+
+  <div class="single-stack">
+    {{ range $tech := $technologies }}
+      {{ with index $.Page.Params.techReasons $tech }}
+      <div class="single-stack__card">
+        <div class="single-stack__top">
+          <span class="single-stack__name">{{ $tech | title }}</span>
+          <span class="single-stack__dot"></span>
+        </div>
+        <div class="single-stack__divider"></div>
+        <p class="single-stack__info">{{ . }}</p>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

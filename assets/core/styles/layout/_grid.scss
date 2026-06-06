@@ -1,0 +1,78 @@
+@use "../abstracts/mixins";
+
+// layout / grid
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+
+  &--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--auto-fit {
+    @include mixins.grid-auto-fit(250px);
+  }
+
+  &--auto-fill {
+    @include mixins.grid-auto-fill(250px);
+  }
+
+  @include mixins.media-down("md") {
+    &--2,
+    &--3,
+    &--4 {
+      grid-template-columns: 1fr;
+    }
+
+    &--auto-fit,
+    &--auto-fill {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+}
+
+// flex layouts
+.flex {
+  @include mixins.flex-center;
+
+  &--between {
+    @include mixins.flex-between;
+  }
+
+  &--column {
+    @include mixins.flex-column;
+  }
+
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--gap-sm {
+    gap: var(--spacing-sm);
+  }
+
+  &--gap-md {
+    gap: var(--spacing-md);
+  }
+
+  &--gap-lg {
+    gap: var(--spacing-lg);
+  }
+}

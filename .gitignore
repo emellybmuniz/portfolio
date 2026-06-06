@@ -33,15 +33,21 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
 
 docs
 
 # Hugo output
-
 public/
 resources/_gen/
 .hugo_build.lock
+hugo_stats.json
 
 /backup/archived

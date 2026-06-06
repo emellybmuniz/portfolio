@@ -23,14 +23,9 @@ home = ['HTML', 'JSON']
 # Params
 [params]
   author = "Emelly Beatriz"
-  cvLink = "/downloads/emelly-beatriz-cv-pt.pdf"
+
   
-  # Social
-  [params.social]
-    linkedin = "https://www.linkedin.com/in/emellybmuniz/"
-    github = "https://github.com/emellybmuniz"
-    instagram = "https://www.instagram.com/emellybmuniz"
-    email = "emellybmuniz@gmail.com"
+  # O bloco [params.social] foi migrado para data/socials.yaml para facilitar a manutenção e escalabilidade.
 
   # Performance
   [params.performance]
@@ -72,7 +67,7 @@ home = ['HTML', 'JSON']
 [menu]
   [[menu.main]]
     identifier = "about"
-    url = "/about/"
+    pageRef = "/about"
     weight = 10
     [menu.main.params]
       icon = "user-solid-full"
@@ -94,3 +89,36 @@ home = ['HTML', 'JSON']
     weight = 40
     [menu.main.params]
       icon = "paper-plane-solid-full"
+
+# Module Mounts for Feature-Based Co-Location
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "assets/features"
+    target = "layouts/partials/features"
+  [[module.mounts]]
+    source = "assets/features"
+    target = "assets/features"
+  [[module.mounts]]
+    source = "assets/shared"
+    target = "layouts/partials/shared"
+  [[module.mounts]]
+    source = "assets/shared"
+    target = "assets/shared"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"

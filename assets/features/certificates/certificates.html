@@ -1,0 +1,82 @@
+<section class="certificates" id="certificates">
+  <div class="certificates__container">
+    <h2
+      class="certificates__title"
+      data-animate="animate-fade-in-up"
+      data-observe-once="true"
+    >
+      {{ i18n "certificates.title" }}
+    </h2>
+
+    {{- $contentSite := $.Site -}} {{- if ne (lower $.Site.Language.Lang)
+    "pt-br" -}} {{- range .Sites -}} {{- if eq (lower .Language.Lang) "pt-br"
+    -}} {{- $contentSite = . -}} {{- end -}} {{- end -}} {{- end -}}
+
+    <div class="certificates__filters-desktop">
+      <div class="certificates__filters" data-filter-group="certificates">
+        <button
+          class="certificates__filter-btn certificates__filter-btn--active"
+          data-category="all"
+          aria-pressed="true"
+        >
+          <span class="certificates__filter-btn-icon" aria-hidden="true"
+            >{{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content |
+            safeHTML }}{{ end }}</span
+          >
+          <span>{{ i18n "certificates.all" }}</span>
+        </button>
+
+        {{ $certs := where $contentSite.RegularPages "Section" "certificates" }}
+        {{ $foundIssuers := slice }}
+        {{ range $c := $certs }}
+          {{ with .Params.issuer }}
+            {{ $currentIssuer := . }}
+            {{ $found := false }}
+            {{ range $fi := $foundIssuers }}
+              {{ if eq (lower $fi.name) (lower $currentIssuer) }}{{ $found = true }}{{ end }}
+            {{ end }}
+            {{ if not $found }}
+              {{ $foundIssuers = $foundIssuers | append (dict "name" $currentIssuer "id" (lower $currentIssuer)) }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        {{ range $foundIssuers }}
+        <button
+          class="certificates__filter-btn"
+          data-category="{{ .id }}"
+          aria-pressed="false"
+        >
+          <span>{{ .name }}</span>
+        </button>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="certificates__mobile-filter">
+      <button class="btn btn--secondary certificates__mobile-filter-btn" data-drawer-trigger="certificatesFilters">
+        <span class="btn__icon">{{ with resources.Get "icons/filter-solid.svg" }}{{ .Content | safeHTML }}{{ end }}</span>
+        {{ i18n "projects.filters" | default "Filtros" }}
+      </button>
+    </div>
+    {{ partial "shared/ui/drawer/drawer.html" (dict "id" "certificatesFilters" "singularKey" "projects.count_singular" "pluralKey" "projects.count_plural") }}
+
+    <div class="certificates__grid" id="certificatesGrid">
+      {{ if gt (len $certs) 0 }} {{ range $certs }} {{ partialCached
+      "components/certificate-card.html" . .RelPermalink }} {{ end }} {{ else }}
+      <p class="certificates__empty-state">{{ i18n "certificates.empty" }}</p>
+      {{ end }}
+    </div>
+
+    <div
+      class="certificates__pagination"
+      id="certificatesPagination"
+      aria-hidden="true"
+    >
+      <div class="certificates__dots" id="certificatesDots"></div>
+      <span class="certificates__swipe-hint"
+        >{{ i18n "certificates.swipe" | default "ARRASTE PARA O LADO ➜" }}</span
+      >
+    </div>
+  </div>
+</section>

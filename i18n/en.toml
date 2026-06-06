@@ -181,32 +181,27 @@ other = "Send Message"
 [dashboard.experience_label]
 other = "Experience"
 
-[dashboard.experience_value]
-other = "3+ years"
+
 
 [dashboard.experience_desc]
 other = "Frontend Development"
 
 [dashboard.projects_label]
-other = "Projects"
+other = "Deliverables"
 
-[dashboard.projects_value]
-other = "15+"
+
 
 [dashboard.projects_desc]
-other = "Built"
+other = "Developed Projects"
 
 [dashboard.academic_title]
 other = "Academic Background"
 
-[dashboard.academic_degree]
-other = "Bachelor's in Software Engineering"
 
-[dashboard.academic_uni]
-other = "Example University"
 
-[dashboard.academic_period]
-other = "2018 - 2022"
+
+
+
 
 [dashboard.soft_skills]
 other = "Soft Skills"
@@ -217,17 +212,13 @@ other = "Professional Journey"
 [dashboard.timeline_intro]
 other = "A timeline highlighting my recent and most relevant experiences in software development and ecosystem support."
 
-[dashboard.timeline_title]
-other = "Front-end Developer"
 
-[dashboard.timeline_date]
-other = "2022 - Present"
 
-[dashboard.timeline_company]
-other = "Rio de Janeiro, Brazil"
 
-[dashboard.timeline_content]
-other = "Building modern, responsive, and scalable interfaces with a focus on performance and accessibility. Creating responsive layouts, clean code, and practical use of libraries and frameworks."
+
+
+
+
 
 [about.back]
 other = "Projects"
@@ -242,10 +233,10 @@ other = "Project overview"
 other = "Applied Technologies and Decisions"
 
 [about.context]
-other = "1. Context and Architecture"
+other = "Context and Architecture"
 
 [about.challenges]
-other = "2. Challenges Solved"
+other = "Challenges Solved"
 
 [about.code]
 other = "Buffer Algorithm"
@@ -287,7 +278,7 @@ other = "Type"
 other = "Copy Snippet"
 
 [footer.brand]
-other = "Made it to the end? If my work sparked your interest, let's keep the conversation going and turn the next idea into something solid."
+other = "Did you make it to the end? That’s great! If my work sparked your interest, let’s not stop here. Get in touch with me so we can create something amazing together."
 
 [footer.quick_links]
 other = "Quick Links"
@@ -339,3 +330,10 @@ other = "Platform"
 
 [single.focus]
 other = "Focus"
+
+[projects.action_demo]
+other = 'Demo'
+[projects.action_repo]
+other = 'Code'
+[projects.action_details]
+other = 'Details'

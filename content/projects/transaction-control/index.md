@@ -4,9 +4,10 @@ date: 2024-01-01
 featured: false
 weight: 10
 draft: false
-description: "Projeto Controle de Transações desenvolvido por Emelly Beatriz."
+description: "Sistema bancário de terminal focado em arquitetura modular e orientação a objetos em Java."
 imageCover: "TransactionControlPOO.webp"
-categories:
+imageCoverFallback: "TransactionControlPOO.png"
+categories: 
   - backend
 technologies:
   - Java
@@ -14,97 +15,38 @@ technologies:
 liveDemo: "#"
 repositoryUrl: "https://github.com/emellybmuniz/TransactionControlPOO"
 
+techReasons:
+  Java: "Base linguística fortemente tipada para aplicar os conceitos rigorosos da Programação Orientada a Objetos: herança, polimorfismo e encapsulamento em contextos bancários."
+  Gradle: "Ferramenta moderna de automação de compilação, facilitando rodar testes integrados e gerenciar os pacotes do repositório."
+
 metadata:
   status: "Concluído"
-  platform: "Back-end / Desktop"
-  focus: "Back-end"
+  platform: "CLI / Back-end"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
+## Sobre o Projeto
+O projeto de Controle de Transações consiste em um sistema financeiro de console para gerir a vida financeira de contas correntes e carteiras de investimento. Apesar de sua interface em terminal, sua construção seguiu preceitos corporativos de segurança.
 
-Sistema bancário em Java para controle de contas, carteiras e investimentos. Permite criar contas, realizar transferências, investir, consultar saldo e histórico de operações. Focado em boas práticas de POO, tratamento de exceções e arquitetura modular.
----
-## 🚀 Visão Geral do Projeto
-Sistema bancário orientado a objetos, com suporte a múltiplas carteiras, contas e investimentos. Demonstra encapsulamento, herança, polimorfismo, tratamento de exceções customizadas e persistência em memória. Público-alvo: estudantes e desenvolvedores interessados em arquitetura Java e POO.
-## 📂 Estrutura de Diretórios
-```bash
-📦 java-bank/
-├── src/
-│   └── main/
-│       └── java/
-│           └── br/com/dio/
-│               ├── Main.java                # Ponto de entrada do sistema
-│               ├── exception/               # Exceções customizadas
-│               ├── model/                   # Modelos de domínio (Conta, Carteira, Investimento)
-│               └── repository/              # Repositórios de dados
-├── build.gradle.kts                        # Configuração do Gradle
-├── README.md                               # Documentação
-└── ...
-```
-## ✨ Destaques & Funcionalidades
-### 🎯 **Gestão de Contas e Carteiras**
-- Criação, consulta e remoção de contas e carteiras
-- Transferências entre contas
-- Investimentos e auditoria de operações
-- Benefícios: organização financeira, histórico detalhado
-- Utiliza: Java, Gradle, POO
-### 🎨 **Design/Interface**
-- Estrutura modular e clara
-- Código bem comentado e organizado
-- Foco em usabilidade via linha de comando
-### 📱 **Compatibilidade/Responsividade**
-- Suporte multiplataforma (Windows, Linux, Mac)
-- Projeto console, sem interface gráfica
-### ✅ **Validação/Segurança**
-- Validação de saldo, existência de contas/carteiras
-- Tratamento de exceções customizadas
-- Segurança básica via encapsulamento
-### 🔄 **Experiência do Usuário**
-- Mensagens claras de erro e sucesso
-- Operações rápidas e intuitivas
-## 🛠️ Tecnologias Utilizadas
-### Detalhes Técnicos:
-- **Java**: Lógica principal, POO, exceções
-- **Gradle**: Gerenciamento de dependências e build
-## 1. Clone este repositório
-$ git clone https://github.com/emellybmuniz/java-bank.git
-## 2. Navegue até o diretório do projeto
-$ cd java-bank
-## 3. Compile o projeto
-$ gradlew build
-## 4. Execute o sistema
-$ gradlew run
-```
-### Exemplos de Uso:
-```java
-// Criação de conta
-AccountWallet conta = new AccountWallet("Emelly", ...);
-// Transferência
-bankService.transfer(contaOrigem, contaDestino, valor);
-```
-## 🛡️ Validação e Tratamento de Erros
-### Validações Implementadas:
-- Existência de conta/carteira
-- Saldo suficiente
-- Investimento válido
-### Tratamento de Erros:
-- Exceções customizadas (ex: AccountNotFoundException, NoFundsEnoughException)
-- Mensagens claras ao usuário
-## 🔌 API/Funcionalidades Avançadas
-### Métodos Disponíveis:
-| Método | Descrição | Parâmetros |
-|--------|-----------|------------|
-| criarConta | Cria nova conta | nome, dados |
-| transferir | Transfere entre contas | origem, destino, valor |
-| investir | Realiza investimento | conta, valor |
-| consultarSaldo | Consulta saldo | conta |
-### Funcionalidades Especiais:
-- Auditoria de operações financeiras
-- Suporte a múltiplos tipos de carteira
-### Como contribuir:
-1. **Fork** este repositório
-2. **Clone** seu fork: `git clone https://github.com/seu-usuario/java-bank.git`
-3. **Crie uma branch** para sua feature: `git checkout -b feature/nova-funcionalidade`
-4. **Faça suas alterações** e teste completamente
-5. **Commit** suas mudanças: `git commit -m 'Adiciona nova funcionalidade'`
-6. **Push** para a branch: `git push origin feature/nova-funcionalidade`
-7. **Abra um Pull Request** com descrição detalhada das mudanças
+### Arquitetura, Exceções e Resiliência
+
+Foi utilizado intensamente o lançamento de exceções customizadas no Java (como `AccountNotFoundException` ou `NoFundsEnoughException`) não permitindo que erros matemáticos ou contábeis vazassem no sistema de forma silenciosa. A estrutura dividida em pacotes separando modelos, serviços e regras evitou a clássica abordagem de scripts monolíticos, garantindo que adicionar novas regras de taxa ou carteiras futuras seja incrivelmente flexível.
+
+## Arquitetura e Decisões Técnicas
+, Exceções e Resiliência
+
+Foi utilizado intensamente o lançamento de exceções customizadas no Java (como `AccountNotFoundException` ou `NoFundsEnoughException`) não permitindo que erros matemáticos ou contábeis vazassem no sistema de forma silenciosa. A estrutura dividida em pacotes separando modelos, serviços e regras evitou a clássica abordagem de scripts monolíticos, garantindo que adicionar novas regras de taxa ou carteiras futuras seja incrivelmente flexível.
+
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

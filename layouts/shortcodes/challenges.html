@@ -1,0 +1,31 @@
+{{ if .Page.Params.metadata.challenges }}
+<section class="single-content">
+  <h3 class="single-content__title">{{ i18n "about.challenges" }}</h3>
+  <div class="single-challenges">
+    {{ range $challenge := .Page.Params.metadata.challenges }}
+    <div class="single-challenge">
+      
+      <div class="single-challenge__top">
+        <div class="single-challenge__header-text">
+          {{ with $challenge.kicker }}<span class="single-challenge__kicker">{{ . }}</span>{{ end }}
+          {{ with $challenge.title }}<h4 class="single-challenge__title">{{ . }}</h4>{{ end }}
+        </div>
+        <span class="single-challenge__dot"></span>
+      </div>
+
+      <div class="single-challenge__body">
+        <div class="single-challenge__col">
+          <span class="single-challenge__label">Problema</span>
+          {{ with $challenge.description }}<p class="single-challenge__desc">{{ . }}</p>{{ end }}
+        </div>
+        <div class="single-challenge__col single-challenge__col--solution">
+          <span class="single-challenge__label single-challenge__label--solution">Solução Aplicada</span>
+          {{ with $challenge.resolution }}<p class="single-challenge__res">{{ . }}</p>{{ end }}
+        </div>
+      </div>
+
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -9,23 +9,17 @@
   "api" "API"
 }}
 {{ $allTechnologies := slice }}
-{{ $projectCategories := slice }}
+{{ $allCategories := slice }}
 {{ range $projects }}
   {{ with .Params.technologies }}
-    {{ range . }}
-      {{ $allTechnologies = $allTechnologies | append . }}
-    {{ end }}
+    {{ $allTechnologies = $allTechnologies | append . }}
   {{ end }}
   {{ with .Params.categories }}
-    {{ range . }}
-      {{ if not (in $projectCategories .) }}
-        {{ $projectCategories = $projectCategories | append . }}
-      {{ end }}
-    {{ end }}
+    {{ $allCategories = $allCategories | append . }}
   {{ end }}
 {{ end }}
 {{ $uniqueTechnologies := $allTechnologies | uniq | sort }}
-{{ $uniqueCategories := $projectCategories | uniq | sort }}
+{{ $uniqueCategories := $allCategories | uniq | sort }}
 
 <section class="projects projects--all projects-explorer" id="projects" data-projects-explorer>
   <div class="projects-explorer__container">
@@ -45,7 +39,7 @@
           {{ i18n "projects.technologies_label" }}
         </span>
         <span class="projects-explorer__meta-chip">
-          <strong>{{ len $projectCategories }}</strong>
+          <strong>{{ len $uniqueCategories }}</strong>
           {{ i18n "projects.categories_label" }}
         </span>
       </div>
@@ -114,7 +108,7 @@
       <section class="projects-explorer__results" aria-label="Lista de projetos">
         <div class="projects-explorer__results-header">
           <p class="projects-explorer__results-summary">
-            <span data-projects-summary>{{ len $projects }}</span> {{ i18n "projects.results_found" }}
+            <span data-projects-summary>{{ len $projects }}</span> <span data-projects-summary-text data-text-plural="{{ i18n "projects.results_found" }}" data-text-singular="projeto encontrado">{{ i18n "projects.results_found" }}</span>
           </p>
         </div>
 
@@ -136,7 +130,7 @@
               data-date="{{ .Date.Format "2006-01-02" }}"
               data-searchable="{{ printf "%s %s" .Title $description | plainify | lower }}"
             >
-              {{ partial "components/project-card.html" . }}
+              {{ partialCached "components/project-card.html" . .RelPermalink }}
             </div>
           {{ end }}
         </div>
@@ -148,5 +142,5 @@
     </div>
   </div>
 </section>
-{{- partial "sections/footer.html" . -}}
+{{- partial "shared/ui/footer/footer.html" . -}}
 {{ end }}

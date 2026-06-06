@@ -1,5 +1,5 @@
 <article class="cert-card" data-category="{{ lower (default "all" .Params.issuer) }}">
-  <!-- Parte Superior: Badge do Emissor e Carga Horária -->
+  <!-- top section -->
   <div class="cert-card__header">
     {{ $issuer := .Params.issuer | default "Certificado" }}
     {{ $issuerClass := lower $issuer | replaceRE "[^a-z0-9]" "-" }}
@@ -15,12 +15,12 @@
     {{ end }}
   </div>
 
-  <!-- Corpo Central: Título -->
+  <!-- main body -->
   <div class="cert-card__body">
     <h3 class="cert-card__title">{{ .Title }}</h3>
   </div>
 
-  <!-- Parte Inferior: ID e Link de Verificação -->
+  <!-- bottom section -->
   <div class="cert-card__footer">
     {{ if .Params.code }}
     <button class="cert-card__copy-btn js-copy-btn" data-clipboard-text="{{ .Params.code }}" aria-label="Copiar chave de verificação">
@@ -36,6 +36,6 @@
     </a>
     {{ end }}
   </div>
-  <!-- Efeito Neon -->
+  <!-- neon effect -->
   <div class="cert-card__glow"></div>
 </article>

@@ -9,29 +9,23 @@
   <section class="single-hero">
     <div class="single-hero__container">
       
-      <!-- Detalhes Textuais Principais -->
+      <!-- main details -->
       <div class="single-hero__content">
-        <a href="{{ printf "%s#projects" .Site.Home.RelPermalink }}" class="single-hero__back-projects">
-          Ver todos os projetos
+        <a href="{{ with .Site.GetPage "/projects" }}{{ .RelPermalink }}{{ else }}/projects/{{ end }}" class="single-hero__back-projects" onclick="if(document.referrer.includes(window.location.hostname)) { history.back(); return false; }">
+          Voltar
         </a>
         
         <h2 class="single-hero__title">
           {{ .Title }}
         </h2>
 
-        <!-- Chips Rápidos de Tecnologias de Destaque -->
-        <div class="single-hero__techs">
-          {{ range $primaryTechs }}
-            <span class="single-hero__tech">{{ . }}</span>
-          {{ end }}
-        </div>
 
         <p class="single-hero__desc">
           {{ $summary }}
         </p>
       </div>
 
-      <!-- Card Lateral de Metadados Rápidos -->
+      <!-- metadata sidebar -->
       <aside class="single-meta">
         <div class="single-meta__grid">
           {{ if .Params.metadata.status }}
@@ -77,15 +71,24 @@
         </div>
 
         <div class="single-meta__actions">
-          {{ with .Params.repositoryUrl }}
-          <a href="{{ . }}" class="single-meta__btn single-meta__btn--repo" target="_blank" rel="noopener noreferrer">
+          {{ if and .Params.repositoryUrl (ne .Params.repositoryUrl "#") }}
+          <a href="{{ .Params.repositoryUrl }}" class="single-meta__btn single-meta__btn--repo" target="_blank" rel="noopener noreferrer">
             {{ i18n "about.repository" }}
           </a>
+          {{ else }}
+          <span class="single-meta__btn single-meta__btn--repo single-meta__btn--disabled" aria-disabled="true">
+            {{ i18n "about.repository" }}
+          </span>
           {{ end }}
-          {{ with .Params.liveDemo }}
-          <a href="{{ . }}" class="single-meta__btn single-meta__btn--demo" target="_blank" rel="noopener noreferrer">
+
+          {{ if and .Params.liveDemo (ne .Params.liveDemo "#") }}
+          <a href="{{ .Params.liveDemo }}" class="single-meta__btn single-meta__btn--demo" target="_blank" rel="noopener noreferrer">
             {{ i18n "about.demo" }}
           </a>
+          {{ else }}
+          <span class="single-meta__btn single-meta__btn--demo single-meta__btn--disabled" aria-disabled="true">
+            {{ i18n "about.demo" }}
+          </span>
           {{ end }}
         </div>
       </aside>
@@ -93,62 +96,23 @@
     </div>
   </section>
 
-  <!-- CORPO DA WIKI -->
+  <!-- wiki content -->
   <main class="single-body">
     <div class="single-body__container">
       
-      <!-- SEÇÃO: TECNOLOGIAS APLICADAS -->
-      <section class="single-section" aria-label="Especialização de Stacks">
-        <div class="single-section__header">
-          <span class="single-section__subtitle">{{ i18n "about.applied_tech" }}</span>
-          {{ with .Params.stackIntro }}<p class="single-section__desc">{{ . }}</p>{{ end }}
-        </div>
 
-        <div class="single-stack">
-          {{ range $index, $tech := first 4 $technologies }}
-          <div class="single-stack__card">
-            <div class="single-stack__top">
-              <span class="single-stack__name">{{ $tech | title }}</span>
-              <span class="single-stack__dot"></span>
-            </div>
-            <div class="single-stack__divider"></div>
-            <!-- Idealmente, uma descrição da tecnologia, se não houver, colocamos um placeholder ou não exibimos -->
-            <p class="single-stack__info">Tecnologia central aplicada ao escopo deste projeto visando escalabilidade.</p>
-          </div>
-          {{ end }}
-        </div>
-      </section>
-
-      <!-- CONTEÚDO SEMÂNTICO DO MARKDOWN -->
       {{ if gt (len .Content) 0 }}
       <section class="single-content">
-        <h3 class="single-content__title">{{ i18n "about.context" }}</h3>
         <div class="single-content__text">
           {{ .Content }}
         </div>
       </section>
       {{ end }}
 
-      <!-- Desafios Resolvidos -->
-      {{ if .Params.metadata.challenges }}
-      <section class="single-content">
-        <h3 class="single-content__title">{{ i18n "about.challenges" }}</h3>
-        <div class="single-challenges">
-          {{ range $challenge := .Params.metadata.challenges }}
-          <div class="single-challenge">
-            {{ with $challenge.kicker }}<span class="single-challenge__kicker">{{ . }}</span>{{ end }}
-            {{ with $challenge.title }}<h4 class="single-challenge__title">{{ . }}</h4>{{ end }}
-            {{ with $challenge.description }}<p class="single-challenge__desc">{{ . }}</p>{{ end }}
-            {{ with $challenge.resolution }}<p class="single-challenge__res">: {{ . }}</p>{{ end }}
-          </div>
-          {{ end }}
-        </div>
-      </section>
-      {{ end }}
 
     </div>
   </main>
 </article>
 
-{{- partial "sections/footer.html" . -}}
+{{- partial "shared/ui/footer/footer.html" . -}}
 {{ end }}

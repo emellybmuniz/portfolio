@@ -1,0 +1,96 @@
+<header class="header">
+  {{- $homePath := .Site.Home.RelPermalink -}}
+  {{ if .IsHome }}
+  <!-- Logo/Home Link -->
+  <a href="{{ .Site.Home.RelPermalink }}" class="header__logo">
+    <div class="header__logo-badge">EB</div>
+  </a>
+
+  <!-- Menu Toggle (Mobile) -->
+  <button
+    class="header__menuToggle_button"
+    id="menuToggle"
+    aria-label="{{ i18n "nav.menu" }}"
+    aria-expanded="false"
+  >
+    <span class="header__menuToggle-line header__menuToggle-line--1"></span>
+    <span class="header__menuToggle-line header__menuToggle-line--2"></span>
+    <span class="header__menuToggle-line header__menuToggle-line--3"></span>
+  </button>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      {{ range .Site.Menus.main }}
+      <li class="header__nav-item">
+        <a
+          href="{{ if .Page }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+          class="header__nav-link"
+        >
+          {{ with .Params.icon }} {{ $icon := resources.Get (printf "icons/%s.svg" .) }} {{ if $icon }}
+          <span class="header__nav-icon" aria-hidden="true">
+            {{ $icon.Content | safeHTML }}
+          </span>
+          {{ end }} {{ end }}
+          <span>{{ i18n (printf "nav.%s" .Identifier) }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ else }}
+  <div class="header__detailed-container">
+    <div class="header__detailed-left">
+      <a href="{{ if eq .Section "projects" }}{{ printf "%s#projects" $homePath }}{{ else }}{{ $homePath }}{{ end }}" onclick="try { if(!document.referrer.includes(window.location.host)) return true; var ref = new URL(document.referrer).pathname.replace(/\/$/, '').split('/').pop(); var cur = window.location.pathname.replace(/\/$/, '').split('/').pop(); if(ref === cur) return true; history.back(); return false; } catch(e) { return true; }" class="header__back-btn" aria-label="{{ i18n "nav.home" }}">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </a>
+      <div class="header__detailed-title-group">
+        <span class="header__detailed-category">
+          {{ if eq .Section "projects" }}{{ i18n "nav.projects" | upper }}{{ else if eq .Section "about" }}{{ i18n "nav.about" | upper }}{{ else }}{{ i18n "nav.projects" | upper }}{{ end }}
+        </span>
+        <h1 class="header__detailed-title">Home/{{ if .Title }}{{ .Title }}{{ else }}{{ .Section | title }}{{ end }}</h1>
+      </div>
+    </div>
+
+    <div class="header__detailed-right-group">
+      <nav class="header__detailed-nav">
+        {{ range .Site.Menus.main }}
+        <a
+          href="{{ if .Page }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+          class="header__nav-link"
+        >
+          {{ with .Params.icon }} {{ $icon := resources.Get (printf "icons/%s.svg" .) }} {{ if $icon }}
+          <span class="header__nav-icon" aria-hidden="true">
+            {{ $icon.Content | safeHTML }}
+          </span>
+          {{ end }} {{ end }}
+          <span>{{ i18n (printf "nav.%s" .Identifier) }}</span>
+        </a>
+        {{ end }}
+      </nav>
+
+      <div class="header__detailed-right">
+        <theme-toggle class="footer__control-group" id="headerThemeDropdownContainer">
+          <button class="footer__control-btn footer__control-btn--theme" id="headerThemeToggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="headerThemeMenu" aria-label="Selecionar tema">
+            <span class="footer__control-icon" id="headerThemeActiveIcon" aria-hidden="true"></span>
+            <span class="footer__control-label" id="headerThemeActiveLabel">{{ i18n "footer.theme_violet" }}</span>
+          </button>
+
+          <div class="footer__dropdown" id="headerThemeMenu" role="menu" hidden>
+            <button type="button" class="footer__dropdown-item" data-theme="light" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_light" }}</span>
+              <span class="theme-dot theme-dot--light"></span>
+            </button>
+            <button type="button" class="footer__dropdown-item" data-theme="violet" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_violet" }}</span>
+              <span class="theme-dot theme-dot--violet"></span>
+            </button>
+            <button type="button" class="footer__dropdown-item" data-theme="extra-dark" role="menuitem">
+              <span class="footer__dropdown-item-title">{{ i18n "footer.theme_dark" }}</span>
+              <span class="theme-dot theme-dot--extra-dark"></span>
+            </button>
+          </div>
+        </theme-toggle>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</header>

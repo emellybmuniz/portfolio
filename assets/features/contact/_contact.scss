@@ -1,0 +1,281 @@
+@use "../../core/styles/abstracts/mixins";
+
+.contact {
+  width: 100%;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  min-height: clamp(640px, 72vh, 960px);
+  background: var(--color-bg);
+
+  @include mixins.media-down("lg") {
+    min-height: auto;
+  }
+
+  @include mixins.media-down("md") {
+    padding: var(--spacing-2xl) 0 0 0;
+  }
+}
+
+.contact__container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-inline: clamp(var(--spacing-sm), 2.5vw, var(--spacing-2xl));
+
+  @include mixins.media-down("md") {
+    padding-inline: var(--spacing-md); // ensures text doesn't touch borders
+  }
+}
+
+.contact__heading {
+  max-width: 760px;
+  margin: 0 auto var(--spacing-2xl);
+  text-align: center;
+}
+
+.contact__title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+
+  @include mixins.media-down("md") {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.contact__subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-1-125xl);
+  line-height: 1.7;
+  margin: 0 auto;
+
+  @include mixins.media-down("md") {
+    font-size: var(--font-size-md);
+  }
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+
+  @include mixins.media("lg") {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: stretch;
+  }
+}
+
+.contact__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-width: 0;
+
+  @include mixins.media("lg") {
+    height: 100%;
+  }
+}
+
+.contact__column--links {
+  @include mixins.media("lg") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.contact__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-surface-border);
+  background: var(--color-surface);
+  backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-lg);
+  min-width: 0;
+
+  @include mixins.media-down("md") {
+    border-radius: 1.5rem;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.02),
+      transparent 45%,
+      rgba(157, 78, 221, 0.05)
+    );
+    pointer-events: none;
+  }
+}
+
+.contact__links-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--spacing-md);
+  min-height: 100%;
+}
+
+.contact__link-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  width: 100%;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-surface-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+
+  @include mixins.transition;
+
+  &:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface);
+    transform: translateY(-2px);
+  }
+}
+
+.contact__link-card--static {
+  cursor: default;
+}
+
+.contact__link-mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  background: var(--color-primary-alpha);
+  border: 1px solid rgba(157, 78, 221, 0.16);
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+  }
+}
+
+.contact__link-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.contact__link-label {
+  font-size: 0.78rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact__link-value {
+  color: var(--color-text);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.contact__form {
+  width: 100%;
+  padding: var(--spacing-xl);
+  min-height: clamp(620px, 76vh, 900px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  @include mixins.media-down("lg") {
+    min-height: auto;
+  }
+}
+
+.contact__form-fields {
+  display: grid;
+  gap: 0.85rem;
+
+  @include mixins.media("lg") {
+    flex: 1;
+  }
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.contact__form-group--message {
+  flex: 1;
+}
+
+.contact__label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  color: var(--color-text);
+
+  @include mixins.transition;
+
+  min-width: 0;
+  min-height: 48px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+  @include mixins.media-down("md") {
+    font-size: Max(16px, var(--font-size-base)); // evita auto-zoom no ios
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    background-color: var(--color-surface);
+    box-shadow:
+      0 0 0 4px rgba(157, 78, 221, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 240px;
+  font-family: var(--font-primary);
+
+  @include mixins.media-down("lg") {
+    min-height: 160px;
+  }
+}
+
+.contact__form .btn {
+  align-self: flex-start;
+}

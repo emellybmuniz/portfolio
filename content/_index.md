@@ -1,6 +1,5 @@
 ---
 title: "Home"
-description: "Emelly Beatriz - Frontend Developer & Software Engineer"
+description: "Emelly Beatriz - Engenharia de Software e Deselvolvedora Front-end. Explore meus projetos, certificações e trajetória profissional."
 draft: false
 ---
-

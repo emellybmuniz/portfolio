@@ -184,32 +184,27 @@ other = "Enviar Mensagem"
 [dashboard.experience_label]
 other = "Experiência"
 
-[dashboard.experience_value]
-other = "3+ anos"
+
 
 [dashboard.experience_desc]
 other = "Desenvolvimento Frontend"
 
 [dashboard.projects_label]
-other = "Projetos"
+other = "Entregas"
 
-[dashboard.projects_value]
-other = "15+"
+
 
 [dashboard.projects_desc]
-other = "Desenvolvidos"
+other = "Projetos Desenvolvidos"
 
 [dashboard.academic_title]
 other = "Formação Acadêmica"
 
-[dashboard.academic_degree]
-other = "Bacharelado em Engenharia de Software"
 
-[dashboard.academic_uni]
-other = "Universidade Exemplo"
 
-[dashboard.academic_period]
-other = "2018 - 2022"
+
+
+
 
 [dashboard.soft_skills]
 other = "Soft Skills"
@@ -220,29 +215,21 @@ other = "Jornada Profissional"
 [dashboard.timeline_intro]
 other = "Uma linha do tempo destacando minhas experiências e atuações recentes no desenvolvimento e suporte ao ecossistema de software."
 
-[dashboard.timeline_1_title]
-other = "Embaixadora Universitária"
 
-[dashboard.timeline_1_date]
-other = "2025 — Presente"
 
-[dashboard.timeline_1_company]
-other = "DIO (Digital Innovation One) — Rio de Janeiro, Brasil"
 
-[dashboard.timeline_1_content]
-other = "Responsável pela ponte estratégica entre a comunidade acadêmica de tecnologia e a plataforma de ensino DIO, liderando workshops de desenvolvimento frontend, engajamento comunitário e suporte ao ecossistema estudantil de software."
 
-[dashboard.timeline_2_title]
-other = "Desenvolvedora Front-end Freelance"
 
-[dashboard.timeline_2_date]
-other = "2024 — Presente"
 
-[dashboard.timeline_2_company]
-other = "Projetos Independentes — Remoto"
 
-[dashboard.timeline_2_content]
-other = "Foco na estruturação de interfaces modernas e responsivas utilizando Tailwind CSS, frameworks reativos e melhores práticas de acessibilidade (WCAG). Entrega de layouts otimizados para performance e conversão."
+
+
+
+
+
+
+
+
 
 [about.back]
 other = "Projetos"
@@ -257,10 +244,10 @@ other = "Visão geral do projeto"
 other = "Tecnologias Aplicadas e Decisões"
 
 [about.context]
-other = "1. Contexto e Arquitetura"
+other = "Contexto e Arquitetura"
 
 [about.challenges]
-other = "2. Desafios Resolvidos"
+other = "Desafios Resolvidos"
 
 [about.code]
 other = "Algoritmo de Buffer"
@@ -302,7 +289,7 @@ other = "Tipo"
 other = "Copiar Snippet"
 
 [footer.brand]
-other = "Chegou até o fim? Se meu trabalho despertou seu interesse, vamos continuar a conversa e transformar a próxima ideia em algo sólido."
+other = "Chegou até o fim? Muito legal! Se meu trabalho despertou seu interesse, não vamos encerrar por aqui. Conecte-se comigo para criarmos algo incrível juntos."
 
 [footer.quick_links]
 other = "Links Rápidos"
@@ -354,3 +341,10 @@ other = "Plataforma"
 
 [single.focus]
 other = "Foco"
+
+[projects.action_demo]
+other = 'Demo'
+[projects.action_repo]
+other = 'Repositório'
+[projects.action_details]
+other = 'Detalhes'

@@ -6,42 +6,44 @@ weight: 1
 draft: false
 description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."
 imageCover: "interactive-roadmap-project-cover.webp"
-categories:
-  - frontend
+imageCoverFallback: "interactive-roadmap-project-cover.png"
+categories: 
+  - fullstack
 technologies:
   - Tailwind
-  - HTML
-  - CSS
+  - HTML5
+  - CSS3
   - JavaScript
   - Google AI Studio
   - MongoDB
 liveDemo: "#"
 repositoryUrl: "#"
 
-stackIntro: "Cada escolha técnica abaixo representa uma decisão de produto, performance e manutenção, visando a escalabilidade e a experiência do usuário."
+techReasons:
+  Tech: "Lorem ipsum dolor sit amet"
 
 metadata:
-  duration: "3 meses"
+  status: "Concluído"
+  platform: "Web Application"
   role: "Desenvolvedora Fullstack"
-  complexity: "Robusto"
-  accessibility: "WCAG 2.1 AA"
-  responsiveness: "Mobile-first"
+  industry: "Tecnologia"
+  
   challenges:
-    - kicker: "Integração Complexa"
-      title: "Integração em tempo real com a API do Gemini"
-      description: "O principal desafio foi garantir uma comunicação fluida e em tempo real com a API do Gemini, lidando com latência e garantindo a consistência dos dados."
-      resolution: "Implementação de um sistema de cache robusto e otimização das chamadas à API com estratégias de debounce e throttling."
-    - kicker: "Persistência de Dados"
-      title: "Arquitetura de banco de dados para persistência de progresso"
-      description: "Desenvolver um esquema de banco de dados flexível e escalável para armazenar o progresso do usuário em diferentes roadmaps, considerando a complexidade das relações entre tópicos e subtópicos."
-      resolution: "Utilização de MongoDB com um modelo de dados aninhado e indexação estratégica para consultas rápidas e eficientes."
-    - kicker: "Experiência do Usuário"
-      title: "Design de interface intuitiva para roadmaps complexos"
-      description: "Transformar a complexidade de um roadmap de aprendizado em uma interface de usuário simples e fácil de navegar, que incentive o engajamento e a progressão."
-      resolution: "Foco em um design minimalista, com feedback visual claro para o progresso e navegação por etapas, utilizando testes de usabilidade para refinar a experiência."
-  features:
-    - "Sugestões de projetos personalizadas"
-    - "Tracking de progresso interativo"
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
+## Sobre o Projeto
 Aqui entra a descrição longa e detalhada do projeto. Como você centralizou as informações técnicas no Frontmatter acima, você pode usar este espaço para contar a "história" do projeto, decisões de design e lições aprendidas.
+
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

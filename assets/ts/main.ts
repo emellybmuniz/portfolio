@@ -1,17 +1,20 @@
-import "./projects";
-import "./skills";
-import "./clipboard";
-import { setupFilterGroup } from "./content-filters";
-import { setupCertificatesCarousel } from "./certificates";
-import "./components/theme-toggle";
-import "./components/lang-toggle";
+import "../features/projects/projects";
+import "../features/skills/skills";
+import "../core/utils/clipboard";
+import { setupFilterGroup } from "../core/utils/content-filters";
+import {
+  setupCertificatesCarousel,
+  setupCertificatesFiltersDrawer,
+} from "../features/certificates/certificates";
+import "../shared/ui/theme-toggle/theme-toggle";
+import "../shared/ui/lang-toggle/lang-toggle";
 
-import { ThemeManager } from "./theme";
-import { LanguageManager } from "./i18n";
-import { NavigationManager } from "./navigation";
-import { ScrollManager } from "./scroll";
-import { HeroMotion } from "./hero-motion";
-import { AnimationManager } from "./animations";
+import { ThemeManager } from "../core/scripts/theme";
+import { LanguageManager } from "../core/scripts/i18n";
+import { NavigationManager } from "../features/header/header-navigation";
+import { ScrollManager } from "../core/scripts/scroll";
+import { HeroMotion } from "../features/hero/hero-motion";
+import { AnimationManager } from "../core/scripts/animations";
 
 class Portfolio {
   private themeManager: ThemeManager;
@@ -60,6 +63,7 @@ class Portfolio {
     });
 
     setupCertificatesCarousel();
+    setupCertificatesFiltersDrawer();
   }
 }
 

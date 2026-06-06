@@ -4,51 +4,49 @@ date: 2024-01-01
 featured: false
 weight: 10
 draft: false
-description: "Projeto Validador de CPF desenvolvido por Emelly Beatriz."
+description: "Aplicação web que consome a regra matemática da Receita Federal para validar CPFs brasileiros."
 imageCover: "validador-cpf.webp"
-categories:
+imageCoverFallback: "validador-cpf.png"
+categories: 
   - frontend
 technologies:
-  - HTML
-  - CSS
   - JavaScript
+  - HTML5
+  - CSS3
 liveDemo: "https://emellybmuniz.github.io/validador-CPF/"
 repositoryUrl: "https://github.com/emellybmuniz/validador-CPF"
+
+techReasons:
+  JavaScript: "Linguagem isolada no lado cliente para executar instantaneamente a verificação iterativa matemática dos dois últimos dígitos de segurança sem necessidade de requisições de servidor."
+  HTML5: "Criação semântica limpa dos campos para coleta limpa das numerações."
+  CSS3: "Feedback imediato de cor ao usuário demonstrando dinamicamente com base nas regras inseridas no DOM as validações em tons verdes e vermelhos."
 
 metadata:
   status: "Concluído"
   platform: "Web"
-  focus: "Front-end"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
-[🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
+## Sobre o Projeto
+Um painel de utilidade prática desenvolvido para atuar primariamente como validador assíncrono. Esta interface não salva ou repassa dados; ela destrói e aplica algoritmicamente o conceito por trás do documento CPF (Cadastro de Pessoas Físicas).
 
-A simple and intuitive web application, developed with HTML, CSS, and JavaScript, to validate Brazilian CPF (Individual Taxpayer Registration) numbers.
+### Cálculo de Dígitos
 
----
+Ao invés de verificar o formato em uma simples Regex, o projeto implementa em JavaScript puro a regra modular real dos dois últimos dígitos verificadores do documento brasileiro, validando toda a cadeia de arrays e filtrando pontuações e formatos incorretos enviados pelo usuário quase imediatamente. A resposta de erro ou acerto é renderizada em tela limpa sob um design centralizado agradável.
 
-## 🚀 Project Overview
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-This project provides a clean user interface for users to input a CPF number and instantly check its validity based on the official algorithm for calculating the check digits.
-
-![Project Demonstration](src/images/validador-cpf.png)
-
-## ✨ Highlights & Features
-
-- **Clear Feedback:** Provides clear visual messages for valid and invalid CPFs.
-- **Algorithm Check:** Implements the official mathematical algorithm to verify the two check digits.
-- **Responsive Design:** Adapts to different screen sizes for a great experience on desktop and mobile devices.
-
-## 🛠️ Technologies Used
-
-This project was built using the following technologies:
-
-## 1. Clone this repository
-$ git clone https://github.com/emellybmuniz/validador-CPF.git
-
-## 2. Navigate to the project directory
-$ cd validador-CPF
-
-## 3. Open in your browser
-$ open index.html  # Or double-click the file
-```
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

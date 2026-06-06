@@ -1,0 +1,175 @@
+<section class="contact" id="contact">
+  <div class="contact__container">
+    <div
+      class="contact__heading"
+      data-animate="animate-fade-in-up"
+      data-observe-once="true"
+    >
+      <h2 class="contact__title">{{ i18n "contact.title" }}</h2>
+      <p class="contact__subtitle">{{ i18n "contact.subtitle" }}</p>
+    </div>
+
+    <div class="contact__layout">
+      <div class="contact__column contact__column--links">
+        <div
+          class="contact__links-grid"
+          data-animate="animate-fade-in-up"
+          data-observe-once="true"
+        >
+          <a
+            href="#"
+            data-email="ZW1lbGx5Ym11bml6QGdtYWlsLmNvbQ=="
+            onclick="window.location.href = 'mailto:' + atob(this.getAttribute('data-email')); return false;"
+            class="contact__link-card"
+          >
+            <span class="contact__link-mark" aria-hidden="true">
+              {{ with resources.Get "icons/envelope-solid-full.svg" }}{{
+              .Content | safeHTML }}{{ end }}
+            </span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.email" }}</span>
+              <span class="contact__link-value"
+                >{{ .Site.Data.socials.email }}</span
+              >
+            </span>
+          </a>
+
+          <a
+            href="{{ .Site.Data.socials.linkedin }}"
+            class="contact__link-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact__link-mark" aria-hidden="true">
+              {{ with resources.Get "icons/linkedin.svg" }}{{ .Content |
+              safeHTML }}{{ end }}
+            </span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.linkedin" }}</span>
+              <span class="contact__link-value">emellybmuniz</span>
+            </span>
+          </a>
+
+          <a
+            href="{{ .Site.Data.socials.github }}"
+            class="contact__link-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact__link-mark" aria-hidden="true">
+              {{ with resources.Get "icons/github.svg" }}{{ .Content | safeHTML
+              }}{{ end }}
+            </span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.github" }}</span>
+              <span class="contact__link-value">emellybmuniz</span>
+            </span>
+          </a>
+
+          <a
+            href="{{ .Site.Data.socials.instagram }}"
+            class="contact__link-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact__link-mark" aria-hidden="true">
+              {{ with resources.Get "icons/instagram.svg" }}{{ .Content |
+              safeHTML }}{{ end }}
+            </span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.instagram" }}</span>
+              <span class="contact__link-value">emellybmuniz</span>
+            </span>
+          </a>
+
+          <a
+            href="#" 
+            data-wa="NTUyMTk5MDgzNjk2MA==" 
+            onclick="window.open('https://wa.me/' + atob(this.getAttribute('data-wa')), '_blank'); return false;"
+            class="contact__link-card"
+          >
+            <span class="contact__link-mark" aria-hidden="true">
+              {{ with resources.Get "icons/whatsapp-brands-solid-full.svg" }}{{
+              .Content | safeHTML }}{{ end }}
+            </span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.whatsapp" }}</span>
+              <span class="contact__link-value">Envie uma mensagem</span>
+            </span>
+          </a>
+
+          <div class="contact__link-card contact__link-card--static">
+            <span class="contact__link-mark" aria-hidden="true">RJ</span>
+            <span class="contact__link-content">
+              <span class="contact__link-label">{{ i18n "contact.location" }}</span>
+              <span class="contact__link-value">Rio de Janeiro, Brasil</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="contact__form contact__card"
+        id="contactForm"
+        method="POST"
+        action="https://formsubmit.co/emellybmuniz@gmail.com"
+        data-animate="animate-fade-in-up"
+        data-observe-once="true"
+      >
+        <div class="contact__form-fields">
+          <input type="text" name="_honey" style="display:none">
+          <div class="contact__form-group">
+            <label for="contactName" class="contact__label">{{ i18n "contact.name" }}</label>
+            <input
+              type="text"
+              id="contactName"
+              class="contact__input"
+              placeholder="{{ i18n "contact.name_placeholder" }}"
+              name="name"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="contact__form-group">
+            <label for="contactEmail" class="contact__label">{{ i18n "contact.email" }}</label>
+            <input
+              type="email"
+              id="contactEmail"
+              class="contact__input"
+              placeholder="your@email.com"
+              name="email"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="contact__form-group contact__form-group--message">
+            <label for="contactMessage" class="contact__label">{{ i18n "contact.message" }}</label>
+            <textarea
+              id="contactMessage"
+              class="contact__textarea"
+              placeholder="{{ i18n "contact.message_placeholder" }}"
+              name="message"
+              rows="8"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn--primary btn--holographic btn--holographic--subtle"
+        >
+          {{ with resources.Get "icons/envelope-solid-full.svg" }}
+          <span class="btn__icon" aria-hidden="true"
+            >{{ .Content | safeHTML }}</span
+          >
+          {{ end }}
+          <span>{{ i18n "contact.send" }}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

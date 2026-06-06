@@ -22,13 +22,26 @@
           </picture>
         </a>
       {{- else -}}
-        <div class="project-card__image-placeholder"><span>{{ .Title }}</span></div>
+        {{- /* Fallback Simples e Elegante: Variação de HSL baseada em Hash */ -}}
+        {{- $hash := hash.FNV32a .Title -}}
+        {{- $h := add 240 (mod $hash 60) -}}
+        {{- $s := add 30 (mod (div $hash 100) 40) -}}
+        {{- $l_offset := mod (div $hash 10000) 15 -}}
+        <div class="project-card__image-placeholder" aria-hidden="true" style="--fb-h: {{ $h }}; --fb-s: {{ $s }}%; --fb-l-offset: {{ $l_offset }}%;">
+          <div class="project-card__placeholder-pattern"></div>
+          <span class="project-card__placeholder-text">{{ .Title }}</span>
+        </div>
       {{- end -}}
       {{ if .Params.technologies }}
         <div class="project-card__overlay">
           <ul class="project-card__technologies">
-            {{ range .Params.technologies }}
+            {{ $techs := .Params.technologies }}
+            {{ $limit := 5 }}
+            {{ range first $limit $techs }}
               <li class="project-card__tech-badge">{{ . }}</li>
+            {{ end }}
+            {{ if gt (len $techs) $limit }}
+              <li class="project-card__tech-badge project-card__tech-badge--more">...</li>
             {{ end }}
           </ul>
         </div>
@@ -52,8 +65,13 @@
 
       {{ if .Params.technologies }}
         <ul class="project-card__tech-list" aria-label="Tecnologias do projeto">
-          {{ range first 4 .Params.technologies }}
+          {{ $techs := .Params.technologies }}
+          {{ $limit := 3 }}
+          {{ range first $limit $techs }}
             <li class="project-card__tech-badge">{{ . }}</li>
+          {{ end }}
+          {{ if gt (len $techs) $limit }}
+            <li class="project-card__tech-badge project-card__tech-badge--more">+{{ sub (len $techs) $limit }}</li>
           {{ end }}
         </ul>
       {{ end }}
@@ -64,17 +82,19 @@
         <div class="project-card__actions">
           {{ if and .Params.liveDemo (ne .Params.liveDemo "#") }}
             <a href="{{ .Params.liveDemo }}" class="btn btn--sm project-card__action project-card__action--demo" target="_blank" rel="noopener noreferrer">
-              Live Demo
+              {{ i18n "projects.action_demo" | default "Demo" }}
             </a>
           {{ end }}
           {{ if .Params.repositoryUrl }}
             <a href="{{ .Params.repositoryUrl }}" class="btn btn--sm project-card__action project-card__action--repository" target="_blank" rel="noopener noreferrer">
-              Repository
+              {{ i18n "projects.action_repo" | default "Code" }}
             </a>
           {{ end }}
-          <a href="{{ .RelPermalink }}" class="btn btn--sm project-card__action project-card__action--details">
-            Learn More
-          </a>
+          {{ if gt (len .Content) 0 }}
+            <a href="{{ .RelPermalink }}" class="btn btn--sm project-card__action project-card__action--details">
+              {{ i18n "projects.action_details" | default "Details" }}
+            </a>
+          {{ end }}
         </div>
       </div>
     </div>

@@ -1,41 +1,60 @@
 ---
 title: "Portfolio Redesign"
 date: 2026-06-01
-featured: false
+featured: true
+weight: 10
 draft: false
-description: "Redesign de portfólio pessoal focado em destacar projetos de forma mais visual e interativa, utilizando Hugo para uma construção rápida e eficiente."
+description: "Redesign de portfólio focado em performance, componentes arquiteturais e experiência responsiva imersiva."
 imageCover: "portfolio-project-cover.webp"
 imageCoverFallback: "portfolio-project-cover.png"
-categories:
+categories: 
   - frontend
 technologies:
   - Hugo
   - SCSS
   - TypeScript
   - JavaScript
-  - HTML
-  - CSS
+  - HTML5
+  - CSS3
 liveDemo: "https://example.com"
 repositoryUrl: "https://github.com/emellybmuniz/portfolio"
+
+techReasons:
+  Hugo: "Geração estática para garantir tempos de carregamento ultra-rápidos e performance de ponta."
+  SCSS: "Arquitetura modular de estilos e tokens de design escaláveis sem verbosidade."
+  TypeScript: "Interatividade segura através de tipagem estática e menor propensão a erros de runtime."
+  JavaScript: "Gerenciamento dinâmico de DOM leve para animações que prescindem de frameworks."
+  HTML: "Semântica estrita para acessibilidade e otimização natural para SEO."
+  CSS: "Garantia de layout responsivo e fallback de estilos em navegadores variados."
+
+metadata:
+  status: "Concluído"
+  platform: "Web Application"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
-## Visão Geral do Projeto
+## Sobre o Projeto
+O desenvolvimento da nova versão do portfólio foi arquitetado como uma demonstração prática de engenharia front-end moderna. O foco central não foi apenas exibir os projetos, mas construir uma aplicação que refletisse alto rigor técnico: tempos de carregamento mínimos, ausência de dependências pesadas e acessibilidade por padrão.
 
-Este projeto de redesign do meu portfólio pessoal teve como objetivo principal criar uma vitrine mais moderna e funcional para meus trabalhos. A ideia era não apenas apresentar os projetos, mas também demonstrar minhas habilidades em desenvolvimento frontend, design responsivo e otimização de performance.
+### Desafios e Decisões de Arquitetura
 
-### Desafios e Soluções
+O maior desafio técnico consistiu em orquestrar uma interface rica em detalhes visuais e micro-interações enquanto se mantinha um escopo restrito de performance (Lighthouse score na faixa dos 90-100). 
 
-Um dos maiores desafios foi equilibrar a estética visual com a performance. Optei por utilizar Hugo para a geração estática, garantindo tempos de carregamento rápidos. Para o estilo, SCSS modular foi essencial para manter a organização e a escalabilidade. A interatividade foi implementada com TypeScript leve, evitando dependências pesadas.
+Para contornar o acúmulo de processamento no client-side, optou-se por utilizar o Hugo para renderização estática. O estilo foi componentizado usando SCSS para preservar uma hierarquia lógica. Adicionalmente, toda a interatividade de filtros e temas foi feita via Vanilla JS e TypeScript estrito, eliminando a carga de bibliotecas externas e otimizando a responsividade geral do DOM.
 
-### Tecnologias Utilizadas
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-*   **Hugo:** Gerador de site estático para performance e facilidade de manutenção.
-*   **SCSS:** Pré-processador CSS para modularidade e variáveis de design.
-*   **TypeScript:** Para interatividade e validação de tipos no JavaScript.
-*   **HTML Semântico:** Foco em acessibilidade e SEO.
-*   **JavaScript:** Para funcionalidades dinâmicas e filtros.
-
-### Lições Aprendidas
-
-Durante o desenvolvimento, aprofundei meus conhecimentos em otimização de imagens, carregamento lazy-load e a importância de um bom sistema de design para a consistência visual. A experiência de construir um portfólio que é, por si só, um projeto, foi extremamente valiosa.
-
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

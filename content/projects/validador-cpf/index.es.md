@@ -6,49 +6,45 @@ weight: 10
 draft: false
 description: "Projeto Validador de CPF desenvolvido por Emelly Beatriz."
 imageCover: "validador-cpf.webp"
-categories:
+imageCoverFallback: "validador-cpf.png"
+categories: 
   - frontend
 technologies:
-  - HTML
-  - CSS
+  - HTML5
+  - CSS3
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/validador-CPF/"
 repositoryUrl: "https://github.com/emellybmuniz/validador-CPF"
 
+techReasons:
+  Tech: "Lorem ipsum dolor sit amet"
+
 metadata:
   status: "Concluído"
   platform: "Web"
-  focus: "Front-end"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
-[🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
+## Sobre o Projeto
+[ English](./README.md) | [ Português](./README.pt.md)
 
 A simple and intuitive web application, developed with HTML, CSS, and JavaScript, to validate Brazilian CPF (Individual Taxpayer Registration) numbers.
 
 ---
 
-## 🚀 Project Overview
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-This project provides a clean user interface for users to input a CPF number and instantly check its validity based on the official algorithm for calculating the check digits.
-
-![Project Demonstration](src/images/validador-cpf.png)
-
-## ✨ Highlights & Features
-
-- **Clear Feedback:** Provides clear visual messages for valid and invalid CPFs.
-- **Algorithm Check:** Implements the official mathematical algorithm to verify the two check digits.
-- **Responsive Design:** Adapts to different screen sizes for a great experience on desktop and mobile devices.
-
-## 🛠️ Technologies Used
-
-This project was built using the following technologies:
-
-## 1. Clone this repository
-$ git clone https://github.com/emellybmuniz/validador-CPF.git
-
-## 2. Navigate to the project directory
-$ cd validador-CPF
-
-## 3. Open in your browser
-$ open index.html  # Or double-click the file
-```
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

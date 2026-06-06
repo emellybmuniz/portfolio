@@ -1,0 +1,95 @@
+<section class="projects projects--home" id="projects">
+  <div class="projects__container">
+    <h2 class="projects__title" data-animate="animate-fade-in-up" data-observe-once="true">{{ i18n "projects.featured_title" }}</h2>
+
+    {{ $projects := where .Site.RegularPages "Section" "projects" }}
+
+    {{ $featuredProjects := slice }}
+    {{ range sort $projects "Params.weight" "asc" "Date" "desc" }}
+      {{ if .Params.featured }}
+        {{ $featuredProjects = $featuredProjects | append . }}
+      {{ end }}
+    {{ end }}
+
+    <div class="projects__filters-desktop">
+      <div class="projects__filters">
+        <button
+          class="projects__filter-btn projects__filter-btn--active btn--holographic btn--holographic--subtle"
+          data-category="all"
+          aria-pressed="true"
+        >
+          <span class="projects__filter-btn-icon" aria-hidden="true"
+            >{{ with resources.Get "icons/star-solid-full.svg" }}{{ .Content |
+            safeHTML }}{{ end }}</span
+          >
+          <span>{{ i18n "projects.category_all" }}</span>
+        </button>
+
+        {{/* Collect categories used by visible projects */}}
+        {{ $found := slice }}
+        {{ range $p := $featuredProjects }} {{ with $p.Params.categories }} {{ range $c := . }} {{ if not (in $found $c) }} {{ $found = $found | append $c }} {{ end }} {{
+        end }} {{ end }} {{ end }} {{/* Desired taxonomy: only render buttons for
+        keys present in $found */}} {{ $taxonomy := slice (dict "key" "frontend"
+        "label" "Frontend" "icon" "icons/code-solid-full.svg") (dict "key" "backend" "label" "Backend" "icon" "icons/server-solid-full.svg") (dict "key"
+        "fullstack" "label" "Fullstack" "icon" "icons/layer-group-solid-full.svg")
+        (dict "key" "ui-ux" "label" "UI/UX" "icon" "icons/brush-solid-full.svg") (dict "key" "cli" "label" "CLI" "icon" "icons/terminal-solid-full.svg")
+        (dict "key" "api" "label" "API" "icon" "icons/plug-solid-full.svg") }} {{
+        range $cat := $taxonomy }} {{ if in $found $cat.key }}
+        <button 
+          class="projects__filter-btn btn--holographic btn--holographic--subtle" 
+          data-category="{{ $cat.key }}"
+          aria-pressed="false"
+        >
+          {{ with $cat.icon }}<span
+            class="projects__filter-btn-icon"
+            aria-hidden="true"
+            >{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}</span
+          >{{ end }}
+          <span>{{ $cat.label }}</span>
+        </button>
+        {{ end }} {{ end }}
+      </div>
+    </div>
+
+    <div class="projects__mobile-filter">
+      <button class="btn btn--secondary projects__mobile-filter-btn" data-drawer-trigger="projectsFilters">
+        <span class="btn__icon">{{ with resources.Get "icons/filter-solid.svg" }}{{ .Content | safeHTML }}{{ end }}</span>
+        {{ i18n "projects.filters" | default "Filtros" }}
+      </button>
+    </div>
+    {{ partial "shared/ui/drawer/drawer.html" (dict "id" "projectsFilters" "singularKey" "projects.count_singular" "pluralKey" "projects.count_plural") }}
+
+    <div class="projects__grid" data-projects-grid data-stagger="true">
+      {{ $projectIndex := 0 }}
+      {{ range $featuredProjects }}
+        <div
+          class="projects__grid-item{{ if ge $projectIndex 3 }} projects__grid-item--collapsed{{ else }} projects__grid-item--revealed{{ end }}"
+          data-stagger-item
+          data-category="{{ with .Params.categories }}{{ delimit . " " }}{{ end }}"
+        >
+          {{ partialCached "components/project-card.html" . .RelPermalink }}
+        </div>
+        {{ $projectIndex = add $projectIndex 1 }}
+      {{ end }}
+    </div>
+
+    <div class="projects__cta">
+      <button
+        type="button"
+        class="btn btn--secondary btn--holographic btn--holographic--subtle projects__expand-btn"
+        data-projects-expand-btn
+        aria-expanded="false"
+      >
+        <span class="projects__expand-btn-label">{{ i18n "projects.view_more" }}</span>
+        <span class="projects__expand-count" aria-live="polite">+3</span>
+      </button>
+      <a
+      href="{{ "projects/" | relLangURL }}"
+        class="btn btn--primary btn--holographic projects__all-link"
+        data-projects-all-link
+      >
+        {{ i18n "projects.view_all" }}
+      </a>
+    </div>
+  </div>
+</section>

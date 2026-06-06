@@ -22,7 +22,7 @@
   <body class="{{ if eq .Section "about" }}page-about{{ else if .IsHome }}page-home{{ else }}page-{{ .Section }}{{ end }}">
     <a href="#main-content" class="skip-link sr-only">Pular para o conteúdo principal</a>
 
-    {{- partial "navigation/header.html" . -}}
+    {{- partial "features/header/header.html" . -}}
 
     <main id="main-content">{{- block "main" . }} {{- end }}</main>
 

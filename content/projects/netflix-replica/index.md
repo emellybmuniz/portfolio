@@ -4,9 +4,10 @@ date: 2024-01-01
 featured: false
 weight: 10
 draft: false
-description: "Projeto Replica da Netflix desenvolvido por Emelly Beatriz."
+description: "Clone da landing page da Netflix criado inteiramente com HTML e CSS nativos."
 imageCover: "netflix-replica.webp"
-categories:
+imageCoverFallback: "netflix-replica.png"
+categories: 
   - frontend
 technologies:
   - HTML5
@@ -14,45 +15,36 @@ technologies:
 liveDemo: "https://emellybmuniz.github.io/netflix-replica/"
 repositoryUrl: "https://github.com/emellybmuniz/netflix-replica"
 
+techReasons:
+  HTML5: "Criação de semântica limpa para os blocos modulares e formulários da landing page."
+  CSS3: "Replicação meticulosa de assets visuais complexos, gradientes escuros, efeitos de hover e responsividade fluida baseada em layout flexível."
+
 metadata:
   status: "Concluído"
   platform: "Web"
-  focus: "Front-end"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
+## Sobre o Projeto
+Um exercício aprofundado de Front-end focado primariamente em estética visual e precisão posicional. O desafio principal não foi lógico, e sim recriar fielmente os estilos da plataforma real usando estritamente ferramentas web puras (Vanilla HTML e CSS).
 
-[🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
+### Precisão UI e Design
 
-This website, inspired by Netflix's aesthetic, was developed with the sole purpose of promoting the learning and practice of programming and design skills. I emphasize that there is no intention to plagiarize or copy any existing content; this is an initiative aimed at developing technical and creative skills.
+Construído sob a premissa *mobile-first*, a página não depende de componentes prontos para gerar suas interfaces. Cores de contraste, opacidade em camadas, grids e tipografias específicas do serviço de streaming foram refeitos manualmente. O resultado consolida o conhecimento pleno sobre estilização base sem o "atalho" de bibliotecas prontas como o Bootstrap.
 
----
-## 🚀 Project Overview
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-[![Project Demonstration](src/imagens/project-demo.gif)](https://emellybmuniz.github.io/netflix-replica/)
-
-## ✨ Highlights & Features
-
-- **Fully Responsive:** Built with a mobile-first approach, the layout seamlessly adapts to desktops, tablets, and mobile phones.
-- **Accurate Replica:** Aims to be a visually accurate clone of the Netflix landing page, showcasing attention to detail in UI/UX.
-- **Interactive Elements:** Includes interactive components like the email sign-up form and buttons, mimicking the user experience of the original site.
-
-## 🛠️ Technologies Used
-
-This project was built using the following technologies:
-
-## 1. Clone this repository
-$ git clone https://github.com/emellybmuniz/netflix-replica.git
-## 2. Navigate to the project directory
-$ cd netflix-replica
-## 3. Open in your browser
-
-## Linux
-$ xdg-open index.html
-
-## macOS
-$ open index.html 
-
-## Windows
-$ start index.html 
-```
-
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

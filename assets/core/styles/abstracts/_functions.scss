@@ -1,0 +1,28 @@
+@use "sass:color";
+@use "sass:math";
+
+// abstracts / functions
+
+@function to-rem($pixels) {
+  @if math.unit($pixels) == "px" {
+    @return ($pixels / 16px) * 1rem;
+  } @else {
+    @return ($pixels / 16) * 1rem;
+  }
+}
+
+@function to-em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}
+
+@function color-alpha($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
+@function luminance($color) {
+  @return (
+      color.red($color) * 0.299 + color.green($color) * 0.587 +
+        color.blue($color) * 0.114
+    ) /
+    255;
+}

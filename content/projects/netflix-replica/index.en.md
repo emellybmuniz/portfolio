@@ -6,7 +6,8 @@ weight: 10
 draft: false
 description: "Projeto Replica da Netflix desenvolvido por Emelly Beatriz."
 imageCover: "netflix-replica.webp"
-categories:
+imageCoverFallback: "netflix-replica.png"
+categories: 
   - frontend
 technologies:
   - HTML5
@@ -14,45 +15,35 @@ technologies:
 liveDemo: "https://emellybmuniz.github.io/netflix-replica/"
 repositoryUrl: "https://github.com/emellybmuniz/netflix-replica"
 
+techReasons:
+  Tech: "Lorem ipsum dolor sit amet"
+
 metadata:
   status: "Concluído"
   platform: "Web"
-  focus: "Front-end"
+  role: "Desenvolvedora"
+  industry: "Tecnologia"
+  
+  challenges:
+    - kicker: "Desafio 1: Lorem Ipsum"
+      title: "Lorem Ipsum"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      
+features:
+  - "Lorem ipsum dolor"
+  - "Lorem ipsum dolor"
 ---
 
-
-[🇺🇸 English](./README.md) | [🇧🇷 Português](./README.pt.md)
+## Sobre o Projeto
+[ English](./README.md) | [ Português](./README.pt.md)
 
 This website, inspired by Netflix's aesthetic, was developed with the sole purpose of promoting the learning and practice of programming and design skills. I emphasize that there is no intention to plagiarize or copy any existing content; this is an initiative aimed at developing technical and creative skills.
 
 ---
-## 🚀 Project Overview
 
-[![Project Demonstration](src/imagens/project-demo.gif)](https://emellybmuniz.github.io/netflix-replica/)
+## Arquitetura e Decisões Técnicas
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-## ✨ Highlights & Features
-
-- **Fully Responsive:** Built with a mobile-first approach, the layout seamlessly adapts to desktops, tablets, and mobile phones.
-- **Accurate Replica:** Aims to be a visually accurate clone of the Netflix landing page, showcasing attention to detail in UI/UX.
-- **Interactive Elements:** Includes interactive components like the email sign-up form and buttons, mimicking the user experience of the original site.
-
-## 🛠️ Technologies Used
-
-This project was built using the following technologies:
-
-## 1. Clone this repository
-$ git clone https://github.com/emellybmuniz/netflix-replica.git
-## 2. Navigate to the project directory
-$ cd netflix-replica
-## 3. Open in your browser
-
-## Linux
-$ xdg-open index.html
-
-## macOS
-$ open index.html 
-
-## Windows
-$ start index.html 
-```
-
+## Impacto e Resultados
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

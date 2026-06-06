@@ -181,32 +181,27 @@ other = "Enviar Mensaje"
 [dashboard.experience_label]
 other = "Experiencia"
 
-[dashboard.experience_value]
-other = "3+ años"
+
 
 [dashboard.experience_desc]
 other = "Desarrollo Frontend"
 
 [dashboard.projects_label]
-other = "Proyectos"
+other = "Entregables"
 
-[dashboard.projects_value]
-other = "15+"
+
 
 [dashboard.projects_desc]
-other = "Desarrollados"
+other = "Proyectos Desarrollados"
 
 [dashboard.academic_title]
 other = "Formación Académica"
 
-[dashboard.academic_degree]
-other = "Licenciatura en Ingeniería de Software"
 
-[dashboard.academic_uni]
-other = "Universidad Ejemplo"
 
-[dashboard.academic_period]
-other = "2018 - 2022"
+
+
+
 
 [dashboard.soft_skills]
 other = "Habilidades Blandas"
@@ -217,17 +212,13 @@ other = "Trayectoria Profesional"
 [dashboard.timeline_intro]
 other = "Una línea de tiempo que destaca mis experiencias recientes y más relevantes en desarrollo de software y soporte al ecosistema."
 
-[dashboard.timeline_title]
-other = "Desarrolladora Front-end"
 
-[dashboard.timeline_date]
-other = "2022 - Presente"
 
-[dashboard.timeline_company]
-other = "Río de Janeiro, Brasil"
 
-[dashboard.timeline_content]
-other = "Construcción de interfaces modernas, responsivas y escalables con foco en rendimiento y accesibilidad. Creación de layouts responsivos, código limpio y uso práctico de bibliotecas y frameworks."
+
+
+
+
 
 [about.back]
 other = "Proyectos"
@@ -242,10 +233,10 @@ other = "Resumen del proyecto"
 other = "Tecnologías Aplicadas y Decisiones"
 
 [about.context]
-other = "1. Contexto y Arquitectura"
+other = "Contexto y Arquitectura"
 
 [about.challenges]
-other = "2. Desafíos Resueltos"
+other = "Desafíos Resueltos"
 
 [about.code]
 other = "Algoritmo de Buffer"
@@ -287,7 +278,7 @@ other = "Tipo"
 other = "Copiar snippet"
 
 [footer.brand]
-other = "¿Llegaste hasta el final? Si mi trabajo despertó tu interés, sigamos conversando y convirtamos la próxima idea en algo sólido."
+other = "¿Has llegado hasta el final? ¡Genial! Si mi trabajo te ha llamado la atención, no nos quedemos aquí. Ponte en contacto conmigo para que podamos crear algo increíble juntos."
 
 [footer.quick_links]
 other = "Enlaces Rápidos"
@@ -339,3 +330,10 @@ other = "Plataforma"
 
 [single.focus]
 other = "Enfoque"
+
+[projects.action_demo]
+other = 'Demo'
+[projects.action_repo]
+other = 'Código'
+[projects.action_details]
+other = 'Detalles'
