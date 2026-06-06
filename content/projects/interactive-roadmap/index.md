@@ -1,7 +1,7 @@
 ---
 title: "Interactive Roadmap"
 date: 2025-06-01
-featured: false
+featured: true
 weight: 1
 draft: false
 description: "Plataforma inteligente de roadmaps gerados com IA para guiar profissionais de TI."
@@ -13,7 +13,7 @@ technologies:
   - Google AI Studio
   - MongoDB
   - JavaScript
-  - Tailwind
+  - Tailwind CSS
 liveDemo: "#"
 repositoryUrl: "#"
 

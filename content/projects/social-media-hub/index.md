@@ -10,15 +10,15 @@ imageCoverFallback: "social-media-hub.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/social-media-hub/"
 repositoryUrl: "https://github.com/emellybmuniz/social-media-hub"
 
 techReasons:
-  HTML5: "Uso estratégico da tag iframe para embutir navegação multiplataforma dentro do mockup de celular."
-  CSS3: "Aplicação de CSS Grid, Flexbox e Transformações (scale/rotate) para criar a ilusão de profundidade e interface realista."
+  HTML: "Uso estratégico da tag iframe para embutir navegação multiplataforma dentro do mockup de celular."
+  CSS: "Aplicação de CSS Grid, Flexbox e Transformações (scale/rotate) para criar a ilusão de profundidade e interface realista."
   JavaScript: "Lógica simples para transição e gerenciamento dinâmico dos links que carregam dentro do frame."
 
 metadata:

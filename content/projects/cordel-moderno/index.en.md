@@ -10,8 +10,8 @@ imageCoverFallback: "cordel-moderno-project-cover.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/projeto-cordel/"
 repositoryUrl: "https://github.com/emellybmuniz/projeto-cordel"
 

@@ -10,8 +10,8 @@ imageCoverFallback: "stopwatch.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/stopwatch/"
 repositoryUrl: "https://github.com/emellybmuniz/stopwatch"

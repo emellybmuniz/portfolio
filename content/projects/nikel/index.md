@@ -12,16 +12,16 @@ categories:
 technologies:
   - JavaScript
   - Bootstrap
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/Nikel/"
 repositoryUrl: "https://github.com/emellybmuniz/nikel"
 
 techReasons:
   JavaScript: "Lógica de cálculo de fluxo financeiro, manipulação de saldo real e sistema de cadastro persistindo dados localmente via LocalStorage."
   Bootstrap: "Prototipagem ágil e responsiva das tabelas de transação, navegação e formulários utilitários."
-  HTML5: "Semântica dos formulários e tabelas financeiras base."
-  CSS3: "Customização temática limpa do framework Bootstrap."
+  HTML: "Semântica dos formulários e tabelas financeiras base."
+  CSS: "Customização temática limpa do framework Bootstrap."
 
 metadata:
   status: "Concluído"

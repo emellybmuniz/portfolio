@@ -11,15 +11,15 @@ categories:
   - frontend
 technologies:
   - JavaScript
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/validador-CPF/"
 repositoryUrl: "https://github.com/emellybmuniz/validador-CPF"
 
 techReasons:
   JavaScript: "Linguagem isolada no lado cliente para executar instantaneamente a verificação iterativa matemática dos dois últimos dígitos de segurança sem necessidade de requisições de servidor."
-  HTML5: "Criação semântica limpa dos campos para coleta limpa das numerações."
-  CSS3: "Feedback imediato de cor ao usuário demonstrando dinamicamente com base nas regras inseridas no DOM as validações em tons verdes e vermelhos."
+  HTML: "Criação semântica limpa dos campos para coleta limpa das numerações."
+  CSS: "Feedback imediato de cor ao usuário demonstrando dinamicamente com base nas regras inseridas no DOM as validações em tons verdes e vermelhos."
 
 metadata:
   status: "Concluído"

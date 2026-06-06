@@ -5,8 +5,8 @@ featured: false
 weight: 10
 draft: true
 description: "Resumo curto do projeto."
-imageCover: "caminho/para/imagem-de-capa.webp"
-imageCoverFallback: "caminho/para/imagem-de-capa.png"
+imageCover: "imagem-de-capa.webp"
+imageCoverFallback: "imagem-de-capa.png"
 categories: 
   - "Backend"
 technologies:

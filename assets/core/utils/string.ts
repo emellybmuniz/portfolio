@@ -9,7 +9,7 @@ export function normalize(value: string): string {
 
 export function splitTokens(value?: string): string[] {
   return (value || "")
-    .split(/\s+/)
+    .split(",")
     .map((token) => normalize(token))
     .filter(Boolean);
 }

@@ -10,14 +10,14 @@ imageCoverFallback: "netflix-replica.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/netflix-replica/"
 repositoryUrl: "https://github.com/emellybmuniz/netflix-replica"
 
 techReasons:
-  HTML5: "Criação de semântica limpa para os blocos modulares e formulários da landing page."
-  CSS3: "Replicação meticulosa de assets visuais complexos, gradientes escuros, efeitos de hover e responsividade fluida baseada em layout flexível."
+  HTML: "Criação de semântica limpa para os blocos modulares e formulários da landing page."
+  CSS: "Replicação meticulosa de assets visuais complexos, gradientes escuros, efeitos de hover e responsividade fluida baseada em layout flexível."
 
 metadata:
   status: "Concluído"

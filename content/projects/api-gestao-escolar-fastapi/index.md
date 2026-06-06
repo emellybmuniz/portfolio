@@ -1,103 +1,88 @@
 ---
 title: "API de Gestão Escolar com FastAPI"
-date: 2025-06-01
-featured: false
-weight: 1
+date: "2025-07-05" 
+featured: true
+weight: 10
 draft: false
-description: "API RESTful desenvolvida para a gestão integrada de alunos, cursos e matrículas em instituições de ensino. "
-imageCover: "api-gestao-escolar-fastapi.webp"
-imageCoverFallback: "api-gestao-escolar-fastapi.png"
+description: "API RESTful resiliente e de alta performance desenvolvida para centralizar o gerenciamento de alunos, cursos e matrículas em instituições de ensino."
+imageCover: "api-gestao-escolar.webp"
+imageCoverFallback: "api-gestao-escolar.png"
 categories: 
-  - backend
-  - api
+  - "Backend"
 technologies:
-  - FastAPI
-  - Python
-  - QLAlchemy
-  - Pydantic
-  - Uvicorn
-  - Docker
-  - SQLite
-liveDemo: "#"
-repositoryUrl: "#"
+  - "Python"
+  - "FastAPI"
+  - "Docker"
+  - "SQLAlchemy"
+  - "Pydantic"
+  - "SQLite"
+liveDemo: ""
+repositoryUrl: "https://github.com/emellybmuniz/api-gestao-escolar-fastapi"
 
 techReasons:
-  FastAPI: "Framework escolhido por sua altíssima performance, suporte nativo a assincronismo e geração automática de documentação (Swagger)."
-  Python: "Linguagem central pelo ecossistema robusto de bibliotecas de manipulação de dados e velocidade de prototipação."
+  Python: "Linguagem escolhida pela sua robustez, legibilidade e ecossistema maduro para o desenvolvimento web e manipulação de dados."
+  FastAPI: "Framework de alto desempenho baseado em Starlette e Pydantic, selecionado para maximizar o throughput de requisições e fornecer documentação OpenAPI automática."
+  Docker: "Utilizado para garantir o empacotamento completo da aplicação, eliminando a inconsistência entre os ambientes de desenvolvimento, teste e produção."
+  SQLAlchemy: "ORM adotado para isolar a camada de persistência em uma abordagem estritamente orientada a objetos, facilitando consultas complexas e relacionamentos entre entidades."
+  Pydantic: "Responsável pela análise e validação estática de dados, bloqueando requisições malformadas na borda da aplicação antes de onerarem o banco de dados."
+  SQLite: "Banco de dados local em arquivo, ideal para prototipagem rápida e testes de integração com provisionamento automatizado no primeiro ciclo de execução da API."
 
 metadata:
   status: "Concluído"
-  platform: "Backend API"
-  role: "Desenvolvedora Backend"
-  industry: "Tecnologia"
+  platform: "Backend / API RESTful"
+  role: "Software Engineer / DevOps Student"
+  industry: "Educação / EdTech"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      
+    - kicker: "Desafio 1: Inconsistência de Ambientes"
+      title: "O clássico 'na minha máquina funciona'"
+      description: "Garantir que a aplicação se comportasse de forma idêntica em qualquer sistema operacional, contornando conflitos de dependências globais de Python."
+      resolution: "Desenvolvimento de uma estratégia de conteinerização multiestágio com Dockerfile baseado em Python Slim e isolamento de dependências via Docker Compose."
+    - kicker: "Desafio 2: Validação Rígida e Integridade de Dados"
+      title: "Prevenção de vazamento de dados e payloads inválidos"
+      description: "Evitar a inserção de dados escolares corrompidos, inconsistentes (ex: e-mails inválidos) ou vazamento de IDs internos expostos diretamente do banco de dados."
+      resolution: "Implementação de uma camada de Schemas baseados em Pydantic utilizando tipos nativos como EmailStr e separação estrita das regras de negócio dos modelos físicos do ORM."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Arquitetura limpa com separação estrita de responsabilidades (Rotas, Modelos e Schemas)."
+  - "Documentação interativa auto-gerada com Swagger UI (/docs)."
+  - "Esteira de Integração Contínua (CI) via GitHub Workflows automatizada para build da imagem Docker."
+  - "Validação de dados em tempo de execução via Pydantic."
+  - "Configurações automáticas e persistência de dados em SQLite isoladas localmente."
 ---
 
 ## Sobre o Projeto
 
-O sistema foi arquitetado em Python utilizando o framework FastAPI para maximizar o throughput de requisições, algo essencial em períodos de pico como épocas de matrículas e lançamento de notas. 
+O gerenciamento de dados acadêmicos exige fluxos eficientes para suportar picos sazonais de acessos — como nos períodos de matrículas e encerramento de ciclos letivos. Esta **API de Gestão Escolar** foi projetada para atuar no ecossistema educacional (EdTech), centralizando as operações fundamentais de controle de alunos, oferta de cursos e efetivação de matrículas. 
 
-O design do backend segue princípios RESTful estritos, com rotas bem definidas para operações CRUD envolvendo alunos, professores, disciplinas e boletins. Todo o fluxo de dados é validado de forma estática garantindo que entradas malformadas sejam bloqueadas instantaneamente, sem onerar o banco de dados.
-
-## O Que o Projeto Soluciona:
-O sistema digitaliza e centraliza as operações fundamentais de uma escola, fornecendo endpoints documentados interativamente para fácil integração com interfaces de usuário ou outros serviços. Do ponto de vista de infraestrutura e DevOps, o projeto adota a conteinerização para mitigar o clássico problema de inconsistência de ambientes, assegurando que o código execute da mesma maneira tanto no ambiente de desenvolvimento quanto em produção.
+Desenvolvida originalmente no contexto da *Imersão DevOps - Alura Google Cloud*, a aplicação resolve de ponta a ponta o desafio de digitalizar registros educacionais de forma estruturada. Mais do que construir endpoints funcionais, o foco do projeto residiu em estabelecer um ambiente de engenharia moderno, com alta manutenibilidade, documentação viva e previsibilidade de infraestrutura.
 
 ## Arquitetura e Decisões Técnicas
-O sistema foi arquitetado em Python utilizando o framework FastAPI para maximizar o throughput de requisições, algo essencial em períodos de pico como épocas de matrículas e lançamento de notas. 
 
-O design do backend segue princípios RESTful estritos, com rotas bem definidas para operações CRUD envolvendo alunos, professores, disciplinas e boletins. Todo o fluxo de dados é validado de forma estática garantindo que entradas malformadas sejam bloqueadas instantaneamente, sem onerar o banco de dados.
+A fundação do backend baseia-se nos princípios estritos do padrão arquitetural **RESTful**. Para conferir manutenibilidade à base de código à medida que a plataforma escala, o projeto adota o princípio de **Separação de Responsabilidades (Separation of Concerns)**, organizando-se de forma modular:
+
+* **`app.py`**: O ponto de entrada centralizado da aplicação que instancia o ecossistema FastAPI e unifica os roteadores.
+* **`routers/`**: Diretório responsável por modularizar os pontos de acesso HTTP isolando os domínios de negócio (`alunos.py`, `cursos.py`, `matriculas.py`).
+* **`models.py`**: Camada que lida única e exclusivamente com as entidades, mapeamento de tabelas físicas e relacionamentos (`relationship`) do banco de dados SQLAlchemy.
+* **`schemas.py`**: Contém as regras de validação estrutural via Pydantic, blindando os endpoints contra tipos de dados inesperados.
+
+{{< technologies >}}
+
+## Desafios e Soluções de Engenharia
+
+Ao longo do ciclo de desenvolvimento e implantação da API, contornamos problemas críticos voltados à garantia da estabilidade e robustez do software:
+
+{{< challenges >}}
+
+### Detalhes das Soluções Aplicadas
+
+1. **Camada de Validação Robusta:** Ao utilizar os Schemas do Pydantic (como as classes `Aluno` e `Curso`), a API assegura que entradas fora do padrão (ex: strings vazias ou e-mails fora de formatação) disparem um erro `422 Unprocessable Entity` de forma nativa e imediata, sem sequer atingir o banco de dados.
+2. **Consultas Inteligentes com ORM:** No módulo de matrículas (`routers/matriculas.py`), o aproveitamento dos relacionamentos nativos do SQLAlchemy permitiu realizar buscas reversas eficientes (como recuperar todos os alunos matriculados em um curso específico a partir do código deste), abstraindo junções complexas de SQL para lógica de objetos em Python.
 
 ## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+A reestruturação e conteinerização do projeto resultaram em melhorias significativas na experiência de engenharia e na confiabilidade do serviço:
 
-
-**Stack Tecnológico:**
-*   **Linguagem & Framework:** Python 3.10+ com FastAPI, priorizando alta performance e facilidade na construção de rotas.
-*   **Engenharia de Dados (ORM e Validação):** SQLAlchemy para modelagem e comunicação com o banco de dados SQLite, em conjunto com Pydantic para a validação robusta dos esquemas de dados.
-*   **DevOps & Infraestrutura:** Docker, utilizado para empacotar a aplicação e suas dependências.
-
-**Arquitetura e Padrões de Código:**
-O projeto foi estruturado com foco em manutenibilidade e separação de responsabilidades (Clean Code), um diferencial importante para o trabalho em equipe:
-*   `routers/`: Diretório que modulariza as rotas da aplicação, isolando os domínios de negócio (como alunos, cursos e matrículas).
-*   `models.py`: Arquivo dedicado exclusivamente aos modelos do banco de dados.
-*   `schemas.py`: Centraliza as regras de validação de dados via Pydantic, garantindo que a API receba e retorne apenas formatos válidos.
-*   `database.py`: Isola as configurações e a persistência do banco de dados (gerado automaticamente no primeiro uso).
-
-
-## Metadados do Projeto
-
-    Indústria: Educação / EdTech.
-    Plataforma: Backend / API RESTful.
-    Papel no Projeto: A confirmar (Desenvolvido no contexto da "Imersão DevOps - Alura Google Cloud").
-    Status: A confirmar.
-    Tecnologias: Python 3.10+, FastAPI, SQLAlchemy, Pydantic, Uvicorn, Docker, SQLite.
-    Motivações Técnicas: Garantir um ambiente de desenvolvimento e produção consistente através de containerização.
-    Repositório: Código-fonte via GitHub Archive.
-    Demonstração: Local via interface interativa Swagger (/docs).
-
-## Visão Geral e Impacto
-Este projeto consiste em uma API RESTful projetada para o ecossistema educacional, focada no gerenciamento centralizado de alunos, cursos e matrículas. Desenvolvido como parte do programa "Imersão DevOps - Alura Google Cloud", o sistema resolve o desafio de manter registros educacionais estruturados, oferecendo uma interface de comunicação programática clara e eficiente. O projeto destaca-se pela preocupação com a consistência de ambientes, utilizando Docker para padronizar a execução tanto em desenvolvimento quanto em produção.
-
-Decisões Arquiteturais e de Engenharia
-Stack Tecnológico Focado em Performance e Validação
-A escolha do FastAPI como framework principal reflete uma priorização de alta performance e facilidade de documentação. Para garantir a integridade e a segurança dos dados trafegados, a aplicação utiliza Pydantic (schemas.py) para validação rigorosa de entrada e saída.
-A camada de persistência de dados é gerenciada através do SQLAlchemy (ORM), garantindo que as regras de negócio interajam com o banco de dados de maneira orientada a objetos (models.py). Como solução de armazenamento local e sem atrito para testes, foi adotado o SQLite (escola.db), configurado para provisionamento automático na primeira execução do sistema.
-Separação de Responsabilidades (Separation of Concerns)
-A base de código foi estruturada para garantir escalabilidade e fácil manutenção:
-
-    app.py: Ponto de entrada central da aplicação.
-    routers/: O roteamento foi modularizado por domínio de negócio, isolando os fluxos de alunos, cursos e matrículas em arquivos distintos.
-    Modelos e Schemas: A separação estrita entre representação de banco de dados (models.py) e validação de requisições (schemas.py) evita vazamento de dados sensíveis e melhora a clareza do código.
-
-Experiência do Desenvolvedor (DX) e Infraestrutura
-Para simplificar a integração de novos desenvolvedores, a API disponibiliza uma interface interativa gerada automaticamente (disponível na rota /docs), permitindo testes imediatos de todos os endpoints sem a necessidade de clientes externos como Postman. Além disso, a presença do Docker e de um arquivo requirements.txt assegura que o processo de configuração do ambiente virtual e instalação de dependências seja padronizado e previsível.
+* **Instalação Zero (Zero-Friction DX):** Um novo desenvolvedor consegue colocar a API em operação local em menos de 2 minutos utilizando apenas o comando `docker compose up`, eliminando completamente o tempo gasto configurando dependências locais.
+* **Documentação Viva de 100% dos Endpoints:** Com a geração automática de Swagger na rota `/docs`, eliminou-se a necessidade de manter coleções externas atualizadas manualmente (ex: Postman), centralizando testes funcionais no próprio navegador.
+* **Pipelines de CI Confiáveis:** A integração com o GitHub Actions garante o build automático da imagem Docker a cada novo *push* na branch `main`, validando a integridade do código e preparando o artefato para ambientes de nuvem contínuos.

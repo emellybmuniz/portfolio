@@ -1,49 +1,70 @@
 ---
-title: "Calculadora de IMC"
-date: 2024-01-01
+title: "BMI Calculator"
+date: "2026-06-06"
 featured: false
-weight: 10
+weight: 5
 draft: false
-description: "Projeto Calculadora de IMC desenvolvido por Emelly Beatriz."
+description: "A straightforward frontend Body Mass Index (BMI) calculator featuring conditional card component styling based on WHO reference charts."
 imageCover: "calculadora-imc.webp"
 imageCoverFallback: "calculadora-imc.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - HTML5
-  - CSS3
-  - JavaScript
+  - "JavaScript"
+  - "HTML"
+  - "CSS"
 liveDemo: "https://emellybmuniz.github.io/calculadora-imc/"
 repositoryUrl: "https://github.com/emellybmuniz/calculadora-imc"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  JavaScript: "Handles form submission events, sanitizes decimal punctuation formats, and evaluates the operational BMI formula."
+  HTML: "Provides the presentation layout for the inputs, submission triggers, and the static reference comparison matrix table."
+  CSS: "Powers the main radial gradient background presentation and maps conditional classification status alert colors."
 
 metadata:
-  status: "Concluído"
-  platform: "Web"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  status: "Completed"
+  platform: "Web Application (Client-side)"
+  role: "Frontend Developer"
+  industry: "Utility Tools"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      
+    - kicker: "Challenge 1: Punctuation Sanitization"
+      title: "Handling mixed local decimal separator inputs"
+      description: "Preventing regional metric entries using comma notation (e.g., 1,75) from returning NaN variants during parsing steps."
+      resolution: "Executed string-level conversion targeting localized commas via '.replace(',', '.')' methods prior to executing parseFloat calls."
+    - kicker: "Challenge 2: State Class Overlaps"
+      title: "Resetting residual status styling rules over updates"
+      description: "Ensuring old alert indicator class structures do not stack on the display container when running multiple operations in sequence."
+      resolution: "Explicitly declared 'resultadoImc.className' rule clears within the rendering pipelines right before injecting updated state lists."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Mathematical calculation routines following WHO standard frameworks."
+  - "Sanitization layer converting distinct comma and period user values dynamically."
+  - "Conditional layout presentation mapping custom palette colors to specific scores."
+  - "Native form navigation intercept routing computations entirely client-side."
+  - "Decoupled responsive media sheet streamlining paint passes for compact viewports."
 ---
 
-## Sobre o Projeto
+## About the Project
 
-Uma calculadora de Índice de Massa Corporal (IMC) simples e responsiva, desenvolvida com HTML, CSS e JavaScript. Este projeto permite que os usuários insiram seu peso e altura para calcular seu IMC e receber uma classificação de acordo com os padrões internacionais de saúde da Organização Mundial da Saúde (OMS).
+The **BMI Calculator** is a fundamental frontend utility built to exercise basic form event handling, conditional input validation constraints, and script-driven style adjustments based on data feedback states.
 
----
+## Architecture and Technical Decisions
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The application utilizes an un-compiled, purely client-side stack segmented to provide easy interface tracking:
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+* **`src/js/main.js`**: Houses the mathematical pure calculation step (`calculoImc`), conditional scope lookup maps (`getClassificacao`), and DOM element triggers.
+* **`src/css/telasmenores.css`**: Completely encapsulates responsive rules (`max-width: 540px`) to turn off complex radial gradient definitions and layout drop-shadows on high-dpi mobile viewports.
+
+{{< technologies >}}
+
+## Engineering Challenges and Resolutions
+
+Development objectives focused on establishing input parameter consistency and managing user feedback views:
+
+{{< challenges >}}
+
+## Impact and Results
+
+* **Asynchronous-Feel Interactivity**: Leveraging `evento.preventDefault()` calls maintains layout states during computation runs, serving metrics on screen with zero reload latency.
+* **Sanitization Boundary Guards**: Negative metrics, blank spaces, or invalid alpha-character structures are captured during core checks, invoking standard descriptive alert boxes.

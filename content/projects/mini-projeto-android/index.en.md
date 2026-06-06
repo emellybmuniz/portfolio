@@ -10,8 +10,8 @@ imageCoverFallback: "mini-projeto-android-project-cover.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/mini-projeto-android/"
 repositoryUrl: "https://github.com/emellybmuniz/mini-projeto-android"
 

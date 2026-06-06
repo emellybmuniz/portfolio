@@ -1,6 +1,6 @@
 ---
 title: "Baozi Store API"
-date: "2026-05-10"
+date: "2026-10-05"
 featured: false
 weight: 10
 draft: false
@@ -16,7 +16,7 @@ technologies:
   - "H2 Database"
   - "MySQL"
 liveDemo: "#"
-repositoryUrl: "To be confirmed"
+repositoryUrl: "https://github.com/emellybmuniz/baozistore-api"
 
 techReasons:
   Java: "Linguagem core utilizada na versão 21, permitindo o uso de recursos modernos de tipagem estática forte e concorrência estável."

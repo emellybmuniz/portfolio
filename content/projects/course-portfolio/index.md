@@ -10,15 +10,15 @@ imageCoverFallback: "course-portfolio.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/coursePortfolio/"
 repositoryUrl: "https://github.com/emellybmuniz/coursePortfolio"
 
 techReasons:
-  HTML5: "Estruturação das seções da SPA mantendo a semântica adequada de cabeçalhos e navegação."
-  CSS3: "Criação de um sistema de tema claro/escuro nativo e design adaptativo sem dependência de bibliotecas externas."
+  HTML: "Estruturação das seções da SPA mantendo a semântica adequada de cabeçalhos e navegação."
+  CSS: "Criação de um sistema de tema claro/escuro nativo e design adaptativo sem dependência de bibliotecas externas."
   JavaScript: "Gerenciamento de estado do tema no localStorage, validação fluida de formulário e animação do menu lateral."
 
 metadata:

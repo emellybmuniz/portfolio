@@ -10,7 +10,7 @@ imageCoverFallback: "course-portfolio.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
+  - HTML
   - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/coursePortfolio/"

@@ -4,7 +4,7 @@ date: 2024-01-01
 featured: false
 weight: 10
 draft: false
-description: 'A simple and interactive social media hub with a mobile-first design. It features an iPhone mobile interface that displays multiple social platforms responsively. This project was developed based on the HTML5 and CSS3 course from "Curso em Vídeo".'
+description: 'A simple and interactive social media hub with a mobile-first design. It features an iPhone mobile interface that displays multiple social platforms responsively. This project was developed based on the HTML and CSS course from "Curso em Vídeo".'
 imageCover: "social-media-hub.webp"
 imageCoverFallback: "social-media-hub.png"
 categories: 

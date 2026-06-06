@@ -1,7 +1,7 @@
 ---
 title: "Dashboard de Salários na área de dados"
 date: 2024-01-01
-featured: false
+featured: true
 weight: 10
 draft: false
 description: "Projeto Dashboard de Salários na área de dados desenvolvido por Emelly Beatriz."

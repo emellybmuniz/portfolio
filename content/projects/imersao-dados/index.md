@@ -1,7 +1,7 @@
 ---
 title: "Dashboard de Salários na Área de Dados"
 date: 2024-01-01
-featured: false
+featured: true
 weight: 10
 draft: false
 description: "Aplicação interativa para análise e visualização de salários baseada em dados reais."

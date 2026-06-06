@@ -10,8 +10,8 @@ imageCoverFallback: "nikel.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - Bootstrap
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/Nikel/"

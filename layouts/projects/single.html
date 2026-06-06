@@ -11,8 +11,8 @@
       
       <!-- main details -->
       <div class="single-hero__content">
-        <a href="{{ with .Site.GetPage "/projects" }}{{ .RelPermalink }}{{ else }}/projects/{{ end }}" class="single-hero__back-projects" onclick="if(document.referrer.includes(window.location.hostname)) { history.back(); return false; }">
-          Voltar
+        <a href="{{ with .Site.GetPage "/projects" }}{{ .RelPermalink }}{{ else }}{{ .Site.BaseURL }}projects/{{ end }}" class="single-hero__back-projects">
+          {{ i18n "projects.view_all" }}
         </a>
         
         <h2 class="single-hero__title">

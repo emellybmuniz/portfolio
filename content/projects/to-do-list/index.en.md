@@ -10,8 +10,8 @@ imageCoverFallback: "to-do-list-project-cover.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/to-do-list/"
 repositoryUrl: "https://github.com/emellybmuniz/to-do-list"

@@ -10,8 +10,8 @@ imageCoverFallback: "web-playground.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
   - TypeScript
   - Sass
@@ -42,7 +42,7 @@ features:
 > Coleção de exercícios e mini-projetos web (HTML, CSS, JavaScript) — exemplos práticos e material de estudo.
 
 <p align="left">
-   <img alt="Web" src="https://img.shields.io/badge/Web-HTML%2FCSS%2FJS-blue?style=for-the-badge&logo=html5">
+   <img alt="Web" src="https://img.shields.io/badge/Web-HTML%2FCSS%2FJS-blue?style=for-the-badge&logo=HTML">
    <img alt="Último commit" src="https://img.shields.io/github/last-commit/emellybmuniz/web-playground?style=for-the-badge">
    <img alt="License" src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge">
 </p>

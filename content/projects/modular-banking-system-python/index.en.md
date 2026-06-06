@@ -1,59 +1,76 @@
 ---
 title: "Modular Banking System"
-date: 2024-01-01
+date: "2024-01-01"
 featured: true
-weight: 10
+weight: 11
 draft: false
-description: "Sistema bancário modular em Python."
+description: "Refactoring of a dictionary-structured CLI banking system into an object-oriented architecture (OOP) with multi-layer separation."
 imageCover: "coursePortfolio.webp"
 imageCoverFallback: "coursePortfolio.png"
 categories: 
-  - backend
-  - cli
+  - "Backend"
+  - "CLI"
 technologies:
-  - Python
+  - "Python"
 liveDemo: "#"
 repositoryUrl: "https://github.com/emellybmuniz/modular-banking-system-python"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  Python: "Language used to apply advanced object-oriented programming concepts, inheritance, encapsulation, and polymorphism through a clean modular structure."
 
 metadata:
-  status: "Concluído"
-  platform: "Web/API"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  status: "Completed"
+  platform: "CLI Application"
+  role: "Backend Developer"
+  industry: "Technology"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Challenge 1: Paradigm Migration"
+      title: "Transitioning structural data from dictionaries to class instances"
+      description: "The old procedural implementation centralized records within primitive dictionaries and tuples, causing high coupling and complex business rule validation."
+      resolution: "The domain was mapped according to a complete UML model, encapsulating data into typed objects (Client, Account, History) and isolating transactions via the Command pattern."
+    - kicker: "Challenge 2: Shared Ledger Coherence"
+      title: "Synchronization and propagation of transactions among multiple client accounts"
+      description: "Ensuring that all transactions executed across different financial accounts were written to and read from a unified ledger without mixing memory references."
+      resolution: "An initialization workflow was adopted to dynamically bind a single 'History' instance to the customer, allowing new accounts to inherit this same reference transparently."
       
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Complete domain class modeling (Client, Natural Person, Checking Account, History)"
+  - "Encapsulation of deposits and withdrawals via objects inheriting from an abstract transaction class"
+  - "Independent service layer isolating enterprise workflows from terminal operations"
+  - "In-memory repository implementation based on the Singleton pattern to simulate persistence"
+  - "Strict validation of domain constraints, such as duplicate CPFs and unique account identifiers"
+  - "Operational limit checks on withdrawal quantities specific to the Checking Account specialization"
+  - "Dynamic command-line user interface powered by an interactive menu loop"
+  - "Comprehensive suite of functional integration tests structured with pytest"
 ---
 
-## Sobre o Projeto
+## About the Project
 
-Este projeto contém a implementação de um sistema bancário modular em Python. O objetivo foi transformar uma versão legada que usava dicionários para guardar clientes e contas, em um sistema orientado a objetos seguindo uma modelagem UML, com separação clara entre domínio, repositório, serviços e interface (CLI). O projeto foca em: modelagem de classes (clientes, contas, transações), operações bancárias (depósito, saque), repositório em memória e um menu CLI para interação.
+The Modular Banking System originated from the technical requirement to evolve an accounting script previously structured on top of pure Python dictionaries and tuples into a modular, Object-Oriented software application. The core objective of the project is to demonstrate the feasibility of transforming procedural logic into an extensible, clean codebase aligned with modern software engineering practices.
 
----
+The application addresses the issues related to primitive data coupling common in early learning stages. Before the development of this modular system, fundamental constraints such as withdrawal thresholds or balance verification were scattered across user interface handlers, hindering testability and preventing the pluggability of storage components.
 
-### O que foi feito?
+## Architecture and Technical Decisions
 
-- [x] Modelagem das classes do domínio (Cliente, Conta, Histórico, Transação, Conta Corrente).
-- [x] Implementação de repositórios em memória para clientes e contas.
-- [x] Serviços que encapsulam regras de negócio (criação de cliente/conta, depósito, saque, extrato, saldo).
-- [x] CLI básico com menu para interagir com o sistema (criar usuário, criar conta, depositar, sacar, visualizar extrato e listar contas).
-- [x] Atualização para armazenar dados em objetos (POO) seguindo o enunciado do bootcamp.
-- [x] Testes automatizados (pytest) para validar fluxo principal e regras (arquivo `tests/test_integration.py`).
+The codebase structure was organized according to the Single Responsibility Principle (SRP), distributing logic among distinct operational layers:
+* **Domain (Models):** Encapsulates core business entities (`Client`, `Account`, `CheckingAccount`, `History`, `Transaction`). Balance mutation is protected, exposing it purely for read-only access via standard properties (`@property`).
+* **Repository:** Substitutes raw global variables with controlled storage structures (`InMemoryClientRepository`, `InMemoryAccountRepository`), preparing the layout for smooth relational database integration without altering core code blocks.
+* **Services:** Orchestrates the workflows connecting repositories with domain logic (account instantiation, deposit routines, and validation checkpoints).
+* **CLI:** An isolated terminal interface that exclusively relies on exposed functions from the services layer to fetch and render user actions.
 
----
+Modularity was reinforced through dependency injection techniques. Service constructors accept repository instances, establishing the required decoupling to run deterministic integration test routines.
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+{{< technologies >}}
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Engineering Challenges and Solutions
+
+Throughout the implementation phase, structuring internal inheritance logic and managing data retention rules without an active database were key elements to ensure correct software performance.
+
+{{< challenges >}}
+
+## Impact and Results
+
+* **Interface Decoupling:** The command-line visual module can be completely swapped for a web-based API layer without requiring a single code modification within the business logic or domain entities.
+* **Exception Testing Coverage:** Code evaluation powered by pytest successfully covers happy paths and critical edge cases, including insufficient funds errors or duplicate registration blocks.
+* **Long-Term Maintainability:** Full alignment with the UML diagrams drastically reduces onboarding friction for analyzing the operational behavior of financial transactions.

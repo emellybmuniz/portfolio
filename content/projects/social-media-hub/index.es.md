@@ -36,7 +36,7 @@ features:
 
 ## Sobre o Projeto
 
-A simple and interactive social media hub with a mobile-first design. It features an iPhone mobile interface that displays multiple social platforms responsively. This project was developed based on the HTML5 and CSS3 course from "Curso em Vídeo".
+A simple and interactive social media hub with a mobile-first design. It features an iPhone mobile interface that displays multiple social platforms responsively. This project was developed based on the HTML and CSS course from "Curso em Vídeo".
 
 ---
 

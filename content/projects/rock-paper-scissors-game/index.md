@@ -11,8 +11,8 @@ categories:
   - frontend
 technologies:
   - JavaScript
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/rock-paper-scissors-game/"
 repositoryUrl: "https://github.com/emellybmuniz/rock-paper-scissors-game"
 

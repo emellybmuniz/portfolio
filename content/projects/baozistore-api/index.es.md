@@ -1,12 +1,12 @@
 ---
 title: "Baozi Store API"
-date: "2026-05-10"
+date: "2026-10-05"
 featured: false
 weight: 10
 draft: false
 description: "API RESTful desarrollada con Spring Boot para la gestión de clientes, productos y pedidos en el dominio de comercio electrónico, diseñada con aislamiento de entornos y desacoplamiento de datos relacionales."
 imageCover: "docs/baozistore_use_case.png"
-imageCoverFallback: "To be confirmed"
+imageCoverFallback: "https://github.com/emellybmuniz/baozistore-api"
 categories: 
   - "Backend"
 technologies:

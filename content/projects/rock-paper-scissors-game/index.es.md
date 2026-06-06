@@ -10,8 +10,8 @@ imageCoverFallback: "rock-paper-scissors-game.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/rock-paper-scissors-game/"
 repositoryUrl: "https://github.com/emellybmuniz/rock-paper-scissors-game"

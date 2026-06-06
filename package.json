@@ -10,6 +10,7 @@
     "lint:js": "eslint assets/ts/**/*.ts",
     "format": "prettier --write 'assets/**/*.{ts,scss}'",
     "type-check": "tsc --noEmit",
+    "test:e2e": "playwright test",
     "prepare": "husky"
   },
   "keywords": [
@@ -23,6 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
+    "@playwright/test": "^1.60.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",

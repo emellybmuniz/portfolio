@@ -10,16 +10,16 @@ imageCoverFallback: "to-do-list-project-cover.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/to-do-list/"
 repositoryUrl: "https://github.com/emellybmuniz/to-do-list"
 
 techReasons:
   JavaScript: "Lógica primária contendo funções para operações completas de CRUD (Create, Read, Update, Delete) manipulando arrays de estado no lado do cliente."
-  HTML5: "Criação de formulários nativos prevendo a validação para que tarefas vazias não sejam publicadas."
-  CSS3: "Transições suaves e aplicação de pseudo-classes lógicas para identificar itens marcados como concluídos (line-through)."
+  HTML: "Criação de formulários nativos prevendo a validação para que tarefas vazias não sejam publicadas."
+  CSS: "Transições suaves e aplicação de pseudo-classes lógicas para identificar itens marcados como concluídos (line-through)."
 
 metadata:
   status: "Concluído"

@@ -1,64 +1,68 @@
 ---
-title: "E-Commerce Control"
-date: 2024-01-01
+title: "Warehouse Microservice"
+date: "2026-06-05"
 featured: true
 weight: 10
 draft: false
-description: "Sistema de gerenciamento de estoque baseado em microsserviços, desenvolvido com Spring Boot e mensageria RabbitMQ para sincronização de disponibilidade de produtos em tempo real."
-imageCover: "coursePortfolio.webp"
-imageCoverFallback: "coursePortfolio.png"
+description: "A stock management microservice using asynchronous processing and real-time synchronization via RabbitMQ."
+imageCover: "assets/images/background.png"
+imageCoverFallback: "assets/images/background.png"
 categories: 
-  - backend
+  - "Backend"
 technologies:
-  - Java
+  - "Java"
+  - "Spring Boot"
+  - "RabbitMQ"
+  - "MapStruct"
 liveDemo: "#"
 repositoryUrl: "https://github.com/emellybmuniz/dio-ecommerce-control"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  Java 21: "I used it to leverage the modern features of the language, ensuring a stable, strongly typed, and high-performance core to handle stock flows."
+  Spring Boot 3: "I chose it to speed up the RESTful API creation, making full use of its native dependency injection and Spring Data JPA features to communicate with the database."
+  RabbitMQ: "I adopted it as an asynchronous message broker to handle communication between microservices without blocking or overloading the main purchase flow."
+  MapStruct: "I implemented it to automatically and cleanly map database entities to DTOs, eliminating the need to write boilerplate mapping code manually."
 
 metadata:
-  status: "Concluído"
-  platform: "Web/API"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  status: "In development"
+  platform: "Distributed API"
+  role: "Solo Backend Developer"
+  industry: "E-commerce"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Challenge 1: Tight Coupling and Flow Blocking"
+      title: "Stock synchronization without disrupting system availability"
+      description: "In e-commerce architectures, relying on synchronous HTTP calls to update stock can slow down or crash the application if one of the services fails."
+      resolution: "I developed an asynchronous listener attached to the 'product.change.availability.queue'. By configuring the Jackson2JsonMessageConverter, I set up the service to consume status update events in the background, refreshing the database via JPA without freezing the user experience."
       
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Product inventory registration and retrieval with native sorting by name"
+  - "Asynchronous JSON message consumption for real-time availability updates"
+  - "RESTful API integration with the external storefront microservice"
+  - "Automated interactive API documentation powered by Swagger UI and SpringDoc OpenAPI"
+  - "Data persistence configured using Spring Data JPA and an H2 database for rapid testing"
 ---
 
-## Sobre o Projeto
-**Contexto e Motivação:**
+## About the Project
 
-O **Warehouse** é um microsserviço de gerenciamento de estoque que faz parte de uma arquitetura distribuída de e-commerce. O sistema utiliza comunicação assíncrona via RabbitMQ para sincronizar a disponibilidade de produtos entre diferentes serviços.
+The **Warehouse Microservice** is a backend system focused on inventory management that I built to integrate into a distributed e-commerce architecture. The project's main purpose was to address the tight coupling issue between catalog and inventory systems.
 
-Este projeto foi desenvolvido como parte de um estudo sobre arquitetura de microsserviços, demonstrando conceitos fundamentais como:
+Before implementing this asynchronous microservice approach, any instability during product queries would directly affect the checkout flow. With this solution, I decoupled the responsibilities, enabling the inventory system to process status changes in isolation and ensuring the storefront remains operational even during peak traffic periods.
 
-- Comunicação assíncrona entre serviços
-- Mensageria com RabbitMQ
-- Integração entre microsserviços via REST
-- Persistência de dados com JPA/Hibernate
-- Documentação de API com OpenAPI/Swagger
+## Architecture and Technical Decisions
 
-**Público-alvo:**
-Desenvolvedores interessados em aprender sobre microsserviços, mensageria e arquitetura distribuída.
+I structured the project layout by strictly separating responsibilities into well-defined layers (Controller → Service → Repository). I targeted a modern stack that minimizes boilerplate and simplifies autonomous software maintenance:
 
-**Principais Benefícios:**
+{{< technologies >}}
 
-- Desacoplamento entre serviços de estoque e vitrine
-- Sincronização em tempo real da disponibilidade de produtos
-- Escalabilidade horizontal facilitada
-- Fácil manutenção e evolução independente dos serviços
+## Engineering Challenges and Solutions
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+While developing the messaging components, I focused heavily on ensuring the microservice could correctly ingest external data payloads and interpret availability changes without causing persistence errors.
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+{{< challenges >}}
+
+## Impact and Results
+
+At this stage, I have not configured infrastructure tracking tools (such as Prometheus) or automated load testing inside this repository. However, the qualitative and technical results achieved from this solo development approach include:
+- **Reduced Boilerplate Code:** By pairing Lombok with MapStruct, I drastically decreased the need to manually write getters, setters, and structural data conversion methods, allowing me to focus entirely on core business logic.
+- **Frictionless Onboarding:** I configured the environment using Gradle Wrapper alongside an H2 in-memory database, which means you can clone the repository and run the application instantly using simple commands, without needing a local database setup.

@@ -10,8 +10,8 @@ imageCoverFallback: "netflix-replica.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
 liveDemo: "https://emellybmuniz.github.io/netflix-replica/"
 repositoryUrl: "https://github.com/emellybmuniz/netflix-replica"
 

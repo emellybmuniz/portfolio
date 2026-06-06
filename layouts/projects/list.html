@@ -18,8 +18,31 @@
     {{ $allCategories = $allCategories | append . }}
   {{ end }}
 {{ end }}
-{{ $uniqueTechnologies := $allTechnologies | uniq | sort }}
-{{ $uniqueCategories := $allCategories | uniq | sort }}
+{{ $techMap := dict }}
+{{ range $allTechnologies }}
+  {{ $lower := . | lower }}
+  {{ if not (isset $techMap $lower) }}
+    {{ $techMap = merge $techMap (dict $lower .) }}
+  {{ end }}
+{{ end }}
+{{ $uniqueTechKeys := slice }}
+{{ range $k, $v := $techMap }}
+  {{ $uniqueTechKeys = $uniqueTechKeys | append $k }}
+{{ end }}
+{{ $uniqueTechKeys = $uniqueTechKeys | sort }}
+
+{{ $catMap := dict }}
+{{ range $allCategories }}
+  {{ $lower := . | lower }}
+  {{ if not (isset $catMap $lower) }}
+    {{ $catMap = merge $catMap (dict $lower .) }}
+  {{ end }}
+{{ end }}
+{{ $uniqueCatKeys := slice }}
+{{ range $k, $v := $catMap }}
+  {{ $uniqueCatKeys = $uniqueCatKeys | append $k }}
+{{ end }}
+{{ $uniqueCatKeys = $uniqueCatKeys | sort }}
 
 <section class="projects projects--all projects-explorer" id="projects" data-projects-explorer>
   <div class="projects-explorer__container">
@@ -35,11 +58,11 @@
           {{ i18n "projects.total_label" }}
         </span>
         <span class="projects-explorer__meta-chip">
-          <strong>{{ len $uniqueTechnologies }}</strong>
+          <strong>{{ len $uniqueTechKeys }}</strong>
           {{ i18n "projects.technologies_label" }}
         </span>
         <span class="projects-explorer__meta-chip">
-          <strong>{{ len $uniqueCategories }}</strong>
+          <strong>{{ len $uniqueCatKeys }}</strong>
           {{ i18n "projects.categories_label" }}
         </span>
       </div>
@@ -63,8 +86,8 @@
           <span>{{ i18n "projects.technologies_label" }}</span>
           <select data-projects-tech>
             <option value="all">{{ i18n "projects.tech_all" }}</option>
-            {{ range $uniqueTechnologies }}
-              <option value="{{ lower . }}">{{ . }}</option>
+            {{ range $uniqueTechKeys }}
+              <option value="{{ . }}">{{ index $techMap . }}</option>
             {{ end }}
           </select>
         </label>
@@ -73,9 +96,10 @@
           <span>{{ i18n "projects.categories_label" }}</span>
           <select data-projects-category>
             <option value="all">{{ i18n "projects.category_all" }}</option>
-            {{ range $uniqueCategories }}
-              {{ $label := index $categoryLabels . | default (. | title) }}
-              <option value="{{ lower . }}">{{ $label }}</option>
+            {{ range $uniqueCatKeys }}
+              {{ $original := index $catMap . }}
+              {{ $label := index $categoryLabels . | default ($original | title) }}
+              <option value="{{ . }}">{{ $label }}</option>
             {{ end }}
           </select>
         </label>
@@ -123,8 +147,8 @@
               data-project-item
               data-title="{{ .Title | plainify | lower }}"
               data-description="{{ $description | plainify | lower }}"
-              data-technologies="{{ delimit $technologies " " | lower }}"
-              data-categories="{{ delimit $categories " " | lower }}"
+              data-technologies="{{ delimit $technologies "," | lower }}"
+              data-categories="{{ delimit $categories "," | lower }}"
               data-featured="{{ if .Params.featured }}yes{{ else }}no{{ end }}"
               data-has-demo="{{ if $hasDemo }}yes{{ else }}no{{ end }}"
               data-date="{{ .Date.Format "2006-01-02" }}"

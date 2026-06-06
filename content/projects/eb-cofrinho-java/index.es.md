@@ -12,8 +12,8 @@ categories:
   - cli
 technologies:
   - Tailwind
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
   - Google AI Studio
   - MongoDB

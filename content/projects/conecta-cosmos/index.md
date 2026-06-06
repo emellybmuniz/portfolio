@@ -1,58 +1,65 @@
 ---
 title: "Conecta Cosmos"
-date: 2024-01-01
+date: "2026-06-05"
 featured: true
 weight: 10
 draft: false
-description: "Um portal educacional sobre o Sistema Solar."
+description: "Aplicação web interativa e educacional para exploração do Sistema Solar e validação de conhecimento com quiz dinâmico desenvolvida por mim."
 imageCover: "conecta-cosmos.webp"
-imageCoverFallback: "conecta-cosmos.png"
+imageCoverFallback: "assets/images/background.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - HTML5
-  - CSS3
-  - JavaScript
-liveDemo: "https://emellybmuniz.github.io/projeto-via-lactea-v0.1/"
-repositoryUrl: "https://github.com/emellybmuniz/projeto-via-lactea-v0.1"
+  - "React"
+  - "TypeScript"
+  - "Tailwind CSS"
+  - "Vite"
+liveDemo: "#"
+repositoryUrl: "https://github.com/emellybmuniz/conecta-cosmos"
 
 techReasons:
-  HTML5: "Estruturação semântica para garantir acessibilidade, hierarquia de conteúdo e SEO."
-  CSS3: "Estilização visual imersiva e animações de interface sem dependência de bibliotecas externas."
-  JavaScript: "Lógica interativa do quiz, manipulação dinâmica do DOM e controle de estado no navegador."
+  React 19: "Escolhi o React 19 para construir uma interface declarativa, onde consegui modularizar os componentes visuais do Sistema Solar e controlar o estado do quiz de forma simples."
+  TypeScript: "Adicionei no projeto para garantir tipagem estática nos modelos de dados dos planetas e nas perguntas do quiz, me ajudando a evitar erros de propriedade indefinida em tempo de execução."
+  Tailwind CSS: "Foi o framework que escolhi para fazer a estilização responsiva de forma rápida, criando os efeitos visuais do espaço sem precisar encher o projeto com arquivos CSS separados."
+  Vite: "Adotei como minha ferramenta de build para fugir de configurações complexas. Ele me deu um recarregamento muito rápido em desenvolvimento e gerou arquivos leves para a produção."
 
 metadata:
-  status: "Concluído"
+  status: "Em desenvolvimento"
   platform: "Web"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  role: "Desenvolvedora Frontend Solo"
+  industry: "Educação / Tecnologia"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Desafio 1: Gerenciamento e Estruturação de Dados"
+      title: "Organização das informações dos corpos celestes e do quiz"
+      description: "No começo, percebi que colocar muitos dados sobre os planetas e perguntas direto nos componentes de tela ia deixar meu código confuso e ruim de mexer depois."
+      resolution: "Eu resolvi isso separando e tipando todos os dados em arquivos '.ts' na pasta data, deixando meus componentes limpos e focados só em mostrar a interface."
       
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Sistema Solar interativo com efeitos visuais ao passar o mouse (hover)"
+  - "Exibição de dados astronômicos detalhados ao selecionar um corpo celeste"
+  - "Quiz de múltipla escolha integrado para testar o conhecimento do usuário"
+  - "Estrutura moderna baseada em componentes reutilizáveis e fortemente tipados"
 ---
 
 ## Sobre o Projeto
-O Conecta Cosmos é uma aplicação web educacional desenhada para proporcionar uma exploração interativa do Sistema Solar. O foco do projeto é entregar uma experiência visual envolvente onde o usuário pode não apenas consumir informações astronômicas, mas também interagir com os elementos em tela.
 
-### Arquitetura e Decisões
-
-O projeto foi construído inteiramente com tecnologias web nativas para garantir máxima performance, carregamento instantâneo e ausência de complexidade de build. 
-
-A interface permite uma exploração tátil: ao interagir com os planetas, informações detalhadas são reveladas de forma assíncrona visualmente. Além disso, a aplicação conta com um sistema de quiz construído em Vanilla JavaScript que valida o conhecimento adquirido pelo usuário durante a navegação, manipulando o DOM de forma limpa e eficiente.
+O **Conecta Cosmos** é uma aplicação web educacional que eu idealizei e construí sozinha para transformar o aprendizado sobre o Sistema Solar em algo visual e interativo. Eu queria resolver o problema de conteúdos didáticos tradicionais que costumam ser estáticos, criando um espaço onde quem está estudando possa clicar nos planetas, descobrir curiosidades e testar o que aprendeu na mesma hora com um quiz.
 
 ## Arquitetura e Decisões Técnicas
-e Decisões
 
-O projeto foi construído inteiramente com tecnologias web nativas para garantir máxima performance, carregamento instantâneo e ausência de complexidade de build. 
+Eu montei o projeto usando uma arquitetura moderna voltada para o frontend, focando em deixar o código organizado para eu conseguir dar manutenção sozinha no futuro. Minhas escolhas priorizaram ferramentas que me dessem velocidade e segurança:
 
-A interface permite uma exploração tátil: ao interagir com os planetas, informações detalhadas são reveladas de forma assíncrona visualmente. Além disso, a aplicação conta com um sistema de quiz construído em Vanilla JavaScript que valida o conhecimento adquirido pelo usuário durante a navegação, manipulando o DOM de forma limpa e eficiente.
+{{< technologies >}}
+
+## Desafios e Soluções de Engenharia
+
+Durante o desenvolvimento, foquei bastante em como organizar o fluxo de informações para garantir que a tela respondesse rápido quando o usuário clicasse em um planeta ou respondesse uma pergunta.
+
+{{< challenges >}}
 
 ## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Eu ainda não configurei ferramentas de métricas ou dados de acesso no repositório. Porém, avaliando o meu desenvolvimento e o código, os resultados que alcancei foram:
+- **Código mais organizado:** Como eu separei os dados estruturados (planetas e perguntas) dos componentes visuais, ficou muito mais fácil se eu quiser sentar e adicionar novos conteúdos depois.
+- **Ambiente de desenvolvimento rápido:** O uso do Vite me ajudou muito no dia a dia, porque as alterações que eu fazia no layout com Tailwind apareciam na tela instantaneamente.

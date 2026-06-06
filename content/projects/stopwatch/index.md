@@ -10,16 +10,16 @@ imageCoverFallback: "stopwatch.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 liveDemo: "https://emellybmuniz.github.io/stopwatch/"
 repositoryUrl: "https://github.com/emellybmuniz/stopwatch"
 
 techReasons:
   JavaScript: "Orquestração matemática contínua utilizando métodos como `setInterval` e manipulação de milissegundos convertidos para o formato relógio."
-  HTML5: "Marcação estrita e acessível dos botões de ação (Iniciar, Parar, Resetar) e do painel do display."
-  CSS3: "Uso de fontes monoespaçadas no visor para garantir que os caracteres não saltem na tela a cada mudança de dígito, preservando a UX."
+  HTML: "Marcação estrita e acessível dos botões de ação (Iniciar, Parar, Resetar) e do painel do display."
+  CSS: "Uso de fontes monoespaçadas no visor para garantir que os caracteres não saltem na tela a cada mudança de dígito, preservando a UX."
 
 metadata:
   status: "Concluído"

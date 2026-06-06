@@ -1,7 +1,7 @@
 ---
 title: "Roadmap Interactivo"
 date: 2025-06-01
-featured: false
+featured: true
 weight: 1
 draft: false
 description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."
@@ -10,9 +10,9 @@ imageCoverFallback: "interactive-roadmap-project-cover.png"
 categories: 
   - fullstack
 technologies:
-  - Tailwind
-  - HTML5
-  - CSS3
+  - Tailwind CSS
+  - HTML
+  - CSS
   - JavaScript
   - Google AI Studio
   - MongoDB

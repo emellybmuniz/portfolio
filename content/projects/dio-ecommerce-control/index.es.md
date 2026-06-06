@@ -1,43 +1,68 @@
 ---
-title: "E-Commerce Control"
-date: 2024-01-01
+title: "Warehouse Microservice"
+date: "2026-06-05"
 featured: true
 weight: 10
 draft: false
-description: "Sistema de gerenciamento de estoque baseado em microsserviços, desenvolvido com Spring Boot e mensageria RabbitMQ para sincronização de disponibilidade de produtos em tempo real."
-imageCover: "coursePortfolio.webp"
-imageCoverFallback: "coursePortfolio.png"
+description: "Microservicio de gestión de inventario con procesamiento asíncrono y sincronización en tiempo real mediante RabbitMQ."
+imageCover: "assets/images/background.png"
+imageCoverFallback: "assets/images/background.png"
 categories: 
-  - backend
+  - "Backend"
 technologies:
-  - Java
+  - "Java"
+  - "Spring Boot"
+  - "RabbitMQ"
+  - "MapStruct"
 liveDemo: "#"
 repositoryUrl: "https://github.com/emellybmuniz/dio-ecommerce-control"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  Java 21: "Lo utilicé para aprovechar las ventajas de las versiones modernas del lenguaje, garantizando una base estable, tipado fuerte y alto rendimiento al gestionar el flujo de inventario."
+  Spring Boot 3: "Lo elegí para acelerar la creación de la API RESTful, aprovechando la inyección de dependencias nativa y las facilidades de Spring Data JPA para interactuar con la base de datos."
+  RabbitMQ: "Lo adopté como el broker de mensajería asíncrona para permitir la comunicación entre microservicios sin bloquear ni sobrecargar el flujo principal de compra."
+  MapStruct: "Lo implementé para realizar el mapeo automático entre las entidades de la base de datos y los DTOs de forma limpia, eliminando la necesidad de escribir código repetitivo a mano."
 
 metadata:
-  status: "Concluído"
-  platform: "Web/API"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  status: "En desarrollo"
+  platform: "Distributed API"
+  role: "Desarrolladora Backend Solo"
+  industry: "E-commerce"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Desafío 1: Acoplamiento Rígido y Bloqueo de Flujos"
+      title: "Sincronización de inventario sin comprometer la disponibilidad del sistema"
+      description: "In las arquitecturas de comercio electrónico, si la actualización del inventario depende de llamadas HTTP directas y síncronas, el sistema puede volverse lento o caerse si alguno de los servicios falla."
+      resolution: "Desarrollé un listener asíncrono conectado a la cola 'product.change.availability.queue'. Configurando el Jackson2JsonMessageConverter, logré consumir los eventos de cambio de estado en segundo plano, actualizando la base de datos mediante JPA sin interrumpir la experiencia del usuario."
       
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Registro y consulta de productos en el inventario con ordenación nativa por nombre"
+  - "Consumo asíncrono de mensajes JSON para actualizaciones de disponibilidad en tiempo real"
+  - "Integración mediante API RESTful con el microservicio de vitrina externo (Storefront)"
+  - "Documentación interactiva de API automatizada con Swagger UI y SpringDoc OpenAPI"
+  - "Persistencia de datos configurada con Spring Data JPA y base de datos H2 para pruebas rápidas"
 ---
 
-## Sobre o Projeto
+## Sobre el Proyecto
+
+**Warehouse Microservice** es un sistema de backend enfocado en la gestión de inventario que diseñé y construí para formar parte de una arquitectura distribuida de comercio electrónico. El objetivo central del proyecto fue resolver el problema del acoplamiento rígido entre los sistemas de catálogo e inventario.
+
+Antes de implementar este enfoque de microservicio asíncrono, cualquier inestabilidad en las consultas de productos afectaba directamente el flujo de pago. Con esta solución, descentralicé las responsabilidades, permitiendo que el inventario procese los cambios de estado de manera aislada y garantizando que la tienda siga operativa incluso durante picos de alta demanda.
 
 ## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Estructuré el diseño del proyecto separando estrictamente las responsabilidades en capas bien definidas (Controller → Service → Repository). Busqué herramientas modernas que evitaran código repetitivo y facilitaran el mantenimiento de forma autónoma:
+
+{{< technologies >}}
+
+## Desafíos y Soluções de Engenharia
+
+Durante el desarrollo de los componentes de mensajería, me enfoqué principalmente en asegurar que el microservicio pudiera recibir datos externos e interpretar correctamente los cambios de disponibilidad sin provocar errores de persistencia.
+
+{{< challenges >}}
 
 ## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Por el momento, no he configurado herramientas de monitoreo de infraestructura (como Prometheus) ni pruebas de carga automatizadas en este repositorio. Sin embargo, los resultados técnicos y cualitativos que alcancé programando de forma individual fueron:
+- **Reducción de Código Repetitivo:** Al combinar Lombok con MapStruct, reduje drásticamente la necesidad de escribir métodos de conversión de datos, getters y setters a mano, lo que me permitió concentrarme únicamente en la lógica de negocio.
+- **Entorno de Inicio Rápido:** Configuré el entorno utilizando Gradle Wrapper y una base de datos en memoria H2, lo que permite clonar el repositorio y levantar la aplicación de inmediato con comandos sencillos, eliminando la necesidad de configurar bases de datos locales.

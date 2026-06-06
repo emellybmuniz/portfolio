@@ -10,8 +10,8 @@ imageCoverFallback: "web-playground.png"
 categories: 
   - frontend
 technologies:
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
   - TypeScript
   - Sass

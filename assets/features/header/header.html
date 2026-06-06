@@ -39,7 +39,7 @@
   {{ else }}
   <div class="header__detailed-container">
     <div class="header__detailed-left">
-      <a href="{{ if eq .Section "projects" }}{{ printf "%s#projects" $homePath }}{{ else }}{{ $homePath }}{{ end }}" onclick="try { if(!document.referrer.includes(window.location.host)) return true; var ref = new URL(document.referrer).pathname.replace(/\/$/, '').split('/').pop(); var cur = window.location.pathname.replace(/\/$/, '').split('/').pop(); if(ref === cur) return true; history.back(); return false; } catch(e) { return true; }" class="header__back-btn" aria-label="{{ i18n "nav.home" }}">
+      <a href="{{ .Site.Home.RelPermalink }}" class="header__back-btn" aria-label="{{ i18n "nav.home" }}">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
       </a>
       <div class="header__detailed-title-group">
