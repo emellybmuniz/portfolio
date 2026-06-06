@@ -1,53 +1,69 @@
 ---
-title: "Projeto Cordel Moderno"
-date: 2024-05-12
+title: "Proyecto Cordel Moderno"
+date: "2024-05-12"
 featured: false
 weight: 10
 draft: false
-description: "Pequeno projeto de cordel moderno desenvolvido para fins de aprendizado e prática."
+description: "Página web simple desarrollada para ejercitar la aplicación de efectos de desplazamiento parallax y tipografía fluida con CSS puro."
 imageCover: "cordel-moderno-project-cover.webp"
 imageCoverFallback: "cordel-moderno-project-cover.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - HTML
-  - CSS
+  - "HTML5"
+  - "CSS3"
 liveDemo: "https://emellybmuniz.github.io/projeto-cordel/"
 repositoryUrl: "https://github.com/emellybmuniz/projeto-cordel"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  HTML5: "Utilizado para el marcado estructural semántico de las secciones y los bloques de versos que componen el poema."
+  CSS3: "Responsable de la estilización visual, la gestión de fuentes externas y la fijación de los fondos para crear la ilusión de profundidad."
 
 metadata:
-  status: "Concluído"
-  platform: "Web Application"
-  role: "Desenvolvedor Frontend"
-  industry: "Tecnologia"
+  status: "Completado"
+  platform: "Web Estática"
+  role: "Desarrolladora Frontend"
+  industry: "Educación / Portafolio"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      
+    - kicker: "Desafío 1: Legibilidad sobre Imágenes"
+      title: "Contraste de texto en fondos detallados"
+      description: "Mostrar los versos del poema directamente sobre imágenes fotográficas detalladas dificultaba la lectura debido a las variaciones de color del fondo."
+      resolution: "Se añadió un contenedor con un ancho máximo de '50vw' y un fondo oscuro semitransparente ('rgba(0, 0, 0, 0.392)') detrás de los textos, aislando los caracteres sin cubrir la imagen por completo."
+    - kicker: "Desafio 2: Escala de la Tipografía"
+      title: "Adaptación de fuentes sin saltos de línea artificiales"
+      description: "Garantizar que las estrofas del cordel mantuvieran su estructura original de saltos de línea ('<br>') en diferentes tamaños de pantalla, sin desbordar los márgenes."
+      resolution: "Reemplazamos los tamaños fijos en píxeles por unidades de viewport ('vw') en las propiedades de 'font-size', logrando que el texto se encoja o crezca en proporción exacta al tamaño del navegador."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Efecto de profundidad parallax simple utilizando la propiedad nativa 'background-attachment: fixed'."
+  - "Tipografía fluida basada en unidades de ancho de pantalla ('vw') para mantener la proporción del diseño."
+  - "Importación y uso de fuentes personalizadas a través de Google Fonts para la ambientación estética."
+  - "Marcado semántico limpio dividido de forma clara en bloques de texto y secciones fijas de imagen."
 ---
 
-## Sobre o Projeto
-Este é o corpo principal do seu projeto. Use este espaço para fornecer uma descrição longa e detalhada, como uma "wiki" do projeto. Você pode incluir:
+## Sobre el Proyecto
 
-- **Contexto:** Por que o projeto foi criado? Qual problema ele resolve?
-- **Arquitetura:** Detalhes sobre a estrutura do código e as escolhas de design.
-- **Decisões Técnicas:** Explique as escolhas de tecnologias e padrões de design.
-- **Resultados:** Quais foram os impactos ou aprendizados?
-- **Lições Aprendidas:** O que você faria diferente hoje?
+El **Proyecto Cordel Moderno** fue desarrollado como un ejercicio práctico centrado en la estilización de interfaces sobre elementos visuales tradicionales. La página muestra el poema \"Cordel Moderno\" del autor Milton Duarte, utilizando la web como medio para presentar una obra inspirada en la literatura de cordel brasileña tradicional, contrastando el folclore cultural con las dinámicas de la tecnología actual.
 
-Você pode usar Markdown completo aqui para formatar seu texto, adicionar imagens (referenciando-as localmente se estiverem na mesma pasta do projeto), links, etc.
+El desarrollo se basó en un desafío propuesto en los módulos de HTML5 y CSS3 de la plataforma *Curso em Vídeo*, enfocado en explorar el comportamiento de imágenes de fondo estáticas respecto al movimiento de desplazamiento (scroll) de la pantalla.
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Arquitectura y Decisiones Técnicas
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+La estructura de la aplicación es puramente estática y simplificada, enfocada en el dominio de propiedades nativas de las hojas de estilo:
+
+* **Efecto Parallax en CSS Puro**: En lugar de cargar scripts o librerías externas de JavaScript para rastrear el movimiento, la ilusión de profundidad se simula exclusivamente mediante la combinación de las propiedades `background-attachment: fixed`, `background-position` y `background-size: cover` en las secciones correspondientes.
+* **Tipografía Temática**: Uso de las tipografías de Google Fonts *Freeman* (para aportar peso y visibilidad a los títulos) y *Dekko* (para simular la estética manuscrita característica de los folletos en los bloques de texto).
+
+{{< technologies >}}
+
+## Desafíos de Ingeniería y Soluciones
+
+Durante la construcción de la hoja de estilos, los ajustes principales se centraron en asegurar que las decisiones estéticas no afectaran negativamente la lectura:
+
+{{< challenges >}}
+
+## Impacto y Resultados
+
+* **Diseño Adaptable sin Frameworks**: El diseño de la página se ajusta tanto a monitores de escritorio como a teléfonos móviles sin requerir sistemas de rejilla complejos ni dependencias de terceros como Bootstrap, validando el uso correcto de las unidades relativas modernas de CSS.
+* **Preservación de la Métrica**: La disposición del texto respeta la estructura poética original planteada por el autor, garantizando niveles óptimos de contraste y una navegación cómoda mediante el desplazamiento vertical.

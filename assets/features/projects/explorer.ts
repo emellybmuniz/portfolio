@@ -16,8 +16,11 @@ export class ProjectsExplorer {
     summaryText: HTMLElement | null;
     emptyState: HTMLElement | null;
     projectsGrid: HTMLElement | null;
+    pagination: HTMLElement | null;
   };
   private lastControlUsed: HTMLElement | null = null;
+  private currentPage: number = 1;
+  private pageSize: number = 12;
 
   constructor(private readonly root: HTMLElement) {
     this.elements = {
@@ -43,7 +46,11 @@ export class ProjectsExplorer {
       ),
       emptyState: root.querySelector<HTMLElement>("[data-projects-empty]"),
       projectsGrid: root.querySelector<HTMLElement>("[data-projects-grid]"),
+      pagination: root.querySelector<HTMLElement>("[data-projects-pagination]"),
     };
+
+    const rootPageSize = parseInt(this.root.dataset.pageSize || "12", 10);
+    this.pageSize = isNaN(rootPageSize) ? 12 : rootPageSize;
 
     this.init();
   }
@@ -52,26 +59,31 @@ export class ProjectsExplorer {
     this.elements.searchInput?.addEventListener("input", (event) => {
       const target = event.currentTarget;
       this.lastControlUsed = target instanceof HTMLElement ? target : null;
+      this.currentPage = 1;
       this.render();
     });
     this.elements.techSelect?.addEventListener("change", (event) => {
       const target = event.currentTarget;
       this.lastControlUsed = target instanceof HTMLElement ? target : null;
+      this.currentPage = 1;
       this.render();
     });
     this.elements.categorySelect?.addEventListener("change", (event) => {
       const target = event.currentTarget;
       this.lastControlUsed = target instanceof HTMLElement ? target : null;
+      this.currentPage = 1;
       this.render();
     });
     this.elements.demoSelect?.addEventListener("change", (event) => {
       const target = event.currentTarget;
       this.lastControlUsed = target instanceof HTMLElement ? target : null;
+      this.currentPage = 1;
       this.render();
     });
     this.elements.sortSelect?.addEventListener("change", (event) => {
       const target = event.currentTarget;
       this.lastControlUsed = target instanceof HTMLElement ? target : null;
+      this.currentPage = 1;
       this.render();
     });
 
@@ -83,6 +95,7 @@ export class ProjectsExplorer {
         this.elements.categorySelect.value = "all";
       if (this.elements.demoSelect) this.elements.demoSelect.value = "all";
       if (this.elements.sortSelect) this.elements.sortSelect.value = "recent";
+      this.currentPage = 1;
       this.render();
     });
 
@@ -159,9 +172,21 @@ export class ProjectsExplorer {
       return rightDate - leftDate;
     });
 
+    const visibleCount = sortedCards.length;
+    const totalPages = Math.ceil(visibleCount / this.pageSize);
+
+    if (this.currentPage > totalPages && totalPages > 0) {
+      this.currentPage = totalPages;
+    }
+
+    const paginatedCards = sortedCards.slice(
+      (this.currentPage - 1) * this.pageSize,
+      this.currentPage * this.pageSize,
+    );
+
     if (this.elements.projectsGrid) {
       this.elements.cards.forEach((card) => {
-        if (!sortedCards.includes(card)) {
+        if (!paginatedCards.includes(card)) {
           card.classList.add("projects__grid-item--hidden");
         } else {
           card.classList.remove("projects__grid-item--hidden");
@@ -169,12 +194,12 @@ export class ProjectsExplorer {
       });
 
       // appendChild reorders existing dom nodes
-      sortedCards.forEach((card) => {
+      paginatedCards.forEach((card) => {
         this.elements.projectsGrid?.appendChild(card);
       });
     }
 
-    const visibleCount = sortedCards.length;
+    this.renderPagination(totalPages);
 
     if (this.elements.count) {
       this.elements.count.textContent = String(visibleCount);
@@ -200,13 +225,75 @@ export class ProjectsExplorer {
     this.restoreFocusToControls();
   }
 
+  private renderPagination(totalPages: number): void {
+    if (!this.elements.pagination) return;
+
+    this.elements.pagination.innerHTML = "";
+
+    if (totalPages <= 1) {
+      this.elements.pagination.classList.add("is-hidden");
+      return;
+    }
+
+    this.elements.pagination.classList.remove("is-hidden");
+
+    const prevBtn = document.createElement("button");
+    prevBtn.className =
+      "projects-explorer__pagination-btn projects-explorer__pagination-btn--prev";
+    prevBtn.type = "button";
+    prevBtn.innerHTML =
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>';
+    prevBtn.setAttribute("aria-label", "Página anterior");
+    prevBtn.disabled = this.currentPage === 1;
+    prevBtn.addEventListener("click", () =>
+      this.goToPage(this.currentPage - 1),
+    );
+    this.elements.pagination.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement("button");
+      pageBtn.className = "projects-explorer__pagination-btn";
+      if (i === this.currentPage) {
+        pageBtn.classList.add("is-active");
+        pageBtn.setAttribute("aria-current", "page");
+      }
+      pageBtn.type = "button";
+      pageBtn.textContent = String(i);
+      pageBtn.addEventListener("click", () => this.goToPage(i));
+      this.elements.pagination.appendChild(pageBtn);
+    }
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className =
+      "projects-explorer__pagination-btn projects-explorer__pagination-btn--next";
+    nextBtn.type = "button";
+    nextBtn.innerHTML =
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+    nextBtn.setAttribute("aria-label", "Próxima página");
+    nextBtn.disabled = this.currentPage === totalPages;
+    nextBtn.addEventListener("click", () =>
+      this.goToPage(this.currentPage + 1),
+    );
+    this.elements.pagination.appendChild(nextBtn);
+  }
+
+  private goToPage(page: number): void {
+    this.currentPage = page;
+    this.render();
+
+    this.root.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   private restoreFocusToControls(): void {
     const activeElement = document.activeElement;
     if (!activeElement || !this.root.contains(activeElement)) {
       return;
     }
 
-    if ((activeElement as HTMLElement).closest("[data-project-item]")) {
+    if (
+      (activeElement as HTMLElement).closest("[data-project-item]") ||
+      (activeElement as HTMLElement).closest("[data-projects-pagination]")
+    ) {
       const fallbackControl =
         this.lastControlUsed ||
         this.elements.techSelect ||

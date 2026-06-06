@@ -1,50 +1,68 @@
 ---
-title: "EB Cofrinho Java"
-date: 2025-06-01
+title: "Java Piggy Bank CLI"
+date: "2026-03-23"
 featured: false
-weight: 1
+weight: 5
 draft: false
-description: "Plataforma inteligente de roadmaps com IA para guiar profissionais de TI."
-imageCover: "carbon.png"
-imageCoverFallback: "carbon.png"
+description: "A console-based application built in Java to simulate foreign currency storage, tracking, and evaluation using an ad-hoc JSON storage mechanism."
+imageCover: "cofrinho-java.webp"
+imageCoverFallback: "cofrinho-java.png"
 categories: 
-  - frontend
-  - cli
+  - "Backend"
 technologies:
-  - Tailwind
-  - HTML
-  - CSS
-  - JavaScript
-  - Google AI Studio
-  - MongoDB
+  - "Java"
+  - "Maven"
 liveDemo: "#"
-repositoryUrl: "#"
+repositoryUrl: "https://github.com/emellybmuniz/eb-cofrinho-java"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  Java: "Selected to employ rigorous Object-Oriented Programming (OOP) concepts, inheritance structures, and strict static typing for safe financial logic."
+  Maven: "Utilized as a build automation framework to manage compilation cycles and project packaging without runtime overhead from large external dependencies."
 
 metadata:
-  status: "Concluído"
-  platform: "Web Application"
-  role: "Desenvolvedora Fullstack"
-  industry: "Tecnologia"
+  status: "In Development"
+  platform: "Console Application (CLI)"
+  role: "Java Developer"
+  industry: "Utility Tools / Learning"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      
+    - kicker: "Challenge 1: Zero-Dependency Storage"
+      title: "Ad-hoc native JSON serialization workflows"
+      description: "Persisting and hydrating currency object arrays into a localized data sheet (`cofrinho.json`) without embedding external JSON parsers (e.g., Jackson or Gson)."
+      resolution: "Authored an ad-hoc string parsing algorithm within the data file layer, processing data streams manually through targeted string manipulation rules."
+    - kicker: "Challenge 2: Domain Extensibility"
+      title: "Adding new currencies without cascading code rewrites"
+      description: "Ensuring that scaling the supported currencies pool (like Pound or Yen) does not tightly bind or break total financial balance aggregation calculations."
+      resolution: "Leveraged polymorphism by extending a common abstract class ('Moeda') backed by an exchange configuration map ('TipoMoeda'), allowing totals to process cleanly over polymorphic collections."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Interactive terminal menu interface providing essential asset tracking operations."
+  - "Automated currency calculation matrix mapping foreign values to local targets."
+  - "Custom exception handling routines intercepting invalid runtime metrics."
+  - "Local JSON file storage powered by stable auto-incrementing integer key indexes."
 ---
 
-## Sobre o Projeto
-Aqui entra a descrição longa e detalhada do projeto. Como você centralizou as informações técnicas no Frontmatter acima, você pode usar este espaço para contar a "história" do projeto, decisões de design e lições aprendidas.
+## About the Project
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+The **Java Piggy Bank** is a console utility (CLI application) engineered to master pure programmatic logic using vanilla Java features. The software mimics a physical coin bank, enabling users to insert coins from various origins (Real, Dollar, and Euro), remove specific entries using sequential ID indexing, and verify the total balance converted into the standard local baseline currency (BRL).
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Architecture and Technical Decisions
+
+The layout emphasizes clear maintainability and Separation of Concerns across explicit namespace boundaries:
+
+* **`model/`**: Governs core business states. The base abstract entity `Moeda` sets contractual requirements that child objects (`Real`, `Dolar`, `Euro`) implement. The `TipoMoeda` configuration enum acts as a source of truth for symbols and base rates.
+* **`repository/`**: Isolates physical disk writing strategies behind a neat `CofrinhoRepository` abstraction layer, decoupling system rules from persistent device storage.
+* **`exception/`**: Employs a custom `invalidValueException` class, providing edge protection that immediately blocks zero or negative balances at runtime.
+
+{{< technologies >}}
+
+## Engineering Challenges and Resolutions
+
+Architectural workflows focused mostly on working around the absence of third-party ecosystem tools:
+
+{{< challenges >}}
+
+## Impact and Results
+
+* **Highly Decoupled Codebase**: Adding an alternative legal tender to the application requires minimal steps, isolating upgrades to defining its specific object subclass and extending the dictionary enum map.
+* **Data Layer Soundness**: Imposing strict constructors and processing filters shields the physical `cofrinho.json` data asset against state corruption, ensuring smooth execution across repeated operations.

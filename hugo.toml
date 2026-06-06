@@ -23,6 +23,7 @@ home = ['HTML', 'JSON']
 # Params
 [params]
   author = "Emelly Beatriz"
+  projectsPageSize = 12
 
   
   # O bloco [params.social] foi migrado para data/socials.yaml para facilitar a manutenção e escalabilidade.

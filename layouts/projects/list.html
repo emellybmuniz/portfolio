@@ -44,7 +44,7 @@
 {{ end }}
 {{ $uniqueCatKeys = $uniqueCatKeys | sort }}
 
-<section class="projects projects--all projects-explorer" id="projects" data-projects-explorer>
+<section class="projects projects--all projects-explorer" id="projects" data-projects-explorer data-page-size="{{ .Site.Params.projectsPageSize | default 12 }}">
   <div class="projects-explorer__container">
     <header class="projects-explorer__hero">
       <div class="projects-explorer__hero-copy">
@@ -163,6 +163,10 @@
           {{ i18n "projects.no_results" }}
         </p>
       </section>
+    </div>
+    <div class="projects-explorer__layout projects-explorer__layout--pagination">
+      <div class="projects-explorer__pagination-spacer" aria-hidden="true"></div>
+      <nav class="projects-explorer__pagination is-hidden" aria-label="Paginação de projetos" data-projects-pagination></nav>
     </div>
   </div>
 </section>

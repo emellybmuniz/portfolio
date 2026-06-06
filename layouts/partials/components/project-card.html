@@ -4,20 +4,33 @@
       {{- /* Procura pela imagem dentro da pasta do projeto */ -}}
       {{- $image := .Resources.GetMatch .Params.imageCover -}}
       {{- if $image -}}
-        {{- /* Cria uma versão WebP e uma fallback (original format) */ -}}
+        {{- /* Cria uma versão WebP e uma fallback segura */ -}}
         {{- $thumbnailWebP := $image.Resize "600x webp" -}}
-        {{- $thumbnailFallback := $image.Resize "600x" -}}
+        
+        {{- $fallbackImage := "" -}}
+        {{- if .Params.imageCoverFallback -}}
+          {{- $manualFallback := .Resources.GetMatch .Params.imageCoverFallback -}}
+          {{- if $manualFallback -}}
+            {{- $fallbackImage = $manualFallback.Resize "600x" -}}
+          {{- end -}}
+        {{- end -}}
+        
+        {{- if not $fallbackImage -}}
+          {{- /* Converte para JPG caso não tenha fallback manual, evitando enviar WebP no img tag */ -}}
+          {{- $fallbackImage = $image.Resize "600x jpg" -}}
+        {{- end -}}
+
         <a href="{{ .RelPermalink }}" class="project-card__image-link" aria-label="Ver detalhes do projeto {{ .Title }}">
           <picture>
             <source srcset="{{ $thumbnailWebP.RelPermalink }}" type="image/webp" />
             <img
-              src="{{ $thumbnailFallback.RelPermalink }}"
+              src="{{ $fallbackImage.RelPermalink }}"
               alt="{{ printf (i18n "projects.cover_alt" | default "Capa do projeto %s") .Title }}"
               class="project-card__image"
               loading="lazy"
               decoding="async"
-              width="{{ $thumbnailFallback.Width }}"
-              height="{{ $thumbnailFallback.Height }}"
+              width="{{ $fallbackImage.Width }}"
+              height="{{ $fallbackImage.Height }}"
             />
           </picture>
         </a>

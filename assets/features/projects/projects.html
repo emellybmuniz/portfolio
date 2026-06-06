@@ -27,27 +27,60 @@
 
         {{/* Collect categories used by visible projects */}}
         {{ $found := slice }}
-        {{ range $p := $featuredProjects }} {{ with $p.Params.categories }} {{ range $c := . }} {{ if not (in $found $c) }} {{ $found = $found | append $c }} {{ end }} {{
-        end }} {{ end }} {{ end }} {{/* Desired taxonomy: only render buttons for
-        keys present in $found */}} {{ $taxonomy := slice (dict "key" "frontend"
-        "label" "Frontend" "icon" "icons/code-solid-full.svg") (dict "key" "backend" "label" "Backend" "icon" "icons/server-solid-full.svg") (dict "key"
-        "fullstack" "label" "Fullstack" "icon" "icons/layer-group-solid-full.svg")
-        (dict "key" "ui-ux" "label" "UI/UX" "icon" "icons/brush-solid-full.svg") (dict "key" "cli" "label" "CLI" "icon" "icons/terminal-solid-full.svg")
-        (dict "key" "api" "label" "API" "icon" "icons/plug-solid-full.svg") }} {{
-        range $cat := $taxonomy }} {{ if in $found $cat.key }}
-        <button 
-          class="projects__filter-btn btn--holographic btn--holographic--subtle" 
-          data-category="{{ $cat.key }}"
-          aria-pressed="false"
-        >
-          {{ with $cat.icon }}<span
-            class="projects__filter-btn-icon"
-            aria-hidden="true"
-            >{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}</span
-          >{{ end }}
-          <span>{{ $cat.label }}</span>
-        </button>
-        {{ end }} {{ end }}
+        {{ range $p := $featuredProjects }}
+          {{ with $p.Params.categories }}
+            {{ range $c := . }}
+              {{ $lowerC := lower $c }}
+              {{ if not (in $found $lowerC) }}
+                {{ $found = $found | append $lowerC }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        {{/* Desired taxonomy: only render buttons for keys present in $found */}}
+        {{ $taxonomy := slice
+          (dict "key" "frontend" "label" "Frontend" "icon" "icons/code-solid-full.svg")
+          (dict "key" "backend" "label" "Backend" "icon" "icons/server-solid-full.svg")
+          (dict "key" "fullstack" "label" "Fullstack" "icon" "icons/layer-group-solid-full.svg")
+          (dict "key" "ui-ux" "label" "UI/UX" "icon" "icons/brush-solid-full.svg")
+          (dict "key" "cli" "label" "CLI" "icon" "icons/terminal-solid-full.svg")
+          (dict "key" "api" "label" "API" "icon" "icons/plug-solid-full.svg")
+        }}
+
+        {{ $taxKeys := slice }}
+        {{ range $cat := $taxonomy }}
+          {{ $taxKeys = $taxKeys | append $cat.key }}
+          {{ if in $found $cat.key }}
+            <button 
+              class="projects__filter-btn btn--holographic btn--holographic--subtle" 
+              data-category="{{ $cat.key }}"
+              aria-pressed="false"
+            >
+              {{ with $cat.icon }}<span class="projects__filter-btn-icon" aria-hidden="true">{{ with resources.Get . }}{{ .Content | safeHTML }}{{ end }}</span>{{ end }}
+              <span>{{ $cat.label }}</span>
+            </button>
+          {{ end }}
+        {{ end }}
+
+        {{/* Render fallback category "Outros" if there are unknown categories */}}
+        {{ $hasOutros := false }}
+        {{ range $f := $found }}
+          {{ if not (in $taxKeys $f) }}
+            {{ $hasOutros = true }}
+          {{ end }}
+        {{ end }}
+
+        {{ if $hasOutros }}
+          <button 
+            class="projects__filter-btn btn--holographic btn--holographic--subtle" 
+            data-category="outros"
+            aria-pressed="false"
+          >
+            <span class="projects__filter-btn-icon" aria-hidden="true">{{ with resources.Get "icons/cubes-solid-full.svg" }}{{ .Content | safeHTML }}{{ end }}</span>
+            <span>{{ i18n "projects.category_others" | default "Diversos" }}</span>
+          </button>
+        {{ end }}
       </div>
     </div>
 
@@ -65,7 +98,18 @@
         <div
           class="projects__grid-item{{ if ge $projectIndex 3 }} projects__grid-item--collapsed{{ else }} projects__grid-item--revealed{{ end }}"
           data-stagger-item
-          data-category="{{ with .Params.categories }}{{ delimit . " " }}{{ end }}"
+          data-category="
+            {{- $mappedCats := slice -}}
+            {{- range .Params.categories -}}
+              {{- $c := lower . -}}
+              {{- if in $taxKeys $c -}}
+                {{- $mappedCats = $mappedCats | append $c -}}
+              {{- else -}}
+                {{- $mappedCats = $mappedCats | append "outros" -}}
+              {{- end -}}
+            {{- end -}}
+            {{- delimit ($mappedCats | uniq) " " -}}
+          "
         >
           {{ partialCached "components/project-card.html" . .RelPermalink }}
         </div>
