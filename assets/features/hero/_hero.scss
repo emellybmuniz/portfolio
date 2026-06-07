@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../../core/styles/abstracts/mixins";
 
 .hero {
@@ -6,6 +7,7 @@
   min-height: calc(90vh - 80px);
   display: flex;
   align-items: center;
+  position: relative;
 
   --hero-highlight-gradient: linear-gradient(
     to right,
@@ -145,6 +147,8 @@
   gap: var(--spacing-xl);
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 1;
 
   @include mixins.media-down("lg") {
     grid-template-columns: 1fr;
@@ -476,6 +480,12 @@
   height: 100%;
   border-radius: inherit;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+
+  &.is-loaded {
+    opacity: 1;
+  }
 }
 
 .hero__photo img {

@@ -10,13 +10,22 @@
 <meta property="og:title" content="{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta property="og:description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{ if .Params.image }}<meta property="og:image" content="{{ .Params.image }}" />{{ end }}
+{{ $profile := resources.Get "images/hero/profile-picture.webp" | resources.Fingerprint }}
+{{ if .Params.image }}
+<meta property="og:image" content="{{ .Params.image | absURL }}" />
+{{ else if $profile }}
+<meta property="og:image" content="{{ $profile.Permalink }}" />
+{{ end }}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta name="twitter:description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
-
+{{ if .Params.image }}
+<meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+{{ else if $profile }}
+<meta name="twitter:image" content="{{ $profile.Permalink }}" />
+{{ end }}
 <!-- Canonical -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -32,8 +41,14 @@
 
 
 <!-- Lang alternate -->
-{{ range .Sites }}
-  {{ if ne .Language.Lang $.Site.Language.Lang }}
-    <link rel="alternate" hreflang="{{ lower .Language.Lang }}" href="{{ .Home.RelPermalink }}" />
+{{ if .IsTranslated }}
+  {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ lower .Language.Lang }}" href="{{ .Permalink }}" />
+    {{ if eq .Language.Lang "pt-BR" }}
+      <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+    {{ end }}
   {{ end }}
+{{ else }}
+  <link rel="alternate" hreflang="{{ lower .Language.Lang }}" href="{{ .Permalink }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
 {{ end }}

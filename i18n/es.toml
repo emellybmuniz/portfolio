@@ -23,7 +23,7 @@ other = "¡Hola, soy Emelly Beatriz!"
 other = "Desarrolladora Frontend & Entusiasta de UX"
 
 [hero.description]
-other = "Apasionada por crear experiencias digitales intuitivas y visualmente impactantes, buscando siempre colaborar en proyectos innovadores. ✨"
+other = "Apasionada por crear experiencias digitales intuitivas y visualmente impactantes, buscando siempre colaborar en proyectos innovadores."
 
 [hero.projects_cta]
 other = "Mis Proyectos"
@@ -337,3 +337,6 @@ other = 'Demo'
 other = 'Código'
 [projects.action_details]
 other = 'Detalles'
+
+[nav.back_to_home]
+other = "Volver al inicio"

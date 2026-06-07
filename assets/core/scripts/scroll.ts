@@ -1,4 +1,4 @@
-declare let Lenis: any;
+import Lenis from "lenis";
 
 export class ScrollManager {
   private prefersReducedMotion: boolean;
@@ -35,7 +35,7 @@ export class ScrollManager {
   }
 
   private setupSmoothScroll(): void {
-    if (this.prefersReducedMotion || typeof Lenis === "undefined") return;
+    if (this.prefersReducedMotion || !Lenis) return;
 
     this.lenisInstance = new Lenis({
       duration: 1.2,
@@ -44,7 +44,6 @@ export class ScrollManager {
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      smoothTouch: false,
       touchMultiplier: 2,
     });
 
@@ -76,21 +75,34 @@ export class ScrollManager {
 
     if (!this.scrollTopBtn) return;
 
-    let ticking = false;
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            const isScrolled = window.scrollY > 300;
-            this.toggleScrollButton(isScrolled);
-            ticking = false;
-          });
-          ticking = true;
-        }
+    const sentinel = document.createElement("div");
+    Object.assign(sentinel.style, {
+      position: "absolute",
+      top: "300px",
+      left: "0",
+      width: "1px",
+      height: "1px",
+      pointerEvents: "none",
+      visibility: "hidden",
+    });
+    document.body.appendChild(sentinel);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isScrolled =
+          entry.boundingClientRect.top <= 0 && !entry.isIntersecting;
+        this.toggleScrollButton(isScrolled);
       },
-      { passive: true, signal },
+      { root: null, rootMargin: "0px", threshold: 0 },
     );
+
+    observer.observe(sentinel);
+
+    // Cleanup when aborted
+    signal.addEventListener("abort", () => {
+      observer.disconnect();
+      sentinel.remove();
+    });
 
     this.scrollTopBtn.addEventListener(
       "click",

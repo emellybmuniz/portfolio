@@ -32,23 +32,19 @@
                 class="hero__social-link hero__social-link--linkedin"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="LinkedIn"
+                aria-label="LinkedIn"
               >
                 {{ (resources.Get "icons/linkedin.svg").Content | safeHTML }}
-                <span class="sr-only">LinkedIn</span>
               </a>
             </li>
             {{ end }} {{ with .Site.Data.socials.email }}
             <li>
               <a
-                href="#"
-                data-email="{{ . | base64Encode }}"
-                onclick="window.location.href = 'mailto:' + atob(this.getAttribute('data-email')); return false;"
+                href="mailto:{{ . }}"
                 class="hero__social-link hero__social-link--email"
-                title="Email"
+                aria-label="Email"
               >
                 {{ (resources.Get "icons/email.svg").Content | safeHTML }}
-                <span class="sr-only">Email</span>
               </a>
             </li>
             {{ end }} {{ with .Site.Data.socials.github }}
@@ -58,10 +54,9 @@
                 class="hero__social-link hero__social-link--github"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="GitHub"
+                aria-label="GitHub"
               >
                 {{ (resources.Get "icons/github.svg").Content | safeHTML }}
-                <span class="sr-only">GitHub</span>
               </a>
             </li>
             {{ end }} {{ with .Site.Data.socials.instagram }}
@@ -71,10 +66,9 @@
                 class="hero__social-link hero__social-link--instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Instagram"
+                aria-label="Instagram"
               >
                 {{ (resources.Get "icons/instagram.svg").Content | safeHTML }}
-                <span class="sr-only">Instagram</span>
               </a>
             </li>
             {{ end }}
@@ -88,10 +82,10 @@
         <div class="hero__media">
           <div class="hero__photo-shell">
             <div class="hero__photo-inner">
-              <picture class="hero__photo">
                 {{ $profile := resources.Get "images/hero/profile-picture.webp" | resources.Fingerprint }}
                 {{ if $profile }}
                 <img
+                  class="hero__photo"
                   src="{{ $profile.RelPermalink }}"
                   alt="Foto de perfil de {{ i18n "hero.title" }}"
                   loading="eager"
@@ -101,7 +95,6 @@
                   height="400"
                 />
                 {{ end }}
-              </picture>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Dropdown } from "../../../core/utils/dropdown";
-import { ThemeMode } from "../theme";
+import { ThemeMode } from "../../../core/scripts/theme";
 
 const themeLabels: Record<ThemeMode, string> = {
   light: "Light",

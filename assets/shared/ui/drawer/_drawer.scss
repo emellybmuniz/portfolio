@@ -1,5 +1,9 @@
 @use "../../../core/styles/abstracts/mixins";
 
+ui-drawer {
+  display: contents;
+}
+
 // drawer overlay
 .drawer-overlay {
   position: fixed;

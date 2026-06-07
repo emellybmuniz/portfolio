@@ -1,32 +1,36 @@
-{{ $ts := resources.Get "ts/main.ts" }} {{ if $ts }} {{ $js := $ts | js.Build
-(dict "minify" true) | resources.Fingerprint }}
-<script
-  src="{{ $js.RelPermalink }}"
-  integrity="{{ $js.Data.Integrity }}"
-  crossorigin="anonymous"
-  defer
-></script>
+{{ $ts := resources.Get "core/scripts/main.ts" }}
+{{ if $ts }}
+  {{ $js := $ts | js.Build (dict "minify" true "format" "esm") | resources.Fingerprint }}
+  <script
+    type="module"
+    src="{{ $js.RelPermalink }}"
+    integrity="{{ $js.Data.Integrity }}"
+    crossorigin="anonymous"
+  ></script>
 {{ end }}
-<!-- Smooth Scrolling via Lenis -->
-<script
-  src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"
-  integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed"
-  crossorigin="anonymous"
-></script>
+
 
 <script>
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(() => {
-      const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-QQ38JRQ412";
-      script.async = true;
-      document.head.appendChild(script);
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QQ38JRQ412");
-    });
-  }
+  window.requestIdleCallback = window.requestIdleCallback || function(cb) {
+    return setTimeout(function() {
+      var start = Date.now();
+      cb({ 
+        didTimeout: false,
+        timeRemaining: function() { return Math.max(0, 50 - (Date.now() - start)); }
+      });
+    }, 1);
+  };
+  
+  window.requestIdleCallback(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-QQ38JRQ412";
+    script.async = true;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QQ38JRQ412");
+  });
 </script>

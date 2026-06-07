@@ -1,6 +1,6 @@
 const purgecss = require("@fullhuman/postcss-purgecss")({
   // Specify the paths to all of the template files in your project
-  content: ["./layouts/**/*.html", "./assets/ts/**/*.ts"],
+  content: ["./layouts/**/*.html", "./assets/**/*.ts", "./assets/**/*.html", "./content/**/*.md"],
   // This is the function used to extract class names from your templates
   defaultExtractor: (content) => {
     // Capture as liberally as possible, including things like `md:w-1/2`

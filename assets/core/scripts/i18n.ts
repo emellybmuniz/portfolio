@@ -18,10 +18,13 @@ export class LanguageManager {
 
   private setupListeners(): void {
     document.addEventListener("lang-select", (e: Event) => {
-      const customEvent = e as CustomEvent<LanguageCode>;
-      const langKey = customEvent.detail;
-      if (langKey) {
-        this.navigateToLanguage(langKey);
+      const customEvent = e as CustomEvent<{
+        lang: LanguageCode;
+        url?: string;
+      }>;
+      const { lang, url } = customEvent.detail;
+      if (lang) {
+        this.navigateToLanguage(lang, url);
       }
     });
   }
@@ -38,8 +41,8 @@ export class LanguageManager {
     return "pt-BR";
   }
 
-  private navigateToLanguage(lang: LanguageCode): void {
-    const nextPath = this.getLocalizedPath(lang);
+  private navigateToLanguage(lang: LanguageCode, exactUrl?: string): void {
+    const nextPath = exactUrl || this.getLocalizedPath(lang);
     localStorage.setItem("lang", lang);
     window.location.assign(nextPath);
   }

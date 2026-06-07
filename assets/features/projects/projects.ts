@@ -1,5 +1,5 @@
 import ProjectsExplorer from "./explorer";
-import { Drawer } from "../../shared/ui/drawer/drawer";
+import type { UiDrawer } from "../../shared/ui/drawer/ui-drawer";
 
 function setupProjectsSection(): void {
   const container = document.querySelector<HTMLElement>(".projects--home");
@@ -32,9 +32,11 @@ function setupProjectsSection(): void {
   const EXPAND_BATCH_SIZE = 3;
   let visibleCount = INITIAL_VISIBLE_COUNT;
 
-  let drawer: Drawer | null = null;
+  let drawer: UiDrawer | null = null;
   if (mobileFilterBtn) {
-    drawer = new Drawer({ idPrefix: "projectsFilters" });
+    drawer = document.getElementById(
+      "projectsFiltersUiDrawer",
+    ) as UiDrawer | null;
     mobileFilterBtn.addEventListener("click", () => {
       populateDrawer();
       drawer?.open();

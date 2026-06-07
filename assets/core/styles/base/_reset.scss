@@ -4,12 +4,17 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
+  background-color: var(--color-bg);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+portfolio-carousel {
+  display: block;
 }
 
 body {

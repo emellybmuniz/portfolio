@@ -1,64 +1,65 @@
 ---
-title: "To-Do List"
-date: 2024-08-01
+title: "Task Manager"
+date: "2024-08-01"
 featured: false
 weight: 10
 draft: false
-description: "A simple to-do list application built with HTML, CSS, and JavaScript."
-imageCover: "to-do-list-project-cover.webp"
-imageCoverFallback: "to-do-list-project-cover.png"
+description: "A minimalist to-do list built with vanilla HTML, CSS, and JavaScript, marking my first practical studies with browser data persistence."
+imageCover: "todo-list.webp"
+imageCoverFallback: "todo-list.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - HTML
-  - CSS
-  - JavaScript
+  - "JavaScript"
+  - "HTML5"
+  - "CSS3"
 liveDemo: "https://emellybmuniz.github.io/to-do-list/"
 repositoryUrl: "https://github.com/emellybmuniz/to-do-list"
 
 techReasons:
-  Tech: "Lorem ipsum dolor sit amet"
+  JavaScript: "Used to capture keyboard inputs, dynamically generate new task items within the HTML structure, and manage local data saving operations."
+  HTML5: "Responsible for providing the basic input form framework and a clean semantic container where tasks are listed."
+  CSS3: "Adopted to create a clean visual layout, dividing structural styling and mobile responsiveness rules into specific files to improve maintainability."
 
 metadata:
-  status: "Concluído"
+  status: "Completed"
   platform: "Web Application"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  role: "Frontend Developer"
+  industry: "Education / Personal Study"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Challenge 1: Data Persistence with localStorage"
+      title: "Saving and retrieving structured data locally"
+      description: "As this was one of my first encounters with browser caching systems, learning how to save inputs without losing data upon refreshing the page was an early hurdle."
+      resolution: "I implemented logic that converts the task array into a string using 'JSON.stringify()' before storing it. When the page initializes, the script executes 'JSON.parse()' to read that data back, ensuring users find their notes saved in the next session."
       
+    - kicker: "Challenge 2: Syncing Item Deletion"
+      title: "Removing elements from the DOM and storage simultaneously"
+      description: "When clicking the trash icon to delete a task, it was necessary to ensure the element vanished visually from the screen and that the correct item was erased from local memory."
+      resolution: "I organized element creation by mapping an index reference to each task. When the trash icon click event triggers, the code identifies the precise position within the array, removes it via 'splice()', refreshes localStorage, and clears the DOM to render the updated list."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Immediate inclusion of new activities through a straightforward text entry field"
+  - "Automatic browser-side persistence to prevent data loss when closing tabs"
+  - "Individual task removal backed by dynamic view updates"
+  - "Responsive design featuring a dedicated style sheet tailored for smaller viewports"
+  - "Codebase engineered with pure native tech (Vanilla JS) without third-party libraries"
 ---
 
-## Sobre o Projeto
-## Visão Geral do Projeto
+## About the Project
+I built this to-do list as a hands-on project to practice what I was learning in JavaScript regarding DOM manipulation and local storage. The application is direct and simple: a space where users can log their daily tasks and remove them as they are completed.
 
-Este projeto de redesign do meu portfólio pessoal teve como objetivo principal criar uma vitrine mais moderna e funcional para meus trabalhos. A ideia era não apenas apresentar os projetos, mas também demonstrar minhas habilidades em desenvolvimento frontend, design responsivo e otimização de performance.
+The main purpose of this exercise was to understand how to bring a web page to life, moving away from purely static, visual designs to create a basic interactive system that stores user inputs.
 
-### Desafios e Soluções
+## Code Architecture and Layout Choices
+The project prioritizes native web technologies to keep learning focused on the core pillars of frontend development. For the visual side, I chose to split the CSS rules cleanly: I created a `main.css` file focused on the core layout structure for larger displays and a separate `mobile.css` file strictly responsible for smartphone adjustments.
 
-Um dos maiores desafios foi equilibrar a estética visual com a performance. Optei por utilizar Hugo para a geração estática, garantindo tempos de carregamento rápidos. Para o estilo, SCSS modular foi essencial para manter a organização e a escalabilidade. A interatividade foi implementada com TypeScript leve, evitando dependências pesadas.
+{{< technologies >}}
 
-### Tecnologias Utilizadas
+## Code Hurdles and Fixes
+While organizing the script logic, the most notable challenges were related to handling array values and ensuring correct synchronization between the visible UI elements and local browser memory.
 
-- **Hugo:** Gerador de site estático para performance e facilidade de manutenção.
-- **SCSS:** Pré-processador CSS para modularidade e variáveis de design.
-- **TypeScript:** Para interatividade e validação de tipos no JavaScript.
-- **HTML Semântico:** Foco em acessibilidade e SEO.
-- **JavaScript:** Para funcionalidades dinâmicas e filtros.
+{{< challenges >}}
 
-### Lições Aprendidas
-
-Durante o desenvolvimento, aprofundei meus conhecimentos em otimização de imagens, carregamento lazy-load e a importância de um bom sistema de design para a consistência visual. A experiência de construir um portfólio que é, por si só, um projeto, foi extremamente valiosa.
-
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Conclusion
+This To-Do List project was highly beneficial for my early frontend development growth, as it gave me clarity on how simple client-side data lifecycles operate. Successfully resolving data conversion problems and applying separated stylesheets for mobile responsiveness helped build my confidence in developing dynamic layouts using JavaScript.

@@ -22,7 +22,7 @@
       {{ range .Site.Menus.main }}
       <li class="header__nav-item">
         <a
-          href="{{ if .Page }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+          href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else if in .URL "#" }}{{ printf "%s%s" $.Site.Home.RelPermalink (replaceRE "^.*(#.*)$" "$1" .URL) }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
           class="header__nav-link"
         >
           {{ with .Params.icon }} {{ $icon := resources.Get (printf "icons/%s.svg" .) }} {{ if $icon }}
@@ -46,7 +46,7 @@
         <span class="header__detailed-category">
           {{ if eq .Section "projects" }}{{ i18n "nav.projects" | upper }}{{ else if eq .Section "about" }}{{ i18n "nav.about" | upper }}{{ else }}{{ i18n "nav.projects" | upper }}{{ end }}
         </span>
-        <h1 class="header__detailed-title">Home/{{ if .Title }}{{ .Title }}{{ else }}{{ .Section | title }}{{ end }}</h1>
+        <h1 class="header__detailed-title">{{ i18n "nav.back_to_home" }}</h1>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
       <nav class="header__detailed-nav">
         {{ range .Site.Menus.main }}
         <a
-          href="{{ if .Page }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+          href="{{ if .Page }}{{ .Page.RelPermalink }}{{ else if in .URL "#" }}{{ printf "%s%s" $.Site.Home.RelPermalink (replaceRE "^.*(#.*)$" "$1" .URL) }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
           class="header__nav-link"
         >
           {{ with .Params.icon }} {{ $icon := resources.Get (printf "icons/%s.svg" .) }} {{ if $icon }}

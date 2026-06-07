@@ -1,5 +1,4 @@
-import { qAll } from "../../core/utils/dom";
-import { Drawer } from "../../shared/ui/drawer/drawer";
+import type { UiDrawer } from "../../shared/ui/drawer/ui-drawer";
 
 type DrawerCategoryId = "all" | "frontend" | "backend" | "tools" | "design";
 
@@ -28,7 +27,7 @@ interface SkillsElements {
 class SkillsSection {
   private elements: SkillsElements;
   private skillsData: SkillData[] = [];
-  private drawer: Drawer;
+  private drawer: UiDrawer | null = null;
 
   constructor() {
     this.elements = {
@@ -40,11 +39,15 @@ class SkillsSection {
         ? document.getElementById("skillFiltersMobileToggle")
         : null) as HTMLButtonElement | null,
       filterMenu: document.getElementById("skillFiltersMobileMenu"),
-      allFilterButtons: qAll<HTMLButtonElement>(".skills__filter-btn"),
-      mobileCategoryButtons: qAll<HTMLButtonElement>(".skills__mobile-cat-btn"),
+      allFilterButtons: Array.from(
+        document.querySelectorAll<HTMLButtonElement>(".skills__filter-btn"),
+      ),
+      mobileCategoryButtons: Array.from(
+        document.querySelectorAll<HTMLButtonElement>(".skills__mobile-cat-btn"),
+      ),
     };
 
-    this.drawer = new Drawer({ idPrefix: "skills" });
+    this.drawer = document.getElementById("skillsUiDrawer") as UiDrawer | null;
     this.init();
   }
 
@@ -61,7 +64,9 @@ class SkillsSection {
   private collectSkillsData(): void {
     if (!this.elements.skillsGrid) return;
 
-    const cards = qAll<HTMLElement>(".skill-card", this.elements.skillsGrid);
+    const cards = Array.from(
+      this.elements.skillsGrid.querySelectorAll<HTMLElement>(".skill-card"),
+    );
 
     this.skillsData = cards.map((card) => {
       const img = card.querySelector<HTMLImageElement>("img");
@@ -83,14 +88,16 @@ class SkillsSection {
   private applySkillGradients(): void {
     if (!this.elements.skillsGrid) return;
 
-    qAll<HTMLElement>(".skill-card__icon-bg", this.elements.skillsGrid).forEach(
-      (node) => {
-        const gradient = node.dataset.gradient;
-        if (gradient) {
-          node.style.backgroundImage = gradient;
-        }
-      },
-    );
+    Array.from(
+      this.elements.skillsGrid.querySelectorAll<HTMLElement>(
+        ".skill-card__icon-bg",
+      ),
+    ).forEach((node) => {
+      const gradient = node.dataset.gradient;
+      if (gradient) {
+        node.style.backgroundImage = gradient;
+      }
+    });
   }
 
   private setupMobileFilterInteraction(): void {
@@ -156,6 +163,7 @@ class SkillsSection {
   }
 
   private openDrawer(categoryId: DrawerCategoryId): void {
+    if (!this.drawer) return;
     const { titleEl, descEl, listEl } = this.drawer;
 
     if (!titleEl || !descEl || !listEl) return;

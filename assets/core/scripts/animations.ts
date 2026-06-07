@@ -51,10 +51,22 @@ export class AnimationManager {
             el.querySelectorAll<HTMLElement>("[data-stagger-item]"),
           );
 
+          const isSkillsGrid = el.classList.contains("skills__grid");
+          // Calculate grid columns to determine the row of each item
+          const cols =
+            window.innerWidth >= 1200 ? 4 : window.innerWidth >= 768 ? 2 : 1;
+
           if (entry.isIntersecting) {
             el.classList.add("in-view");
             items.forEach((item, idx) => {
-              const delay = idx * 115;
+              let delay = 0;
+              if (isSkillsGrid) {
+                // Determine the row of the current item and delay by row
+                const row = Math.floor(idx / cols);
+                delay = row * 120;
+              }
+              // Other grids (like projects) will have delay 0 to fly in together
+
               item.style.transitionDelay = `${delay}ms`;
               item.classList.add("in-view");
             });

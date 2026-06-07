@@ -1,6 +1,6 @@
 ---
 title: "Warehouse Microservice"
-date: "2026-06-05"
+date: "2025-10-24"
 featured: true
 weight: 10
 draft: false

@@ -61,22 +61,25 @@
     </div>
     {{ partial "shared/ui/drawer/drawer.html" (dict "id" "certificatesFilters" "singularKey" "projects.count_singular" "pluralKey" "projects.count_plural") }}
 
-    <div class="certificates__grid" id="certificatesGrid">
-      {{ if gt (len $certs) 0 }} {{ range $certs }} {{ partialCached
-      "components/certificate-card.html" . .RelPermalink }} {{ end }} {{ else }}
-      <p class="certificates__empty-state">{{ i18n "certificates.empty" }}</p>
-      {{ end }}
-    </div>
+    <portfolio-carousel class="certificates__carousel-wrapper">
+      <div class="certificates__grid" id="certificatesGrid" data-carousel-grid>
+        {{ if gt (len $certs) 0 }} {{ range $certs }} {{ partialCached
+        "components/certificate-card.html" . .RelPermalink }} {{ end }} {{ else }}
+        <p class="certificates__empty-state">{{ i18n "certificates.empty" }}</p>
+        {{ end }}
+      </div>
 
-    <div
-      class="certificates__pagination"
-      id="certificatesPagination"
-      aria-hidden="true"
-    >
-      <div class="certificates__dots" id="certificatesDots"></div>
-      <span class="certificates__swipe-hint"
-        >{{ i18n "certificates.swipe" | default "ARRASTE PARA O LADO ➜" }}</span
+      <div
+        class="certificates__pagination"
+        id="certificatesPagination"
+        aria-hidden="true"
+        data-carousel-pagination
       >
-    </div>
+        <div class="certificates__dots" id="certificatesDots" data-carousel-dots></div>
+        <span class="certificates__swipe-hint"
+          >{{ i18n "certificates.swipe" | default "ARRASTE PARA O LADO ➜" }}</span
+        >
+      </div>
+    </portfolio-carousel>
   </div>
 </section>

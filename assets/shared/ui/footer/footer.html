@@ -100,25 +100,39 @@
           </button>
 
           <div class="footer__dropdown footer__dropdown--lang" id="langMenu" role="menu" hidden>
+            {{- $translations := dict -}}
+            {{- range $.AllTranslations -}}
+              {{- $translations = merge $translations (dict (lower .Language.Lang) .RelPermalink) -}}
+            {{- end -}}
+
             {{- range $.Site.Languages -}}
-              {{- if eq (lower .Lang) "pt-br" -}}
-            <button type="button" class="footer__dropdown-item" data-lang="pt-BR" role="menuitem">
+              {{- $langLower := lower .Lang -}}
+              {{- $langUrl := index $translations $langLower | default (printf "/portfolio/%s/" (cond (eq $langLower "pt-br") "" $langLower)) -}}
+              
+              {{- if eq $langLower "pt-br" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="pt-BR" data-url="{{ $langUrl }}" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "lang.pt" }}</span>
               <span class="footer__dropdown-item-meta">PT</span>
             </button>
               {{- end -}}
             {{- end -}}
+            
             {{- range $.Site.Languages -}}
-              {{- if eq (lower .Lang) "en" -}}
-            <button type="button" class="footer__dropdown-item" data-lang="en" role="menuitem">
+              {{- $langLower := lower .Lang -}}
+              {{- $langUrl := index $translations $langLower | default "/portfolio/en/" -}}
+              {{- if eq $langLower "en" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="en" data-url="{{ $langUrl }}" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "lang.en" }}</span>
               <span class="footer__dropdown-item-meta">EN</span>
             </button>
               {{- end -}}
             {{- end -}}
+            
             {{- range $.Site.Languages -}}
-              {{- if eq (lower .Lang) "es" -}}
-            <button type="button" class="footer__dropdown-item" data-lang="es" role="menuitem">
+              {{- $langLower := lower .Lang -}}
+              {{- $langUrl := index $translations $langLower | default "/portfolio/es/" -}}
+              {{- if eq $langLower "es" -}}
+            <button type="button" class="footer__dropdown-item" data-lang="es" data-url="{{ $langUrl }}" role="menuitem">
               <span class="footer__dropdown-item-title">{{ i18n "lang.es" }}</span>
               <span class="footer__dropdown-item-meta">ES</span>
             </button>

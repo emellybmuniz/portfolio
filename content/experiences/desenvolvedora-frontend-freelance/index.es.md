@@ -1,5 +1,5 @@
 ---
-title: "Desarrolladora Front-end Freelance"
+title: "Desarrollador Front-end Freelance"
 date_period: "2024 — Presente"
 company: "Proyectos Independientes — Remoto"
 active: false

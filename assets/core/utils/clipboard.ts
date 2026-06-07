@@ -1,6 +1,6 @@
-import { qAll } from "./dom";
-
-const copyToClipboard_buttons = qAll<HTMLButtonElement>(".js-copy-btn");
+const copyToClipboard_buttons = Array.from(
+  document.querySelectorAll<HTMLButtonElement>(".js-copy-btn"),
+);
 
 const handleCopyClick = (event: Event) => {
   const target = event.currentTarget;

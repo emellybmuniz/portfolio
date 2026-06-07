@@ -1,6 +1,6 @@
 ---
 title: "BMI Calculator"
-date: "2026-06-06"
+date: "2024-06-28"
 featured: false
 weight: 5
 draft: false

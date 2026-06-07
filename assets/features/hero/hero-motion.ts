@@ -20,6 +20,17 @@ export class HeroMotion {
   }
 
   public init(): void {
+    const img = document.querySelector<HTMLImageElement>(".hero__photo");
+    if (img) {
+      if (img.complete) {
+        img.classList.add("is-loaded");
+      } else {
+        img.addEventListener("load", () => img.classList.add("is-loaded"), {
+          once: true,
+        });
+      }
+    }
+
     if (this.prefersReducedMotion || this.isMobileTouch || !this.hero) return;
     this.setupHeroMotion();
   }

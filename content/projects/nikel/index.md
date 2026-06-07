@@ -1,54 +1,65 @@
 ---
-title: "Nikel"
-date: 2024-01-01
+title: "Nikel - Gerenciador de Finanças Pessoais"
+date: "2025-11-20"
 featured: false
 weight: 10
 draft: false
-description: "Gerenciador financeiro pessoal rodando no navegador com persistência offline."
+description: "Uma aplicação simples de controle financeiro desenvolvida para um desafio técnico, marcando meu primeiro contato prático com o framework Bootstrap."
 imageCover: "nikel.webp"
 imageCoverFallback: "nikel.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - JavaScript
-  - Bootstrap
-  - HTML
-  - CSS
-liveDemo: "https://emellybmuniz.github.io/Nikel/"
+  - "Bootstrap"
+  - "JavaScript"
+liveDemo: "https://emellybmuniz.github.io/nikel/"
 repositoryUrl: "https://github.com/emellybmuniz/nikel"
 
 techReasons:
-  JavaScript: "Lógica de cálculo de fluxo financeiro, manipulação de saldo real e sistema de cadastro persistindo dados localmente via LocalStorage."
-  Bootstrap: "Prototipagem ágil e responsiva das tabelas de transação, navegação e formulários utilitários."
-  HTML: "Semântica dos formulários e tabelas financeiras base."
-  CSS: "Customização temática limpa do framework Bootstrap."
+  Bootstrap: "Adotado por ser o requisito central do teste técnico da Growdev, servindo como base para a criação rápida da interface responsiva e componentes como modais."
+  JavaScript: "Utilizado para dar vida à aplicação, controlando as ações do usuário, os cálculos de saldo e o salvamento dos dados no navegador."
+  HTML5: "Responsável pela marcação e organização básica de todas as telas do sistema, como as páginas de login, painel e transações."
+  CSS3: "Usado para aplicar estilos customizados e cores personalizadas além dos padrões entregues pelo Bootstrap."
 
 metadata:
   status: "Concluído"
-  platform: "Web"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  platform: "Web Application"
+  role: "Frontend Developer"
+  industry: "Finanças / Estudo Pessoal"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Desafio 1: Primeiro Contato com Bootstrap"
+      title: "Adaptação ao uso de um framework CSS em um teste prático"
+      description: "Como eu nunca havia utilizado o Bootstrap antes deste desafio, compreender o funcionamento do sistema de grids e a correta configuração dos modais de cadastro foi um obstáculo no início."
+      resolution: "Estudei a documentação oficial do Bootstrap 5 ao longo do desenvolvimento, aprendendo a combinar as classes de linhas e colunas (row/col) e a usar os atributos nativos de dados para abrir e fechar os modais de transação sem quebrar o layout."
       
+    - kicker: "Desafio 2: Armazenamento e Separação de Dados"
+      title: "Persistir informações de múltiplos usuários localmente"
+      description: "O sistema precisava guardar os registros financeiros de forma que diferentes contas de e-mail pudessem se cadastrar e ver apenas as suas próprias movimentações, usando apenas o navegador."
+      resolution: "Criei uma lógica em JavaScript que utiliza o e-mail cadastrado como chave única no LocalStorage. Os dados financeiros de cada conta ficam guardados dentro de um objeto estruturado, permitindo renderizar o histórico correto assim que o login é validado."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Painel principal com cálculo automático de saldo com base em entradas e saídas"
+  - "Histórico completo com listagem e controle de todas as movimentações inseridas"
+  - "Interface responsiva adaptada para celulares com menu colapsável nativo"
+  - "Lógica de autenticação simulada que impede o acesso às páginas internas sem login ativo"
+  - "Validação básica de campos como formato de e-mail e tamanho mínimo de senha"
 ---
 
 ## Sobre o Projeto
-O Nikel é uma aplicação de finanças pessoais que demonstra o potencial do ecossistema front-end sem depender de um banco de dados real online. Todo o motor da aplicação roda no lado do cliente.
+Desenvolvi este gerenciador financeiro para concluir o desafio técnico da VesteTech através do treinamento gratuito CODAÍ 2.0 da Growdev. A aplicação funciona como uma carteira digital simples, onde o objetivo é permitir que o usuário cadastre e acompanhe seus ganhos e despesas diárias de forma direta.
 
-### Persistência com API Nativa
+Este projeto representa um marco inicial importante nos meus estudos, pois foi a primeira vez que precisei transformar requisitos de uma avaliação técnica em uma interface funcional completa, lidando com prazos e com a necessidade de disponibilizar o código em um repositório público como regra do processo.
 
-Para salvar histórico de transações, saques e depósitos sem perdas, o projeto implementa de maneira pesada a manipulação da API `LocalStorage` do navegador. Ela simula sessões de banco de dados, protegendo acessos por senha a dashboard (criando até um pseudo sistema de login e logout), e armazenando o saldo remanescente entre aberturas de abas, exibindo dados em uma interface limpa feita com Bootstrap.
+## Construção e Escolhas Técnicas
+Por se tratar de um projeto frontend focado em fundamentos, a estrutura foi construída utilizando a base tradicional da web, eliminando ferramentas complexas de build. O diferencial técnico esteve na integração entre as interações do usuário e o armazenamento nativo do navegador para garantir que as informações inseridas continuassem salvas mesmo após fechar a aba.
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+{{< technologies >}}
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Dificuldades no Desenvolvimento e Soluções
+Durante a escrita do código, o principal foco foi fazer com que a manipulação do DOM feita pelo JavaScript conversasse de forma limpa com as classes estruturais do framework visual.
+
+{{< challenges >}}
+
+## Conclusão
+O desenvolvimento do Nikel foi fundamental para eu entender como funciona a dinâmica de frameworks CSS e como o JavaScript puro pode resolver problemas reais de lógica de negócios e persistência simples. Por ser meu primeiro contato com o Bootstrap e um dos meus primeiros testes técnicos, o resultado foi satisfatório por entregar todos os critérios obrigatórios pedidos no desafio, servindo como uma excelente base de aprendizado prático.

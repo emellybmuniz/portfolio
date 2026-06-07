@@ -2,24 +2,26 @@
 {{ $idPrefix := .id }}
 {{ $titleId := printf "%sDrawerTitle" $idPrefix }}
 
-<div class="drawer-overlay" id="{{ $idPrefix }}DrawerOverlay" aria-hidden="true"></div>
+<ui-drawer id="{{ $idPrefix }}UiDrawer" aria-hidden="true">
+  <div class="drawer-overlay" id="{{ $idPrefix }}DrawerOverlay" aria-hidden="true"></div>
 
-<div class="drawer" id="{{ $idPrefix }}Drawer" role="dialog" aria-modal="true" aria-labelledby="{{ $titleId }}" aria-hidden="true">
-  <div class="drawer__header">
-    <p class="drawer__title" id="{{ $titleId }}"></p>
-    <p class="drawer__desc" id="{{ $idPrefix }}DrawerDesc"
-      data-singular="{{ .singularKey | default (i18n "skills.count_singular") }}"
-      data-plural="{{ .pluralKey | default (i18n "skills.count_plural") }}">
-    </p>
-  </div>
+  <div class="drawer" id="{{ $idPrefix }}Drawer" role="dialog" aria-modal="true" aria-labelledby="{{ $titleId }}" aria-hidden="true">
+    <div class="drawer__header">
+      <p class="drawer__title" id="{{ $titleId }}"></p>
+      <p class="drawer__desc" id="{{ $idPrefix }}DrawerDesc"
+        data-singular="{{ .singularKey | default (i18n "skills.count_singular") }}"
+        data-plural="{{ .pluralKey | default (i18n "skills.count_plural") }}">
+      </p>
+    </div>
 
-  <div class="drawer__body" id="{{ $idPrefix }}DrawerBody">
-    <div class="drawer__list" id="{{ $idPrefix }}DrawerList" aria-live="polite"></div>
-  </div>
+    <div class="drawer__body" id="{{ $idPrefix }}DrawerBody">
+      <div class="drawer__list" id="{{ $idPrefix }}DrawerList" aria-live="polite"></div>
+    </div>
 
-  <div class="drawer__footer">
-    <button class="drawer__close" id="{{ $idPrefix }}DrawerClose" type="button" aria-label="{{ i18n "skills.close_drawer" | default "Fechar" }}">
-      {{ i18n "skills.close_drawer" | default "Fechar" }}
-    </button>
+    <div class="drawer__footer">
+      <button class="drawer__close-btn drawer__close" id="{{ $idPrefix }}DrawerClose" type="button" aria-label="{{ i18n "skills.close_drawer" | default "Fechar" }}">
+        {{ i18n "skills.close_drawer" | default "Fechar" }}
+      </button>
+    </div>
   </div>
-</div>
+</ui-drawer>

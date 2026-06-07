@@ -1,52 +1,63 @@
 ---
-title: "Social Media Hub"
-date: 2024-01-01
+title: "Social Media Hub - Simulador de Tela Mobile"
+date: "2024-05-20"
 featured: false
 weight: 10
 draft: false
-description: "Experimento de interface simulando um dispositivo mobile para navegação interativa entre plataformas sociais."
+description: "Um projeto prático que simula a interface de um iPhone para navegar por perfis de redes sociais usando HTML e CSS estruturais."
 imageCover: "social-media-hub.webp"
 imageCoverFallback: "social-media-hub.png"
 categories: 
-  - frontend
+  - "Frontend"
 technologies:
-  - HTML
-  - CSS
-  - JavaScript
+  - "HTML5"
+  - "CSS3"
 liveDemo: "https://emellybmuniz.github.io/social-media-hub/"
 repositoryUrl: "https://github.com/emellybmuniz/social-media-hub"
 
 techReasons:
-  HTML: "Uso estratégico da tag iframe para embutir navegação multiplataforma dentro do mockup de celular."
-  CSS: "Aplicação de CSS Grid, Flexbox e Transformações (scale/rotate) para criar a ilusão de profundidade e interface realista."
-  JavaScript: "Lógica simples para transição e gerenciamento dinâmico dos links que carregam dentro do frame."
+  HTML5: "Utilizado para criar o esqueleto das páginas de pré-visualização e gerenciar o direcionamento dos links internos para a tela simulada."
+  CSS3: "Utilizado para fazer o alinhamento centralizado do mockup do celular, o controle de overflow e os efeitos visuais simples de foco nos botões."
 
 metadata:
   status: "Concluído"
-  platform: "Web"
-  role: "Desenvolvedora"
-  industry: "Tecnologia"
+  platform: "Web Application"
+  role: "Frontend Developer"
+  industry: "Educação / Estudo Pessoal"
   
   challenges:
-    - kicker: "Desafio 1: Lorem Ipsum"
-      title: "Lorem Ipsum"
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      resolution: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    - kicker: "Desafio 1: Navegação sem Recarregamento"
+      title: "Alimentar a tela interna de forma dinâmica"
+      description: "Eu precisava fazer com que o clique nos botões laterais trocasse o conteúdo visível dentro do desenho do celular sem que a página inteira sofresse um refresh."
+      resolution: "Utilizei a propriedade nativa 'target' nos links de ancoragem apontando diretamente para o atributo 'name' de um elemento iframe posicionado no centro do celular, permitindo o carregamento isolado das subpáginas."
       
+    - kicker: "Desafio 2: Encaixe do Layout Absoluto"
+      title: "Alinhar o iframe sobre a imagem do iPhone"
+      description: "Fazer com que a janela interna contendo os sites ficasse perfeitamente sobreposta à tela do mockup do celular em diferentes resoluções foi difícil no começo."
+      resolution: "Combinei o uso de posicionamento absoluto com coordenadas em pixels fixas para delimitar a tela do celular e adotei Media Queries simples para reajustar o tamanho dos ícones e do container geral nas telas de smartphones."
+
 features:
-  - "Lorem ipsum dolor"
-  - "Lorem ipsum dolor"
+  - "Estrutura de navegação interna baseada em iframe e alvos de links nativos"
+  - "Estilização visual simulando as proporções físicas de um celular"
+  - "Menu lateral de ícones interativos com pequenas animações de hover"
+  - "Código dividido de forma modular com páginas HTML simples para cada rede social"
+  - "Fundo de tela configurado com imagem fixa para criar efeito de profundidade"
 ---
 
 ## Sobre o Projeto
-e Execução Visual
+Desenvolvi este projeto como parte das minhas práticas durante o curso de HTML5 e CSS3 do Curso em Vídeo. A proposta era criar uma espécie de hub ou centralizador de links que simulasse a navegação real por dentro de um aparelho celular (iPhone).
 
-O projeto foi construído essencialmente para explorar limites de estruturação de layout puro, sem auxílio de frameworks. 
+O foco do exercício foi entender as dinâmicas de posicionamento de elementos na tela e aprender a trabalhar com carregamento de conteúdos locais e externos de forma integrada na mesma interface de usuário.
 
-Através do uso coordenado de `iframes` atrelados à propriedade `target` dos links, o conteúdo é injetado dinamicamente no espaço da tela do mockup. O ambiente visual foi refinado com efeitos de transição escalonados e um plano de fundo fixo de textura, gerando uma imersão de paralaxe discreta quando explorado em resoluções maiores.
+## Organização e Escolhas Técnicas
+A construção da interface baseou-se inteiramente no uso de tags padrão e folhas de estilo limpas, sem o uso de bibliotecas visuais. A arquitetura de arquivos foi pensada de maneira simples, onde cada rede social possui seu próprio arquivo HTML com uma imagem representativa e um link direto para o respectivo perfil.
 
-## Arquitetura e Decisões Técnicas
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+{{< technologies >}}
 
-## Impacto e Resultados
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Dificuldades Práticas e Soluções
+Durante a organização do código, os principais pontos de ajuste foram relacionados à manutenção das proporções visuais do dispositivo simulado para evitar que o conteúdo vazasse.
+
+{{< challenges >}}
+
+## Conclusão
+O Social Media Hub foi um excelente laboratório prático para fixar conceitos de posicionamento absoluto, uso de iframes e fluxos básicos de navegação estrutural. Por ser um projeto simples feito no início do meu aprendizado, ele cumpriu bem o papel de me ajudar a compreender visualmente como o navegador lida com caixas e sobreposições de camadas no CSS, servindo como degrau para a criação de layouts futuros mais complexos.

@@ -4,12 +4,12 @@
     "ignoreDeprecations": "5.0",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ES2020",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./assets/ts",
+    "rootDir": "assets",
 
     "strict": true,
     "esModuleInterop": true,
@@ -30,6 +30,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["assets/ts/**/*.ts"],
+  "include": ["assets/**/*.ts"],
   "exclude": ["node_modules", "dist", "public"]
 }

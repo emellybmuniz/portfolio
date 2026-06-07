@@ -1,5 +1,5 @@
 import { Dropdown } from "../../../core/utils/dropdown";
-import { LanguageCode } from "../i18n";
+import { LanguageCode } from "../../../core/scripts/i18n";
 
 export class LangToggle extends HTMLElement {
   private dropdown: Dropdown | null = null;
@@ -18,9 +18,12 @@ export class LangToggle extends HTMLElement {
 
       this.dropdown.onItemClick((button) => {
         const langKey = button.dataset.lang as LanguageCode | undefined;
+        const targetUrl = button.dataset.url;
         if (langKey) {
           document.dispatchEvent(
-            new CustomEvent("lang-select", { detail: langKey }),
+            new CustomEvent("lang-select", {
+              detail: { lang: langKey, url: targetUrl },
+            }),
           );
         }
       });

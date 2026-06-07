@@ -23,7 +23,7 @@ other = "Hi, I'm Emelly Beatriz!"
 other = "Frontend Developer & UX Enthusiast"
 
 [hero.description]
-other = "Passionate about creating intuitive and visually impactful digital experiences, always looking to collaborate on innovative projects. ✨"
+other = "Passionate about creating intuitive and visually impactful digital experiences, always looking to collaborate on innovative projects."
 
 [hero.projects_cta]
 other = "My Projects"
@@ -337,3 +337,6 @@ other = 'Demo'
 other = 'Code'
 [projects.action_details]
 other = 'Details'
+
+[nav.back_to_home]
+other = "Back to home"

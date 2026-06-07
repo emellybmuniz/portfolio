@@ -91,7 +91,7 @@
           <div class="dashboard__divider"></div>
 
           <div class="dashboard__education-list">
-            {{ range sort (where site.RegularPages "Type" "education") "Params.weight" "asc" }}
+            {{ range sort (where .Site.RegularPages "Type" "education") "Params.weight" "asc" }}
             <div class="dashboard__education-item">
               <h4 class="dashboard__academic-degree">
                 {{ .Params.degree }}
@@ -166,7 +166,7 @@
           </p>
 
           <div class="dashboard__timeline">
-            {{ range sort (where site.RegularPages "Type" "experiences") "Params.weight" "asc" }}
+            {{ range sort (where .Site.RegularPages "Type" "experiences") "Params.weight" "asc" }}
             <div class="dashboard__timeline-item">
               <div class="dashboard__timeline-bullet">
                 {{ if .Params.active }}

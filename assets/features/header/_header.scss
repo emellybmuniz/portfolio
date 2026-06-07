@@ -41,7 +41,7 @@ body.page-projects .header {
   width: 65px;
   height: 65px;
   border-radius: var(--border-radius-full);
-  border: 2.5px solid var(--color-text);
+  border: 2px solid var(--color-surface-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,21 +49,7 @@ body.page-projects .header {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-secondary);
   color: var(--color-text);
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(45, 212, 191, 0.05) 32%,
-    rgba(157, 78, 221, 0.062) 72%,
-    rgba(255, 255, 255, 0.03)
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 8px 18px rgba(157, 78, 221, 0.053),
-    0 0 10px rgba(45, 212, 191, 0.05);
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.12);
+  background: var(--color-surface);
 
   @include mixins.transition;
 
@@ -72,42 +58,13 @@ body.page-projects .header {
     height: 50px;
     font-size: 1.5rem;
   }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -40%;
-    background: linear-gradient(
-      115deg,
-      transparent 32%,
-      rgba(255, 255, 255, 0.12) 48%,
-      rgba(45, 212, 191, 0.09) 52%,
-      transparent 68%
-    );
-    opacity: 0.42;
-    transform: translateX(-26%) rotate(10deg);
-    transition:
-      transform var(--transition-slow) var(--timing-smooth),
-      opacity var(--transition-base) var(--timing-smooth);
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
 }
 
 .header__logo:hover .header__logo-badge {
-  color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.28);
-  transform: translateY(-1px) scale(1.01);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 14px rgba(157, 78, 221, 0.1),
-    0 0 16px rgba(45, 212, 191, 0.08);
-}
-
-.header__logo:hover .header__logo-badge::before {
-  opacity: 0.58;
-  transform: translateX(26%) rotate(10deg);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 // menu toggle (mobile)

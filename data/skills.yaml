@@ -107,3 +107,39 @@ skills:
     color:
       from: "#ffffff"
       to: "#D899FF"
+  - name: Sass
+    category: ["frontend", "design"]
+    icon: "sass.svg"
+    color:
+      from: "#CF649A"
+      to: "#A53670"
+  - name: Insomnia
+    category: ["tools", "backend"]
+    icon: "insomnia.svg"
+    color:
+      from: "#5A45CA"
+      to: "#4027A1"
+  - name: Postman
+    category: ["tools", "backend"]
+    icon: "postman.svg"
+    color:
+      from: "#FF6C37"
+      to: "#D84A1B"
+  - name: PostgreSQL
+    category: ["tools", "backend"]
+    icon: "postgresql.svg"
+    color:
+      from: "#336791"
+      to: "#234969"
+  - name: Node.js
+    category: ["tools", "backend"]
+    icon: "nodejs.svg"
+    color:
+      from: "#339933"
+      to: "#226622"
+  - name: Npm
+    category: ["tools", "backend"]
+    icon: "npm.svg"
+    color:
+      from: "#CB3837"
+      to: "#9B2B2A"
