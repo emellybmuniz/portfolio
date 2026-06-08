@@ -80,7 +80,17 @@
 
 // transitions
 @mixin transition(
-  $properties: all,
+  $properties: (
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+  ),
   $duration: var(--transition-base),
   $timing: var(--timing-ease-in-out)
 ) {
