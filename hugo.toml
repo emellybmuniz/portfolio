@@ -1,4 +1,4 @@
-baseURL = 'https://emellybmuniz.github.io/portfolio/'
+baseURL = "/"
 defaultContentLanguage = 'pt-BR'
 defaultContentLanguageInSubdir = false
 pageSize = 12
