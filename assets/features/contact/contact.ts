@@ -82,6 +82,10 @@ export class ContactFormManager {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    new ContactFormManager();
+  });
+} else {
   new ContactFormManager();
-});
+}

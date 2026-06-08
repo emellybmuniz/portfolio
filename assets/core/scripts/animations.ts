@@ -126,11 +126,25 @@ export class AnimationManager {
 
     const update = () => {
       this.frameId = null;
-      const scrollY = window.scrollY || window.pageYOffset;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight || 1;
-      const progress = Math.max(0, Math.min(1, scrollY / docHeight));
 
+      // --- READ PHASE ---
+      const scrollY = window.scrollY || window.pageYOffset;
+      const innerHeight = window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - innerHeight || 1;
+      const progress = Math.max(0, Math.min(1, scrollY / docHeight));
+      const viewportCenter = innerHeight / 2;
+
+      const parallaxData = parallaxEls.map((el) => {
+        const speed = parseFloat(el.dataset.parallaxSpeed || "0.12");
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+        const distance = elCenter - viewportCenter;
+        const translateY = -distance * speed;
+        return { el, translateY };
+      });
+
+      // --- WRITE PHASE ---
       document.documentElement.style.setProperty(
         "--scroll-y",
         `${Math.round(scrollY)}px`,
@@ -140,14 +154,7 @@ export class AnimationManager {
         `${progress.toFixed(4)}`,
       );
 
-      const viewportCenter = window.innerHeight / 2;
-
-      parallaxEls.forEach((el) => {
-        const speed = parseFloat(el.dataset.parallaxSpeed || "0.12");
-        const rect = el.getBoundingClientRect();
-        const elCenter = rect.top + rect.height / 2;
-        const distance = elCenter - viewportCenter;
-        const translateY = -distance * speed;
+      parallaxData.forEach(({ el, translateY }) => {
         el.style.transform = `translate3d(0, ${translateY.toFixed(2)}px, 0)`;
       });
     };
