@@ -1,50 +1,46 @@
 ---
-title: "Calculadora de IMC"
-date: "2024-06-28"
+title: Calculadora de IMC
+date: 2024-06-28
 featured: false
 weight: 5
 draft: false
-description: "Uma ferramenta front-end simples para cálculo do Índice de Massa Corporal (IMC) com estilização condicional baseada nas faixas da OMS."
-imageCover: "calculadora-imc.webp"
-imageCoverFallback: "calculadora-imc.png"
-categories: 
+description: Uma ferramenta front-end simples para cálculo do Índice de Massa Corporal (IMC) com estilização condicional baseada nas faixas da OMS.
+imageCover: calculadora-imc.webp
+imageCoverFallback: calculadora-imc.png
+categories:
   - frontend
 technologies:
-  - "JavaScript"
-  - "HTML"
-  - "CSS"
-liveDemo: "https://emellybmuniz.github.io/calculadora-imc/"
-repositoryUrl: "https://github.com/emellybmuniz/calculadora-imc"
-
-techReasons:
-  HTML: "Responsável pela estruturação do formulário de captura e da tabela estática contendo os intervalos de referência."
-  CSS: "Aplicado para criar o fundo com gradiente radial e alternar as classes de cores do painel de resultado dinamicamente."
-  JavaScript: "Utilizado para interceptar o envio do formulário, normalizar a entrada de caracteres (vírgula para ponto) e processar o cálculo aritmético."
-
+  - JavaScript
+  - HTML5
+  - CSS3
+liveDemo: https://emellybmuniz.github.io/calculadora-imc/
+repositoryUrl: https://github.com/emellybmuniz/calculadora-imc
 metadata:
-  status: "Concluído"
-  platform: "Web Application (Client-side)"
-  role: "Desenvolvedora Frontend"
-  industry: "Ferramentas Utilitárias"
-  
+  status: Concluído
+  platform: Web Application (Client-side)
+  role: Desenvolvedora Frontend
+  industry: Ferramentas Utilitárias
   challenges:
-    - kicker: "Desafio 1: Formatação de Decimais"
-      title: "Tratamento de vírgulas em inputs numéricos"
-      description: "Evitar que a inserção de alturas ou pesos usando o padrão de pontuação brasileiro (ex: 1,75) gerasse valores do tipo NaN no método parseFloat."
-      resolution: "Foi aplicado o método '.replace(',', '.')' nas strings capturadas dos elementos antes de realizar a conversão para ponto flutuante."
-    - kicker: "Desafio 2: Manipulação de Classes de Feedback"
-      title: "Alternância dinâmica de cores do estado de resultado"
-      description: "Garantir que as classes de estilização anteriores fossem limpas a cada novo cálculo para evitar a sobreposição visual de cores de faixas diferentes."
-      resolution: "A propriedade 'resultadoImc.className' foi reiniciada no escopo das funções de renderização antes da inserção da nova classe de classificação."
-      
+    - kicker: 'Desafio 1: Formatação de Decimais'
+      title: Tratamento de vírgulas em inputs numéricos
+      description: 'Evitar que a inserção de alturas ou pesos usando o padrão de pontuação brasileiro (ex: 1,75) gerasse valores do tipo NaN no método parseFloat.'
+      resolution: Foi aplicado o método '.replace(',', '.')' nas strings capturadas dos elementos antes de realizar a conversão para ponto flutuante.
+    - kicker: 'Desafio 2: Manipulação de Classes de Feedback'
+      title: Alternância dinâmica de cores do estado de resultado
+      description: Garantir que as classes de estilização anteriores fossem limpas a cada novo cálculo para evitar a sobreposição visual de cores de faixas diferentes.
+      resolution: A propriedade 'resultadoImc.className' foi reiniciada no escopo das funções de renderização antes da inserção da nova classe de classificação.
 features:
-  - "Cálculo matemático baseado na fórmula oficial da OMS."
-  - "Normalização automática de inputs contendo separadores decimais distintos."
-  - "Estilização condicional do painel de resposta baseada no status de peso."
-  - "Bloqueio preventivo de recarregamento de página via interceptação de submit."
-  - "Folha de estilo dedicada para telas menores com desativação de efeitos pesados."
+  - Cálculo matemático baseado na fórmula oficial da OMS.
+  - Normalização automática de inputs contendo separadores decimais distintos.
+  - Estilização condicional do painel de resposta baseada no status de peso.
+  - Bloqueio preventivo de recarregamento de página via interceptação de submit.
+  - Folha de estilo dedicada para telas menores com desativação de efeitos pesados.
+techReasons:
+  HTML: Responsável pela estruturação do formulário de captura e da tabela estática contendo os intervalos de referência.
+  CSS: Aplicado para criar o fundo com gradiente radial e alternar as classes de cores do painel de resultado dinamicamente.
+  JavaScript: Utilizado para interceptar o envio do formulário, normalizar a entrada de caracteres (vírgula para ponto) e processar o cálculo aritmético.
 ---
-  
+
 ## Sobre o Projeto
 
 A **Calculadora de IMC** é um utilitário front-end básico desenvolvido para exercitar a captura de dados de formulários, validação condicional de entradas numéricas e alteração dinâmica de elementos de estilo baseando-se no comportamento do usuário. 

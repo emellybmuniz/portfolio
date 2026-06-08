@@ -1,49 +1,44 @@
 ---
-title: "Calculadora Web Básica"
-date: "2024-10-09"
+title: Calculadora Web Básica
+date: 2024-10-09
 featured: false
 weight: 5
 draft: false
-description: "Una aplicación frontend sencilla de calculadora creada para practicar la manipulación del DOM y el patrón estructural Factory Function en JavaScript."
-imageCover: "calculadora.webp"
-imageCoverFallback: "calculadora-web.png"
-categories: 
-  - "Frontend"
+description: Una aplicación frontend sencilla de calculadora creada para practicar la manipulación del DOM y el patrón estructural Factory Function en JavaScript.
+imageCover: calculadora.webp
+imageCoverFallback: calculadora-web.png
+categories:
+  - Frontend
 technologies:
-  - "JavaScript"
-  - "HTML"
-  - "CSS"
-
-liveDemo: "https://emellybmuniz.github.io/calculadora/"
-repositoryUrl: "https://github.com/emellybmuniz/calculadora"
-
-techReasons:
-  JavaScript: "Utilizado para construir toda la lógica operativa de la calculadora, capturar clics en la interfaz y procesar las cadenas de operaciones matemáticas."
-  HTML: "Responsable de la estructura de marcado básica de la pantalla y de la tabla que organiza los botones numéricos y de operadores."
-  CSS: "Aplicado para centrar el componente en pantallas de escritorio y realizar ajustes simples de dimensiones para pantallas de teléfonos móviles."
-
+  - JavaScript
+  - HTML5
+  - CSS3
+liveDemo: https://emellybmuniz.github.io/calculadora/
+repositoryUrl: https://github.com/emellybmuniz/calculadora
 metadata:
-  status: "Completado"
-  platform: "Web Application (Client-side)"
-  role: "Desarrolladora Frontend"
-  industry: "Herramientas Utilitarias"
-  
+  status: Completado
+  platform: Web Application (Client-side)
+  role: Desarrolladora Frontend
+  industry: Herramientas Utilitarias
   challenges:
-    - kicker: "Desafío 1: Contexto en la Captura de Eventos"
-      title: "Mantenimiento del contexto dinámico en JavaScript"
-      description: "Evitar que la referencia al elemento 'this' se perdiera al ejecutar funciones desde el escuchador de eventos global del documento."
-      resolution: "Se utilizó el método '.bind(this)' dentro de la función de delegación de eventos para enlazar correctamente el objeto de la Factory Function."
-    - kicker: "Desafío 2: Validación de Expresiones"
-      title: "Tratamiento de entradas inválidas en la pantalla"
-      description: "Impedir que caracteres dañados u operaciones imposibles causaran fallos críticos o mostraran resultados incorrectos en la interfaz."
-      resolution: "Implementación de una estructura de validación try/catch combinada con la función 'isFinite()' para identificar divisiones por cero o errores sintácticos."
-
+    - kicker: 'Desafío 1: Contexto en la Captura de Eventos'
+      title: Mantenimiento del contexto dinámico en JavaScript
+      description: Evitar que la referencia al elemento 'this' se perdiera al ejecutar funciones desde el escuchador de eventos global del documento.
+      resolution: Se utilizó el método '.bind(this)' dentro de la función de delegación de eventos para enlazar correctamente el objeto de la Factory Function.
+    - kicker: 'Desafío 2: Validación de Expresiones'
+      title: Tratamiento de entradas inválidas en la pantalla
+      description: Impedir que caracteres dañados u operaciones imposibles causaran fallos críticos o mostraran resultados incorrectos en la interfaz.
+      resolution: Implementación de una estructura de validación try/catch combinada con la función 'isFinite()' para identificar divisiones por cero o errores sintácticos.
 features:
-  - "Operaciones aritméticas estándar y control de precedencia mediante paréntesis."
-  - "Navegación híbrida que responde a clics en pantalla y entradas directas del teclado."
-  - "Código de lógica encapsulado bajo el patrón de diseño Factory Function."
-  - "Manejo nativo de excepciones que despliega alertas en caso de expresiones inválidas."
-  - "Diseño elástico que adapta el tamaño de los botones en pantallas móviles."
+  - Operaciones aritméticas estándar y control de precedencia mediante paréntesis.
+  - Navegación híbrida que responde a clics en pantalla y entradas directas del teclado.
+  - Código de lógica encapsulado bajo el patrón de diseño Factory Function.
+  - Manejo nativo de excepciones que despliega alertas en caso de expresiones inválidas.
+  - Diseño elástico que adapta el tamaño de los botones en pantallas móviles.
+techReasons:
+  JavaScript: Utilizado para construir toda la lógica operativa de la calculadora, capturar clics en la interfaz y procesar las cadenas de operaciones matemáticas.
+  HTML: Responsable de la estructura de marcado básica de la pantalla y de la tabla que organiza los botones numéricos y de operadores.
+  CSS: Aplicado para centrar el componente en pantallas de escritorio y realizar ajustes simples de dimensiones para pantallas de teléfonos móviles.
 ---
 
 ## Sobre el Proyecto

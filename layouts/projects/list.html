@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $projects := .RegularPages }}
+{{ $projects := where .RegularPages "Section" "projects" }}
 {{ $categoryLabels := dict
   "frontend" "Frontend"
   "backend" "Backend"
@@ -20,7 +20,7 @@
 {{ end }}
 {{ $techMap := dict }}
 {{ range $allTechnologies }}
-  {{ $lower := . | lower }}
+  {{ $lower := replace . " " "" | lower }}
   {{ if not (isset $techMap $lower) }}
     {{ $techMap = merge $techMap (dict $lower .) }}
   {{ end }}
@@ -139,6 +139,10 @@
         <div class="projects-explorer__grid" data-projects-grid>
           {{ range sort $projects "Date" "desc" }}
             {{ $technologies := .Params.technologies | default (slice) }}
+            {{ $strippedTechs := slice }}
+            {{ range $technologies }}
+              {{ $strippedTechs = $strippedTechs | append (replace . " " "" | lower) }}
+            {{ end }}
             {{ $categories := .Params.categories | default (slice) }}
             {{ $description := .Params.description | default .Summary | plainify }}
             {{ $hasDemo := and .Params.liveDemo (ne .Params.liveDemo "#") }}
@@ -147,7 +151,7 @@
               data-project-item
               data-title="{{ .Title | plainify | lower }}"
               data-description="{{ $description | plainify | lower }}"
-              data-technologies="{{ delimit $technologies "," | lower }}"
+              data-technologies="{{ delimit $strippedTechs "," }}"
               data-categories="{{ delimit $categories "," | lower }}"
               data-featured="{{ if .Params.featured }}yes{{ else }}no{{ end }}"
               data-has-demo="{{ if $hasDemo }}yes{{ else }}no{{ end }}"

@@ -1,54 +1,50 @@
 ---
-title: "Weather Dashboard"
-date: "2025-09-09"
+title: Weather Dashboard
+date: 2025-09-09
 featured: true
 weight: 10
 draft: false
-description: "Painel meteorológico completo e intuitivo para consulta em tempo real e mapas interativos."
-imageCover: "weather-dash.webp"
-imageCoverFallback: "weather-dash.png"
-categories: 
-  - "Frontend"
+description: Painel meteorológico completo e intuitivo para consulta em tempo real e mapas interativos.
+imageCover: weather-dash.webp
+imageCoverFallback: weather-dash.png
+categories:
+  - Frontend
 technologies:
-  - "HTML"
-  - "CSS"
-  - "JavaScript"
-  - "Tailwind CSS"
-liveDemo: "https://emellybmuniz.github.io/WeatherDash/public/"
-repositoryUrl: "https://github.com/emellybmuniz/WeatherDash"
-
-techReasons:
-  JavaScript: "Lógica modular Vanilla JS usada de forma pura para gerenciar requisições assíncronas (fetch) e manipular os elementos da tela."
-  Tailwind CSS: "Framework utilitário que facilitou a criação de uma interface moderna e responsiva sem a necessidade de escrever muitos arquivos CSS manuais."
-  HTML: "Estruturação semântica utilizada para criar uma base sólida, organizada e acessível para exibição das informações."
-  CSS: "Responsável pela aplicação de variáveis de estilo, transições suaves de layout e suporte ao controle dinâmico de temas."
-
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Tailwind CSS
+liveDemo: https://emellybmuniz.github.io/WeatherDash/public/
+repositoryUrl: https://github.com/emellybmuniz/WeatherDash
 metadata:
-  status: "Concluído"
-  platform: "Web Application"
-  role: "Desenvolvedora Frontend"
-  industry: "Tecnologia"
-  
+  status: Concluído
+  platform: Web Application
+  role: Desenvolvedora Frontend
+  industry: Tecnologia
   challenges:
-    - kicker: "Desafio 1: Integração de APIs Múltiplas"
-      title: "Orquestração de múltiplos provedores de dados no cliente"
-      description: "Buscar dados meteorológicos atuais, previsões estendidas e geocodificação ao mesmo tempo pode causar atrasos ou conflitos na renderização da tela."
-      resolution: "Foi implementado um fluxo assíncrono encadeado com promessas (Promises), carregando primeiro a WeatherAPI e puxando os dados secundários de geolocalização e mapas em segundo plano."
-    - kicker: "Desafio 2: Persistência Sem Servidor"
-      title: "Armazenamento de preferências e cidades favoritas"
-      description: "Manter as escolhas de tema (claro/escuro), unidades de medida e a lista de locais favoritados pelo usuário sem possuir um banco de dados backend."
-      resolution: "Utilizou-se a API nativa do localStorage do navegador para salvar strings JSON, carregando e atualizando a interface automaticamente a cada inicialização."
-      
+    - kicker: 'Desafio 1: Integração de APIs Múltiplas'
+      title: Orquestração de múltiplos provedores de dados no cliente
+      description: Buscar dados meteorológicos atuais, previsões estendidas e geocodificação ao mesmo tempo pode causar atrasos ou conflitos na renderização da tela.
+      resolution: Foi implementado um fluxo assíncrono encadeado com promessas (Promises), carregando primeiro a WeatherAPI e puxando os dados secundários de geolocalização e mapas em segundo plano.
+    - kicker: 'Desafio 2: Persistência Sem Servidor'
+      title: Armazenamento de preferências e cidades favoritas
+      description: Manter as escolhas de tema (claro/escuro), unidades de medida e a lista de locais favoritados pelo usuário sem possuir um banco de dados backend.
+      resolution: Utilizou-se a API nativa do localStorage do navegador para salvar strings JSON, carregando e atualizando a interface automaticamente a cada inicialização.
 features:
-  - "Consulta de dados meteorológicos atuais em tempo real via WeatherAPI"
-  - "Previsão do tempo detalhada para múltiplos dias através da integração com Open-Meteo"
-  - "Mapa interativo com radar meteorológico integrado via Windy"
-  - "Pesquisa de cidades com sistema de auto-completar integrado à API Nominatim"
-  - "Sistema de favoritos com suporte a salvamento permanente no localStorage"
-  - "Personalização de interface com Modo Claro/Escuro e 6 paletas de cores de destaque"
-  - "Conversão dinâmica entre sistemas de unidades métricas e imperiais"
-  - "Recomendações customizadas baseadas no clima geradas a partir de um arquivo JSON local"
-  - "Captura de tela automatizada do painel usando a biblioteca html2canvas para compartilhamento"
+  - Consulta de dados meteorológicos atuais em tempo real via WeatherAPI
+  - Previsão do tempo detalhada para múltiplos dias através da integração com Open-Meteo
+  - Mapa interativo com radar meteorológico integrado via Windy
+  - Pesquisa de cidades com sistema de auto-completar integrado à API Nominatim
+  - Sistema de favoritos com suporte a salvamento permanente no localStorage
+  - Personalização de interface com Modo Claro/Escuro e 6 paletas de cores de destaque
+  - Conversão dinâmica entre sistemas de unidades métricas e imperiais
+  - Recomendações customizadas baseadas no clima geradas a partir de um arquivo JSON local
+  - Captura de tela automatizada do painel usando a biblioteca html2canvas para compartilhamento
+techReasons:
+  JavaScript: Lógica modular Vanilla JS usada de forma pura para gerenciar requisições assíncronas (fetch) e manipular os elementos da tela.
+  Tailwind CSS: Framework utilitário que facilitou a criação de uma interface moderna e responsiva sem a necessidade de escrever muitos arquivos CSS manuais.
+  HTML: Estruturação semântica utilizada para criar uma base sólida, organizada e acessível para exibição das informações.
+  CSS: Responsável pela aplicação de variáveis de estilo, transições suaves de layout e suporte ao controle dinâmico de temas.
 ---
 
 ## Sobre o Projeto
@@ -60,6 +56,7 @@ Antes da criação do painel, a centralização de informações climáticas div
 ## Arquitetura e Decisões Técnicas
 
 O projeto foi construído utilizando uma arquitetura cliente pura (Single Page Application estática) organizada em diretórios separados para arquivos públicos de interface e códigos de comportamento técnico:
+
 * **Public:** Contém os arquivos estruturais da interface (`index.html`, `settings.html`) e o arquivo de dados estáticos (`recomendations.json`).
 * **Src:** Reúne a lógica de script pura da aplicação e os estilos adicionais que complementam as utilidades estruturais do Tailwind.
 

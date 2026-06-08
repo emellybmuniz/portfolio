@@ -1,7 +1,7 @@
 ---
-title: "Freelance Front-end Developer"
-company: "Independent Projects — Remote"
-date_period: "2024 — Present"
+title: Front-end Developer
+date_period: 2024 — Present
+company: Independent Projects — Remote
 active: false
 weight: 2
 ---

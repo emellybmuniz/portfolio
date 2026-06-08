@@ -1,53 +1,47 @@
 ---
-title: "Baozi Store API"
-date: "2026-10-05"
+title: Baozi Store API
+date: 2026-05-10
 featured: false
 weight: 10
 draft: false
-description: "API RESTful desenvolvida com Spring Boot para gerenciamento de clientes, produtos e pedidos no domínio de e-commerce, projetada com isolamento de ambientes e desacoplamento de persistência."
-imageCover: "docs/baozistore_use_case.png"
-imageCoverFallback: "To be confirmed"
-categories: 
-  - "Backend"
+description: API RESTful desenvolvida com Spring Boot para gerenciamento de clientes, produtos e pedidos no domínio de e-commerce, projetada com isolamento de ambientes e desacoplamento de persistência.
+categories:
+  - Backend
 technologies:
-  - "Java"
-  - "Spring Boot"
-  - "Spring Data JPA"
-  - "H2 Database"
-  - "MySQL"
-liveDemo: "#"
-repositoryUrl: "https://github.com/emellybmuniz/baozistore-api"
-
-techReasons:
-  Java: "Linguagem core utilizada na versão 21, permitindo o uso de recursos modernos de tipagem estática forte e concorrência estável."
-  Spring Boot: "Utilizado na versão 4.0.6 para acelerar o ciclo de inicialização do sistema por meio de auto-configurações pré-definidas e gerenciamento nativo de dependências."
-  Spring Data JPA: "Camada de abstração de dados que elimina código boilerplate para operações CRUD por meio da herança da interface JpaRepository."
-  H2 Database: "Banco de dados relacional em memória integrado ao perfil padrão para agilizar os testes locais e o processo de onboarding de novos engenheiros."
-  MySQL: "Engine de persistência relacional tradicional configurada para o ambiente persistente do sistema através de perfis isolados."
-
+  - Java
+  - Spring Boot
+  - Spring Data JPA
+  - H2 Database
+  - MySQL
+liveDemo: '#'
+repositoryUrl: https://github.com/emellybmuniz/baozistore-api
 metadata:
-  status: "Concluído"
-  platform: "Backend API"
-  role: "Desenvolvedora Backend"
-  industry: "E-commerce"
-  
+  status: Concluído
+  platform: Backend API
+  role: Desenvolvedora Backend
+  industry: E-commerce
   challenges:
-    - kicker: "Desafio 1: Acoplamento de Entidades"
-      title: "Evitando armadilhas de carregamento em cascata (Cascading Traps)"
-      description: "Em ecossistemas de e-commerce, o relacionamento direto gerenciado por ORM entre Pedidos, Clientes e Produtos pode onerar transações do banco de dados devido a carregamentos EAGER/LAZY inadequados e travar evoluções de arquitetura."
-      resolution: "Eliminou-se os relacionamentos gerenciados diretos do Hibernate (como @ManyToOne). A entidade Pedido foi modelada persistindo os identificadores clienteId e produtoId como atributos primitivos do tipo UUID, reduzindo o custo computacional de persistência e preparando a aplicação para uma transação simplificada rumo a microsserviços."
-    - kicker: "Desafio 2: Configuração de Ambiente"
-      title: "Mitigação de fricção no setup local de desenvolvimento"
-      description: "A dependência obrigatória de um banco de dados externo persistente (como MySQL) durante o desenvolvimento local eleva a barreira de entrada e gera inconsistências entre ambientes."
-      resolution: "Implementou-se o isolamento de infraestrutura utilizando Spring Profiles. O ambiente padrão executa de forma efêmera em memória com H2 e console ativo (/h2-console), enquanto o profile 'mysql' chaveia a persistência relacional externa via propriedades isoladas e Hibernate ddl-auto configurado como 'update'."
-      
+    - kicker: 'Desafio 1: Acoplamento de Entidades'
+      title: Evitando armadilhas de carregamento em cascata (Cascading Traps)
+      description: Em ecossistemas de e-commerce, o relacionamento direto gerenciado por ORM entre Pedidos, Clientes e Produtos pode onerar transações do banco de dados devido a carregamentos EAGER/LAZY inadequados e travar evoluções de arquitetura.
+      resolution: Eliminou-se os relacionamentos gerenciados diretos do Hibernate (como @ManyToOne). A entidade Pedido foi modelada persistindo os identificadores clienteId e produtoId como atributos primitivos do tipo UUID, reduzindo o custo computacional de persistência e preparando a aplicação para uma transação simplificada rumo a microsserviços.
+    - kicker: 'Desafio 2: Configuração de Ambiente'
+      title: Mitigação de fricção no setup local de desenvolvimento
+      description: A dependência obrigatória de um banco de dados externo persistente (como MySQL) durante o desenvolvimento local eleva a barreira de entrada e gera inconsistências entre ambientes.
+      resolution: Implementou-se o isolamento de infraestrutura utilizando Spring Profiles. O ambiente padrão executa de forma efêmera em memória com H2 e console ativo (/h2-console), enquanto o profile 'mysql' chaveia a persistência relacional externa via propriedades isoladas e Hibernate ddl-auto configurado como 'update'.
 features:
-  - "CRUD Completo de Clientes (Controle de cadastro e data de associação)"
-  - "CRUD Completo de Produtos (Gestão de preço com precisão decimal e flag de estoque)"
-  - "CRUD Completo de Pedidos associados por identificadores UUID estáveis"
-  - "Isolamento completo de ambientes via Spring Profiles (Default vs MySQL)"
-  - "Geração automática e atualização estrutural de schema via Hibernate DDL"
-  - "Mapeamento funcional de casos de uso via documentação técnica em PlantUML"
+  - CRUD Completo de Clientes (Controle de cadastro e data de associação)
+  - CRUD Completo de Produtos (Gestão de preço com precisão decimal e flag de estoque)
+  - CRUD Completo de Pedidos associados por identificadores UUID estáveis
+  - Isolamento completo de ambientes via Spring Profiles (Default vs MySQL)
+  - Geração automática e atualização estrutural de schema via Hibernate DDL
+  - Mapeamento funcional de casos de uso via documentação técnica em PlantUML
+techReasons:
+  Java: Linguagem core utilizada na versão 21, permitindo o uso de recursos modernos de tipagem estática forte e concorrência estável.
+  Spring Boot: Utilizado na versão 4.0.6 para acelerar o ciclo de inicialização do sistema por meio de auto-configurações pré-definidas e gerenciamento nativo de dependências.
+  Spring Data JPA: Camada de abstração de dados que elimina código boilerplate para operações CRUD por meio da herança da interface JpaRepository.
+  H2 Database: Banco de dados relacional em memória integrado ao perfil padrão para agilizar os testes locais e o processo de onboarding de novos engenheiros.
+  MySQL: Engine de persistência relacional tradicional configurada para o ambiente persistente do sistema através de perfis isolados.
 ---
 
 ## Sobre o Projeto

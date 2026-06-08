@@ -1,53 +1,47 @@
 ---
-title: "Baozi Store API"
-date: "2026-10-05"
+title: Baozi Store API
+date: 2026-05-10
 featured: false
 weight: 10
 draft: false
-description: "API RESTful desarrollada con Spring Boot para la gestión de clientes, productos y pedidos en el dominio de comercio electrónico, diseñada con aislamiento de entornos y desacoplamiento de datos relacionales."
-imageCover: "docs/baozistore_use_case.png"
-imageCoverFallback: "https://github.com/emellybmuniz/baozistore-api"
-categories: 
-  - "Backend"
+description: API RESTful desarrollada con Spring Boot para la gestión de clientes, productos y pedidos en el dominio de comercio electrónico, diseñada con aislamiento de entornos y desacoplamiento de datos relacionales.
+categories:
+  - Backend
 technologies:
-  - "Java"
-  - "Spring Boot"
-  - "Spring Data JPA"
-  - "H2 Database"
-  - "MySQL"
-liveDemo: "#"
-repositoryUrl: "To be confirmed"
-
-techReasons:
-  Java: "Lenguaje de programación principal empleado en su versión 21, permitiendo el uso de capacidades modernas de concurrencia y tipado estático fuerte."
-  Spring Boot: "Utilizado en su versión 4.0.6 para acelerar el arranque del ecosistema mediante autoconfiguraciones predefinidas e inyección estructurada de dependencias."
-  Spring Data JPA: "Abstracción sobre la capa de persistencia elegida para remover código repetitivo de operaciones CRUD mediante la herencia limpia de JpaRepository."
-  H2 Database: "Base de datos relacional en memoria integrada en el perfil predeterminado para agilizar pruebas locales y optimizar el onboarding técnico de nuevos ingenieros."
-  MySQL: "Motor relacional persistente convencional configurado para entornos persistentes a través de archivos de propiedades aislados."
-
+  - Java
+  - Spring Boot
+  - Spring Data JPA
+  - H2 Database
+  - MySQL
+liveDemo: '#'
+repositoryUrl: https://github.com/emellybmuniz/baozistore-api
 metadata:
-  status: "Concluido"
-  platform: "Backend API"
-  role: "Desarrolladora Backend"
-  industry: "E-commerce"
-  
+  status: Concluido
+  platform: Backend API
+  role: Desarrolladora Backend
+  industry: E-commerce
   challenges:
-    - kicker: "Desafío 1: Acoplamiento de Datos"
-      title: "Evitando trampas de carga en cascada en el mapeo relacional"
-      description: "En lógicas de comercio electrónico, el uso excesivo de relaciones administradas por ORM entre Pedidos, Clientes y Productos genera sobrecostos de procesamiento debido a políticas incorrectas de carga (EAGER/LAZY) y dificulta la evolución del software."
-      resolution: "Se removieron las relaciones directas gestionadas por Hibernate (como @ManyToOne). La entidad Pedido fue estructurada para almacenar clienteId y produtoId como atributos primitivos tipo UUID, reduciendo el costo transaccional de persistencia y preparando el sistema para una migración limpia hacia microservicios autónomos."
-    - kicker: "Desafío 2: Configuración de Entornos"
-      title: "Reducción de fricción en la inicialización del entorno de desarrollo"
-      description: "La obligación de configurar y mantener servidores relacionales locales externos (como MySQL) ralentiza el despliegue inicial de los espacios de trabajo de los ingenieros."
-      resolution: "Se implementó un aislamiento de infraestructura utilizando Spring Profiles. El perfil predeterminado arranca el sistema de manera efímera con H2 y la consola web (/h2-console) activa, mientras que el perfil 'mysql' activa la comunicación relacional convencional bajo demanda con ddl-auto en modo 'update'."
-      
+    - kicker: 'Desafío 1: Acoplamiento de Datos'
+      title: Evitando trampas de carga en cascada en el mapeo relacional
+      description: En lógicas de comercio electrónico, el uso excesivo de relaciones administradas por ORM entre Pedidos, Clientes y Productos genera sobrecostos de procesamiento debido a políticas incorrectas de carga (EAGER/LAZY) y dificulta la evolución del software.
+      resolution: Se removieron las relaciones directas gestionadas por Hibernate (como @ManyToOne). La entidad Pedido fue estructurada para almacenar clienteId y produtoId como atributos primitivos tipo UUID, reduciendo el costo transaccional de persistencia y preparando el sistema para una migración limpia hacia microservicios autónomos.
+    - kicker: 'Desafío 2: Configuración de Entornos'
+      title: Reducción de fricción en la inicialización del entorno de desarrollo
+      description: La obligación de configurar y mantener servidores relacionales locales externos (como MySQL) ralentiza el despliegue inicial de los espacios de trabajo de los ingenieros.
+      resolution: Se implementó un aislamiento de infraestructura utilizando Spring Profiles. El perfil predeterminado arranca el sistema de manera efímera con H2 y la consola web (/h2-console) activa, mientras que el perfil 'mysql' activa la comunicación relacional convencional bajo demanda con ddl-auto en modo 'update'.
 features:
-  - "CRUD Completo de Clientes (Seguimiento de nombres y fechas de registro de usuarios)"
-  - "CRUD Completo de Productos (Gestión de precios decimales de alta precisión y banderas de stock)"
-  - "CRUD Completo de Pedidos asociados a través de identificadores universales estables (UUID)"
-  - "Segmentación dinámica de entornos de base de datos ejecutada por Spring Profiles"
-  - "Sincronización automática de esquemas relacionales mediante configuración Hibernate DDL"
-  - "Documentación de requerimientos funcionales del sistema mediante diagramas PlantUML"
+  - CRUD Completo de Clientes (Seguimiento de nombres y fechas de registro de usuarios)
+  - CRUD Completo de Productos (Gestión de precios decimales de alta precisión y banderas de stock)
+  - CRUD Completo de Pedidos asociados a través de identificadores universales estables (UUID)
+  - Segmentación dinámica de entornos de base de datos ejecutada por Spring Profiles
+  - Sincronización automática de esquemas relacionales mediante configuración Hibernate DDL
+  - Documentación de requerimientos funcionales del sistema mediante diagramas PlantUML
+techReasons:
+  Java: Lenguaje de programación principal empleado en su versión 21, permitiendo el uso de capacidades modernas de concurrencia y tipado estático fuerte.
+  Spring Boot: Utilizado en su versión 4.0.6 para acelerar el arranque del ecosistema mediante autoconfiguraciones predefinidas e inyección estructurada de dependencias.
+  Spring Data JPA: Abstracción sobre la capa de persistencia elegida para remover código repetitivo de operaciones CRUD mediante la herencia limpia de JpaRepository.
+  H2 Database: Base de datos relacional en memoria integrada en el perfil predeterminado para agilizar pruebas locales y optimizar el onboarding técnico de nuevos ingenieros.
+  MySQL: Motor relacional persistente convencional configurado para entornos persistentes a través de archivos de propiedades aislados.
 ---
 
 ## Sobre o Projeto

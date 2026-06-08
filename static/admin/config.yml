@@ -1,0 +1,173 @@
+backend:
+  name: github
+  repo: emellybmuniz/portfolio
+  branch: main
+
+local_backend: true
+
+locale: "en"
+media_folder: "static/images"
+public_folder: "/images"
+
+i18n:
+  structure: multiple_files
+  locales: [pt, en, es]
+  default_locale: pt
+  omit_default_locale_from_file_path: true
+
+collections:
+  - name: "resumes"
+    label: "Resumes"
+    editor:
+      preview: false
+    files:
+      - label: "Upload Resumes"
+        name: "settings"
+        file: "data/settings.yaml"
+        format: "yaml"
+        fields:
+          - { label: "Resume (PT - Default)", name: "cvLink", widget: "file", choose_url: false, required: false }
+          - { label: "Resume (EN)", name: "cvLinkEn", widget: "file", choose_url: false, required: false }
+          - { label: "Resume (ES)", name: "cvLinkEs", widget: "file", choose_url: false, required: false }
+
+  - name: "tech_stack"
+    label: "Tech Stack"
+    editor:
+      preview: false
+    files:
+      - label: "Edit Hard Skills"
+        name: "skills"
+        file: "data/skills.yaml"
+        format: "yaml"
+        fields:
+          - label: "Technologies List"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Technology Name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", multiple: true, options: ["frontend", "backend", "tools", "design"] }
+              - { label: "Icon (SVG)", name: "icon", widget: "file", media_folder: "assets/icons", public_folder: "icons", choose_url: false }
+              - label: "Color Gradient"
+                name: "color"
+                widget: "object"
+                fields:
+                  - { label: "Start Color (HEX)", name: "from", widget: "string" }
+                  - { label: "End Color (HEX)", name: "to", widget: "string" }
+
+  - name: "skills_stats"
+    label: "Skills & Stats"
+    editor:
+      preview: false
+    files:
+      - label: "Edit Soft Skills"
+        name: "about"
+        file: "content/about/_index.md"
+        format: "yaml-frontmatter"
+        i18n: true
+        fields:
+          - { label: "Years of Experience", name: "experience_years", widget: "string", i18n: "duplicate" }
+          - { label: "Projects Count", name: "projects_count", widget: "string", i18n: "duplicate" }
+          - { label: "Soft Skills", name: "soft_skills", widget: "list", i18n: true }
+          - { label: "Title (System)", name: "title", widget: "hidden", default: "Sobre mim" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: true
+    i18n: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Project Title", name: "title", widget: "string", i18n: true }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", i18n: "duplicate" }
+      - { label: "Highlight on Home?", name: "featured", widget: "boolean", default: false, required: false, i18n: "duplicate" }
+      - { label: "Display Order", name: "weight", widget: "number", default: 10, required: false, i18n: "duplicate" }
+      - { label: "Hide (Draft)?", name: "draft", widget: "boolean", default: false, required: false, i18n: "duplicate" }
+      - { label: "Short Description", name: "description", widget: "text", required: false, i18n: true }
+      - { label: "Cover Image (WebP)", name: "imageCover", widget: "image", required: false, i18n: "duplicate", hint: "Suggested dimensions: 1200x675px" }
+      - { label: "Cover Image Fallback", name: "imageCoverFallback", widget: "image", required: false, i18n: "duplicate" }
+      - { label: "Categories", name: "categories", widget: "list", required: false, i18n: "duplicate" }
+      - { label: "Technologies", name: "technologies", widget: "list", required: false, i18n: "duplicate" }
+      - { label: "Demo URL", name: "liveDemo", widget: "string", required: false, i18n: "duplicate" }
+      - { label: "Repository URL", name: "repositoryUrl", widget: "string", required: false, i18n: "duplicate" }
+      - label: "Project Metadata"
+        name: "metadata"
+        widget: "object"
+        required: false
+        i18n: true
+        fields:
+          - { label: "Status", name: "status", widget: "string", required: false, i18n: true }
+          - { label: "Platform", name: "platform", widget: "string", required: false, i18n: true }
+          - { label: "Your Role", name: "role", widget: "string", required: false, i18n: true }
+          - { label: "Industry", name: "industry", widget: "string", required: false, i18n: true }
+          - label: "Challenges"
+            name: "challenges"
+            widget: "list"
+            required: false
+            i18n: true
+            fields:
+              - { label: "Subtitle (Kicker)", name: "kicker", widget: "string", i18n: true }
+              - { label: "Challenge Title", name: "title", widget: "string", i18n: true }
+              - { label: "Description", name: "description", widget: "text", i18n: true }
+              - { label: "How was it solved?", name: "resolution", widget: "text", i18n: true }
+      - label: "Main Features"
+        name: "features"
+        widget: "list"
+        required: false
+        i18n: true
+      - { label: "Page Content (Markdown)", name: "body", widget: "markdown", required: false, i18n: true, default: "{{< technologies >}}\n\n{{< challenges >}}" }
+
+  - name: "experiences"
+    label: "Professional Experiences"
+    folder: "content/experiences"
+    path: "{{slug}}/index"
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: true
+    i18n: true
+    editor:
+      preview: false
+    fields:
+       - { label: "Job Title", name: "title", widget: "string", i18n: true }
+       - { label: "Period (Ex: 2024 — Present)", name: "date_period", widget: "string", i18n: true }
+       - { label: "Company", name: "company", widget: "string", required: false, i18n: true }
+       - { label: "Active", name: "active", widget: "boolean", default: false, required: false, i18n: "duplicate" }
+       - { label: "Description", name: "body", widget: "markdown", required: false, i18n: true }
+
+  - name: "education"
+    label: "Education"
+    folder: "content/education"
+    path: "{{slug}}/index"
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: true
+    i18n: true
+    editor:
+      preview: false
+    fields:
+       - { label: "Degree", name: "degree", widget: "string", i18n: true }
+       - { label: "Institution", name: "university", widget: "string", i18n: true }
+       - { label: "Period", name: "period", widget: "string", i18n: true }
+       - { label: "Display Order", name: "weight", widget: "number", default: 10, required: false, i18n: "duplicate" }
+       - { label: "Description", name: "body", widget: "markdown", required: false, i18n: true }
+
+  - name: "certificates"
+    label: "Certificates"
+    folder: "content/certificates"
+    create: true
+    extension: "md"
+    format: "yaml-frontmatter"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Issuer", name: "issuer", widget: "string", required: false }
+      - { label: "Hours", name: "hours", widget: "string", required: false }
+      - { label: "Authenticity Code", name: "code", widget: "string", required: false }
+      - { label: "Credential URL", name: "credentialUrl", widget: "string", required: false }

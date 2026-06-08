@@ -1,145 +1,178 @@
 skills:
   - name: HTML
-    category: ["frontend"]
-    icon: "html.svg"
+    category:
+      - frontend
+    icon: html.svg
     color:
-      from: "#F16529"
-      to: "#D6336C"
+      from: '#F16529'
+      to: '#D6336C'
   - name: CSS
-    category: ["frontend"]
-    icon: "css.svg"
+    category:
+      - frontend
+    icon: css.svg
     color:
-      from: "#2965F1"
-      to: "#2DD4BF"
+      from: '#2965F1'
+      to: '#2DD4BF'
   - name: JavaScript
-    category: ["frontend"]
-    icon: "js.svg"
+    category:
+      - frontend
+    icon: js.svg
     color:
-      from: "#f7e031"
-      to: "#F0B90B"
+      from: '#f7e031'
+      to: '#F0B90B'
   - name: Python
-    category: ["backend"]
-    icon: "python.svg"
+    category:
+      - backend
+    icon: python.svg
     color:
-      from: "#2C3E50"
-      to: "#1A2533"
+      from: '#2C3E50'
+      to: '#1A2533'
   - name: MySQL
-    category: ["backend"]
-    icon: "mysql.svg"
+    category:
+      - backend
+    icon: mysql.svg
     color:
-      from: "#347098"
-      to: "#2f6a91"
+      from: '#347098'
+      to: '#2f6a91'
   - name: VS Code
-    category: ["tools"]
-    icon: "vscode.svg"
+    category:
+      - tools
+    icon: vscode.svg
     color:
-      from: "#2C3E50"
-      to: "#1A2533"
+      from: '#2C3E50'
+      to: '#1A2533'
   - name: IntelliJ IDEA
-    category: ["tools"]
-    icon: "intellij.svg"
+    category:
+      - tools
+    icon: intellij.svg
     color:
-      from: "#a855f7"
-      to: "#ec4899"
+      from: '#a855f7'
+      to: '#ec4899'
   - name: Java
-    category: ["backend"]
-    icon: "Java.svg"
+    category:
+      - backend
+    icon: Java.svg
     color:
-      from: "#dbdbdb"
-      to: "#edf5f7"
+      from: '#dbdbdb'
+      to: '#edf5f7'
   - name: Git
-    category: ["tools"]
-    icon: "Git.svg"
+    category:
+      - tools
+    icon: Git.svg
     color:
-      from: "#1f2937"
-      to: "#000000"
+      from: '#1f2937'
+      to: '#000000'
   - name: Firebase
-    category: ["tools", "backend"]
-    icon: "Firebase.svg"
+    category:
+      - tools
+      - backend
+    icon: Firebase.svg
     color:
-      from: "#3c3c3c"
-      to: "#1e1e1e"
+      from: '#3c3c3c'
+      to: '#1e1e1e'
   - name: Canva
-    category: ["design"]
-    icon: "Canva.svg"
+    category:
+      - design
+    icon: Canva.svg
     color:
-      from: "#2C3E50"
-      to: "#1A2533"
+      from: '#2C3E50'
+      to: '#1A2533'
   - name: Figma
-    category: ["design"]
-    icon: "Figma.svg"
+    category:
+      - design
+    icon: Figma.svg
     color:
-      from: "#4a5568"
-      to: "#2d3748"
+      from: '#4a5568'
+      to: '#2d3748'
   - name: Maven
-    category: ["tools", "backend"]
-    icon: "maven.svg"
+    category:
+      - tools
+      - backend
+    icon: maven.svg
     color:
-      from: "#02303A"
-      to: "#000000"
+      from: '#02303A'
+      to: '#000000'
   - name: Gradle
-    category: ["tools", "backend"]
-    icon: "gradle.svg"
+    category:
+      - tools
+      - backend
+    icon: gradle.svg
     color:
-      from: "#e3eff2"
-      to: "#edf5f7"
+      from: '#e3eff2'
+      to: '#edf5f7'
   - name: MongoDB
-    category: ["backend"]
-    icon: "mongodb.svg"
+    category:
+      - backend
+    icon: mongodb.svg
     color:
-      from: "#104828"
-      to: "#0A2C18"
+      from: '#104828'
+      to: '#0A2C18'
   - name: Next.js
-    category: ["frontend"]
-    icon: "nextjs.svg"
+    category:
+      - frontend
+    icon: nextjs.svg
     color:
-      from: "#000000"
-      to: "#444444"
+      from: '#000000'
+      to: '#444444'
   - name: Tailwind CSS
-    category: ["frontend"]
-    icon: "tailwind.svg"
+    category:
+      - frontend
+    icon: tailwind.svg
     color:
-      from: "#06B6D4"
-      to: "#38BDF8"
+      from: '#06B6D4'
+      to: '#38BDF8'
   - name: Bootstrap
-    category: ["frontend"]
-    icon: "bootstrap.svg"
+    category:
+      - frontend
+    icon: bootstrap.svg
     color:
-      from: "#ffffff"
-      to: "#D899FF"
+      from: '#ffffff'
+      to: '#D899FF'
   - name: Sass
-    category: ["frontend", "design"]
-    icon: "sass.svg"
+    category:
+      - frontend
+      - design
+    icon: sass.svg
     color:
-      from: "#CF649A"
-      to: "#A53670"
+      from: '#CF649A'
+      to: '#A53670'
   - name: Insomnia
-    category: ["tools", "backend"]
-    icon: "insomnia.svg"
+    category:
+      - tools
+      - backend
+    icon: insomnia.svg
     color:
-      from: "#5A45CA"
-      to: "#4027A1"
+      from: '#5A45CA'
+      to: '#4027A1'
   - name: Postman
-    category: ["tools", "backend"]
-    icon: "postman.svg"
+    category:
+      - tools
+      - backend
+    icon: postman.svg
     color:
-      from: "#FF6C37"
-      to: "#D84A1B"
+      from: '#FF6C37'
+      to: '#D84A1B'
   - name: PostgreSQL
-    category: ["tools", "backend"]
-    icon: "postgresql.svg"
+    category:
+      - tools
+      - backend
+    icon: postgresql.svg
     color:
-      from: "#336791"
-      to: "#234969"
+      from: '#336791'
+      to: '#234969'
   - name: Node.js
-    category: ["tools", "backend"]
-    icon: "nodejs.svg"
+    category:
+      - tools
+      - backend
+    icon: nodejs.svg
     color:
-      from: "#339933"
-      to: "#226622"
+      from: '#339933'
+      to: '#226622'
   - name: Npm
-    category: ["tools", "backend"]
-    icon: "npm.svg"
+    category:
+      - tools
+      - backend
+    icon: npm.svg
     color:
-      from: "#CB3837"
-      to: "#9B2B2A"
+      from: '#CB3837'
+      to: '#9B2B2A'

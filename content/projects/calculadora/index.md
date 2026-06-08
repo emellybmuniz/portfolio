@@ -1,49 +1,44 @@
 ---
-title: "Calculadora Web"
-date: "2024-10-09"
+title: Calculadora Web
+date: 2024-10-09
 featured: false
 weight: 5
 draft: false
-description: "Uma aplicação front-end simples de calculadora construída para praticar manipulação do DOM e o padrão estrutural Factory Function em JavaScript."
-imageCover: "calculadora.webp"
-imageCoverFallback: "calculadora-web.png"
-categories: 
-  - "Frontend"
+description: Uma aplicação front-end simples de calculadora construída para praticar manipulação do DOM e o padrão estrutural Factory Function em JavaScript.
+imageCover: calculadora.webp
+imageCoverFallback: calculadora-web.png
+categories:
+  - Frontend
 technologies:
-  - "JavaScript"
-  - "HTML"
-  - "CSS"
-
-liveDemo: "https://emellybmuniz.github.io/calculadora/"
-repositoryUrl: "https://github.com/emellybmuniz/calculadora"
-
-techReasons:
-  JavaScript: "Utilizado para construir toda a lógica operacional da calculadora, capturar cliques na interface e processar as strings de equações matematicas."
-  HTML: "Responsável pela estrutura de marcação básica do display e da tabela que organiza a grade de botões numéricos e de operadores."
-  CSS: "Aplicado para fazer o alinhamento centralizado do componente em telas grandes e realizar um ajuste simples de tamanho para telas de celulares."
-
+  - JavaScript
+  - HTML5
+  - CSS3
+liveDemo: https://emellybmuniz.github.io/calculadora/
+repositoryUrl: https://github.com/emellybmuniz/calculadora
 metadata:
-  status: "Concluído"
-  platform: "Web Application (Client-side)"
-  role: "Desenvolvedora Frontend"
-  industry: "Ferramentas Utilitárias"
-  
+  status: Concluído
+  platform: Web Application (Client-side)
+  role: Desenvolvedora Frontend
+  industry: Ferramentas Utilitárias
   challenges:
-    - kicker: "Desafio 1: Captura e Contexto de Eventos"
-      title: "Manutenção do contexto dinâmico do JavaScript"
-      description: "Evitar que o escopo do 'this' fosse perdido ao disparar funções de clique de dentro do ouvinte de eventos global do documento."
-      resolution: "Foi utilizado o método '.bind(this)' dentro da função de delegação de eventos para amarrar o contexto correto da Factory Function."
-    - kicker: "Desafio 2: Validação de Equações"
-      title: "Tratamento de entradas inválidas no display"
-      description: "Impedir que caracteres quebrados ou operações aritméticas impossíveis causassem erros fatais ou exibissem conteúdos estranhos ao usuário."
-      resolution: "Criação de uma validação com bloco try/catch combinada com a função 'isFinite()' para identificar divisões por zero ou sintaxes corrompidas."
-
+    - kicker: 'Desafio 1: Captura e Contexto de Eventos'
+      title: Manutenção do contexto dinâmico do JavaScript
+      description: Evitar que o escopo do 'this' fosse perdido ao disparar funções de clique de dentro do ouvinte de eventos global do documento.
+      resolution: Foi utilizado o método '.bind(this)' dentro da função de delegação de eventos para amarrar o contexto correto da Factory Function.
+    - kicker: 'Desafio 2: Validação de Equações'
+      title: Tratamento de entradas inválidas no display
+      description: Impedir que caracteres quebrados ou operações aritméticas impossíveis causassem erros fatais ou exibissem conteúdos estranhos ao usuário.
+      resolution: Criação de uma validação com bloco try/catch combinada com a função 'isFinite()' para identificar divisões por zero ou sintaxes corrompidas.
 features:
-  - "Operações aritméticas básicas e controle de precedência por parênteses."
-  - "Navegação híbrida aceitando cliques em tela e entrada direta via teclado."
-  - "Estrutura Javascript encapsulada através do padrão Factory Function."
-  - "Validação de erro nativa com disparo de alertas em telas de falhas estruturais."
-  - "Layout flexível com adaptação automática para visualização em smartphones."
+  - Operações aritméticas básicas e controle de precedência por parênteses.
+  - Navegação híbrida aceitando cliques em tela e entrada direta via teclado.
+  - Estrutura Javascript encapsulada através do padrão Factory Function.
+  - Validação de erro nativa com disparo de alertas em telas de falhas estruturais.
+  - Layout flexível com adaptação automática para visualização em smartphones.
+techReasons:
+  JavaScript: Utilizado para construir toda a lógica operacional da calculadora, capturar cliques na interface e processar as strings de equações matematicas.
+  HTML: Responsável pela estrutura de marcação básica do display e da tabela que organiza a grade de botões numéricos e de operadores.
+  CSS: Aplicado para fazer o alinhamento centralizado do componente em telas grandes e realizar um ajuste simples de tamanho para telas de celulares.
 ---
 
 ## Sobre o Projeto

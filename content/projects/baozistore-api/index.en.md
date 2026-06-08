@@ -1,53 +1,47 @@
 ---
-title: "Baozi Store API"
-date: "2026-10-05"
+title: Baozi Store API
+date: 2026-05-10
 featured: false
 weight: 10
 draft: false
-description: "A RESTful API for client, product, and order management in the e-commerce domain, designed with environment isolation and decoupled data entities using Spring Boot."
-imageCover: "docs/baozistore_use_case.png"
-imageCoverFallback: "To be confirmed"
-categories: 
-  - "Backend"
+description: A RESTful API for client, product, and order management in the e-commerce domain, designed with environment isolation and decoupled data entities using Spring Boot.
+categories:
+  - Backend
 technologies:
-  - "Java"
-  - "Spring Boot"
-  - "Spring Data JPA"
-  - "H2 Database"
-  - "MySQL"
-liveDemo: "#"
-repositoryUrl: "https://github.com/emellybmuniz/baozistore-api"
-
-techReasons:
-  Java: "Core programming language utilized in version 21, unlocking modern static typing features and stable concurrency primitives."
-  Spring Boot: "Deployed at version 4.0.6 to accelerate startup cycles through autoconfiguration presets and native dependency management injection."
-  Spring Data JPA: "Data layer abstraction layer chosen to eliminate boilerplate CRUD mechanisms via clean inheritance of the JpaRepository interface."
-  H2 Database: "Integrated in-memory engine mapped to the default application profile to speed up local verification and minimize developer configuration friction."
-  MySQL: "Traditional persistent relational store configured for staging or persistent deployments through isolated standalone configuration files."
-
+  - Java
+  - Spring Boot
+  - Spring Data JPA
+  - H2 Database
+  - MySQL
+liveDemo: '#'
+repositoryUrl: https://github.com/emellybmuniz/baozistore-api
 metadata:
-  status: "Completed"
-  platform: "Backend API"
-  role: "Backend Developer"
-  industry: "E-commerce"
-  
+  status: Completed
+  platform: Backend API
+  role: Backend Developer
+  industry: E-commerce
   challenges:
-    - kicker: "Challenge 1: Entity Coupling"
-      title: "Preventing relational cascading load traps"
-      description: "In typical e-commerce architectures, direct ORM entity relationships between Orders, Clients, and Products can slow down database transactions due to improper EAGER/LAZY configurations and restrain future database evolution."
-      resolution: "Removed direct Hibernate-managed object associations (such as @ManyToOne). The Pedido entity was redesigned to store clientId and produtoId fields as raw UUID types, reducing persistence runtime costs and streamlining future microservices partitioning pathways."
-    - kicker: "Challenge 2: Workspace Setup"
-      title: "Eliminating local database dependency friction"
-      description: "Requiring an external persistent database engine like MySQL configured during initial environment alignment slows down onboarding and generates transient local mismatch flaws."
-      resolution: "Leveraged infrastructure segregation through Spring Profiles. The default runtime initiates instantly in-memory via H2 with an administrative console available at /h2-console, while external persistent communication switches smoothly via standalone file variables with Hibernate ddl-auto configured to 'update'."
-      
+    - kicker: 'Challenge 1: Entity Coupling'
+      title: Preventing relational cascading load traps
+      description: In typical e-commerce architectures, direct ORM entity relationships between Orders, Clients, and Products can slow down database transactions due to improper EAGER/LAZY configurations and restrain future database evolution.
+      resolution: Removed direct Hibernate-managed object associations (such as @ManyToOne). The Pedido entity was redesigned to store clientId and produtoId fields as raw UUID types, reducing persistence runtime costs and streamlining future microservices partitioning pathways.
+    - kicker: 'Challenge 2: Workspace Setup'
+      title: Eliminating local database dependency friction
+      description: Requiring an external persistent database engine like MySQL configured during initial environment alignment slows down onboarding and generates transient local mismatch flaws.
+      resolution: Leveraged infrastructure segregation through Spring Profiles. The default runtime initiates instantly in-memory via H2 with an administrative console available at /h2-console, while external persistent communication switches smoothly via standalone file variables with Hibernate ddl-auto configured to 'update'.
 features:
-  - "Comprehensive CRUD for Clients (Tracking names and registration timestamps)"
-  - "Comprehensive CRUD for Products (Managing precision decimal indexing and stock availability status)"
-  - "Comprehensive CRUD for Orders mapped cleanly using universal identifier keys (UUID)"
-  - "Dynamic database infrastructure isolation achieved via Spring Engine Profiles"
-  - "Automated structural relational schema propagation managed via Hibernate DDL"
-  - "Functional technical scope mapped cleanly using integrated PlantUML use-case flows"
+  - Comprehensive CRUD for Clients (Tracking names and registration timestamps)
+  - Comprehensive CRUD for Products (Managing precision decimal indexing and stock availability status)
+  - Comprehensive CRUD for Orders mapped cleanly using universal identifier keys (UUID)
+  - Dynamic database infrastructure isolation achieved via Spring Engine Profiles
+  - Automated structural relational schema propagation managed via Hibernate DDL
+  - Functional technical scope mapped cleanly using integrated PlantUML use-case flows
+techReasons:
+  Java: Core programming language utilized in version 21, unlocking modern static typing features and stable concurrency primitives.
+  Spring Boot: Deployed at version 4.0.6 to accelerate startup cycles through autoconfiguration presets and native dependency management injection.
+  Spring Data JPA: Data layer abstraction layer chosen to eliminate boilerplate CRUD mechanisms via clean inheritance of the JpaRepository interface.
+  H2 Database: Integrated in-memory engine mapped to the default application profile to speed up local verification and minimize developer configuration friction.
+  MySQL: Traditional persistent relational store configured for staging or persistent deployments through isolated standalone configuration files.
 ---
 
 ## About the Project

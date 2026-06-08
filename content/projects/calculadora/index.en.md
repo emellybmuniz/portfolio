@@ -1,49 +1,44 @@
 ---
-title: "Web Calculator"
-date: "2024-10-09"
+title: Web Calculator
+date: 2024-10-09
 featured: false
 weight: 5
 draft: false
-description: "A straightforward frontend calculator application built to practice DOM manipulation and the Factory Function structural pattern in vanilla JavaScript."
-imageCover: "calculadora.webp"
-imageCoverFallback: "calculadora-web.png"
-categories: 
-  - "Frontend"
+description: A straightforward frontend calculator application built to practice DOM manipulation and the Factory Function structural pattern in vanilla JavaScript.
+imageCover: calculadora.webp
+imageCoverFallback: calculadora-web.png
+categories:
+  - Frontend
 technologies:
-  - "JavaScript"
-  - "HTML"
-  - "CSS"
-
-liveDemo: "https://emellybmuniz.github.io/calculadora/"
-repositoryUrl: "https://github.com/emellybmuniz/calculadora"
-
-techReasons:
-  JavaScript: "Used to build all operational logic, handle user click interactions, and process mathematical equation strings securely."
-  HTML: "Provides the semantic markup structure for the text display and the table grid holding numbers and operator buttons."
-  CSS: "Handles component layout centering on desktops and minimal dimension adjustments for smartphone screen sizes."
-
+  - JavaScript
+  - HTML5
+  - CSS3
+liveDemo: https://emellybmuniz.github.io/calculadora/
+repositoryUrl: https://github.com/emellybmuniz/calculadora
 metadata:
-  status: "Completed"
-  platform: "Web Application (Client-side)"
-  role: "Frontend Developer"
-  industry: "Utility Tools"
-  
+  status: Completed
+  platform: Web Application (Client-side)
+  role: Frontend Developer
+  industry: Utility Tools
   challenges:
-    - kicker: "Challenge 1: Event Binding Context"
-      title: "Preserving dynamic JavaScript execution context"
-      description: "Preventing the 'this' keyword reference from shifting context when executing methods triggered from the global document click listener."
-      resolution: "Applied explicit '.bind(this)' methods inside the click event delegation to latch the dynamic execution state to the host Factory Function object."
-    - kicker: "Challenge 2: Equation String Validation"
-      title: "Handling structural input corruption on evaluation"
-      description: "Preventing malformed strings or impossible arithmetic operations from breaking execution flow or displaying anomalies on screen."
-      resolution: "Wrapped parsing routines inside a strict try/catch block combined with 'isFinite()' guards to filter arithmetic limits like division by zero."
-
+    - kicker: 'Challenge 1: Event Binding Context'
+      title: Preserving dynamic JavaScript execution context
+      description: Preventing the 'this' keyword reference from shifting context when executing methods triggered from the global document click listener.
+      resolution: Applied explicit '.bind(this)' methods inside the click event delegation to latch the dynamic execution state to the host Factory Function object.
+    - kicker: 'Challenge 2: Equation String Validation'
+      title: Handling structural input corruption on evaluation
+      description: Preventing malformed strings or impossible arithmetic operations from breaking execution flow or displaying anomalies on screen.
+      resolution: Wrapped parsing routines inside a strict try/catch block combined with 'isFinite()' guards to filter arithmetic limits like division by zero.
 features:
-  - "Basic arithmetic operators along with parenthesis grouping precedence."
-  - "Hybrid interaction interface mapping both screen element clicks and physical keystrokes."
-  - "Encapsulated architectural state leveraging the simple Factory Function layout."
-  - "Built-in error catching mechanics deploying quick web alerts for invalid scripts."
-  - "Responsive adaptations automatically re-scaling buttons on smaller smartphones."
+  - Basic arithmetic operators along with parenthesis grouping precedence.
+  - Hybrid interaction interface mapping both screen element clicks and physical keystrokes.
+  - Encapsulated architectural state leveraging the simple Factory Function layout.
+  - Built-in error catching mechanics deploying quick web alerts for invalid scripts.
+  - Responsive adaptations automatically re-scaling buttons on smaller smartphones.
+techReasons:
+  JavaScript: Used to build all operational logic, handle user click interactions, and process mathematical equation strings securely.
+  HTML: Provides the semantic markup structure for the text display and the table grid holding numbers and operator buttons.
+  CSS: Handles component layout centering on desktops and minimal dimension adjustments for smartphone screen sizes.
 ---
 
 ## About the Project

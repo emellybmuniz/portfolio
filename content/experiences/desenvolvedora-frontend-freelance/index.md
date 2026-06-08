@@ -1,7 +1,7 @@
 ---
-title: "Desenvolvedora Front-end Freelance"
-date_period: "2024 — Presente"
-company: "Projetos Independentes — Remoto"
+title: Desenvolvedora Front-end
+date_period: 2024 — Presente
+company: Projetos Independentes — Remoto
 active: false
 weight: 2
 ---
