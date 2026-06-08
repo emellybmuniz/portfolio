@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://emellybeatriz.pages.dev/"
 defaultContentLanguage = 'pt-BR'
 defaultContentLanguageInSubdir = false
 pageSize = 12
