@@ -68,11 +68,10 @@ export class UiDrawer extends BaseElement {
     this.drawerContainer.classList.add("is-open");
     this.overlay.setAttribute("aria-hidden", "false");
     this.drawerContainer.setAttribute("aria-hidden", "false");
+    this.removeAttribute("inert");
 
     this.scrollPosition = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${this.scrollPosition}px`;
-    document.body.style.width = "100%";
+    document.body.style.setProperty("--scroll-y", `-${this.scrollPosition}px`);
     document.body.classList.add("is-drawer-open");
 
     this.closeBtn?.focus();
@@ -85,11 +84,10 @@ export class UiDrawer extends BaseElement {
     this.drawerContainer.classList.remove("is-open");
     this.overlay.setAttribute("aria-hidden", "true");
     this.drawerContainer.setAttribute("aria-hidden", "true");
+    this.setAttribute("inert", "");
 
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
     document.body.classList.remove("is-drawer-open");
+    document.body.style.removeProperty("--scroll-y");
     window.scrollTo(0, this.scrollPosition);
 
     const delay =

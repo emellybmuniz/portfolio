@@ -16,6 +16,55 @@ export class NavigationManager {
   public init(): void {
     this.setupMenuToggle();
     this.setupOutsideClicks();
+    this.setupKeyboardListeners();
+  }
+
+  private setupKeyboardListeners(): void {
+    const { signal } = this.abortController;
+
+    document.addEventListener(
+      "keydown",
+      (e: KeyboardEvent) => {
+        if (!this.nav?.classList.contains("is-active")) return;
+
+        if (e.key === "Escape") {
+          this.closeMenu();
+        }
+        if (e.key === "Tab") {
+          this.trapFocus(e);
+        }
+      },
+      { signal },
+    );
+  }
+
+  private trapFocus(e: KeyboardEvent): void {
+    if (!this.nav || !this.menuToggleBtn) return;
+
+    const navFocusable = Array.from(
+      this.nav.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter((el) => !el.hasAttribute("disabled"));
+
+    const focusable = [this.menuToggleBtn, ...navFocusable];
+
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   }
 
   public destroy(): void {
@@ -121,9 +170,7 @@ export class NavigationManager {
     this.menuToggleBtn.setAttribute("aria-expanded", "true");
 
     this.scrollPosition = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${this.scrollPosition}px`;
-    document.body.style.width = "100%";
+    document.body.style.setProperty("--scroll-y", `-${this.scrollPosition}px`);
     document.body.classList.add("is-drawer-open");
   }
 
@@ -134,10 +181,8 @@ export class NavigationManager {
     this.nav.classList.remove("is-active");
     this.menuToggleBtn.setAttribute("aria-expanded", "false");
 
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
     document.body.classList.remove("is-drawer-open");
+    document.body.style.removeProperty("--scroll-y");
     window.scrollTo(0, this.scrollPosition);
   }
 }

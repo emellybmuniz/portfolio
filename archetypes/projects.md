@@ -1,12 +1,12 @@
 ---
-title: "Nome do Projeto"
+title: "Project Name"
 date: "{{ .Date }}"
 featured: false
 weight: 10
 draft: true
-description: "Resumo curto do projeto."
-imageCover: "imagem-de-capa.webp"
-imageCoverFallback: "imagem-de-capa.png"
+description: "Short summary of the project."
+imageCover: "cover-image.webp"
+imageCoverFallback: "cover-image.png"
 categories: 
   - "Backend"
 technologies:
@@ -15,43 +15,43 @@ liveDemo: "#"
 repositoryUrl: ""
 
 techReasons:
-  Go: "Linguagem de programação escolhida para o desenvolvimento..."
+  Go: "Programming language chosen for development..."
 
 metadata:
-  status: "Concluído"
+  status: "Completed"
   platform: "Web Application"
   role: "Full Stack Developer"
   industry: "E-commerce"
   
   challenges:
-    - kicker: "Desafio 1: Escalabilidade"
-      title: "Lidando com alto volume de acessos"
-      description: "Durante picos de acesso, a API antiga apresentava lentidão."
-      resolution: "Refatoramos utilizando Goroutines, reduzindo a latência em 80%."
+    - kicker: "Challenge 1: Scalability"
+      title: "Handling high traffic volume"
+      description: "During peak access times, the old API was experiencing high latency."
+      resolution: "We refactored it using Goroutines, reducing latency by 80%."
       
 features:
-  - "Autenticação via JWT"
-  - "Banco de dados otimizado"
+  - "JWT Authentication"
+  - "Optimized Database"
 ---
 
-<!-- Sugestão de layout, personalizar conforme necessário:-->
+<!-- Layout suggestion, customize as needed:-->
 
-## Sobre o Projeto
-Uma explicação direta do propósito do projeto e do problema real de negócio. Destacar o cenário antes da intervenção adotada.
+## About the Project
+A clear explanation of the project's purpose and the real business problem it solves. Highlight the scenario prior to the adopted intervention.
 
-## Arquitetura e Decisões Técnicas
-Explicar o **porquê** das tecnologias.
+## Architecture and Technical Decisions
+Explain the **why** behind the technologies chosen.
 
-<!-- Ao usar o shortcode abaixo, os blocos visuais de "techReasons" configurados lá no topo aparecerão exatamente aqui: -->
+<!-- Using the shortcode below, the visual "techReasons" blocks configured at the top will appear exactly here: -->
 {{< technologies >}}
 
-## Desafios e Soluções de Engenharia
-Ao longo da implementação, contornamos alguns problemas cruciais para a garantia da estabilidade do software.
+## Engineering Challenges and Solutions
+Throughout the implementation, we bypassed some crucial problems to guarantee software stability.
 
-<!-- Ao usar o shortcode abaixo, os blocos visuais descritos em "metadata.challenges" lá no topo aparecerão exatamente aqui: -->
+<!-- Using the shortcode below, the visual blocks described in "metadata.challenges" at the top will appear exactly here: -->
 {{< challenges >}}
 
-## Impacto e Resultados
-O que o projeto alcançou? Use números sempre que possível, baseados nas ferramentas de métricas (ex: Lighthouse Score 98/100, "latência reduzida em 80%", etc).
+## Impact and Results
+What did the project achieve? Use numbers whenever possible, based on metrics tools (e.g. Lighthouse Score 98/100, "latency reduced by 80%", etc).
 
-<!-- ÚLTIMA seção visível do artigo! -->
+<!-- LAST visible section of the article! -->

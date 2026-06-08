@@ -29,7 +29,7 @@
   }
 
   &:hover {
-    border-color: rgba(157, 78, 221, 0.4);
+    border-color: rgb(157 78 221 / 40%);
     transform: translateY(-3px);
     box-shadow: var(--shadow-card-hover);
 
@@ -59,9 +59,9 @@
     background: linear-gradient(
       115deg,
       transparent 26%,
-      rgba(255, 255, 255, 0.08) 42%,
-      rgba(45, 212, 191, 0.14) 50%,
-      rgba(255, 255, 255, 0.08) 58%,
+      rgb(255 255 255 / 8%) 42%,
+      rgb(45 212 191 / 14%) 50%,
+      rgb(255 255 255 / 8%) 58%,
       transparent 74%
     );
     transform: translateX(-18%) rotate(10deg);
@@ -97,31 +97,31 @@
   // fallback color
   background-color: var(--color-primary-alpha);
   color: var(--color-primary-light);
-  border-color: rgba(157, 78, 221, 0.3);
+  border-color: rgb(157 78 221 / 30%);
 
   // semantic colors per issuer (mapped via hugo data)
   &--dio {
-    background-color: rgba(16, 185, 129, 0.1);
+    background-color: rgb(16 185 129 / 10%);
     color: #6ee7b7;
-    border-color: rgba(16, 185, 129, 0.3);
+    border-color: rgb(16 185 129 / 30%);
   }
 
   &--uninter {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgb(59 130 246 / 10%);
     color: #93c5fd;
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: rgb(59 130 246 / 30%);
   }
 
   &--udemy {
-    background-color: rgba(239, 68, 68, 0.1);
+    background-color: rgb(239 68 68 / 10%);
     color: #fca5a5;
-    border-color: rgba(239, 68, 68, 0.3);
+    border-color: rgb(239 68 68 / 30%);
   }
 
   &--alura {
-    background-color: rgba(99, 102, 241, 0.1);
+    background-color: rgb(99 102 241 / 10%);
     color: #a5b4fc;
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgb(99 102 241 / 30%);
   }
 }
 
@@ -156,9 +156,9 @@
     background: linear-gradient(
       115deg,
       transparent 26%,
-      rgba(255, 255, 255, 0.08) 42%,
-      rgba(20, 184, 166, 0.12) 50%,
-      rgba(255, 255, 255, 0.08) 58%,
+      rgb(255 255 255 / 8%) 42%,
+      rgb(20 184 166 / 12%) 50%,
+      rgb(255 255 255 / 8%) 58%,
       transparent 74%
     );
   }
@@ -167,8 +167,8 @@
     background: linear-gradient(
       to right,
       transparent,
-      rgba(99, 102, 241, 0.92),
-      rgba(20, 184, 166, 0.85),
+      rgb(99 102 241 / 92%),
+      rgb(20 184 166 / 85%),
       transparent
     );
   }
@@ -177,9 +177,9 @@
     background: linear-gradient(
       115deg,
       transparent 26%,
-      rgba(255, 255, 255, 0.06) 42%,
-      rgba(56, 189, 248, 0.14) 50%,
-      rgba(255, 255, 255, 0.05) 58%,
+      rgb(255 255 255 / 6%) 42%,
+      rgb(56 189 248 / 14%) 50%,
+      rgb(255 255 255 / 5%) 58%,
       transparent 74%
     );
   }
@@ -188,8 +188,8 @@
     background: linear-gradient(
       to right,
       transparent,
-      rgba(56, 189, 248, 0.94),
-      rgba(124, 92, 255, 0.88),
+      rgb(56 189 248 / 94%),
+      rgb(124 92 255 / 88%),
       transparent
     );
   }
@@ -282,7 +282,7 @@
 
   &:hover {
     color: var(--color-primary-light);
-    text-shadow: 0 0 14px rgba(45, 212, 191, 0.22);
+    text-shadow: 0 0 14px rgb(45 212 191 / 22%);
 
     .icon {
       transform: translate(2px, -2px);

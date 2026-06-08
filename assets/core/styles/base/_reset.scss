@@ -35,7 +35,7 @@ body {
   background-image:
     radial-gradient(
       circle 520px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
-      rgba(209, 165, 245, 0.08),
+      rgb(209 165 245 / 8%),
       transparent 85%
     ),
     linear-gradient(150deg, var(--color-bg), #9e00ff);
@@ -53,8 +53,8 @@ body::before {
   z-index: 1;
   background: radial-gradient(
     circle 220px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
-    rgba(209, 165, 245, 0.1) 0,
-    rgba(209, 165, 245, 0.04) 26%,
+    rgb(209 165 245 / 10%) 0,
+    rgb(209 165 245 / 4%) 26%,
     transparent 72%
   );
   mix-blend-mode: screen;
@@ -154,7 +154,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-  appearance: textfield;
   appearance: textfield;
 }
 

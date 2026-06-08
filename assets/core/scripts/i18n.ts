@@ -76,7 +76,7 @@ export class LanguageManager {
   public closeAll(): void {
     document.querySelectorAll("lang-toggle").forEach((el) => {
       if ("close" in el && typeof el.close === "function") {
-        (el as any).close();
+        (el as unknown as { close: () => void }).close();
       }
     });
   }

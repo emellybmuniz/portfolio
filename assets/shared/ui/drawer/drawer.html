@@ -2,7 +2,7 @@
 {{ $idPrefix := .id }}
 {{ $titleId := printf "%sDrawerTitle" $idPrefix }}
 
-<ui-drawer id="{{ $idPrefix }}UiDrawer" aria-hidden="true">
+<ui-drawer id="{{ $idPrefix }}UiDrawer" aria-hidden="true" inert>
   <div class="drawer-overlay" id="{{ $idPrefix }}DrawerOverlay" aria-hidden="true"></div>
 
   <div class="drawer" id="{{ $idPrefix }}Drawer" role="dialog" aria-modal="true" aria-labelledby="{{ $titleId }}" aria-hidden="true">

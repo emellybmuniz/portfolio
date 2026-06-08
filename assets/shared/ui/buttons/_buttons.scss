@@ -46,7 +46,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    fill: currentColor;
+    fill: currentcolor;
   }
 }
 
@@ -74,14 +74,14 @@
 [data-theme="light"] .btn--secondary {
   background-color: var(--color-secondary-alpha);
   color: var(--color-text);
-  border-color: rgba(var(--color-secondary-rgb), 0.18);
+  border-color: rgb(var(--color-secondary-rgb) 0.18);
 
   &:hover:not(:disabled) {
-    background-color: rgba(var(--color-secondary-rgb), 0.16);
-    border-color: rgba(var(--color-secondary-rgb), 0.28);
+    background-color: rgb(var(--color-secondary-rgb) 0.16);
+    border-color: rgb(var(--color-secondary-rgb) 0.28);
     color: var(--color-text);
     box-shadow:
-      0 0 0 1px rgba(var(--color-secondary-rgb), 0.08),
+      0 0 0 1px rgb(var(--color-secondary-rgb) 0.08),
       0 8px 20px var(--secondary-color-shadow);
   }
 }
@@ -92,7 +92,7 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(255 255 255 / 10%);
 
   &::before,
   &::after {
@@ -109,9 +109,9 @@
     background: linear-gradient(
       115deg,
       transparent 22%,
-      rgba(255, 255, 255, 0.15) 42%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0.15) 58%,
+      rgb(255 255 255 / 15%) 42%,
+      rgb(255 255 255 / 30%) 50%,
+      rgb(255 255 255 / 15%) 58%,
       transparent 78%
     );
     transform: translateX(-40%) rotate(8deg);
@@ -122,7 +122,7 @@
   &::after {
     background: radial-gradient(
       circle at 50% 50%,
-      rgba(255, 255, 255, 0.2),
+      rgb(255 255 255 / 20%),
       transparent 72%
     );
     opacity: 0;
@@ -130,9 +130,9 @@
 
   &:hover:not(:disabled) {
     background-color: var(--color-secondary);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgb(255 255 255 / 30%);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 0 1px rgb(255 255 255 / 10%),
       0 8px 20px var(--secondary-color-shadow);
     color: #fff;
 
@@ -156,11 +156,11 @@
 .btn--holographic {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgb(255 255 255 / 18%);
   background: linear-gradient(
     135deg,
-    rgba(157, 78, 221, 0.9),
-    rgba(145, 61, 207, 0.92)
+    rgb(157 78 221 / 90%),
+    rgb(145 61 207 / 92%)
   );
   color: #fff;
   isolation: isolate;
@@ -180,9 +180,9 @@
     background: linear-gradient(
       115deg,
       transparent 22%,
-      rgba(255, 255, 255, 0.18) 42%,
-      rgba(45, 212, 191, 0.32) 50%,
-      rgba(255, 255, 255, 0.12) 58%,
+      rgb(255 255 255 / 18%) 42%,
+      rgb(45 212 191 / 32%) 50%,
+      rgb(255 255 255 / 12%) 58%,
       transparent 78%
     );
     transform: translateX(-40%) rotate(8deg);
@@ -193,8 +193,8 @@
   &::after {
     background: radial-gradient(
       circle at 50% 50%,
-      rgba(45, 212, 191, 0.2),
-      rgba(59, 130, 246, 0.12) 42%,
+      rgb(45 212 191 / 20%),
+      rgb(59 130 246 / 12%) 42%,
       transparent 72%
     );
     opacity: 0.65;
@@ -202,10 +202,10 @@
 
   &:hover:not(:disabled) {
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgb(255 255 255 / 30%);
     box-shadow:
-      0 0 0 1px rgba(45, 212, 191, 0.12),
-      0 10px 28px rgba(145, 61, 207, 0.26);
+      0 0 0 1px rgb(45 212 191 / 12%),
+      0 10px 28px rgb(145 61 207 / 26%);
     transform: none;
 
     &::before {
@@ -222,19 +222,19 @@
 [data-theme="light"] .btn--holographic {
   background: linear-gradient(
     135deg,
-    rgba(93, 47, 150, 0.9),
-    rgba(116, 64, 182, 0.9)
+    rgb(93 47 150 / 90%),
+    rgb(116 64 182 / 90%)
   );
-  border-color: rgba(93, 47, 150, 0.3);
+  border-color: rgb(93 47 150 / 30%);
 }
 
 [data-theme="light"] .btn--holographic.btn--holographic--subtle {
   background: linear-gradient(
     135deg,
-    rgba(123, 67, 181, 0.06),
-    rgba(123, 67, 181, 0.1)
+    rgb(123 67 181 / 6%),
+    rgb(123 67 181 / 10%)
   );
-  border-color: rgba(123, 67, 181, 0.12);
+  border-color: rgb(123 67 181 / 12%);
   color: var(--color-primary-dark);
 }
 
@@ -242,18 +242,18 @@
   background: linear-gradient(
     135deg,
     var(--color-secondary-alpha),
-    rgba(157, 78, 221, 0.16)
+    rgb(157 78 221 / 16%)
   );
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgb(255 255 255 / 14%);
   box-shadow: none;
 
   &::before {
     background: linear-gradient(
       115deg,
       transparent 24%,
-      rgba(255, 255, 255, 0.1) 44%,
-      rgba(157, 78, 221, 0.2) 50%,
-      rgba(255, 255, 255, 0.08) 56%,
+      rgb(255 255 255 / 10%) 44%,
+      rgb(157 78 221 / 20%) 50%,
+      rgb(255 255 255 / 8%) 56%,
       transparent 76%
     );
     opacity: 0.35;
@@ -262,8 +262,8 @@
   &::after {
     background: radial-gradient(
       circle at 50% 50%,
-      rgba(45, 212, 191, 0.08),
-      rgba(157, 78, 221, 0.08) 46%,
+      rgb(45 212 191 / 8%),
+      rgb(157 78 221 / 8%) 46%,
       transparent 74%
     );
     opacity: 0.45;
@@ -271,7 +271,7 @@
 
   &:hover:not(:disabled) {
     box-shadow:
-      0 0 0 1px rgba(45, 212, 191, 0.08),
-      0 8px 18px rgba(145, 61, 207, 0.14);
+      0 0 0 1px rgb(45 212 191 / 8%),
+      0 8px 18px rgb(145 61 207 / 14%);
   }
 }

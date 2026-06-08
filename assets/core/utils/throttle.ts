@@ -1,12 +1,14 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
   limit: number,
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
   let lastArgs: Parameters<T> | null = null;
-  let lastContext: any;
+  let lastContext: unknown;
 
-  return function (this: any, ...args: Parameters<T>) {
+  return function (this: unknown, ...args: Parameters<T>) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const context = this;
     if (!inThrottle) {
       func.apply(context, args);

@@ -1,4 +1,4 @@
-﻿@use "../../core/styles/abstracts/mixins";
+@use "../../core/styles/abstracts/mixins";
 
 body.page-about {
   background: var(--color-bg);
@@ -8,7 +8,7 @@ html[data-theme="light"] body.page-about {
   background-image:
     radial-gradient(
       circle at 50% 50%,
-      rgba(123, 67, 181, 0.06) 0%,
+      rgb(123 67 181 / 6%) 0%,
       transparent 55%
     ),
     linear-gradient(150deg, #f8f8f8 0%, #f0f0f0 100%);
@@ -18,7 +18,7 @@ html[data-theme="violet"] body.page-about {
   background-image:
     radial-gradient(
       circle at 50% 50%,
-      rgba(157, 78, 221, 0.14) 0%,
+      rgb(157 78 221 / 14%) 0%,
       transparent 58%
     ),
     linear-gradient(150deg, #11061a 0%, #1a0f2c 54%, #0c0613 100%);
@@ -28,7 +28,7 @@ html[data-theme="extra-dark"] body.page-about {
   background-image:
     radial-gradient(
       circle at 50% 50%,
-      rgba(88, 117, 173, 0.12) 0%,
+      rgb(88 117 173 / 12%) 0%,
       transparent 58%
     ),
     linear-gradient(150deg, #020509 0%, #040b13 52%, #010205 100%);
@@ -39,8 +39,8 @@ html[data-theme="extra-dark"] body.page-about {
   padding: var(--spacing-2xl) 0;
   background: linear-gradient(
     180deg,
-    rgba(157, 78, 221, 0.06) 0%,
-    rgba(157, 78, 221, 0.02) 100%
+    rgb(157 78 221 / 6%) 0%,
+    rgb(157 78 221 / 2%) 100%
   );
 }
 
@@ -56,7 +56,7 @@ html[data-theme="extra-dark"] body.page-about {
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
 
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     grid-template-columns: minmax(320px, 4fr) minmax(0, 8fr);
     gap: var(--spacing-xl);
   }
@@ -82,7 +82,7 @@ html[data-theme="extra-dark"] body.page-about {
   margin-bottom: var(--spacing-md);
   gap: var(--spacing-md);
 
-  @media (max-width: 640px) {
+  @media (width <= 640px) {
     grid-template-columns: 1fr;
   }
 }
@@ -90,7 +90,6 @@ html[data-theme="extra-dark"] body.page-about {
 .dashboard__card {
   width: 100%;
   background-color: var(--color-surface);
-  backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-surface-border);
   border-radius: 1.5rem;
@@ -105,9 +104,9 @@ html[data-theme="extra-dark"] body.page-about {
 
   &:hover,
   &--hoverable:hover {
-    border-color: rgba(157, 78, 221, 0.4);
+    border-color: rgb(157 78 221 / 40%);
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(157, 78, 221, 0.15);
+    box-shadow: 0 10px 25px -5px rgb(157 78 221 / 15%);
 
     &::after {
       opacity: 1;
@@ -144,7 +143,6 @@ html[data-theme="extra-dark"] body.page-about {
 .dashboard__metric-card {
   background-color: var(--color-surface);
   backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
   border: 1px solid var(--color-surface-border);
   border-radius: 1rem;
   padding: var(--spacing-md);
@@ -154,7 +152,7 @@ html[data-theme="extra-dark"] body.page-about {
   @include mixins.transition;
 
   &:hover {
-    border-color: rgba(var(--color-secondary-rgb), 0.4);
+    border-color: rgb(var(--color-secondary-rgb) 0.4);
     transform: translateY(-4px);
     box-shadow: 0 10px 25px -5px var(--secondary-color-shadow);
 
@@ -199,7 +197,7 @@ html[data-theme="extra-dark"] body.page-about {
   svg {
     width: 26px;
     height: 26px;
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   img {
@@ -253,7 +251,7 @@ html[data-theme="extra-dark"] body.page-about {
   svg {
     width: 100%;
     height: 100%;
-    fill: currentColor;
+    fill: currentcolor;
   }
 }
 
@@ -268,7 +266,7 @@ html[data-theme="extra-dark"] body.page-about {
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
 
-  @media (max-width: 640px) {
+  @media (width <= 640px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -400,7 +398,7 @@ html[data-theme="extra-dark"] body.page-about {
   margin-bottom: var(--spacing-xs);
   min-width: 0;
 
-  @media (max-width: 640px) {
+  @media (width <= 640px) {
     align-items: flex-start;
   }
 }
@@ -419,7 +417,7 @@ html[data-theme="extra-dark"] body.page-about {
   color: var(--color-primary);
   flex-shrink: 0;
 
-  @media (max-width: 640px) {
+  @media (width <= 640px) {
     flex-shrink: 1;
   }
 }

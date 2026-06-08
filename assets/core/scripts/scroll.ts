@@ -4,7 +4,7 @@ export class ScrollManager {
   private prefersReducedMotion: boolean;
   private scrollTopBtn: HTMLButtonElement | null;
   private abortController: AbortController;
-  private lenisInstance: any = null;
+  private lenisInstance: Lenis | null = null;
   private rafId: number | null = null;
 
   constructor() {
@@ -48,7 +48,7 @@ export class ScrollManager {
     });
 
     const raf = (time: number) => {
-      this.lenisInstance.raf(time);
+      this.lenisInstance?.raf(time);
       this.rafId = requestAnimationFrame(raf);
     };
 
@@ -63,7 +63,7 @@ export class ScrollManager {
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             e.preventDefault();
-            this.lenisInstance.scrollTo(targetElement);
+            this.lenisInstance?.scrollTo(targetElement as HTMLElement);
           }
         }
       });

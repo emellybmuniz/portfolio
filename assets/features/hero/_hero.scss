@@ -17,7 +17,7 @@
   );
   --hero-photo-shell-bg: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.08),
+    rgb(255 255 255 / 8%),
     transparent 58%
   );
   --hero-photo-shell-shadow: var(--shadow-xl);
@@ -27,11 +27,11 @@
     #efe4ff 48%,
     #fdf8ff 100%
   );
-  --hero-photo-inner-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
-  --hero-photo-ring-a: rgba(5, 229, 149, 0.92);
-  --hero-photo-ring-b: rgba(182, 154, 232, 0.92);
-  --hero-photo-ring-c: rgba(91, 124, 250, 0.86);
-  --hero-photo-ring-d: rgba(45, 212, 191, 0.82);
+  --hero-photo-inner-shadow: inset 0 0 0 1px rgb(255 255 255 / 14%);
+  --hero-photo-ring-a: rgb(5 229 149 / 92%);
+  --hero-photo-ring-b: rgb(182 154 232 / 92%);
+  --hero-photo-ring-c: rgb(91 124 250 / 86%);
+  --hero-photo-ring-d: rgb(45 212 191 / 82%);
   --hero-content-x: 0px;
   --hero-content-y: 0px;
   --hero-media-x: 0px;
@@ -48,7 +48,7 @@
     align-items: flex-start;
   }
 
-  @media (max-height: 650px) {
+  @media (height <= 650px) {
     padding: var(--spacing-md) var(--spacing-lg);
   }
 }
@@ -63,8 +63,8 @@
   --hero-photo-shell-shadow: var(--shadow-lg);
   --hero-photo-shell-bg: linear-gradient(
     145deg,
-    rgba(99, 102, 241, 0.12),
-    rgba(139, 92, 246, 0.05) 48%,
+    rgb(99 102 241 / 12%),
+    rgb(139 92 246 / 5%) 48%,
     transparent 82%
   );
   --hero-photo-inner-bg: linear-gradient(
@@ -74,22 +74,22 @@
     #fdf8ff 100%
   );
   --hero-photo-inner-shadow:
-    inset 0 0 0 1px rgba(123, 67, 181, 0.1),
-    inset 0 -24px 48px rgba(99, 102, 241, 0.08),
-    inset 0 16px 36px rgba(20, 184, 166, 0.05);
-  --hero-photo-ring-a: rgba(99, 102, 241, 0.92);
-  --hero-photo-ring-b: rgba(168, 85, 247, 0.88);
-  --hero-photo-ring-c: rgba(5, 229, 149, 0.9);
-  --hero-photo-ring-d: rgba(255, 255, 255, 0.92);
+    inset 0 0 0 1px rgb(123 67 181 / 10%),
+    inset 0 -24px 48px rgb(99 102 241 / 8%),
+    inset 0 16px 36px rgb(20 184 166 / 5%);
+  --hero-photo-ring-a: rgb(99 102 241 / 92%);
+  --hero-photo-ring-b: rgb(168 85 247 / 88%);
+  --hero-photo-ring-c: rgb(5 229 149 / 90%);
+  --hero-photo-ring-d: rgb(255 255 255 / 92%);
 }
 
 [data-theme="violet"] .hero {
   --hero-photo-shell-shadow:
-    0 14px 32px rgba(23, 10, 41, 0.26), 0 0 0 1px rgba(157, 78, 221, 0.12);
+    0 14px 32px rgb(23 10 41 / 26%), 0 0 0 1px rgb(157 78 221 / 12%);
   --hero-photo-shell-bg: linear-gradient(
     145deg,
-    rgba(157, 78, 221, 0.16),
-    rgba(124, 58, 237, 0.08) 46%,
+    rgb(157 78 221 / 16%),
+    rgb(124 58 237 / 8%) 46%,
     transparent 82%
   );
   --hero-photo-inner-bg: linear-gradient(
@@ -99,13 +99,13 @@
     #6d28d9 100%
   );
   --hero-photo-inner-shadow:
-    inset 0 0 0 1px rgba(217, 183, 255, 0.16),
-    inset 0 -28px 52px rgba(157, 78, 221, 0.18),
-    inset 0 18px 40px rgba(255, 255, 255, 0.05);
-  --hero-photo-ring-a: rgba(196, 140, 255, 0.96);
-  --hero-photo-ring-b: rgba(157, 78, 221, 0.96);
-  --hero-photo-ring-c: rgba(5, 229, 149, 0.92);
-  --hero-photo-ring-d: rgba(233, 213, 255, 0.94);
+    inset 0 0 0 1px rgb(217 183 255 / 16%),
+    inset 0 -28px 52px rgb(157 78 221 / 18%),
+    inset 0 18px 40px rgb(255 255 255 / 5%);
+  --hero-photo-ring-a: rgb(196 140 255 / 96%);
+  --hero-photo-ring-b: rgb(157 78 221 / 96%);
+  --hero-photo-ring-c: rgb(5 229 149 / 92%);
+  --hero-photo-ring-d: rgb(233 213 255 / 94%);
 }
 
 [data-theme="extra-dark"] .hero {
@@ -116,11 +116,11 @@
     #a78bfa 100%
   );
   --hero-photo-shell-shadow:
-    0 16px 34px rgba(2, 6, 23, 0.42), 0 0 0 1px rgba(56, 189, 248, 0.08);
+    0 16px 34px rgb(2 6 23 / 42%), 0 0 0 1px rgb(56 189 248 / 8%);
   --hero-photo-shell-bg: linear-gradient(
     145deg,
-    rgba(56, 189, 248, 0.1),
-    rgba(124, 92, 255, 0.05) 46%,
+    rgb(56 189 248 / 10%),
+    rgb(124 92 255 / 5%) 46%,
     transparent 78%
   );
   --hero-photo-inner-bg: linear-gradient(
@@ -130,13 +130,13 @@
     #122345 100%
   );
   --hero-photo-inner-shadow:
-    inset 0 0 0 1px rgba(56, 189, 248, 0.12),
-    inset 0 -24px 48px rgba(56, 189, 248, 0.1),
-    inset 0 18px 40px rgba(167, 139, 250, 0.06);
-  --hero-photo-ring-a: rgba(56, 189, 248, 0.95);
-  --hero-photo-ring-b: rgba(124, 92, 255, 0.9);
-  --hero-photo-ring-c: rgba(5, 229, 149, 0.92);
-  --hero-photo-ring-d: rgba(167, 139, 250, 0.9);
+    inset 0 0 0 1px rgb(56 189 248 / 12%),
+    inset 0 -24px 48px rgb(56 189 248 / 10%),
+    inset 0 18px 40px rgb(167 139 250 / 6%);
+  --hero-photo-ring-a: rgb(56 189 248 / 95%);
+  --hero-photo-ring-b: rgb(124 92 255 / 90%);
+  --hero-photo-ring-c: rgb(5 229 149 / 92%);
+  --hero-photo-ring-d: rgb(167 139 250 / 90%);
 }
 
 .hero__container {
@@ -155,7 +155,7 @@
     gap: var(--spacing-xl);
   }
 
-  @media (max-height: 650px) {
+  @media (height <= 650px) {
     gap: var(--spacing-md);
   }
 }
@@ -208,17 +208,16 @@
 .hero__highlight {
   background: var(--hero-highlight-gradient);
   background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 100% auto;
 }
 
 [data-theme="light"] .hero__highlight {
-  text-shadow: 0 0 18px rgba(99, 102, 241, 0.08);
+  text-shadow: 0 0 18px rgb(99 102 241 / 8%);
 }
 
 [data-theme="extra-dark"] .hero__highlight {
-  text-shadow: 0 0 18px rgba(56, 189, 248, 0.14);
+  text-shadow: 0 0 18px rgb(56 189 248 / 14%);
 }
 
 .hero__description {
@@ -297,7 +296,7 @@
     z-index: 2;
     width: 28px;
     height: 28px;
-    fill: currentColor;
+    fill: currentcolor;
 
     @include mixins.transition;
   }
@@ -363,27 +362,27 @@
 }
 
 [data-theme="light"] .hero__social-link--linkedin {
-  border-color: rgba(10, 102, 194, 0.4);
+  border-color: rgb(10 102 194 / 40%);
   color: #0a66c2;
-  background-color: rgba(10, 102, 194, 0.06);
+  background-color: rgb(10 102 194 / 6%);
 }
 
 [data-theme="light"] .hero__social-link--email {
-  border-color: rgba(184, 58, 46, 0.4);
+  border-color: rgb(184 58 46 / 40%);
   color: #b83a2e;
-  background-color: rgba(184, 58, 46, 0.06);
+  background-color: rgb(184 58 46 / 6%);
 }
 
 [data-theme="light"] .hero__social-link--github {
-  border-color: rgba(60, 64, 67, 0.4);
+  border-color: rgb(60 64 67 / 40%);
   color: #3c4043;
-  background-color: rgba(60, 64, 67, 0.05);
+  background-color: rgb(60 64 67 / 5%);
 }
 
 [data-theme="light"] .hero__social-link--instagram {
-  border-color: rgba(199, 60, 122, 0.4);
+  border-color: rgb(199 60 122 / 40%);
   color: #c73c7a;
-  background-color: rgba(199, 60, 122, 0.06);
+  background-color: rgb(199 60 122 / 6%);
 }
 
 .hero__media-column {
@@ -407,8 +406,6 @@
 
 .hero__photo-shell {
   width: 100%;
-
-  // scale photo down on short viewports
   max-width: clamp(200px, min(35vw, 60vh), 380px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -421,12 +418,10 @@
   background: var(--hero-photo-shell-bg);
 
   @include mixins.media-down("lg") {
-    // fluid photo sizing for different viewports
     max-width: clamp(160px, min(48vw, 40vh), 340px);
   }
 
-  // hide photo on extremely short viewports to preserve text visibility
-  @media (max-height: 420px) {
+  @media (height <= 420px) {
     display: none;
   }
 }
@@ -459,10 +454,6 @@
   );
   animation: hero-photo-ring-spin 16s linear infinite;
   pointer-events: none;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
   mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);

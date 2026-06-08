@@ -48,19 +48,16 @@
   .dashboard__card,
   .dashboard__metric-card {
     backdrop-filter: none;
-    backdrop-filter: none;
     background-color: var(--color-surface-elevated, var(--color-surface));
   }
 
   .skills__drawer-overlay {
     backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: rgb(0 0 0 / 72%);
   }
 
   // use solid background instead of blur for mobile menu
   .header__nav {
-    backdrop-filter: none;
     backdrop-filter: none;
     background-color: var(--color-bg);
   }

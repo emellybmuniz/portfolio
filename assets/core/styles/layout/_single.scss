@@ -221,7 +221,7 @@
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
 
-  @media (min-width: 640px) {
+  @media (width >= 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -232,7 +232,7 @@
 
 .single-stack__card {
   padding: var(--spacing-md);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgb(255 255 255 / 2%);
   border: 1px solid var(--color-surface-border);
   border-radius: var(--border-radius-lg);
   display: flex;
@@ -303,7 +303,6 @@
   line-height: 1.8;
   text-align: justify;
   hyphens: auto;
-  hyphens: auto;
 
   p {
     margin-bottom: var(--spacing-lg); // more space between paragraphs
@@ -325,7 +324,7 @@
 
   h2 {
     font-size: calc(var(--font-size-xl) * 1.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgb(255 255 255 / 5%);
     padding-bottom: var(--spacing-xs);
   }
 
@@ -369,7 +368,7 @@
     color: var(--color-primary-light);
     text-decoration: underline;
     text-underline-offset: 4px;
-    text-decoration-color: rgba(255, 255, 255, 0.2);
+    text-decoration-color: rgb(255 255 255 / 20%);
 
     &:hover {
       text-decoration-color: var(--color-primary-light);
@@ -385,7 +384,7 @@
 
 .single-challenge {
   padding: var(--spacing-md);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgb(255 255 255 / 2%);
   border: 1px solid var(--color-surface-border);
   border-radius: var(--border-radius-lg);
   display: flex;
@@ -395,8 +394,8 @@
   @include mixins.transition;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255 255 255 / 4%);
+    border-color: rgb(255 255 255 / 10%);
   }
 }
 

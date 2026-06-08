@@ -20,11 +20,11 @@
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
+    box-shadow: 0 0 20px rgb(157 78 221 / 30%);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(157, 78, 221, 0.6);
+    box-shadow: 0 0 40px rgb(157 78 221 / 60%);
   }
 }
 
@@ -71,6 +71,7 @@
     0% {
       transform: translate3d(0, calc(100px * var(--parallax-speed, 0.12)), 0);
     }
+
     100% {
       transform: translate3d(0, calc(-100px * var(--parallax-speed, 0.12)), 0);
     }
@@ -78,8 +79,6 @@
 }
 
 // staggered children utilities
-[data-stagger] {
-}
 
 [data-stagger-item] {
   opacity: 0;

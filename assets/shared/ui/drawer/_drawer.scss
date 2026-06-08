@@ -8,8 +8,7 @@ ui-drawer {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background-color: rgb(0 0 0 / 60%);
   backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
@@ -37,7 +36,7 @@ ui-drawer {
   border-top: 1px solid var(--color-surface-border);
   border-top-left-radius: var(--border-radius-xl, 1.25rem);
   border-top-right-radius: var(--border-radius-xl, 1.25rem);
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -8px 32px rgb(0 0 0 / 30%);
   transform: translateY(100%);
   pointer-events: none;
   will-change: transform;
@@ -82,7 +81,7 @@ ui-drawer {
   svg {
     width: 20px;
     height: 20px;
-    fill: currentColor;
+    fill: currentcolor;
     flex-shrink: 0;
   }
 }
@@ -154,8 +153,8 @@ ui-drawer {
   @include mixins.transition;
 
   &:hover {
-    background-color: rgba(var(--color-secondary-rgb), 0.06);
-    border-color: rgba(var(--color-secondary-rgb), 0.3);
+    background-color: rgb(var(--color-secondary-rgb) 0.06);
+    border-color: rgb(var(--color-secondary-rgb) 0.3);
   }
 
   &:focus-visible {

@@ -2,7 +2,6 @@
 
 // base / globals
 
-// focus visível global
 :focus-visible {
   @include mixins.focus-ring;
 }
@@ -83,4 +82,10 @@
   html {
     scroll-behavior: auto;
   }
+}
+
+body.is-drawer-open {
+  position: fixed;
+  width: 100%;
+  top: var(--scroll-y, 0);
 }

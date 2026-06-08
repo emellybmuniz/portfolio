@@ -7,8 +7,8 @@
   font-weight: 400;
   font-display: swap;
   src:
-    url("../fonts/Poppins/Poppins-Regular.woff2") format("woff2"),
-    url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    url("../../fonts/Poppins/Poppins-Regular.woff2") format("woff2"),
+    url("../../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -17,8 +17,8 @@
   font-weight: 500;
   font-display: swap;
   src:
-    url("../fonts/Poppins/Poppins-Medium.woff2") format("woff2"),
-    url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    url("../../fonts/Poppins/Poppins-Medium.woff2") format("woff2"),
+    url("../../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -27,8 +27,8 @@
   font-weight: 600;
   font-display: swap;
   src:
-    url("../fonts/Poppins/Poppins-SemiBold.woff2") format("woff2"),
-    url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+    url("../../fonts/Poppins/Poppins-SemiBold.woff2") format("woff2"),
+    url("../../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -37,8 +37,8 @@
   font-weight: 700;
   font-display: swap;
   src:
-    url("../fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
-    url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    url("../../fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
+    url("../../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -47,8 +47,8 @@
   font-weight: 800;
   font-display: swap;
   src:
-    url("../fonts/Poppins/Poppins-ExtraBold.woff2") format("woff2"),
-    url("../fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+    url("../../fonts/Poppins/Poppins-ExtraBold.woff2") format("woff2"),
+    url("../../fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -57,8 +57,8 @@
   font-weight: 400;
   font-display: swap;
   src:
-    url("../fonts/Raleway/static/Raleway-Regular.woff2") format("woff2"),
-    url("../fonts/Raleway/static/Raleway-Regular.ttf") format("truetype");
+    url("../../fonts/Raleway/static/Raleway-Regular.woff2") format("woff2"),
+    url("../../fonts/Raleway/static/Raleway-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -67,8 +67,8 @@
   font-weight: 500;
   font-display: swap;
   src:
-    url("../fonts/Raleway/static/Raleway-Medium.woff2") format("woff2"),
-    url("../fonts/Raleway/static/Raleway-Medium.ttf") format("truetype");
+    url("../../fonts/Raleway/static/Raleway-Medium.woff2") format("woff2"),
+    url("../../fonts/Raleway/static/Raleway-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -77,8 +77,8 @@
   font-weight: 600;
   font-display: swap;
   src:
-    url("../fonts/Raleway/static/Raleway-SemiBold.woff2") format("woff2"),
-    url("../fonts/Raleway/static/Raleway-SemiBold.ttf") format("truetype");
+    url("../../fonts/Raleway/static/Raleway-SemiBold.woff2") format("woff2"),
+    url("../../fonts/Raleway/static/Raleway-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -87,8 +87,8 @@
   font-weight: 700;
   font-display: swap;
   src:
-    url("../fonts/Raleway/static/Raleway-Bold.woff2") format("woff2"),
-    url("../fonts/Raleway/static/Raleway-Bold.ttf") format("truetype");
+    url("../../fonts/Raleway/static/Raleway-Bold.woff2") format("woff2"),
+    url("../../fonts/Raleway/static/Raleway-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -97,8 +97,8 @@
   font-weight: 800;
   font-display: swap;
   src:
-    url("../fonts/Raleway/static/Raleway-ExtraBold.woff2") format("woff2"),
-    url("../fonts/Raleway/static/Raleway-ExtraBold.ttf") format("truetype");
+    url("../../fonts/Raleway/static/Raleway-ExtraBold.woff2") format("woff2"),
+    url("../../fonts/Raleway/static/Raleway-ExtraBold.ttf") format("truetype");
 }
 
 body {
@@ -227,7 +227,7 @@ i {
 }
 
 mark {
-  background-color: rgba(255, 193, 7, 0.2);
+  background-color: rgb(255 193 7 / 20%);
   padding: 0.125rem 0.375rem;
   border-radius: var(--border-radius-sm);
 }

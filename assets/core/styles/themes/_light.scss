@@ -12,7 +12,7 @@
   --color-primary: #7440b6;
   --color-primary-dark: #5d2f96;
   --color-primary-light: #ab84dd;
-  --primary-color-shadow: rgba(116, 64, 182, 0.11);
+  --primary-color-shadow: rgb(116 64 182 / 11%);
   --color-accent-rgb: 99, 102, 241;
   --color-accent-secondary-rgb: 123, 67, 181;
 
@@ -21,14 +21,14 @@
   --color-secondary-dark: #126e45;
   --color-secondary-light: #61bf92;
   --color-secondary-rgb: 20, 122, 76;
-  --color-secondary-alpha: rgba(20, 122, 76, 0.1);
-  --secondary-color-shadow: rgba(20, 122, 76, 0.16);
+  --color-secondary-alpha: rgb(20 122 76 / 10%);
+  --secondary-color-shadow: rgb(20 122 76 / 16%);
 
   // surfaces
-  --color-surface: rgba(255, 255, 255, 0.86);
-  --color-surface-border: rgba(17, 17, 17, 0.22);
-  --color-overlay: rgba(17, 17, 17, 0.06);
-  --color-surface-elevated: rgba(255, 250, 255, 0.96);
+  --color-surface: rgb(255 255 255 / 86%);
+  --color-surface-border: rgb(17 17 17 / 22%);
+  --color-overlay: rgb(17 17 17 / 6%);
+  --color-surface-elevated: rgb(255 250 255 / 96%);
   --shadow-rgb: 18, 16, 26;
   --shadow-accent-rgb: 116, 64, 182;
 
@@ -37,17 +37,17 @@
   --text-on-secondary: #fff;
   --project-action-demo-bg: var(--color-secondary);
   --project-action-demo-bg-hover: var(--color-secondary-dark);
-  --project-action-demo-border: rgba(var(--color-secondary-rgb), 0.28);
+  --project-action-demo-border: rgb(var(--color-secondary-rgb) 0.28);
   --project-action-demo-shadow: var(--secondary-color-shadow);
   --project-action-demo-text: var(--text-on-secondary);
-  --project-action-repository-bg: rgba(37, 99, 235, 0.08);
-  --project-action-repository-bg-hover: rgba(37, 99, 235, 0.14);
-  --project-action-repository-border: rgba(37, 99, 235, 0.22);
-  --project-action-repository-shadow: rgba(37, 99, 235, 0.12);
+  --project-action-repository-bg: rgb(37 99 235 / 8%);
+  --project-action-repository-bg-hover: rgb(37 99 235 / 14%);
+  --project-action-repository-border: rgb(37 99 235 / 22%);
+  --project-action-repository-shadow: rgb(37 99 235 / 12%);
   --project-action-repository-text: #1d4ed8;
-  --project-action-details-bg: rgba(116, 64, 182, 0.1);
-  --project-action-details-bg-hover: rgba(116, 64, 182, 0.16);
-  --project-action-details-border: rgba(116, 64, 182, 0.22);
+  --project-action-details-bg: rgb(116 64 182 / 10%);
+  --project-action-details-bg-hover: rgb(116 64 182 / 16%);
+  --project-action-details-border: rgb(116 64 182 / 22%);
   --project-action-details-shadow: var(--primary-color-shadow);
   --project-action-details-text: #5d2f96;
 }
@@ -56,7 +56,7 @@ html[data-theme="light"] body {
   background-image:
     radial-gradient(
       circle 560px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
-      rgba(99, 102, 241, 0.04),
+      rgb(99 102 241 / 4%),
       transparent 84%
     ),
     linear-gradient(150deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
@@ -65,8 +65,8 @@ html[data-theme="light"] body {
 html[data-theme="light"] body::before {
   background: radial-gradient(
     circle 220px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
-    rgba(99, 102, 241, 0.04) 0,
-    rgba(123, 67, 181, 0.02) 28%,
+    rgb(99 102 241 / 4%) 0,
+    rgb(123 67 181 / 2%) 28%,
     transparent 72%
   );
   mix-blend-mode: multiply;
