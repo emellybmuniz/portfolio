@@ -9,6 +9,7 @@ import { NavigationManager } from "../../features/header/header-navigation";
 import { ScrollManager } from "./scroll";
 import { HeroMotion } from "../../features/hero/hero-motion";
 import { AnimationManager } from "./animations";
+import "../../features/contact/contact";
 
 class Portfolio {
   private themeManager: ThemeManager;

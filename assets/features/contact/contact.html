@@ -112,7 +112,7 @@
         class="contact__form contact__card"
         id="contactForm"
         method="POST"
-        action="https://formsubmit.co/emellybmuniz@gmail.com"
+        action="/api/contact"
         data-animate="animate-fade-in-up"
         data-observe-once="true"
       >
@@ -169,6 +169,8 @@
           {{ end }}
           <span>{{ i18n "contact.send" }}</span>
         </button>
+
+        <div id="contactFormStatus" class="contact__form-status" aria-live="polite" style="display: none; margin-top: 1rem; text-align: center; font-weight: 500;"></div>
       </form>
     </div>
   </div>
