@@ -1,0 +1,57 @@
+# Dual License Agreement
+
+This repository is dual-licensed to accommodate both open-source development and the protection of personal content.
+
+## 1. Source Code License: MIT License
+
+The underlying source code of this portfolio (HTML, CSS, JavaScript, TypeScript, Hugo configuration, and build scripts) is licensed under the MIT License.
+
+Copyright (c) 2026 Emelly Beatriz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 2. Content and Assets License: CC BY-NC-ND 4.0
+
+The personal content of this repository is strictly protected under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+
+**This applies to:**
+- All textual content (articles, project descriptions, "About Me" texts)
+- All personal images and photographs (profile pictures, project covers)
+- The specific visual UI design identity and branding of the portfolio
+
+**Under this license, you may NOT:**
+- Use this content or design for commercial purposes.
+- Modify, remix, transform, or build upon the personal content and design.
+- Use the author's identity or personal data.
+
+If you choose to fork or use the underlying source code (permitted under the MIT License), you MUST replace all personal content, images, and branding with your own before publishing or distributing your version.
+
+Full license text: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+---
+
+## 3. Third-Party Assets
+
+This project uses SVG icons from **Devicon** (https://devicon.dev/).
+Originally created by Konpa (under the MIT License) and supported by many contributors.
+Copyright (c) 2015 Konpa.
+
+All product names, logos, and brands are property of their respective owners. Usage of these names, logos, and brands does not imply endorsement.

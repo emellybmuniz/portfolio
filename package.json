@@ -21,7 +21,7 @@
     "frontend"
   ],
   "author": "Emelly Beatriz",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@playwright/test": "^1.60.0",

@@ -80,6 +80,22 @@ Como a ideia é garantir que o site não quebre visualmente no futuro, configure
 
 ---
 
+## ⚖️ Licença
+
+Sinta-se à vontade para se inspirar e aprender com este projeto! Para equilibrar o espírito Open Source com a proteção do meu conteúdo pessoal, utilizo uma abordagem de licença dupla:
+
+- **Código-Fonte (MIT):** A estrutura (Hugo, HTML, SCSS e TypeScript) é totalmente aberta. Você é super bem-vindo(a) para clonar, estudar e usar o código como base para o seu próprio site!
+- **Conteúdo e Identidade Visual (CC BY-NC-ND 4.0):** Para manter a autenticidade, peço apenas que não reutilize meus textos pessoais, fotografias ou a identidade visual exata. Caso utilize este repositório como ponto de partida, lembre-se de personalizar as cores, imagens e as descrições para refletir a sua própria identidade profissional. 😉
+
+Para mais detalhes, confira o arquivo [LICENSE](./LICENSE).
+
+## 🌟 Créditos e Agradecimentos
+
+Este portfólio utiliza ícones open-source disponibilizados pelo projeto **[Devicon](https://devicon.dev/)**. 
+*Originalmente criado por Konpa sob a licença MIT e suportado por diversos contribuidores. Copyright © 2015 Konpa.*
+
+---
+
 ## ✍️ Autora
 
 Feito com ❤️ por Emelly Beatriz
