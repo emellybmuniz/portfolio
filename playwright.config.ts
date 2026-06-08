@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:1314/portfolio/",
+    baseURL: "http://localhost:1314/",
     trace: "on-first-retry",
   },
 
@@ -26,7 +26,7 @@ export default defineConfig({
   /* Run Hugo server before starting the tests */
   webServer: {
     command: "npm run preview -- --port 1314",
-    url: "http://localhost:1314/portfolio/",
+    url: "http://localhost:1314/",
     reuseExistingServer: !process.env.CI,
   },
 });

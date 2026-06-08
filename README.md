@@ -1,47 +1,50 @@
 # Emelly Beatriz | Portfolio
 
-![GitHub License](https://img.shields.io/github/license/emellybmuniz/portfolio)
 ![GitHub last commit](https://img.shields.io/github/last-commit/emellybmuniz/portfolio)
+![Repo Size](https://img.shields.io/github/repo-size/emellybmuniz/portfolio?color=blue&style=flat)
 ![CI/CD Pipeline](https://github.com/emellybmuniz/portfolio/actions/workflows/ci.yml/badge.svg)
 ![Tested with Playwright](https://img.shields.io/badge/tested_with-playwright-2EAD33.svg?logo=playwright)
+![Cloudflare Pages](https://img.shields.io/badge/deployed_on-Cloudflare_Pages-F38020?logo=cloudflare&logoColor=white)
 ![Project Status](https://img.shields.io/badge/Status%20-%20Completed%20-%20%234BC21E)
 
-Este é o repositório do meu portfólio pessoal. Construí este projeto para aplicar na prática conceitos de arquitetura front-end, performance, acessibilidade e testes, documentando e consolidando meu aprendizado ao longo do desenvolvimento.
+This is the repository for my personal portfolio. I built this project to practically apply front-end architecture, performance, accessibility, and testing concepts, documenting and consolidating my learning throughout the development process.
 
 ---
 
-### 📋 Índice
+### 📋 Table of Contents
 
-- [Visão Geral](#-visão-geral)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como Rodar Localmente](#-como-rodar-localmente)
-- [Testes e Qualidade](#-testes-e-qualidade)
-- [Autora](#-autora)
+- [Overview](#-overview)
+- [Project Structure](#-project-structure)
+- [Technologies Used](#-technologies-used)
+- [How to Run Locally](#-how-to-run-locally)
+- [Tests and Quality](#-tests-and-quality)
+- [License](#-license)
+- [Credits & Acknowledgments](#-credits--acknowledgments)
+- [Author](#-author)
 
 ---
 
-## 🚀 Visão Geral
+## 🚀 Overview
 
-O portfólio foi desenvolvido como um site estático focado em velocidade, facilidade de manutenção e boas práticas. A interface é fluida, possui suporte a *Dark Mode* nativo e é totalmente responsiva. 
+The portfolio was developed as a static site focused on speed, ease of maintenance, and best practices. The interface is fluid, features native *Dark Mode* support, and is fully responsive.
 
-Em vez de usar frameworks pesados (como React ou Next.js) para algo predominantemente estático, optei pelo **Hugo**, permitindo focar meus estudos em HTML limpo, SCSS bem estruturado e TypeScript puro (*Vanilla*).
+Instead of using heavy frameworks (like React or Next.js) for something predominantly static, I opted for **Hugo**, which allowed me to focus my studies on clean HTML, well-structured SCSS, and pure TypeScript (*Vanilla*).
 
-## 📂 Estrutura do Projeto (Feature Co-Location)
+## 📂 Project Structure
 
-A arquitetura do projeto tenta fugir da famosa "sopa de classes". Eu estruturei o código agrupando HTML, SCSS e TypeScript por "Feature" (componente individual).
+The project's architecture tries to avoid the famous "class soup". I structured the code by grouping HTML, SCSS, and TypeScript by "Feature" (individual component).
 
 ```bash
 assets/
-├── core/             # Variáveis Sass globais, tipografia e utilitários
-├── features/         # Componentes isolados (HTML, SCSS e TS moram juntos aqui)
+├── core/             # Global Sass variables, typography, and utilities
+├── features/         # Isolated components (HTML, SCSS, and TS live together here)
 │   ├── header/
 │   ├── projects/
 │   └── ...
-└── shared/           # Elementos UI reaproveitáveis (ex: botões, ícones)
+└── shared/           # Reusable UI elements (e.g., buttons, icons)
 ```
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/scss-%23CC6699.svg?style=for-the-badge&logo=sass&logoColor=white)
@@ -49,58 +52,58 @@ assets/
 ![Hugo](https://img.shields.io/badge/hugo-%23FF4088.svg?style=for-the-badge&logo=hugo&logoColor=white)
 ![Playwright](https://img.shields.io/badge/playwright-%232EAD33.svg?style=for-the-badge&logo=playwright&logoColor=white)
 
-## 📦 Como Rodar Localmente
+## 📦 How to Run Locally
 
-**Pré-requisitos:**
-Você vai precisar do [Node.js](https://nodejs.org/en/) e do [Hugo (versão Extended)](https://gohugo.io/installation/) instalados na sua máquina.
+**Prerequisites:**
+You will need [Node.js](https://nodejs.org/en/) and [Hugo (Extended version)](https://gohugo.io/installation/) installed on your machine.
 
 ```bash
-# 1. Clone este repositório
+# 1. Clone this repository
 git clone https://github.com/emellybmuniz/portfolio.git
 
-# 2. Entre na pasta do projeto
+# 2. Enter the project folder
 cd portfolio
 
-# 3. Instale as dependências (Linters, Prettier, etc)
+# 3. Install dependencies (Linters, Prettier, etc.)
 npm install
 
-# 4. Inicie o servidor local do Hugo
+# 4. Start the local Hugo server
 npm run dev
 
-# 5. O site estará disponível em http://localhost:1313
+# 5. The site will be available at http://localhost:1313
 ```
 
-## 🧪 Testes e Qualidade
+## 🧪 Tests and Quality
 
-Como a ideia é garantir que o site não quebre visualmente no futuro, configurei algumas ferramentas simples de Qualidade de Código (QA):
+To ensure the site doesn't visually break in the future, I set up some simple Code Quality (QA) tools:
 
-- **Playwright:** Para testes *End-to-End* (verificando a navegação e a troca de tema) e *Visual Regression* (para garantir que o layout/CSS não quebre de surpresa). Pode ser executado localmente com `npm run test:e2e`.
-- **Lighthouse CI:** Roda automaticamente validando se a performance, SEO e Acessibilidade estão sempre acima de 90 pontos.
-- **GitHub Actions:** Roda todos os testes, o build e valida o TypeScript strict/ESLint a cada alteração no repositório.
-
----
-
-## ⚖️ Licença
-
-Sinta-se à vontade para se inspirar e aprender com este projeto! Para equilibrar o espírito Open Source com a proteção do meu conteúdo pessoal, utilizo uma abordagem de licença dupla:
-
-- **Código-Fonte (MIT):** A estrutura (Hugo, HTML, SCSS e TypeScript) é totalmente aberta. Você é super bem-vindo(a) para clonar, estudar e usar o código como base para o seu próprio site!
-- **Conteúdo e Identidade Visual (CC BY-NC-ND 4.0):** Para manter a autenticidade, peço apenas que não reutilize meus textos pessoais, fotografias ou a identidade visual exata. Caso utilize este repositório como ponto de partida, lembre-se de personalizar as cores, imagens e as descrições para refletir a sua própria identidade profissional. 😉
-
-Para mais detalhes, confira o arquivo [LICENSE](./LICENSE).
-
-## 🌟 Créditos e Agradecimentos
-
-Este portfólio utiliza ícones open-source disponibilizados pelo projeto **[Devicon](https://devicon.dev/)**. 
-*Originalmente criado por Konpa sob a licença MIT e suportado por diversos contribuidores. Copyright © 2015 Konpa.*
+- **Playwright:** For *End-to-End* tests (verifying navigation and theme switching) and *Visual Regression* tests (to ensure the layout/CSS doesn't unexpectedly break). Can be run locally with `npm run test:e2e`.
+- **Lighthouse CI:** Automatically runs to validate that performance, SEO, and Accessibility scores are always above 90 points.
+- **GitHub Actions:** Runs all tests, builds the site, and validates strict TypeScript/ESLint on every change pushed to the repository.
 
 ---
 
-## ✍️ Autora
+## ⚖️ License
 
-Feito com ❤️ por Emelly Beatriz
+Feel free to draw inspiration and learn from this project! To balance the Open Source spirit with protecting my personal content, I use a dual-license approach:
 
-📬 Fale comigo:
+- **Source Code (MIT):** The structure (Hugo, HTML, SCSS, and TypeScript) is fully open. You are more than welcome to clone, study, and use the code as a foundation for your own site!
+- **Content and Visual Identity (CC BY-NC-ND 4.0):** To maintain authenticity, I only ask that you do not reuse my personal texts, photographs, or exact visual identity. If you use this repository as a starting point, remember to customize the colors, images, and descriptions to reflect your own professional identity.
+
+For more details, check the [LICENSE](./LICENSE) file.
+
+## 🌟 Credits & Acknowledgments
+
+This portfolio uses open-source icons provided by the **[Devicon](https://devicon.dev/)** project. 
+*Originally created by Konpa under the MIT license and supported by various contributors. Copyright © 2015 Konpa.*
+
+---
+
+## ✍️ Author
+
+Made with ❤️ by Emelly Beatriz
+
+📬 Contact me:
 📧 emellybmuniz@gmail.com |
 💼 [Linkedin](https://www.linkedin.com/in/emellybmuniz) |
 🐙 [Github](https://github.com/emellybmuniz)
