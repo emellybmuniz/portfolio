@@ -112,12 +112,14 @@
         class="contact__form contact__card"
         id="contactForm"
         method="POST"
-        action="/api/contact"
+        action="https://api.web3forms.com/submit"
         data-animate="animate-fade-in-up"
         data-observe-once="true"
       >
         <div class="contact__form-fields">
-          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="access_key" value="feacce8c-a441-423f-9de4-18c5b7fef0ac">
+          <input type="hidden" name="subject" value="Nova mensagem do Portfolio">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <div class="contact__form-group">
             <label for="contactName" class="contact__label">{{ i18n "contact.name" }}</label>
             <input

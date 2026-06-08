@@ -35,12 +35,15 @@ export class ContactFormManager {
     this.statusContainer.className = "contact__form-status";
 
     const formData = new FormData(this.form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     try {
       const response = await fetch(this.form.action, {
         method: this.form.method,
-        body: formData,
+        body: json,
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
       });
@@ -54,7 +57,7 @@ export class ContactFormManager {
         this.form.reset();
       } else {
         this.statusContainer.textContent =
-          result.error ||
+          result.message ||
           "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
         this.statusContainer.style.color = "var(--color-error, #ef4444)";
       }

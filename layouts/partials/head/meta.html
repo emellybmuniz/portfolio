@@ -34,9 +34,12 @@
 
 <link rel="preload" href="{{ "fonts/Poppins/Poppins-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ "fonts/Raleway/static/Raleway-Bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-{{ $profile := resources.Get "images/hero/profile-picture.webp" | resources.Fingerprint }}
+{{ $profile := resources.Get "images/hero/profile-picture.webp" }}
 {{ if $profile }}
-<link rel="preload" href="{{ $profile.RelPermalink }}" as="image" fetchpriority="high">
+  {{ $profileXs := $profile.Resize "340x webp q85" | resources.Fingerprint }}
+  {{ $profileSm := $profile.Resize "470x webp q85" | resources.Fingerprint }}
+  {{ $profileLg := $profile.Resize "940x webp q85" | resources.Fingerprint }}
+  <link rel="preload" as="image" href="{{ $profileSm.RelPermalink }}" imagesrcset="{{ $profileXs.RelPermalink }} 340w, {{ $profileSm.RelPermalink }} 470w, {{ $profileLg.RelPermalink }} 940w" imagesizes="(max-width: 768px) 90vw, 470px" fetchpriority="high">
 {{ end }}
 
 
