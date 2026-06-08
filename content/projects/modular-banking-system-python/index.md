@@ -1,6 +1,6 @@
 ---
 title: "Modular Banking System"
-date: "2024-01-01"
+date: "2026-01-07"
 featured: true
 weight: 11
 draft: false

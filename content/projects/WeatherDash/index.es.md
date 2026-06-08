@@ -1,6 +1,6 @@
 ---
 title: "Weather Dashboard"
-date: "2024-01-01"
+date: "2025-09-09"
 featured: true
 weight: 10
 draft: false

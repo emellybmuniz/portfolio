@@ -1,6 +1,6 @@
 ---
 title: "Minimalist Blog API"
-date: "2024-01-01"
+date: "2026-02-09"
 featured: true
 weight: 10
 draft: false
