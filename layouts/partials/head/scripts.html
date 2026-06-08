@@ -8,29 +8,3 @@
     crossorigin="anonymous"
   ></script>
 {{ end }}
-
-
-<script>
-  window.requestIdleCallback = window.requestIdleCallback || function(cb) {
-    return setTimeout(function() {
-      var start = Date.now();
-      cb({ 
-        didTimeout: false,
-        timeRemaining: function() { return Math.max(0, 50 - (Date.now() - start)); }
-      });
-    }, 1);
-  };
-  
-  window.requestIdleCallback(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-QQ38JRQ412";
-    script.async = true;
-    document.head.appendChild(script);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QQ38JRQ412");
-  });
-</script>

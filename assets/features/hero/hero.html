@@ -84,12 +84,13 @@
             <div class="hero__photo-inner">
                 {{ $profile := resources.Get "images/hero/profile-picture.webp" }}
                 {{ if $profile }}
+                {{ $profileXs := $profile.Resize "340x webp q85" | resources.Fingerprint }}
                 {{ $profileSm := $profile.Resize "470x webp q85" | resources.Fingerprint }}
                 {{ $profileLg := $profile.Resize "940x webp q85" | resources.Fingerprint }}
                 <img
                   class="hero__photo"
                   src="{{ $profileSm.RelPermalink }}"
-                  srcset="{{ $profileSm.RelPermalink }} 470w, {{ $profileLg.RelPermalink }} 940w"
+                  srcset="{{ $profileXs.RelPermalink }} 340w, {{ $profileSm.RelPermalink }} 470w, {{ $profileLg.RelPermalink }} 940w"
                   sizes="(max-width: 768px) 90vw, 470px"
                   alt="Foto de perfil de {{ i18n "hero.title" }}"
                   loading="eager"

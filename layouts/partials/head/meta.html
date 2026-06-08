@@ -32,8 +32,8 @@
 
 <!-- Preloads-->
 
-<link rel="preload" href="{{ "fonts/poppins-bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ "fonts/raleway-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/Poppins/Poppins-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/Raleway/static/Raleway-Bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{ $profile := resources.Get "images/hero/profile-picture.webp" | resources.Fingerprint }}
 {{ if $profile }}
 <link rel="preload" href="{{ $profile.RelPermalink }}" as="image" fetchpriority="high">

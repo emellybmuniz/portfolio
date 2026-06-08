@@ -35,7 +35,10 @@ export class ScrollManager {
   }
 
   private setupSmoothScroll(): void {
-    if (this.prefersReducedMotion || !Lenis) return;
+    const isMobile =
+      window.matchMedia("(max-width: 768px)").matches ||
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    if (this.prefersReducedMotion || isMobile || !Lenis) return;
 
     this.lenisInstance = new Lenis({
       duration: 1.2,
