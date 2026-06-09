@@ -124,6 +124,13 @@ export class AnimationManager {
       document.querySelectorAll<HTMLElement>("[data-parallax]"),
     );
 
+    let scrollEndTimer: ReturnType<typeof setTimeout> | null = null;
+    const setWillChange = (active: boolean) => {
+      parallaxEls.forEach((el) => {
+        el.style.willChange = active ? "transform" : "auto";
+      });
+    };
+
     const update = () => {
       this.frameId = null;
 
@@ -164,7 +171,17 @@ export class AnimationManager {
       this.frameId = window.requestAnimationFrame(update);
     };
 
-    window.addEventListener("scroll", schedule, { passive: true, signal });
+    window.addEventListener(
+      "scroll",
+      () => {
+        setWillChange(true);
+        schedule();
+
+        if (scrollEndTimer !== null) clearTimeout(scrollEndTimer);
+        scrollEndTimer = setTimeout(() => setWillChange(false), 200);
+      },
+      { passive: true, signal },
+    );
 
     let resizeTimer: number;
     window.addEventListener(

@@ -471,11 +471,10 @@
   height: 100%;
   border-radius: inherit;
   overflow: hidden;
-  opacity: 0;
   transition: opacity 400ms ease-out;
 
-  &.is-loaded {
-    opacity: 1;
+  @starting-style {
+    opacity: 0;
   }
 }
 

@@ -4,11 +4,37 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
+# HTML pages — always revalidate (no-cache = sends If-None-Match, uses 304 if unchanged)
+/
+  Cache-Control: no-cache, must-revalidate
+
+/en/
+  Cache-Control: no-cache, must-revalidate
+
+/es/
+  Cache-Control: no-cache, must-revalidate
+
+# Fingerprinted assets — immutable for 1 year
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Static images
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Self-hosted fonts
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Favicon files (change infrequently)
+/favicon*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/apple-touch-icon*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/web-app-manifest*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/site.webmanifest
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

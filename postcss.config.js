@@ -15,6 +15,6 @@ module.exports = {
     require("postcss-preset-env")({
       stage: 1,
     }),
-    ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecss] : []),
+  ...(process.env.HUGO_ENVIRONMENT === "production" || process.env.NODE_ENV === "production" ? [purgecss] : []),
   ],
 };

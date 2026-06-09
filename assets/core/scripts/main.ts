@@ -30,17 +30,31 @@ class Portfolio {
     this.heroMotion = new HeroMotion();
     this.animationManager = new AnimationManager();
 
-    this.init();
-    this.setupLazyLoading();
+    this.initCritical();
+    this.initDeferred();
   }
 
-  private init(): void {
+  private initCritical(): void {
     this.themeManager.init();
-    this.langManager.init();
     this.navManager.init();
-    this.scrollManager.init();
-    this.heroMotion.init();
-    this.animationManager.init();
+  }
+
+  private initDeferred(): void {
+    const schedule = (cb: () => void) => {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(cb, { timeout: 300 });
+      } else {
+        setTimeout(cb, 0);
+      }
+    };
+
+    schedule(() => this.langManager.init());
+    schedule(() => this.scrollManager.init());
+    schedule(() => {
+      this.heroMotion.init();
+      this.animationManager.init();
+    });
+    schedule(() => this.setupLazyLoading());
   }
 
   private setupLazyLoading(): void {
