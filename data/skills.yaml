@@ -65,7 +65,6 @@ skills:
   - name: Firebase
     category:
       - tools
-      - backend
     icon: Firebase.svg
     color:
       from: '#3c3c3c'
