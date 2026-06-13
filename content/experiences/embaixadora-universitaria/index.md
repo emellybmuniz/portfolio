@@ -1,7 +1,7 @@
 ---
-title: "Embaixadora Universitária"
-date_period: "2025 — Presente"
-company: "DIO (Digital Innovation One) — Rio de Janeiro, Brasil"
+title: Embaixadora Universitária - Voluntária
+date_period: 2025 — 2026
+company: DIO (Digital Innovation One) — Rio de Janeiro, Brasil
 active: true
 weight: 1
 ---
