@@ -15,7 +15,7 @@ technologies:
   - "TypeScript"
   - "Playwright"
   - "GitHub Actions"
-liveDemo: "https://emellybeatriz.pages.dev"
+liveDemo: "https://emellybeatriz.dev"
 repositoryUrl: "https://github.com/emellybmuniz/portfolio"
 
 techReasons:

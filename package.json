@@ -4,14 +4,14 @@
   "description": "Portfolio de Emelly Beatriz",
   "scripts": {
     "dev": "hugo server -D",
-    "build": "hugo --gc --minify -b https://emellybeatriz.pages.dev/",
+    "build": "hugo --gc --minify -b https://emellybeatriz.dev/",
     "preview": "hugo server",
     "lint:css": "stylelint \"assets/**/*.scss\"",
     "lint:js": "eslint \"assets/**/*.ts\"",
     "format": "prettier --write 'assets/**/*.{ts,scss}'",
     "type-check": "tsc --noEmit",
     "test:e2e": "playwright test",
-    "build:cf": "curl -LJO https://github.com/sass/dart-sass/releases/download/1.80.0/dart-sass-1.80.0-linux-x64.tar.gz && tar -xf dart-sass-1.80.0-linux-x64.tar.gz && export PATH=\"$PWD/dart-sass:$PATH\" && export HUGO_ENVIRONMENT=\"production\" && hugo --gc --minify -b https://emellybeatriz.pages.dev/",
+    "build:cf": "curl -LJO https://github.com/sass/dart-sass/releases/download/1.80.0/dart-sass-1.80.0-linux-x64.tar.gz && tar -xf dart-sass-1.80.0-linux-x64.tar.gz && export PATH=\"$PWD/dart-sass:$PATH\" && export HUGO_ENVIRONMENT=\"production\" && hugo --gc --minify -b https://emellybeatriz.dev/",
     "prepare": "husky"
   },
   "keywords": [
