@@ -1,7 +1,7 @@
 ---
-title: "University Ambassador"
-date_period: "2025 — Present"
-company: "DIO (Digital Innovation One) — Rio de Janeiro, Brazil"
+title: University Ambassador - Volunteer
+date_period: 2025 — 2026
+company: DIO (Digital Innovation One) — Rio de Janeiro, Brazil
 active: true
 weight: 1
 ---
