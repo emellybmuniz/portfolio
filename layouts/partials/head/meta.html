@@ -6,6 +6,7 @@
 <meta name="author" content="{{ .Site.Params.author }}" />
 
 <!-- Open Graph -->
+<meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:type" content="{{ if eq .Kind "home" }}website{{ else }}article{{ end }}" />
 <meta property="og:title" content="{{ if eq .Kind "home" }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta property="og:description" content="{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
