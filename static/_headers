@@ -4,7 +4,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self' 'unsafe-inline' https://*.cloudflareinsights.com; img-src 'self' data: https:;
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' https://*.cloudflareinsights.com https://cloudflareinsights.com; img-src 'self' data: https:; connect-src 'self' https://*.cloudflareinsights.com https://cloudflareinsights.com;
 
 # HTML pages — always revalidate (no-cache = sends If-None-Match, uses 304 if unchanged)
 /
