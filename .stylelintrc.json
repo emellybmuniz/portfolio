@@ -9,6 +9,8 @@
     "color-function-notation": null,
     "scss/at-rule-no-unknown": [true, {
       "ignoreAtRules": ["starting-style"]
-    }]
+    }],
+    "scss/at-import-no-partial-leading-underscore": null,
+    "scss/load-no-partial-leading-underscore": true
   }
 }
