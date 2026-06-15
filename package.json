@@ -4,7 +4,7 @@
   "description": "Portfolio de Emelly Beatriz",
   "scripts": {
     "dev": "hugo server -D",
-    "build": "hugo --gc --minify -b https://emellybeatriz.dev/",
+    "build": "hugo --environment production --gc --minify -b https://emellybeatriz.dev/",
     "preview": "hugo server",
     "lint:css": "stylelint \"assets/**/*.scss\"",
     "lint:js": "eslint \"assets/**/*.ts\"",
