@@ -1,14 +1,9 @@
 <!-- Hugo Pipeline -->
 {{ $scss := resources.Get "core/styles/main.scss" }}
-{{ $css := $scss | css.Sass (dict "outputStyle" "compressed" "transpiler" "dartsass") | css.PostCSS }}
-{{ if hugo.IsProduction }}
-  <style>{{ $css.Content | safeCSS }}</style>
-{{ else }}
-  {{ $css = $css | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $css.RelPermalink }}"
-    integrity="{{ $css.Data.Integrity }}"
-    crossorigin="anonymous"
-  />
-{{ end }}
+{{ $css := $scss | css.Sass (dict "targetPath" "css/main.css" "outputStyle" "compressed" "transpiler" "dartsass") | css.PostCSS | resources.Fingerprint }}
+<link
+  rel="stylesheet"
+  href="{{ $css.RelPermalink }}"
+  integrity="{{ $css.Data.Integrity }}"
+  crossorigin="anonymous"
+/>

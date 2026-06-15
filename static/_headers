@@ -18,6 +18,10 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# CSS Cache rule
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Static images
 /images/*
   Cache-Control: public, max-age=31536000, immutable
